@@ -1,0 +1,20 @@
+<a>
+ <b>
+  <c1>
+   <id>1</id>
+  </c1>
+  <c2>
+   <name type="first">Piet</name>
+   <name type="last">Krediet</name>
+  </c2>
+ </b>
+  <b>a
+  <c1>
+   <id>2</id>
+  </c1>
+  <c2>
+   <name type="first">Jan</name>
+   <name type="last">Joker</name>
+  </c2>
+ </b>
+</a>

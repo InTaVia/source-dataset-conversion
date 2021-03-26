@@ -1,0 +1,11 @@
+prefixes:
+  ex: "http://example.com/"
+
+mappings:
+  episode:
+    sources:
+      - [source_1.xml~xpath, /a/b]
+    s: http://example.com/$(c1/id)
+    po:
+      - [a, foaf:Person]
+      - [ex:name, $(c2/name)]
