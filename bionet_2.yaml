@@ -4,8 +4,8 @@ prefixes:
 mappings:
   episode:
     sources:
-      - [source_1.xml~xpath, /a/b]
-    s: http://example.com/$(c1/id)
+      - [bionet2.xml~xpath, /list/biodes]
+    s: http://example.com/$(person/idno[@type='bioport'])
     po:
       - [a, foaf:Person]
-      - [ex:name, $(c2/name)]
+      - [ex:name, $(person/persName)]
