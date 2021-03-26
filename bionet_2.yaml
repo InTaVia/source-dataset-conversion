@@ -1,11 +1,26 @@
 prefixes:
   ex: "http://example.com/"
+  bgn: "http://biographynet.nl/data/"
 
 mappings:
-  episode:
-    sources:
-      - [bionet2.xml~xpath, /list/biodes]
-    s: http://example.com/$(person/idno[@type='bioport'])
-    po:
-      - [a, foaf:Person]
-      - [ex:name, $(person/persName)]
+    episode:
+        sources:
+        - [bionet2.xml~xpath, /list/biodes]
+        s: http://example.com/biodes/$(person/idno[@type='bioport'])
+        po:
+          - [a, bgn:BioDes]
+          - [ex:name, $(person/persName)]
+          - p:  bgn:aggregatedPerson
+            o:  
+                mapping: agpersons
+                condition:
+                    function: equal
+                    parameters:
+                      - [str1, $(person/idno), s]
+                      - [str2, $(person/idno), o]
+    agpersons:
+        sources:
+        -   [bionet2.xml~xpath, /list/biodes]
+        s: http://example.com/agg/$(person/idno[@type='bioport'])
+        po:
+          - [a, bgn:AggregatedPerson]
