@@ -286,8 +286,8 @@ birthevent
 {S, bgn:event, E},
 {E, bgn:type, "birth"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, NA} ?, % not used, todo
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:notAfter, _NA} ?, % not used, todo
+	{E, bgn:notBefore,_NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -302,8 +302,8 @@ deathevent
 {S, bgn:event, E},
 {E, bgn:type, "death"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, NA} ?, % not used, todo
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:notAfter, _NA} ?, % not used, todo
+	{E, bgn:notBefore,_NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -319,8 +319,8 @@ baptismevent
 {S, bgn:event, E},
 {E, bgn:type, "baptism"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, NA} ?, % not used, todo
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:notAfter, _NA} ?, % not used, todo
+	{E, bgn:notBefore,_NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -335,8 +335,8 @@ marriageevent
 {S, bgn:event, E},
 {E, bgn:type, "marriage"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, NA} ?, % not used, todo
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:notAfter, _NA} ?, % not used, todo
+	{E, bgn:notBefore,_NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -351,8 +351,8 @@ funeralevent
 {S, bgn:event, E},
 {E, bgn:type, "funeral"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, NA} ?, % not used, todo
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:notAfter, _NA} ?, % not used, todo
+	{E, bgn:notBefore,_NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -361,6 +361,17 @@ make_rand_uri(S,['funeral'],Evt),
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
 {Evt, crm:'P4_has_time_span', Date}.
+
+
+
+
+
+
+
+
+
+
+
 
 
 % TODO
