@@ -54,6 +54,7 @@ true.
 
 
 % REWRITE RULES FOR FIXING THE BIODES OBJECT
+% This is currently not changed
 
 biodescapitalizeobject
 @@
@@ -110,14 +111,15 @@ fixpersonobject
 {S, P, bgn:'Person'}
 <=>
 true,
-{S, P, bgn:'PersonDes'}.
+%{S, P, bgn:'PersonDes'}.
+{S, P, crm:'E21_Person'}.
 
 addproxytopersondes
 @@
-{S, rdf:type, bgn:'PersonDes'}
+{S, rdf:type, crm:'E21_Person'}
 ==>
 true,
-{S, rdf:type, ore:'Proxy'}.
+{S, rdf:type, idm:'Person_Proxy'}.
 
 makepersondesuris
 @@
@@ -133,7 +135,7 @@ literal_to_id(['PersonDes-' ,FileID], bgn, URI),
 
 
 % REWRITE RULES FOR FIXING THE FILE DESCRIPTION SECTION
-
+% untouched for now
 fixfiledespredicate
 @@
 {S, rdf:type, bgn:'BioDes'} \
@@ -156,7 +158,7 @@ fixfiledesobject
 true,
 {S, P, bgn:'FileDes'}.
 
-makepersondesuris
+makefiledesuris
 @@
 {S, bgn:xmlFileID, literal(FileID)},
 {S, bgn:hasFileDes, O}\
@@ -169,6 +171,7 @@ literal_to_id(['FileDes-' ,FileID], bgn, URI),
 
 
 % REWRITE RULES FOR FIXING THE BIOGRAPHY SECTION
+% untouched for now
 
 fixbiopartspredicate
 @@
@@ -192,7 +195,7 @@ fixbiopartsobject
 true,
 {S, P, bgn:'BioParts'}.
 
-makepersondesuris
+makebiopartsdesuris
 @@
 {S, bgn:xmlFileID, literal(FileID)},
 {S, bgn:hasBioParts, O}\
@@ -212,11 +215,10 @@ createpersonobjectsandlinkbiodesobjects
 <=>
 true,
 literal_to_id(['Person-', PersonID], bgn, P),
-{S, bgn:aggregatedPerson, P},
+{S, bgn:aggregatedPerson, P}, %relation between biodes and person
 {S, edm:aggregatedCHO, P},
-{P, bgn:personID, literal(PersonID)},
-{P, rdf:type, bgn:'Person'},
-{P, rdf:type, edm:'ProvidedCHO'}.
+{P, bgn:personID, literal(PersonID)}, %leave this for now, could be cidoc
+{P, rdf:type, idm:'Provided_Person'}.
 
 addproxyrelations
 @@
@@ -225,14 +227,15 @@ addproxyrelations
 ==>
 true,
 {O, ore:proxyIn, S},
-{O, ore:proxyFor, P}.
+{O, ore:proxyFor, P},
+{O, idm:personProxyFor,P}.
 
 
 
 
 
 % REWRITE RULES TO FIX FIGURE OBJECTS
-
+% leave this for now
 graphiconbiopartstofigure
 @@
 {bgn:'BioParts', bgn:graphic, G}
@@ -258,7 +261,7 @@ true,
 
 
 
-% REWRITE RULES FOR MINOR FIXES
+% Person names to CIDOC
 
 fixpersonname
 @@
@@ -275,6 +278,89 @@ true,
 {S, bgn:personName, O}.
 
 
+% BIRTH AND DEATH EVENTS
+%
+
+birthevent
+@@
+{S, bgn:event, E},
+{E, bgn:type, "birth"},
+	{E, bgn:date, Date} ?,
+	{E, bgn:notAfter, NA} ?, % not used, todo
+	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:place, Place}?
+<=>
+true,
+make_rand_uri(S,['birth'],Evt),
+{Evt, crm:'P98_brought_into_life', S},
+{Evt, rdf:type, crm:'E67_Birth'},
+{Evt, crm:'P7_took_place_at', Place},
+{Evt, crm:'P4_has_time_span', Date}.
+
+deathevent
+@@
+{S, bgn:event, E},
+{E, bgn:type, "death"},
+	{E, bgn:date, Date} ?,
+	{E, bgn:notAfter, NA} ?, % not used, todo
+	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:place, Place}?
+<=>
+true,
+make_rand_uri(S,['death'],Evt),
+{Evt, crm:'P100_was_death_of', S},
+{Evt, rdf:type, crm:'E5_Event'},
+{Evt, crm:'P7_took_place_at', Place},
+{Evt, crm:'P4_has_time_span', Date}.
+
+
+baptismevent
+@@
+{S, bgn:event, E},
+{E, bgn:type, "baptism"},
+	{E, bgn:date, Date} ?,
+	{E, bgn:notAfter, NA} ?, % not used, todo
+	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:place, Place}?
+<=>
+true,
+make_rand_uri(S,['baptism'],Evt),
+{Evt, crm:'P39_Actor', S},
+{Evt, rdf:type, crm:'E5_Event'},
+{Evt, crm:'P7_took_place_at', Place},
+{Evt, crm:'P4_has_time_span', Date}.
+
+marriageevent
+@@
+{S, bgn:event, E},
+{E, bgn:type, "marriage"},
+	{E, bgn:date, Date} ?,
+	{E, bgn:notAfter, NA} ?, % not used, todo
+	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:place, Place}?
+<=>
+true,
+make_rand_uri(S,['marriage'],Evt),
+{Evt, crm:'P39_Actor', S},
+{Evt, rdf:type, crm:'E5_Event'},
+{Evt, crm:'P7_took_place_at', Place},
+{Evt, crm:'P4_has_time_span', Date}.
+
+funeralevent
+@@
+{S, bgn:event, E},
+{E, bgn:type, "funeral"},
+	{E, bgn:date, Date} ?,
+	{E, bgn:notAfter, NA} ?, % not used, todo
+	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:place, Place}?
+<=>
+true,
+make_rand_uri(S,['funeral'],Evt),
+{Evt, crm:'P39_Actor', S},
+{Evt, rdf:type, crm:'E5_Event'},
+{Evt, crm:'P7_took_place_at', Place},
+{Evt, crm:'P4_has_time_span', Date}.
 
 
 % TODO
@@ -282,7 +368,7 @@ true,
 
 % bgn:snippet on bgn:BioParts generally points to a resource of type bgn:Snippet giving bgn:sourceId
 % bgn:text instead of bgn:snippet on bgn:BioParts
-% bgn:figure points to resource of type bgn:Figure giving a bgn:graphic and a bgn:head (=caption); bgn:graphic points to resource of type bgn:Graphic giving bgn:url 
+% bgn:figure points to resource of type bgn:Figure giving a bgn:graphic and a bgn:head (=caption); bgn:graphic points to resource of type bgn:Graphic giving bgn:url
 
 
 

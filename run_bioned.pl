@@ -1,5 +1,8 @@
 :- module(run_bioned,
-	  [ run_bioned/0
+	  [ run_bioned/0,
+	    delete_bioned/0,
+	    make_rand_uri/2,
+	    make_rand_uri/3
 	  ]).
 
 user:file_search_path(data,       data).
@@ -11,6 +14,9 @@ user:file_search_path(data,       data).
 :- rdf_register_ns(ore,    'http://www.openarchives.org/ore/terms/').
 :- rdf_register_ns(prov,   'http://www.w3.org/ns/prov#').
 :- rdf_register_ns(pplan,  'http://purl.org/net/p-plan#').
+:- rdf_register_ns(bioc,  'http://www.ldf.fi/schema/bioc/').
+:- rdf_register_ns(crm, 'http://www.cidoc-crm.org/cidoc-crm/') .
+:- rdf_register_ns(idm, 'https://intavia.org/idm/').
 
 :- use_module([ library(xmlrdf/xmlrdf),
 		library(semweb/rdf_cache),
@@ -48,9 +54,9 @@ load_biodes_file(XmlFile):-
 
 load_xml_dir:-
 	expand_file_name('data/xml/full_preprocessed/*.xml', X),
-	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
-	append(X, Y, Z),
-	maplist(load_biodes_file, Z).
+%	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
+%	append(X, Y, Z),
+	maplist(load_biodes_file, X).
 
 
 load(File) :-
@@ -88,3 +94,15 @@ save_bioned:-
 
 
 
+delete_bioned:-
+	rdf_retractall(_,_,_,bioned).
+
+
+% UTILITY
+%
+make_rand_uri(InputURI,OutputURI):-
+	random(1,9999999,Rand),
+	atomic_list_concat([InputURI,Rand],OutputURI).
+make_rand_uri(InputURI,List,OutputURI):-
+	random(1,9999999,Rand),
+	atomic_list_concat([InputURI,Rand|List],OutputURI).
