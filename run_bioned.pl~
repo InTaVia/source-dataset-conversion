@@ -1,6 +1,8 @@
 :- module(run_bioned,
 	  [ run_bioned/0,
-	    delete_bioned/0
+	    delete_bioned/0,
+	    make_rand_uri/2,
+	    make_rand_uri/3
 	  ]).
 
 user:file_search_path(data,       data).
@@ -56,6 +58,12 @@ load_xml_dir:-
 %	append(X, Y, Z),
 	maplist(load_biodes_file, X).
 
+load_test_dir:-
+	expand_file_name('data/xml/test/*.xml', X),
+%	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
+%	append(X, Y, Z),
+	maplist(load_biodes_file, X).
+
 
 load(File) :-
 	rdf_current_ns(bgn, Prefix),
@@ -94,3 +102,13 @@ save_bioned:-
 
 delete_bioned:-
 	rdf_retractall(_,_,_,bioned).
+
+
+% UTILITY
+%
+make_rand_uri(InputURI,OutputURI):-
+	random(1,9999999,Rand),
+	atomic_list_concat([InputURI,Rand],OutputURI).
+make_rand_uri(InputURI,List,OutputURI):-
+	random(1,9999999,Rand),
+	atomic_list_concat([InputURI,Rand|List],OutputURI).

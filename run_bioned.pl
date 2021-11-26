@@ -59,6 +59,7 @@ load_xml_dir:-
 	maplist(load_biodes_file, X).
 
 
+
 load(File) :-
 	rdf_current_ns(bgn, Prefix),
 	load_xml_as_rdf(File,

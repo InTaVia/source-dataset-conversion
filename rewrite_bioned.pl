@@ -262,20 +262,54 @@ true,
 
 
 % Person names to CIDOC
+% TODO: this needs some refining
 
 fixpersonname
 @@
 {S, bgn:persname, O}
 <=>
 true,
-{S, bgn:personName, O}.
+{S, bgn:persName, O}.
 
-fixpersonnameagain
+makenameuris
 @@
-{S, bgn:persName, O}
+{S, bgn:personName, O}\
+{O}
+<=>
+make_rand_uri(S,['name'],NameURI),
+{NameURI}.
+
+
+fixpersonnameCidoc
+@@
+{S, bgn:persName, literal(Val)}
 <=>
 true,
-{S, bgn:personName, O}.
+make_rand_uri(S,['name'],NameURI),
+{S, crm:'P1_is_identified_by', NameURI},
+	{NameURI, rdf:type, crm:'E41_Appellation'},
+	{NameURI, rdfs:label, literal(Val)}.
+
+fixpersonnameCidoc
+@@
+{S, bgn:persName, O},
+{S, rdf:value, Val}?
+<=>
+true,
+{S, crm:'P1_is_identified_by', O},
+	{O, rdf:type, crm:'E41_Appellation'},
+	{O, rdfs:label, Val}. %TODO, not sure if this is correct
+
+makenameparts
+@@
+{N, bgn:name , NP},
+{NP, rdf:value, Val},
+{NP, bgn:type, Type}?
+<=>
+{N, crm:'P148_has_component', NP},
+{NP, crm:'P2_has_type', Type},
+{NP, rdfs:label, Val}. % TODO or hasnote?
+
 
 
 % BIRTH AND DEATH EVENTS
