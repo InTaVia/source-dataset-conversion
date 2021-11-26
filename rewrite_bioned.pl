@@ -365,6 +365,255 @@ make_rand_uri(S,['funeral'],Evt),
 
 
 
+% STATES
+
+% States with potential temporal qualifiers. These include the
+% following states: residence (to,from,when) floruit occupation
+% (to,when,from) category, faith (to, from), religion, education,
+% claim_to_fame
+% TODO: potentially remove events for non-qualified occupations to
+% reduce triples?
+occupationstate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "occupation"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Occupation-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Occupation'},  % TODO: should be profession?
+	{OURI, rdfs:label, Val},
+	{S, bioc:has_occupation, OURI},
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S,bioc:has_relation,ARURI},
+make_rand_uri(S,['occupationevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['occupationevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+
+
+educationstate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "education"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Education'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S,bioc:has_relation,ARURI},
+make_rand_uri(S,['educationevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['educationevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+
+residencestate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "residence"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Residence'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_residence, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S,bioc:has_relation,ARURI},
+make_rand_uri(S,['residenceevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['residenceevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+%TODO: What is Floruit?
+floruitstate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "floruit"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Floruit'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_floruit, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S, bioc:has_relation,ARURI},
+make_rand_uri(S,['floruitevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['floruitevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+faithstate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "faith"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Faith'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_faith, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S, bioc:has_relation,ARURI},
+make_rand_uri(S,['faithevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['faithevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+
+% Seems to be empty, for now delete, otherwise use commented stuff below
+religionstate_event
+@@
+{_S, bgn:state, E},
+{E, bgn:type, "religion"},
+	{E,_P,_O}
+<=>
+true.
+
+/*{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Religion'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_religion, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{S, bioc:has_relation,ARURI},
+make_rand_uri(S,['religionevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['religionevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+*/
+
+claimtofamestate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "claim_to_fame"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Claim_to_fame'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_claim_to_fame, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['claimtofamerole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{S, bioc:has_relation,ARURI},
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+make_rand_uri(S,['claimtofameevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['claimtofameevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+categorystate_event
+@@
+{S, bgn:state, E},
+{E, bgn:type, "category"},
+{E, rdf:value, Val},
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:when,WhenDate} ?
+<=>
+true,
+literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
+	{OURI, rdf:type, bgn:'Category'},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_category, OURI}, % TODO: fix correct property for this
+make_rand_uri(S,['categoryrole'],ARURI), %then make the actorrole instance
+	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	{ARURI, rdf:type, bioc:'Actor_Role'},
+	{S, bioc:has_relation,ARURI},
+make_rand_uri(S,['categoryevent'],Evt), %then make the actorroleevent instance
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdfs:label, Val},
+	{Evt, crm:'P11_had_participant_in',ARURI},
+make_rand_uri(S,['categoryevent_time'],Time), % then make the Event instance
+	{Time, rdf:type, crm:'E52_Time-Span'},
+	{Evt, crm:'P4_has_time-span', Time},
+	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
+	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
 
 
 
@@ -374,7 +623,13 @@ make_rand_uri(S,['funeral'],Evt),
 
 
 
-% TODO
+
+
+
+
+
+
+% OLD TODO
 
 
 % bgn:snippet on bgn:BioParts generally points to a resource of type bgn:Snippet giving bgn:sourceId
