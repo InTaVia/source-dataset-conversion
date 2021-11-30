@@ -260,57 +260,68 @@ true,
 {S, bgn:hasGraphic, O}.
 
 
+% FIX GENDER
+%
+sextogender
+@@
+{S, bgn:sex, literal(Sex)}
+<=>
+true,
+sex_to_gender(Sex,Gender),
+{S, bioc:gender, Gender},
+	{Gender, rdf:type, bioc:'Gender'} .
+
+
+sextogender
+@@
+{S, bgn:sex, O},
+{O, bgn:value, literal(Sex)}
+<=>
+true,
+sex_to_gender(Sex,Gender),
+{S, bioc:gender, Gender},
+	{Gender, rdf:type, bioc:'Gender'} .
+
+
+
 
 % Person names to CIDOC
 % TODO: this needs some refining
 
-fixpersonname
-@@
-{S, bgn:persname, O}
-<=>
-true,
-{S, bgn:persName, O}.
-
-makenameuris
-@@
-{S, bgn:personName, O}\
-{O}
-<=>
-make_rand_uri(S,['name'],NameURI),
-{NameURI}.
 
 
-fixpersonnameCidoc
+personnameCidoc
 @@
-{S, bgn:persName, literal(Val)}
+{S, bgn:hasPersName, literal(type(_,[Val]))} %simple names
 <=>
-true,
-make_rand_uri(S,['name'],NameURI),
+make_rand_uri(S,['-name'],NameURI),
+atom(Val),
 {S, crm:'P1_is_identified_by', NameURI},
 	{NameURI, rdf:type, crm:'E41_Appellation'},
 	{NameURI, rdfs:label, literal(Val)}.
 
-fixpersonnameCidoc
+
+personnameCidocComplex
 @@
-{S, bgn:persName, O},
-{S, rdf:value, Val}?
+{S, bgn:hasPersName, literal(type(_,List))} %complex names
 <=>
-true,
-{S, crm:'P1_is_identified_by', O},
-	{O, rdf:type, crm:'E41_Appellation'},
-	{O, rdfs:label, Val}. %TODO, not sure if this is correct
+make_rand_uri(S,['-name'],NameURI),
+name_list_to_str(NameURI, List,Val),
+{S, crm:'P1_is_identified_by', NameURI},
+	{NameURI, rdf:type, crm:'E41_Appellation'},
+	{NameURI, rdfs:label, literal(Val)}.
 
-makenameparts
+cleanpersname
 @@
-{N, bgn:name , NP},
-{NP, rdf:value, Val},
-{NP, bgn:type, Type}?
+{_,bgn:hasPersName,_}
 <=>
-{N, crm:'P148_has_component', NP},
-{NP, crm:'P2_has_type', Type},
-{NP, rdfs:label, Val}. % TODO or hasnote?
+true.
 
-
+cleanpersname
+@@
+{_,rdf:value,literal(type(_,_))}
+<=>
+true.
 
 % BIRTH AND DEATH EVENTS
 %

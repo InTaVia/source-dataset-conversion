@@ -2,7 +2,9 @@
 	  [ run_bioned/0,
 	    delete_bioned/0,
 	    make_rand_uri/2,
-	    make_rand_uri/3
+	    make_rand_uri/3,
+	    sex_to_gender/2,
+	    name_list_to_str/3
 	  ]).
 
 user:file_search_path(data,       data).
@@ -58,17 +60,12 @@ load_xml_dir:-
 %	append(X, Y, Z),
 	maplist(load_biodes_file, X).
 
-load_test_dir:-
-	expand_file_name('data/xml/test/*.xml', X),
-%	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
-%	append(X, Y, Z),
-	maplist(load_biodes_file, X).
 
 
 load(File) :-
 	rdf_current_ns(bgn, Prefix),
 	load_xml_as_rdf(File,
-			[ dialect(xml), % this is dialect, others are xmlns
+			[ dialect(xmlns), % this is dialect, others are xmlns
 			  unit(bioport), % the root unit
 			  prefix(Prefix), % prefix to use
 			  graph(bioned) % save as graph name
@@ -83,10 +80,7 @@ load(File) :-
 
 run_bioned:-
 	load_xml_dir,
-
-/*
-        load_biodes_file('00376149_13.xml'),
-*/
+        rdf_load('mapschema.ttl'),
 	rewrite,
 	save_bioned.
 
@@ -104,11 +98,33 @@ delete_bioned:-
 	rdf_retractall(_,_,_,bioned).
 
 
-% UTILITY
+% UTILITY predicates
 %
 make_rand_uri(InputURI,OutputURI):-
 	random(1,9999999,Rand),
-	atomic_list_concat([InputURI,Rand],OutputURI).
+	atomic_list_concat([InputURI,'-',Rand],OutputURI).
 make_rand_uri(InputURI,List,OutputURI):-
 	random(1,9999999,Rand),
-	atomic_list_concat([InputURI,Rand|List],OutputURI).
+	atomic_list_concat([InputURI,'-',Rand|List],OutputURI).
+
+sex_to_gender('1', 'http://www.ldf.fi/schema/bioc/Male').
+sex_to_gender('2', 'http://www.ldf.fi/schema/bioc/Female').
+sex_to_gender(_, 'http://www.ldf.fi/schema/bioc/Other').
+
+
+
+% For a name URI, generate the concatenated name PLUS the
+% individual name parts
+name_list_to_str(_NameURI, [],''):-true,!.
+name_list_to_str(NameURI, [element(name,[type=Type],[H])|T],Str):-
+	name_list_to_str(NameURI,T,Rest),
+	make_rand_uri(NameURI,['-',Type],NamePartURI),
+	rdf_assert(NameURI,crm:'P148_has_component',NamePartURI),
+	rdf_assert(NamePartURI,crm:'P2_has_type',Type),
+	rdf_assert(NamePartURI,rdfs:label,literal(H)),
+	atomic_list_concat([H,' ',Rest],Str).
+name_list_to_str(N,[H|T],Str):-
+	atom(H),
+	name_list_to_str(N,T,Rest),
+	atomic_list_concat([H,' ',Rest],Str).
+
