@@ -345,7 +345,7 @@ make_rand_uri(S,['birth'],Evt),
 {Evt, crm:'P98_brought_into_life', S},
 {Evt, rdf:type, crm:'E67_Birth'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time_span', Date}.
+{Evt, crm:'P4_has_time-span', Date}.
 
 deathevent
 @@
@@ -361,7 +361,7 @@ make_rand_uri(S,['death'],Evt),
 {Evt, crm:'P100_was_death_of', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time_span', Date}.
+{Evt, crm:'P4_has_time-span', Date}.
 
 
 baptismevent
@@ -378,7 +378,7 @@ make_rand_uri(S,['baptism'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time_span', Date}.
+{Evt, crm:'P4_has_time-span', Date}.
 
 marriageevent
 @@
@@ -394,7 +394,7 @@ make_rand_uri(S,['marriage'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time_span', Date}.
+{Evt, crm:'P4_has_time-span', Date}.
 
 funeralevent
 @@
@@ -410,7 +410,7 @@ make_rand_uri(S,['funeral'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time_span', Date}.
+{Evt, crm:'P4_has_time-span', Date}.
 
 
 
@@ -694,8 +694,8 @@ rdf(A, bgn:id, Code),
 
 idno
 @@
+{S, rdf:type, 'E21_Person'}\
 {S, bgn:idno, ID},
-{S, rdf:type, _},
 {ID, bgn:type, Type}?,
 {ID, rdf:value, Val}?
 <=>
