@@ -284,11 +284,16 @@ sex_to_gender(Sex,Gender),
 
 
 
+% NATIONALITY
+%
+nationality
+@@
+{S, rdf:type, crm:'E21_Person'}
+==>
+{S, bioc:nationality, bioc:dutch}.
 
 % Person names to CIDOC
 % TODO: this needs some refining
-
-
 
 personnameCidoc
 @@
@@ -664,12 +669,41 @@ make_rand_uri(S,['categoryevent_time'],Time), % then make the Event instance
 
 
 
+% RELATIONS
+%
+
+personrelation
+@@
+{S, bgn:relation, R},
+{R, bgn:name, Type},
+{R, bgn:active, Code}
+<=>
+make_rand_uri(S,['-relation'],RelURI),
+rdf(A, bgn:id, Code),
+{S, bioc:has_family_relation, RelURI},
+{RelURI, rdf:type, bioc:'Family_Relation'},
+{RelURI, crm:'P2_has_type', Type},
+{RelURI, bioc:inheres_in, A}.
 
 
 
 
+% IDNO to IDENTIFIER
+%
+%
 
-
+idno
+@@
+{S, bgn:idno, ID},
+{S, rdf:type, _},
+{ID, bgn:type, Type}?,
+{ID, rdf:value, Val}?
+<=>
+make_rand_uri(S,['-id'],IDURI),
+{S, bioc:'P48_has_preferred_identifier', IDURI},
+{IDURI, rdf:type, crm:'E42_Identifier'},
+{IDURI, crm:'P2_has_type', Type},
+{IDURI, crm:'P3_has_note', Val}.
 
 
 

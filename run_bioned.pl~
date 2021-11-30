@@ -119,9 +119,9 @@ name_list_to_str(_NameURI, [],''):-true,!.
 name_list_to_str(NameURI, [element(name,[type=Type],[H])|T],Str):-
 	name_list_to_str(NameURI,T,Rest),
 	make_rand_uri(NameURI,['-',Type],NamePartURI),
-	rdf_assert(NameURI,crm:'P148_has_component',NamePartURI),
-	rdf_assert(NamePartURI,crm:'P2_has_type',Type),
-	rdf_assert(NamePartURI,rdfs:label,literal(H)),
+	rdf_assert(NameURI,crm:'P148_has_component',NamePartURI,bioned),
+	rdf_assert(NamePartURI,crm:'P2_has_type',literal(Type),bioned),
+	rdf_assert(NamePartURI,rdfs:label,literal(H),bioned),
 	atomic_list_concat([H,' ',Rest],Str).
 name_list_to_str(N,[H|T],Str):-
 	atom(H),
