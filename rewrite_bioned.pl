@@ -336,24 +336,29 @@ birthevent
 {S, bgn:event, E},
 {E, bgn:type, "birth"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, _NA} ?, % not used, todo
-	{E, bgn:notBefore,_NB} ?, % not used, todo
+	{E, bgn:notAfter, NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore,NB} ?, % not used, todo
 	{E, bgn:place, Place}?
 <=>
 true,
-make_rand_uri(S,['birth'],Evt),
+make_rand_uri(S,['-birth'],Evt),
 {Evt, crm:'P98_brought_into_life', S},
 {Evt, rdf:type, crm:'E67_Birth'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time-span', Date}.
+make_rand_uri(S,['-birth-time'],Time), % make the time t instance
+{Evt, crm:'P4_has_time-span', Time},
+{Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P78_is_identified_by', Date},
+	{Time,  bgn:notAfter, NA},
+	{Time,  bgn:notBefore, NB}.
 
 deathevent
 @@
 {S, bgn:event, E},
 {E, bgn:type, "death"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, _NA} ?, % not used, todo
-	{E, bgn:notBefore,_NB} ?, % not used, todo
+	{E, bgn:notAfter, NA} ?,
+	{E, bgn:notBefore,NB} ?,
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -361,7 +366,13 @@ make_rand_uri(S,['death'],Evt),
 {Evt, crm:'P100_was_death_of', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time-span', Date}.
+%{Evt, crm:'P4_has_time-span', Date},
+	make_rand_uri(S,['-death-time'],Time), % make the time t instance
+{Evt, crm:'P4_has_time-span', Time},
+{Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P78_is_identified_by', Date},
+	{Time,  bgn:notAfter, NA},
+	{Time,  bgn:notBefore, NB}.
 
 
 baptismevent
@@ -369,8 +380,8 @@ baptismevent
 {S, bgn:event, E},
 {E, bgn:type, "baptism"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, _NA} ?, % not used, todo
-	{E, bgn:notBefore,_NB} ?, % not used, todo
+	{E, bgn:notAfter, NA} ?,
+	{E, bgn:notBefore,NB} ?,
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -378,15 +389,22 @@ make_rand_uri(S,['baptism'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time-span', Date}.
+%{Evt, crm:'P4_has_time-span', Date},
+	make_rand_uri(S,['-baptism-time'],Time), % make the time t instance
+{Evt, crm:'P4_has_time-span', Time},
+{Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P78_is_identified_by', Date},
+	{Time,  bgn:notAfter, NA},
+	{Time,  bgn:notBefore, NB}.
+
 
 marriageevent
 @@
 {S, bgn:event, E},
 {E, bgn:type, "marriage"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, _NA} ?, % not used, todo
-	{E, bgn:notBefore,_NB} ?, % not used, todo
+	{E, bgn:notAfter, NA} ?,
+	{E, bgn:notBefore,NB} ?,
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -394,15 +412,21 @@ make_rand_uri(S,['marriage'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time-span', Date}.
+%{Evt, crm:'P4_has_time-span', Date},
+	make_rand_uri(S,['-marriage-time'],Time), % make the time t instance
+{Evt, crm:'P4_has_time-span', Time},
+{Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P78_is_identified_by', Date},
+	{Time,  bgn:notAfter, NA},
+	{Time,  bgn:notBefore, NB}.
 
 funeralevent
 @@
 {S, bgn:event, E},
 {E, bgn:type, "funeral"},
 	{E, bgn:date, Date} ?,
-	{E, bgn:notAfter, _NA} ?, % not used, todo
-	{E, bgn:notBefore,_NB} ?, % not used, todo
+	{E, bgn:notAfter,NA} ?,
+	{E, bgn:notBefore,NB} ?,
 	{E, bgn:place, Place}?
 <=>
 true,
@@ -410,7 +434,13 @@ make_rand_uri(S,['funeral'],Evt),
 {Evt, crm:'P39_Actor', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P7_took_place_at', Place},
-{Evt, crm:'P4_has_time-span', Date}.
+%{Evt, crm:'P4_has_time-span', Date},
+	make_rand_uri(S,['-funeral-time'],Time), % make the time t instance
+{Evt, crm:'P4_has_time-span', Time},
+{Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P78_is_identified_by', Date},
+	{Time,  bgn:notAfter, NA},
+	{Time,  bgn:notBefore, NB}.
 
 
 
@@ -435,7 +465,8 @@ occupationstate_event
 true,
 literal_to_id(['Occupation-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Occupation'},  % TODO: should be profession?
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%	{OURI, rdfs:label, Val},
 	{S, bioc:has_occupation, OURI},
 make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -448,8 +479,8 @@ make_rand_uri(S,['occupationevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['occupationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
 
 
@@ -466,7 +497,8 @@ educationstate_event
 true,
 literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Education'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -479,10 +511,9 @@ make_rand_uri(S,['educationevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['educationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
-
 
 residencestate_event
 @@
@@ -496,7 +527,8 @@ residencestate_event
 true,
 literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Residence'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_residence, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -509,9 +541,10 @@ make_rand_uri(S,['residenceevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['residenceevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
 
 %TODO: What is Floruit?
 floruitstate_event
@@ -526,7 +559,8 @@ floruitstate_event
 true,
 literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Floruit'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_floruit, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -539,9 +573,18 @@ make_rand_uri(S,['floruitevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['floruitevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+
+% DELETE empty floruit?
+floruitstate_event
+@@
+{_, bgn:state, E},
+{E, bgn:type, "floruit"},
+{E, _,_}
+<=>
+true.
 
 faithstate_event
 @@
@@ -555,7 +598,8 @@ faithstate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Faith'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_faith, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -568,17 +612,17 @@ make_rand_uri(S,['faithevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['faithevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
 
 
 % Seems to be empty, for now delete, otherwise use commented stuff below
 religionstate_event
 @@
-{_S, bgn:state, E},
+{_, bgn:state, E},
 {E, bgn:type, "religion"},
-	{E,_P,_O}
+	{E,_,_}
 <=>
 true.
 
@@ -619,7 +663,8 @@ claimtofamestate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Claim_to_fame'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_claim_to_fame, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['claimtofamerole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -632,8 +677,8 @@ make_rand_uri(S,['claimtofameevent'],Evt), %then make the actorroleevent instanc
 make_rand_uri(S,['claimtofameevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
 
 categorystate_event
@@ -648,7 +693,8 @@ categorystate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Category'},
-	{OURI, rdfs:label, Val},
+	{OURI, skos:prefLabel, Val}, % model as skos?
+%		{OURI, rdfs:label, Val},
 	{S, bgn:has_category, OURI}, % TODO: fix correct property for this
 make_rand_uri(S,['categoryrole'],ARURI), %then make the actorrole instance
 	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
@@ -661,8 +707,8 @@ make_rand_uri(S,['categoryevent'],Evt), %then make the actorroleevent instance
 make_rand_uri(S,['categoryevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
-	{Time, crm:'P80_end_is_qualified_by', ToDate},
+	{Time, crm:'P81a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
 	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
 
 
@@ -686,6 +732,25 @@ rdf(A, bgn:id, Code),
 {RelURI, bioc:inheres_in, A}.
 
 
+% PLACE Literals to resources
+place_to_resource
+@@
+{Evt, crm:'P7_took_place_at', Place}
+<=>
+literal_to_id(['place-' ,Place], bgn, OURI),
+{OURI, rdf:type, crm:'E53_Place'},
+{OURI, rdfs:label, Place},
+{Evt, crm:'P7_took_place_at', OURI}.
+
+place_appellation
+@@
+{OURI, rdf:type, crm:'E53_Place'},
+{OURI, rdfs:label, Place}
+==>
+literal_to_id(['place-appelation-' ,Place], bgn, APURI),
+{OURI, crm:'P1_is_identified_by', APURI},
+{APURI, rdf:type, crm:'E41_Appellation'},
+{APURI, rdfs:label, Place}.
 
 
 % IDNO to IDENTIFIER
@@ -694,7 +759,7 @@ rdf(A, bgn:id, Code),
 
 idno
 @@
-{S, rdf:type, 'E21_Person'}\
+{S, rdf:type, crm:'E21_Person'}\
 {S, bgn:idno, ID},
 {ID, bgn:type, Type}?,
 {ID, rdf:value, Val}?
@@ -703,10 +768,25 @@ make_rand_uri(S,['-id'],IDURI),
 {S, bioc:'P48_has_preferred_identifier', IDURI},
 {IDURI, rdf:type, crm:'E42_Identifier'},
 {IDURI, crm:'P2_has_type', Type},
-{IDURI, crm:'P3_has_note', Val}.
+{IDURI, rdfs:label, Val}.
 
 
+% CLEAN
 
+clean_empty
+@@
+{_,_,""}
+<=>
+true.
+
+clean_empty_timespans
+@@
+{_,crm:'P4_has_time-span',T},
+{T, rdf:type, crm:'E52_Time-Span'}
+<=>
+not((   rdf(T,P,_),
+P\= 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type')),
+true.
 
 % OLD TODO
 

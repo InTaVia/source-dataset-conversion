@@ -19,6 +19,8 @@ user:file_search_path(data,       data).
 :- rdf_register_ns(bioc,  'http://www.ldf.fi/schema/bioc/').
 :- rdf_register_ns(crm, 'http://www.cidoc-crm.org/cidoc-crm/') .
 :- rdf_register_ns(idm, 'https://intavia.org/idm/').
+:- rdf_register_ns(skos, 'http://www.w3.org/2004/02/skos/core#').
+
 
 :- use_module([ library(xmlrdf/xmlrdf),
 		library(semweb/rdf_cache),
@@ -107,8 +109,8 @@ make_rand_uri(InputURI,List,OutputURI):-
 	random(1,9999999,Rand),
 	atomic_list_concat([InputURI,'-',Rand|List],OutputURI).
 
-sex_to_gender('1', 'http://www.ldf.fi/schema/bioc/Male').
-sex_to_gender('2', 'http://www.ldf.fi/schema/bioc/Female').
+sex_to_gender('1', 'http://www.ldf.fi/schema/bioc/Male'):-true,!.
+sex_to_gender('2', 'http://www.ldf.fi/schema/bioc/Female'):-true,!.
 sex_to_gender(_, 'http://www.ldf.fi/schema/bioc/Other').
 
 
