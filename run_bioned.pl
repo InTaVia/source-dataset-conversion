@@ -62,7 +62,11 @@ load_xml_dir:-
 %	append(X, Y, Z),
 	maplist(load_biodes_file, X).
 
-
+load_testxml_dir:-
+	expand_file_name('data/xml/test/*.xml', X),
+%	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
+%	append(X, Y, Z),
+	maplist(load_biodes_file, X).
 
 load(File) :-
 	rdf_current_ns(bgn, Prefix),
