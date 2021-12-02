@@ -1,0 +1,21 @@
+@base         <schema> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix  bgn: <http://data.biographynet.nl/rdf/> .
+@prefix  map: <http://cs.vu.nl/eculture/map/> .
+@prefix  bioc: <http://www.ldf.fi/schema/bioc/>.
+# Named toplevel resources (25)
+
+
+
+bgn:hasPersName a rdf:Property;
+	map:xmlname "persName" ;
+	rdfs:range rdf:XMLLiteral .
+
+bgn:hasPersName a rdf:Property;
+	map:xmlname "persname" ;
+	rdfs:range rdf:XMLLiteral .
+
+
+bioc:dutch rdf:type bioc:Nationality;
+            rdfs:label "Dutch".
