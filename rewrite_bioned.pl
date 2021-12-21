@@ -539,7 +539,7 @@ make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-occupationevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-occupationevent_time'],Time), % then make the Event instance
@@ -571,7 +571,7 @@ make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-educationevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-educationevent_time'],Time), % then make the Event instance
@@ -601,7 +601,7 @@ make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-residenceevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-residenceevent_time'],Time), % then make the Event instance
@@ -633,7 +633,7 @@ make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-floruitevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-floruitevent_time'],Time), % then make the Event instance
@@ -672,7 +672,7 @@ make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-faithevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-faithevent_time'],Time), % then make the Event instance
@@ -737,7 +737,7 @@ make_rand_uri(S,['-claimtofamerole'],ARURI), %then make the actorrole instance
 	{S, bioc:bearer_of,ARURI},
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 make_rand_uri(S,['-claimtofameevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-claimtofameevent_time'],Time), % then make the Event instance
@@ -767,7 +767,7 @@ make_rand_uri(S,['-categoryrole'],ARURI), %then make the actorrole instance
 	{ARURI, rdf:type, bioc:'Actor_Role'},
 	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-categoryevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, rdf:type,crm:'E7_Activity'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',ARURI},
 make_rand_uri(S,['-categoryevent_time'],Time), % then make the Event instance
