@@ -16,9 +16,9 @@ user:file_search_path(data,       data).
 :- rdf_register_ns(ore,    'http://www.openarchives.org/ore/terms/').
 :- rdf_register_ns(prov,   'http://www.w3.org/ns/prov#').
 :- rdf_register_ns(pplan,  'http://purl.org/net/p-plan#').
-:- rdf_register_ns(bioc,  'http://www.ldf.fi/schema/bioc/').
+:- rdf_register_ns(bioc,  'http://ldf.fi/schema/bioc/').
 :- rdf_register_ns(crm, 'http://www.cidoc-crm.org/cidoc-crm/') .
-:- rdf_register_ns(idm, 'https://intavia.org/idm/').
+:- rdf_register_ns(idm, 'https://www.intavia.eu/idm-core/').
 :- rdf_register_ns(skos, 'http://www.w3.org/2004/02/skos/core#').
 
 

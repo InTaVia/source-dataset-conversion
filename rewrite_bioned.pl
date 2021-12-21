@@ -227,8 +227,8 @@ addproxyrelations
 ==>
 true,
 {O, ore:proxyIn, S},
-{O, ore:proxyFor, P},
-{O, idm:personProxyFor,P}.
+%{O, ore:proxyFor, P},
+{O, idm:person_proxy_for,P}.
 
 
 
@@ -268,7 +268,7 @@ sextogender
 <=>
 true,
 sex_to_gender(Sex,Gender),
-{S, bioc:gender, Gender},
+{S, bioc:has_gender, Gender},
 	{Gender, rdf:type, bioc:'Gender'} .
 
 
@@ -279,7 +279,7 @@ sextogender
 <=>
 true,
 sex_to_gender(Sex,Gender),
-{S, bioc:gender, Gender},
+{S, bioc:has_gender, Gender},
 	{Gender, rdf:type, bioc:'Gender'} .
 
 
@@ -290,7 +290,7 @@ nationality
 @@
 {S, rdf:type, crm:'E21_Person'}
 ==>
-{S, bioc:nationality, bioc:dutch}.
+{S, bioc:has_nationality, bioc:dutch}.
 
 % Person names to CIDOC
 % TODO: this needs some refining
@@ -353,8 +353,8 @@ make_rand_uri(S,['-birth'],Evt),
 make_rand_uri(S,['-birth-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, Date},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -391,7 +391,7 @@ make_rand_uri(S,['-death'],Evt),
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
 {Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -419,8 +419,8 @@ make_rand_uri(S,['-baptism'],Evt),
 	make_rand_uri(S,['-baptism-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, Date},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -448,8 +448,8 @@ make_rand_uri(S,['marriage'],Evt),
 	make_rand_uri(S,['-marriage-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, Date},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -476,8 +476,8 @@ make_rand_uri(S,['funeral'],Evt),
 	make_rand_uri(S,['-funeral-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, Date},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -505,8 +505,8 @@ make_rand_uri(S,['-other'],Evt),
 	make_rand_uri(S,['-other-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
-{Time, crm:'P78_is_identified_by', WhenDate},
+{Time, rdfs:label, Date},
+{Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -547,7 +547,7 @@ make_rand_uri(S,['-occupationevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 
 
@@ -579,7 +579,7 @@ make_rand_uri(S,['-educationevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 residencestate_event
 @@
@@ -609,7 +609,7 @@ make_rand_uri(S,['-residenceevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 
 %TODO: What is Floruit?
@@ -641,7 +641,7 @@ make_rand_uri(S,['-floruitevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 % DELETE empty floruit?
 floruitstate_event
@@ -680,7 +680,7 @@ make_rand_uri(S,['-faithevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 
 % Seems to be empty, for now delete, otherwise use commented stuff below
@@ -714,7 +714,7 @@ make_rand_uri(S,['religionevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P79_beginning_is_qualified_by', FromDate},
 	{Time, crm:'P80_end_is_qualified_by', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 */
 
 claimtofamestate_event
@@ -745,7 +745,7 @@ make_rand_uri(S,['-claimtofameevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 categorystate_event
 @@
@@ -775,7 +775,7 @@ make_rand_uri(S,['-categoryevent_time'],Time), % then make the Event instance
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, crm:'P78_is_identified_by', WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
 
 
 
