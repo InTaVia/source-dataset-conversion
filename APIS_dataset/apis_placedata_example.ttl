@@ -1,0 +1,66 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix idmcore: <https://www.intavia.org/idm-core/> .
+@prefix idmrole: <https://www.intavia.org/idm-role/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://www.intavia.org/apis/birthevent/26697> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/26697> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/3162> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/26697> .
+
+<https://www.intavia.org/apis/deathevent/26697> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/26697> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/26697> .
+
+<https://www.intavia.org/apis/personproxy/26697> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26697>,
+        <https://www.intavia.org/apis/identifier26697> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/26697/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26697>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/26697> ;
+    idmcore:person_proxy_for <https://www.intavia.org/sharedentities/person/0> .
+
+<https://www.intavia.org/apis/appellation/1/26697> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Jonathan  Thornton" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/26697>,
+        <https://www.intavia.org/apis/appellation/3/26697> .
+
+<https://www.intavia.org/apis/appellation/2/26697> rdfs:label "Thornton" .
+
+<https://www.intavia.org/apis/appellation/3/26697> rdfs:label "Jonathan" .
+
+<https://www.intavia.org/apis/birthevent/timespan/26697> crm:P82a_begin_of_the_begin "1776-01-01T00:00:00" ;
+    crm:P82b_end_of_the_end "1776-01-01T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/26697> crm:P82a_begin_of_the_begin "1847-01-01T00:00:00" ;
+    crm:P82b_end_of_the_end "1847-01-01T23:59:59" .
+
+<https://www.intavia.org/apis/identifier26697> a crm:E42_Identifier ;
+    rdfs:label "26697" .
+
+<https://www.intavia.org/apis/place/3162> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "46.76667 23.6" ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/3162/Klausenburg>,
+        <https://www.intavia.org/apis/placeidentifier/3162> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/3162/> .
+
+<https://www.intavia.org/apis/placeappellation/3162/Klausenburg> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Klausenburg" .
+
+<https://www.intavia.org/apis/placeidentifier/3162> a crm:E_42_Identifier ;
+    rdfs:label "3162" .
+
+idmrole:born_person rdfs:subClassOf idmcore:Event_Role .
+
+idmrole:deceased_person rdfs:subClassOf idmcore:Event_Role .
+
+idmrole:male a idmcore:Gender .
+
+<https://www.intavia.org/sharedentities/person/0> a idmcore:Provided_Person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/26697> a idmrole:born_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/26697> a idmrole:deceased_person .
+
