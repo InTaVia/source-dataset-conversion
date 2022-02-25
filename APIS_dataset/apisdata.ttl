@@ -243,6 +243,237 @@
     crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/26896> ;
     idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/26896> .
 
+<https://www.intavia.org/apis/birthevent/27326> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27326> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27326> .
+
+<https://www.intavia.org/apis/birthevent/27332> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27332> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27332> .
+
+<https://www.intavia.org/apis/birthevent/27338> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27338> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/19385> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27338> .
+
+<https://www.intavia.org/apis/birthevent/27343> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27343> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27343> .
+
+<https://www.intavia.org/apis/birthevent/27349> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27349> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27349> .
+
+<https://www.intavia.org/apis/birthevent/27355> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27355> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/2854> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27355> .
+
+<https://www.intavia.org/apis/birthevent/27358> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27358> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27358> .
+
+<https://www.intavia.org/apis/birthevent/27364> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27364> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27364> .
+
+<https://www.intavia.org/apis/birthevent/27367> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27367> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/5103> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27367> .
+
+<https://www.intavia.org/apis/birthevent/27370> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27370> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/9735> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27370> .
+
+<https://www.intavia.org/apis/birthevent/27373> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27373> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/21588> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27373> .
+
+<https://www.intavia.org/apis/birthevent/27376> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27376> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/400> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27376> .
+
+<https://www.intavia.org/apis/birthevent/27379> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27379> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/400> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27379> .
+
+<https://www.intavia.org/apis/birthevent/27382> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27382> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/183> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27382> .
+
+<https://www.intavia.org/apis/birthevent/27385> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27385> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27385> .
+
+<https://www.intavia.org/apis/birthevent/27390> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27390> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/3703> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27390> .
+
+<https://www.intavia.org/apis/birthevent/27393> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27393> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27393> .
+
+<https://www.intavia.org/apis/birthevent/27396> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27396> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27396> .
+
+<https://www.intavia.org/apis/birthevent/27399> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27399> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27399> .
+
+<https://www.intavia.org/apis/birthevent/27402> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27402> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/183> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27402> .
+
+<https://www.intavia.org/apis/birthevent/27405> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27405> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27405> .
+
+<https://www.intavia.org/apis/birthevent/27408> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27408> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/154> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27408> .
+
+<https://www.intavia.org/apis/birthevent/27411> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27411> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/3105> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27411> .
+
+<https://www.intavia.org/apis/birthevent/27418> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27418> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/183> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27418> .
+
+<https://www.intavia.org/apis/birthevent/27421> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27421> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27421> .
+
+<https://www.intavia.org/apis/birthevent/27424> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27424> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/4017> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27424> .
+
+<https://www.intavia.org/apis/birthevent/27430> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27430> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/4767> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27430> .
+
+<https://www.intavia.org/apis/birthevent/27433> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27433> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/13253> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27433> .
+
+<https://www.intavia.org/apis/birthevent/27436> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27436> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27436> .
+
+<https://www.intavia.org/apis/birthevent/27445> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27445> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27445> .
+
+<https://www.intavia.org/apis/birthevent/27451> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27451> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27451> .
+
+<https://www.intavia.org/apis/birthevent/27457> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27457> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/27458> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27457> .
+
+<https://www.intavia.org/apis/birthevent/27462> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27462> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/14608> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27462> .
+
+<https://www.intavia.org/apis/birthevent/27468> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27468> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/27469> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27468> .
+
+<https://www.intavia.org/apis/birthevent/27476> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27476> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/27469> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27476> .
+
+<https://www.intavia.org/apis/birthevent/27479> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27479> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/183> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27479> .
+
+<https://www.intavia.org/apis/birthevent/27482> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27482> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/1131> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27482> .
+
+<https://www.intavia.org/apis/birthevent/27489> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27489> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/1910> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27489> .
+
+<https://www.intavia.org/apis/birthevent/27492> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27492> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27492> .
+
+<https://www.intavia.org/apis/birthevent/27498> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27498> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/1910> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27498> .
+
+<https://www.intavia.org/apis/birthevent/27501> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27501> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/1910> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27501> .
+
+<https://www.intavia.org/apis/birthevent/27504> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27504> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/1910> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27504> .
+
+<https://www.intavia.org/apis/birthevent/27507> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27507> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/183> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27507> .
+
+<https://www.intavia.org/apis/birthevent/27510> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27510> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/9735> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27510> .
+
+<https://www.intavia.org/apis/birthevent/27513> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27513> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27513> .
+
+<https://www.intavia.org/apis/birthevent/27516> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27516> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/8228> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27516> .
+
+<https://www.intavia.org/apis/birthevent/27519> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27519> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/10744> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27519> .
+
+<https://www.intavia.org/apis/birthevent/27524> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27524> ;
+    crm:P7_took_place_at <https://www.intavia.org/apis/place/9735> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27524> .
+
+<https://www.intavia.org/apis/birthevent/27527> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27527> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27527> .
+
+<https://www.intavia.org/apis/birthevent/27530> a crm:E67_Birth ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/birthevent/timespan/27530> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/birthevent/eventrole/1/27530> .
+
 <https://www.intavia.org/apis/deathevent/26697> a crm:E69_Death ;
     crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/26697> ;
     idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/26697> .
@@ -443,6 +674,206 @@
     crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/26896> ;
     idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/26896> .
 
+<https://www.intavia.org/apis/deathevent/27326> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27326> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27326> .
+
+<https://www.intavia.org/apis/deathevent/27332> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27332> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27332> .
+
+<https://www.intavia.org/apis/deathevent/27338> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27338> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27338> .
+
+<https://www.intavia.org/apis/deathevent/27343> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27343> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27343> .
+
+<https://www.intavia.org/apis/deathevent/27349> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27349> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27349> .
+
+<https://www.intavia.org/apis/deathevent/27355> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27355> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27355> .
+
+<https://www.intavia.org/apis/deathevent/27358> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27358> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27358> .
+
+<https://www.intavia.org/apis/deathevent/27364> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27364> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27364> .
+
+<https://www.intavia.org/apis/deathevent/27367> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27367> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27367> .
+
+<https://www.intavia.org/apis/deathevent/27370> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27370> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27370> .
+
+<https://www.intavia.org/apis/deathevent/27373> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27373> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27373> .
+
+<https://www.intavia.org/apis/deathevent/27376> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27376> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27376> .
+
+<https://www.intavia.org/apis/deathevent/27379> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27379> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27379> .
+
+<https://www.intavia.org/apis/deathevent/27382> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27382> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27382> .
+
+<https://www.intavia.org/apis/deathevent/27385> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27385> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27385> .
+
+<https://www.intavia.org/apis/deathevent/27390> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27390> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27390> .
+
+<https://www.intavia.org/apis/deathevent/27393> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27393> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27393> .
+
+<https://www.intavia.org/apis/deathevent/27396> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27396> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27396> .
+
+<https://www.intavia.org/apis/deathevent/27399> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27399> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27399> .
+
+<https://www.intavia.org/apis/deathevent/27402> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27402> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27402> .
+
+<https://www.intavia.org/apis/deathevent/27405> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27405> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27405> .
+
+<https://www.intavia.org/apis/deathevent/27408> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27408> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27408> .
+
+<https://www.intavia.org/apis/deathevent/27411> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27411> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27411> .
+
+<https://www.intavia.org/apis/deathevent/27418> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27418> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27418> .
+
+<https://www.intavia.org/apis/deathevent/27421> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27421> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27421> .
+
+<https://www.intavia.org/apis/deathevent/27424> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27424> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27424> .
+
+<https://www.intavia.org/apis/deathevent/27430> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27430> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27430> .
+
+<https://www.intavia.org/apis/deathevent/27433> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27433> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27433> .
+
+<https://www.intavia.org/apis/deathevent/27436> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27436> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27436> .
+
+<https://www.intavia.org/apis/deathevent/27445> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27445> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27445> .
+
+<https://www.intavia.org/apis/deathevent/27451> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27451> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27451> .
+
+<https://www.intavia.org/apis/deathevent/27457> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27457> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27457> .
+
+<https://www.intavia.org/apis/deathevent/27462> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27462> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27462> .
+
+<https://www.intavia.org/apis/deathevent/27468> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27468> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27468> .
+
+<https://www.intavia.org/apis/deathevent/27476> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27476> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27476> .
+
+<https://www.intavia.org/apis/deathevent/27479> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27479> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27479> .
+
+<https://www.intavia.org/apis/deathevent/27482> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27482> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27482> .
+
+<https://www.intavia.org/apis/deathevent/27489> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27489> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27489> .
+
+<https://www.intavia.org/apis/deathevent/27492> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27492> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27492> .
+
+<https://www.intavia.org/apis/deathevent/27498> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27498> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27498> .
+
+<https://www.intavia.org/apis/deathevent/27501> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27501> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27501> .
+
+<https://www.intavia.org/apis/deathevent/27504> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27504> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27504> .
+
+<https://www.intavia.org/apis/deathevent/27507> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27507> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27507> .
+
+<https://www.intavia.org/apis/deathevent/27510> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27510> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27510> .
+
+<https://www.intavia.org/apis/deathevent/27513> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27513> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27513> .
+
+<https://www.intavia.org/apis/deathevent/27516> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27516> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27516> .
+
+<https://www.intavia.org/apis/deathevent/27519> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27519> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27519> .
+
+<https://www.intavia.org/apis/deathevent/27524> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27524> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27524> .
+
+<https://www.intavia.org/apis/deathevent/27527> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27527> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27527> .
+
+<https://www.intavia.org/apis/deathevent/27530> a crm:E69_Death ;
+    crm:P4_has_time_span <https://www.intavia.org/apis/deathevent/timespan/27530> ;
+    idmcore:had_participant_in_role <https://www.intavia.org/apis/deathevent/eventrole/1/27530> .
+
 <https://www.intavia.org/apis/personproxy/26697> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26697>,
         <https://www.intavia.org/apis/identifier26697> ;
@@ -450,7 +881,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26697>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26697> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/0> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/0>,
+        <https://www.intavia.org/person/100>,
+        <https://www.intavia.org/person/50> .
 
 <https://www.intavia.org/apis/personproxy/26700> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26700>,
@@ -459,7 +892,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26700>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26700> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/1> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/1>,
+        <https://www.intavia.org/person/101>,
+        <https://www.intavia.org/person/51> .
 
 <https://www.intavia.org/apis/personproxy/26703> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26703>,
@@ -468,7 +903,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26703>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26703> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/2> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/102>,
+        <https://www.intavia.org/person/2>,
+        <https://www.intavia.org/person/52> .
 
 <https://www.intavia.org/apis/personproxy/26706> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26706>,
@@ -477,7 +914,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26706>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26706> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/3> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/103>,
+        <https://www.intavia.org/person/3>,
+        <https://www.intavia.org/person/53> .
 
 <https://www.intavia.org/apis/personproxy/26711> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26711>,
@@ -486,7 +925,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26711>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26711> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/4> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/104>,
+        <https://www.intavia.org/person/4>,
+        <https://www.intavia.org/person/54> .
 
 <https://www.intavia.org/apis/personproxy/26714> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26714>,
@@ -495,7 +936,9 @@
     idmcore:has_gender idmrole:female ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26714>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26714> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/5> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/105>,
+        <https://www.intavia.org/person/5>,
+        <https://www.intavia.org/person/55> .
 
 <https://www.intavia.org/apis/personproxy/26717> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26717>,
@@ -504,7 +947,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26717>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26717> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/6> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/106>,
+        <https://www.intavia.org/person/56>,
+        <https://www.intavia.org/person/6> .
 
 <https://www.intavia.org/apis/personproxy/26723> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26723>,
@@ -513,7 +958,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26723>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26723> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/7> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/107>,
+        <https://www.intavia.org/person/57>,
+        <https://www.intavia.org/person/7> .
 
 <https://www.intavia.org/apis/personproxy/26726> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26726>,
@@ -522,7 +969,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26726>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26726> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/8> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/108>,
+        <https://www.intavia.org/person/58>,
+        <https://www.intavia.org/person/8> .
 
 <https://www.intavia.org/apis/personproxy/26729> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26729>,
@@ -531,7 +980,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26729>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26729> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/9> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/109>,
+        <https://www.intavia.org/person/59>,
+        <https://www.intavia.org/person/9> .
 
 <https://www.intavia.org/apis/personproxy/26732> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26732>,
@@ -540,7 +991,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26732>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26732> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/10> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/10>,
+        <https://www.intavia.org/person/110>,
+        <https://www.intavia.org/person/60> .
 
 <https://www.intavia.org/apis/personproxy/26736> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26736>,
@@ -549,7 +1002,9 @@
     idmcore:has_gender idmrole:female ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26736>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26736> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/11> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/11>,
+        <https://www.intavia.org/person/111>,
+        <https://www.intavia.org/person/61> .
 
 <https://www.intavia.org/apis/personproxy/26740> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26740>,
@@ -558,7 +1013,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26740>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26740> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/12> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/112>,
+        <https://www.intavia.org/person/12>,
+        <https://www.intavia.org/person/62> .
 
 <https://www.intavia.org/apis/personproxy/26743> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26743>,
@@ -567,7 +1024,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26743>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26743> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/13> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/113>,
+        <https://www.intavia.org/person/13>,
+        <https://www.intavia.org/person/63> .
 
 <https://www.intavia.org/apis/personproxy/26749> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26749>,
@@ -576,7 +1035,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26749>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26749> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/14> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/114>,
+        <https://www.intavia.org/person/14>,
+        <https://www.intavia.org/person/64> .
 
 <https://www.intavia.org/apis/personproxy/26752> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26752>,
@@ -585,7 +1046,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26752>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26752> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/15> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/115>,
+        <https://www.intavia.org/person/15>,
+        <https://www.intavia.org/person/65> .
 
 <https://www.intavia.org/apis/personproxy/26755> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26755>,
@@ -594,7 +1057,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26755>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26755> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/16> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/116>,
+        <https://www.intavia.org/person/16>,
+        <https://www.intavia.org/person/66> .
 
 <https://www.intavia.org/apis/personproxy/26764> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26764>,
@@ -603,7 +1068,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26764>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26764> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/17> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/117>,
+        <https://www.intavia.org/person/17>,
+        <https://www.intavia.org/person/67> .
 
 <https://www.intavia.org/apis/personproxy/26770> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26770>,
@@ -612,7 +1079,9 @@
     idmcore:has_gender idmrole:female ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26770>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26770> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/18> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/118>,
+        <https://www.intavia.org/person/18>,
+        <https://www.intavia.org/person/68> .
 
 <https://www.intavia.org/apis/personproxy/26779> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26779>,
@@ -621,7 +1090,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26779>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26779> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/19> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/119>,
+        <https://www.intavia.org/person/19>,
+        <https://www.intavia.org/person/69> .
 
 <https://www.intavia.org/apis/personproxy/26786> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26786>,
@@ -630,7 +1101,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26786>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26786> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/20> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/120>,
+        <https://www.intavia.org/person/20>,
+        <https://www.intavia.org/person/70> .
 
 <https://www.intavia.org/apis/personproxy/26789> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26789>,
@@ -639,7 +1112,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26789>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26789> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/21> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/121>,
+        <https://www.intavia.org/person/21>,
+        <https://www.intavia.org/person/71> .
 
 <https://www.intavia.org/apis/personproxy/26792> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26792>,
@@ -648,7 +1123,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26792>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26792> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/22> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/122>,
+        <https://www.intavia.org/person/22>,
+        <https://www.intavia.org/person/72> .
 
 <https://www.intavia.org/apis/personproxy/26795> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26795>,
@@ -657,7 +1134,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26795>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26795> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/23> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/123>,
+        <https://www.intavia.org/person/23>,
+        <https://www.intavia.org/person/73> .
 
 <https://www.intavia.org/apis/personproxy/26798> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26798>,
@@ -666,7 +1145,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26798>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26798> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/24> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/124>,
+        <https://www.intavia.org/person/24>,
+        <https://www.intavia.org/person/74> .
 
 <https://www.intavia.org/apis/personproxy/26801> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26801>,
@@ -675,7 +1156,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26801>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26801> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/25> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/125>,
+        <https://www.intavia.org/person/25>,
+        <https://www.intavia.org/person/75> .
 
 <https://www.intavia.org/apis/personproxy/26809> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26809>,
@@ -684,7 +1167,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26809>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26809> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/26> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/126>,
+        <https://www.intavia.org/person/26>,
+        <https://www.intavia.org/person/76> .
 
 <https://www.intavia.org/apis/personproxy/26812> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26812>,
@@ -693,7 +1178,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26812>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26812> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/27> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/127>,
+        <https://www.intavia.org/person/27>,
+        <https://www.intavia.org/person/77> .
 
 <https://www.intavia.org/apis/personproxy/26815> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26815>,
@@ -702,7 +1189,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26815>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26815> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/28> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/128>,
+        <https://www.intavia.org/person/28>,
+        <https://www.intavia.org/person/78> .
 
 <https://www.intavia.org/apis/personproxy/26818> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26818>,
@@ -711,7 +1200,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26818>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26818> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/29> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/129>,
+        <https://www.intavia.org/person/29>,
+        <https://www.intavia.org/person/79> .
 
 <https://www.intavia.org/apis/personproxy/26821> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26821>,
@@ -720,7 +1211,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26821>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26821> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/30> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/130>,
+        <https://www.intavia.org/person/30>,
+        <https://www.intavia.org/person/80> .
 
 <https://www.intavia.org/apis/personproxy/26824> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26824>,
@@ -729,7 +1222,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26824>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26824> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/31> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/131>,
+        <https://www.intavia.org/person/31>,
+        <https://www.intavia.org/person/81> .
 
 <https://www.intavia.org/apis/personproxy/26827> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26827>,
@@ -738,7 +1233,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26827>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26827> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/32> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/132>,
+        <https://www.intavia.org/person/32>,
+        <https://www.intavia.org/person/82> .
 
 <https://www.intavia.org/apis/personproxy/26830> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26830>,
@@ -747,7 +1244,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26830>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26830> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/33> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/133>,
+        <https://www.intavia.org/person/33>,
+        <https://www.intavia.org/person/83> .
 
 <https://www.intavia.org/apis/personproxy/26833> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26833>,
@@ -756,7 +1255,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26833>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26833> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/34> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/134>,
+        <https://www.intavia.org/person/34>,
+        <https://www.intavia.org/person/84> .
 
 <https://www.intavia.org/apis/personproxy/26836> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26836>,
@@ -765,7 +1266,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26836>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26836> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/35> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/135>,
+        <https://www.intavia.org/person/35>,
+        <https://www.intavia.org/person/85> .
 
 <https://www.intavia.org/apis/personproxy/26839> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26839>,
@@ -774,7 +1277,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26839>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26839> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/36> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/136>,
+        <https://www.intavia.org/person/36>,
+        <https://www.intavia.org/person/86> .
 
 <https://www.intavia.org/apis/personproxy/26842> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26842>,
@@ -783,7 +1288,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26842>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26842> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/37> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/137>,
+        <https://www.intavia.org/person/37>,
+        <https://www.intavia.org/person/87> .
 
 <https://www.intavia.org/apis/personproxy/26851> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26851>,
@@ -792,7 +1299,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26851>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26851> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/38> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/138>,
+        <https://www.intavia.org/person/38>,
+        <https://www.intavia.org/person/88> .
 
 <https://www.intavia.org/apis/personproxy/26854> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26854>,
@@ -801,7 +1310,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26854>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26854> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/39> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/139>,
+        <https://www.intavia.org/person/39>,
+        <https://www.intavia.org/person/89> .
 
 <https://www.intavia.org/apis/personproxy/26857> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26857>,
@@ -810,7 +1321,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26857>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26857> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/40> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/140>,
+        <https://www.intavia.org/person/40>,
+        <https://www.intavia.org/person/90> .
 
 <https://www.intavia.org/apis/personproxy/26860> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26860>,
@@ -819,7 +1332,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26860>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26860> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/41> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/141>,
+        <https://www.intavia.org/person/41>,
+        <https://www.intavia.org/person/91> .
 
 <https://www.intavia.org/apis/personproxy/26863> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26863>,
@@ -828,7 +1343,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26863>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26863> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/42> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/142>,
+        <https://www.intavia.org/person/42>,
+        <https://www.intavia.org/person/92> .
 
 <https://www.intavia.org/apis/personproxy/26866> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26866>,
@@ -837,7 +1354,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26866>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26866> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/43> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/143>,
+        <https://www.intavia.org/person/43>,
+        <https://www.intavia.org/person/93> .
 
 <https://www.intavia.org/apis/personproxy/26869> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26869>,
@@ -846,7 +1365,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26869>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26869> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/44> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/144>,
+        <https://www.intavia.org/person/44>,
+        <https://www.intavia.org/person/94> .
 
 <https://www.intavia.org/apis/personproxy/26878> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26878>,
@@ -855,7 +1376,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26878>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26878> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/45> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/145>,
+        <https://www.intavia.org/person/45>,
+        <https://www.intavia.org/person/95> .
 
 <https://www.intavia.org/apis/personproxy/26881> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26881>,
@@ -864,7 +1387,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26881>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26881> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/46> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/146>,
+        <https://www.intavia.org/person/46>,
+        <https://www.intavia.org/person/96> .
 
 <https://www.intavia.org/apis/personproxy/26887> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26887>,
@@ -873,7 +1398,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26887>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26887> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/47> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/147>,
+        <https://www.intavia.org/person/47>,
+        <https://www.intavia.org/person/97> .
 
 <https://www.intavia.org/apis/personproxy/26890> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26890>,
@@ -882,7 +1409,9 @@
     idmcore:has_gender idmrole:male ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26890>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26890> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/48> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/148>,
+        <https://www.intavia.org/person/48>,
+        <https://www.intavia.org/person/98> .
 
 <https://www.intavia.org/apis/personproxy/26896> a idmcore:Person_Proxy ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/26896>,
@@ -891,7 +1420,459 @@
     idmcore:has_gender idmrole:female ;
     idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/26896>,
         <https://www.intavia.org/apis/deathevent/eventrole/1/26896> ;
-    idmcore:person_proxy_for <https://www.intavia.org/person/49> .
+    idmcore:person_proxy_for <https://www.intavia.org/person/149>,
+        <https://www.intavia.org/person/49>,
+        <https://www.intavia.org/person/99> .
+
+<https://www.intavia.org/apis/personproxy/27326> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27326>,
+        <https://www.intavia.org/apis/identifier27326> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27326/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27326>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27326> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/150> .
+
+<https://www.intavia.org/apis/personproxy/27332> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27332>,
+        <https://www.intavia.org/apis/identifier27332> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27332/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27332>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27332> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/151> .
+
+<https://www.intavia.org/apis/personproxy/27338> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27338>,
+        <https://www.intavia.org/apis/identifier27338> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27338/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27338>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27338> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/152> .
+
+<https://www.intavia.org/apis/personproxy/27343> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27343>,
+        <https://www.intavia.org/apis/identifier27343> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27343/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27343>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27343> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/153> .
+
+<https://www.intavia.org/apis/personproxy/27349> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27349>,
+        <https://www.intavia.org/apis/identifier27349> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27349/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27349>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27349> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/154> .
+
+<https://www.intavia.org/apis/personproxy/27355> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27355>,
+        <https://www.intavia.org/apis/identifier27355> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27355/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27355>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27355> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/155> .
+
+<https://www.intavia.org/apis/personproxy/27358> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27358>,
+        <https://www.intavia.org/apis/identifier27358> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27358/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27358>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27358> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/156> .
+
+<https://www.intavia.org/apis/personproxy/27364> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27364>,
+        <https://www.intavia.org/apis/identifier27364> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27364/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27364>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27364> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/157> .
+
+<https://www.intavia.org/apis/personproxy/27367> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27367>,
+        <https://www.intavia.org/apis/identifier27367> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27367/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27367>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27367> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/158> .
+
+<https://www.intavia.org/apis/personproxy/27370> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27370>,
+        <https://www.intavia.org/apis/identifier27370> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27370/> ;
+    idmcore:has_gender idmrole:female ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27370>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27370> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/159> .
+
+<https://www.intavia.org/apis/personproxy/27373> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27373>,
+        <https://www.intavia.org/apis/identifier27373> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27373/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27373>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27373> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/160> .
+
+<https://www.intavia.org/apis/personproxy/27376> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27376>,
+        <https://www.intavia.org/apis/identifier27376> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27376/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27376>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27376> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/161> .
+
+<https://www.intavia.org/apis/personproxy/27379> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27379>,
+        <https://www.intavia.org/apis/identifier27379> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27379/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27379>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27379> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/162> .
+
+<https://www.intavia.org/apis/personproxy/27382> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27382>,
+        <https://www.intavia.org/apis/identifier27382> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27382/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27382>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27382> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/163> .
+
+<https://www.intavia.org/apis/personproxy/27385> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27385>,
+        <https://www.intavia.org/apis/identifier27385> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27385/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27385>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27385> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/164> .
+
+<https://www.intavia.org/apis/personproxy/27390> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27390>,
+        <https://www.intavia.org/apis/identifier27390> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27390/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27390>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27390> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/165> .
+
+<https://www.intavia.org/apis/personproxy/27393> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27393>,
+        <https://www.intavia.org/apis/identifier27393> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27393/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27393>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27393> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/166> .
+
+<https://www.intavia.org/apis/personproxy/27396> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27396>,
+        <https://www.intavia.org/apis/identifier27396> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27396/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27396>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27396> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/167> .
+
+<https://www.intavia.org/apis/personproxy/27399> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27399>,
+        <https://www.intavia.org/apis/identifier27399> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27399/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27399>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27399> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/168> .
+
+<https://www.intavia.org/apis/personproxy/27402> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27402>,
+        <https://www.intavia.org/apis/identifier27402> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27402/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27402>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27402> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/169> .
+
+<https://www.intavia.org/apis/personproxy/27405> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27405>,
+        <https://www.intavia.org/apis/identifier27405> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27405/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27405>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27405> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/170> .
+
+<https://www.intavia.org/apis/personproxy/27408> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27408>,
+        <https://www.intavia.org/apis/identifier27408> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27408/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27408>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27408> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/171> .
+
+<https://www.intavia.org/apis/personproxy/27411> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27411>,
+        <https://www.intavia.org/apis/identifier27411> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27411/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27411>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27411> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/172> .
+
+<https://www.intavia.org/apis/personproxy/27418> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27418>,
+        <https://www.intavia.org/apis/identifier27418> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27418/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27418>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27418> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/173> .
+
+<https://www.intavia.org/apis/personproxy/27421> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27421>,
+        <https://www.intavia.org/apis/identifier27421> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27421/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27421>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27421> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/174> .
+
+<https://www.intavia.org/apis/personproxy/27424> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27424>,
+        <https://www.intavia.org/apis/identifier27424> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27424/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27424>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27424> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/175> .
+
+<https://www.intavia.org/apis/personproxy/27430> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27430>,
+        <https://www.intavia.org/apis/identifier27430> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27430/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27430>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27430> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/176> .
+
+<https://www.intavia.org/apis/personproxy/27433> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27433>,
+        <https://www.intavia.org/apis/identifier27433> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27433/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27433>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27433> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/177> .
+
+<https://www.intavia.org/apis/personproxy/27436> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27436>,
+        <https://www.intavia.org/apis/identifier27436> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27436/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27436>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27436> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/178> .
+
+<https://www.intavia.org/apis/personproxy/27445> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27445>,
+        <https://www.intavia.org/apis/identifier27445> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27445/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27445>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27445> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/179> .
+
+<https://www.intavia.org/apis/personproxy/27451> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27451>,
+        <https://www.intavia.org/apis/identifier27451> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27451/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27451>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27451> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/180> .
+
+<https://www.intavia.org/apis/personproxy/27457> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27457>,
+        <https://www.intavia.org/apis/identifier27457> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27457/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27457>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27457> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/181> .
+
+<https://www.intavia.org/apis/personproxy/27462> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27462>,
+        <https://www.intavia.org/apis/identifier27462> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27462/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27462>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27462> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/182> .
+
+<https://www.intavia.org/apis/personproxy/27468> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27468>,
+        <https://www.intavia.org/apis/identifier27468> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27468/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27468>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27468> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/183> .
+
+<https://www.intavia.org/apis/personproxy/27476> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27476>,
+        <https://www.intavia.org/apis/identifier27476> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27476/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27476>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27476> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/184> .
+
+<https://www.intavia.org/apis/personproxy/27479> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27479>,
+        <https://www.intavia.org/apis/identifier27479> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27479/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27479>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27479> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/185> .
+
+<https://www.intavia.org/apis/personproxy/27482> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27482>,
+        <https://www.intavia.org/apis/identifier27482> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27482/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27482>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27482> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/186> .
+
+<https://www.intavia.org/apis/personproxy/27489> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27489>,
+        <https://www.intavia.org/apis/identifier27489> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27489/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27489>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27489> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/187> .
+
+<https://www.intavia.org/apis/personproxy/27492> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27492>,
+        <https://www.intavia.org/apis/identifier27492> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27492/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27492>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27492> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/188> .
+
+<https://www.intavia.org/apis/personproxy/27498> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27498>,
+        <https://www.intavia.org/apis/identifier27498> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27498/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27498>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27498> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/189> .
+
+<https://www.intavia.org/apis/personproxy/27501> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27501>,
+        <https://www.intavia.org/apis/identifier27501> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27501/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27501>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27501> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/190> .
+
+<https://www.intavia.org/apis/personproxy/27504> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27504>,
+        <https://www.intavia.org/apis/identifier27504> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27504/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27504>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27504> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/191> .
+
+<https://www.intavia.org/apis/personproxy/27507> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27507>,
+        <https://www.intavia.org/apis/identifier27507> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27507/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27507>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27507> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/192> .
+
+<https://www.intavia.org/apis/personproxy/27510> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27510>,
+        <https://www.intavia.org/apis/identifier27510> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27510/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27510>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27510> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/193> .
+
+<https://www.intavia.org/apis/personproxy/27513> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27513>,
+        <https://www.intavia.org/apis/identifier27513> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27513/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27513>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27513> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/194> .
+
+<https://www.intavia.org/apis/personproxy/27516> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27516>,
+        <https://www.intavia.org/apis/identifier27516> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27516/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27516>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27516> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/195> .
+
+<https://www.intavia.org/apis/personproxy/27519> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27519>,
+        <https://www.intavia.org/apis/identifier27519> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27519/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27519>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27519> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/196> .
+
+<https://www.intavia.org/apis/personproxy/27524> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27524>,
+        <https://www.intavia.org/apis/identifier27524> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27524/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27524>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27524> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/197> .
+
+<https://www.intavia.org/apis/personproxy/27527> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27527>,
+        <https://www.intavia.org/apis/identifier27527> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27527/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27527>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27527> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/198> .
+
+<https://www.intavia.org/apis/personproxy/27530> a idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/appellation/1/27530>,
+        <https://www.intavia.org/apis/identifier27530> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27530/> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:inheres_in <https://www.intavia.org/apis/birthevent/eventrole/1/27530>,
+        <https://www.intavia.org/apis/deathevent/eventrole/1/27530> ;
+    idmcore:person_proxy_for <https://www.intavia.org/person/199> .
 
 <https://www.intavia.org/apis/appellation/1/26697> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Jonathan  Thornton" ;
@@ -1143,6 +2124,256 @@
     crm:P148_has_component <https://www.intavia.org/apis/appellation/2/26896>,
         <https://www.intavia.org/apis/appellation/3/26896> .
 
+<https://www.intavia.org/apis/appellation/1/27326> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Károly Baron  Than de Nemesapát" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27326>,
+        <https://www.intavia.org/apis/appellation/3/27326> .
+
+<https://www.intavia.org/apis/appellation/1/27332> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Mór  Than" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27332>,
+        <https://www.intavia.org/apis/appellation/3/27332> .
+
+<https://www.intavia.org/apis/appellation/1/27338> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Moriz  Thausing" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27338>,
+        <https://www.intavia.org/apis/appellation/3/27338> .
+
+<https://www.intavia.org/apis/appellation/1/27343> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adolf  Theer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27343>,
+        <https://www.intavia.org/apis/appellation/3/27343> .
+
+<https://www.intavia.org/apis/appellation/1/27349> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Albert  Theer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27349>,
+        <https://www.intavia.org/apis/appellation/3/27349> .
+
+<https://www.intavia.org/apis/appellation/1/27355> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Otakar  Theer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27355>,
+        <https://www.intavia.org/apis/appellation/3/27355> .
+
+<https://www.intavia.org/apis/appellation/1/27358> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Robert  Theer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27358>,
+        <https://www.intavia.org/apis/appellation/3/27358> .
+
+<https://www.intavia.org/apis/appellation/1/27364> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Endre  Thék von Kisnarda" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27364>,
+        <https://www.intavia.org/apis/appellation/3/27364> .
+
+<https://www.intavia.org/apis/appellation/1/27367> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Josef  Thenen" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27367>,
+        <https://www.intavia.org/apis/appellation/3/27367> .
+
+<https://www.intavia.org/apis/appellation/1/27370> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Julie  Thenen" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27370>,
+        <https://www.intavia.org/apis/appellation/3/27370> .
+
+<https://www.intavia.org/apis/appellation/1/27373> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Karl  Thern" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27373>,
+        <https://www.intavia.org/apis/appellation/3/27373> .
+
+<https://www.intavia.org/apis/appellation/1/27376> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Louis  Thern" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27376>,
+        <https://www.intavia.org/apis/appellation/3/27376> .
+
+<https://www.intavia.org/apis/appellation/1/27379> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Wilhelm  Thern" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27379>,
+        <https://www.intavia.org/apis/appellation/3/27379> .
+
+<https://www.intavia.org/apis/appellation/1/27382> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Max  Theuer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27382>,
+        <https://www.intavia.org/apis/appellation/3/27382> .
+
+<https://www.intavia.org/apis/appellation/1/27385> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Emil  Thewrewk von Ponor" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27385>,
+        <https://www.intavia.org/apis/appellation/3/27385> .
+
+<https://www.intavia.org/apis/appellation/1/27390> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "József  Thewrewk von Ponor" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27390>,
+        <https://www.intavia.org/apis/appellation/3/27390> .
+
+<https://www.intavia.org/apis/appellation/1/27393> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Franz Seraphin  Theyer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27393>,
+        <https://www.intavia.org/apis/appellation/3/27393> .
+
+<https://www.intavia.org/apis/appellation/1/27396> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Leopold  Theyer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27396>,
+        <https://www.intavia.org/apis/appellation/3/27396> .
+
+<https://www.intavia.org/apis/appellation/1/27399> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Theodor d. Ä.  Theyer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27399>,
+        <https://www.intavia.org/apis/appellation/3/27399> .
+
+<https://www.intavia.org/apis/appellation/1/27402> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Theodor d. J.  Theyer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27402>,
+        <https://www.intavia.org/apis/appellation/3/27402> .
+
+<https://www.intavia.org/apis/appellation/1/27405> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Franz  Thiele" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27405>,
+        <https://www.intavia.org/apis/appellation/3/27405> .
+
+<https://www.intavia.org/apis/appellation/1/27408> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Friedrich  Thiele" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27408>,
+        <https://www.intavia.org/apis/appellation/3/27408> .
+
+<https://www.intavia.org/apis/appellation/1/27411> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Johann Christian  Thielisch" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27411>,
+        <https://www.intavia.org/apis/appellation/3/27411> .
+
+<https://www.intavia.org/apis/appellation/1/27418> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Viktor  Thiel" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27418>,
+        <https://www.intavia.org/apis/appellation/3/27418> .
+
+<https://www.intavia.org/apis/appellation/1/27421> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Otto  Thienemann" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27421>,
+        <https://www.intavia.org/apis/appellation/3/27421> .
+
+<https://www.intavia.org/apis/appellation/1/27424> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Hugo  Thimig" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27424>,
+        <https://www.intavia.org/apis/appellation/3/27424> .
+
+<https://www.intavia.org/apis/appellation/1/27430> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Ferdinand Frh. von  Thinnfeld" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27430>,
+        <https://www.intavia.org/apis/appellation/3/27430> .
+
+<https://www.intavia.org/apis/appellation/1/27433> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Gusztáv Adolf  Thirring" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27433>,
+        <https://www.intavia.org/apis/appellation/3/27433> .
+
+<https://www.intavia.org/apis/appellation/1/27436> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Christian  Thöni" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27436>,
+        <https://www.intavia.org/apis/appellation/3/27436> .
+
+<https://www.intavia.org/apis/appellation/1/27445> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Eduard  Thöny" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27445>,
+        <https://www.intavia.org/apis/appellation/3/27445> .
+
+<https://www.intavia.org/apis/appellation/1/27451> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Wilhelm  Thöny" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27451>,
+        <https://www.intavia.org/apis/appellation/3/27451> .
+
+<https://www.intavia.org/apis/appellation/1/27457> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Edward  Thomas" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27457>,
+        <https://www.intavia.org/apis/appellation/3/27457> .
+
+<https://www.intavia.org/apis/appellation/1/27462> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Rudolf  Thomas" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27462>,
+        <https://www.intavia.org/apis/appellation/3/27462> .
+
+<https://www.intavia.org/apis/appellation/1/27468> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "František  Thomayer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27468>,
+        <https://www.intavia.org/apis/appellation/3/27468> .
+
+<https://www.intavia.org/apis/appellation/1/27476> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Josef  Thomayer" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27476>,
+        <https://www.intavia.org/apis/appellation/3/27476> .
+
+<https://www.intavia.org/apis/appellation/1/27479> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Franz  Thomé" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27479>,
+        <https://www.intavia.org/apis/appellation/3/27479> .
+
+<https://www.intavia.org/apis/appellation/1/27482> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Achilles  Thommen" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27482>,
+        <https://www.intavia.org/apis/appellation/3/27482> .
+
+<https://www.intavia.org/apis/appellation/1/27489> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "August  Thonet" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27489>,
+        <https://www.intavia.org/apis/appellation/3/27489> .
+
+<https://www.intavia.org/apis/appellation/1/27492> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Jakob  Thonet" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27492>,
+        <https://www.intavia.org/apis/appellation/3/27492> .
+
+<https://www.intavia.org/apis/appellation/1/27498> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Josef  Thonet" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27498>,
+        <https://www.intavia.org/apis/appellation/3/27498> .
+
+<https://www.intavia.org/apis/appellation/1/27501> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Michael d. Ä.  Thonet" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27501>,
+        <https://www.intavia.org/apis/appellation/3/27501> .
+
+<https://www.intavia.org/apis/appellation/1/27504> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Michael d. J.  Thonet" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27504>,
+        <https://www.intavia.org/apis/appellation/3/27504> .
+
+<https://www.intavia.org/apis/appellation/1/27507> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Franz  Thonner" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27507>,
+        <https://www.intavia.org/apis/appellation/3/27507> .
+
+<https://www.intavia.org/apis/appellation/1/27510> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Osias  Thon" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27510>,
+        <https://www.intavia.org/apis/appellation/3/27510> .
+
+<https://www.intavia.org/apis/appellation/1/27513> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Otto Ritter von  Thoren" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27513>,
+        <https://www.intavia.org/apis/appellation/3/27513> .
+
+<https://www.intavia.org/apis/appellation/1/27516> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "János  Thorma" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27516>,
+        <https://www.intavia.org/apis/appellation/3/27516> .
+
+<https://www.intavia.org/apis/appellation/1/27519> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Johann  Edler von  Thornton" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27519>,
+        <https://www.intavia.org/apis/appellation/3/27519> .
+
+<https://www.intavia.org/apis/appellation/1/27524> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Eduard Joseph  Tangl" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27524>,
+        <https://www.intavia.org/apis/appellation/3/27524> .
+
+<https://www.intavia.org/apis/appellation/1/27527> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Karlmann  Tangl" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27527>,
+        <https://www.intavia.org/apis/appellation/3/27527> .
+
+<https://www.intavia.org/apis/appellation/1/27530> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Michael  Tangl" ;
+    crm:P148_has_component <https://www.intavia.org/apis/appellation/2/27530>,
+        <https://www.intavia.org/apis/appellation/3/27530> .
+
 <https://www.intavia.org/apis/appellation/2/26697> rdfs:label "Thornton" .
 
 <https://www.intavia.org/apis/appellation/2/26700> rdfs:label "Thoroczkai Wigand" .
@@ -1243,6 +2474,106 @@
 
 <https://www.intavia.org/apis/appellation/2/26896> rdfs:label "Tiefenthaler" .
 
+<https://www.intavia.org/apis/appellation/2/27326> rdfs:label "Than de Nemesapát" .
+
+<https://www.intavia.org/apis/appellation/2/27332> rdfs:label "Than" .
+
+<https://www.intavia.org/apis/appellation/2/27338> rdfs:label "Thausing" .
+
+<https://www.intavia.org/apis/appellation/2/27343> rdfs:label "Theer" .
+
+<https://www.intavia.org/apis/appellation/2/27349> rdfs:label "Theer" .
+
+<https://www.intavia.org/apis/appellation/2/27355> rdfs:label "Theer" .
+
+<https://www.intavia.org/apis/appellation/2/27358> rdfs:label "Theer" .
+
+<https://www.intavia.org/apis/appellation/2/27364> rdfs:label "Thék von Kisnarda" .
+
+<https://www.intavia.org/apis/appellation/2/27367> rdfs:label "Thenen" .
+
+<https://www.intavia.org/apis/appellation/2/27370> rdfs:label "Thenen" .
+
+<https://www.intavia.org/apis/appellation/2/27373> rdfs:label "Thern" .
+
+<https://www.intavia.org/apis/appellation/2/27376> rdfs:label "Thern" .
+
+<https://www.intavia.org/apis/appellation/2/27379> rdfs:label "Thern" .
+
+<https://www.intavia.org/apis/appellation/2/27382> rdfs:label "Theuer" .
+
+<https://www.intavia.org/apis/appellation/2/27385> rdfs:label "Thewrewk von Ponor" .
+
+<https://www.intavia.org/apis/appellation/2/27390> rdfs:label "Thewrewk von Ponor" .
+
+<https://www.intavia.org/apis/appellation/2/27393> rdfs:label "Theyer" .
+
+<https://www.intavia.org/apis/appellation/2/27396> rdfs:label "Theyer" .
+
+<https://www.intavia.org/apis/appellation/2/27399> rdfs:label "Theyer" .
+
+<https://www.intavia.org/apis/appellation/2/27402> rdfs:label "Theyer" .
+
+<https://www.intavia.org/apis/appellation/2/27405> rdfs:label "Thiele" .
+
+<https://www.intavia.org/apis/appellation/2/27408> rdfs:label "Thiele" .
+
+<https://www.intavia.org/apis/appellation/2/27411> rdfs:label "Thielisch" .
+
+<https://www.intavia.org/apis/appellation/2/27418> rdfs:label "Thiel" .
+
+<https://www.intavia.org/apis/appellation/2/27421> rdfs:label "Thienemann" .
+
+<https://www.intavia.org/apis/appellation/2/27424> rdfs:label "Thimig" .
+
+<https://www.intavia.org/apis/appellation/2/27430> rdfs:label "Thinnfeld" .
+
+<https://www.intavia.org/apis/appellation/2/27433> rdfs:label "Thirring" .
+
+<https://www.intavia.org/apis/appellation/2/27436> rdfs:label "Thöni" .
+
+<https://www.intavia.org/apis/appellation/2/27445> rdfs:label "Thöny" .
+
+<https://www.intavia.org/apis/appellation/2/27451> rdfs:label "Thöny" .
+
+<https://www.intavia.org/apis/appellation/2/27457> rdfs:label "Thomas" .
+
+<https://www.intavia.org/apis/appellation/2/27462> rdfs:label "Thomas" .
+
+<https://www.intavia.org/apis/appellation/2/27468> rdfs:label "Thomayer" .
+
+<https://www.intavia.org/apis/appellation/2/27476> rdfs:label "Thomayer" .
+
+<https://www.intavia.org/apis/appellation/2/27479> rdfs:label "Thomé" .
+
+<https://www.intavia.org/apis/appellation/2/27482> rdfs:label "Thommen" .
+
+<https://www.intavia.org/apis/appellation/2/27489> rdfs:label "Thonet" .
+
+<https://www.intavia.org/apis/appellation/2/27492> rdfs:label "Thonet" .
+
+<https://www.intavia.org/apis/appellation/2/27498> rdfs:label "Thonet" .
+
+<https://www.intavia.org/apis/appellation/2/27501> rdfs:label "Thonet" .
+
+<https://www.intavia.org/apis/appellation/2/27504> rdfs:label "Thonet" .
+
+<https://www.intavia.org/apis/appellation/2/27507> rdfs:label "Thonner" .
+
+<https://www.intavia.org/apis/appellation/2/27510> rdfs:label "Thon" .
+
+<https://www.intavia.org/apis/appellation/2/27513> rdfs:label "Thoren" .
+
+<https://www.intavia.org/apis/appellation/2/27516> rdfs:label "Thorma" .
+
+<https://www.intavia.org/apis/appellation/2/27519> rdfs:label "Thornton" .
+
+<https://www.intavia.org/apis/appellation/2/27524> rdfs:label "Tangl" .
+
+<https://www.intavia.org/apis/appellation/2/27527> rdfs:label "Tangl" .
+
+<https://www.intavia.org/apis/appellation/2/27530> rdfs:label "Tangl" .
+
 <https://www.intavia.org/apis/appellation/3/26697> rdfs:label "Jonathan" .
 
 <https://www.intavia.org/apis/appellation/3/26700> rdfs:label "Ede" .
@@ -1342,6 +2673,106 @@
 <https://www.intavia.org/apis/appellation/3/26890> rdfs:label "Ludwig E" .
 
 <https://www.intavia.org/apis/appellation/3/26896> rdfs:label "Paula" .
+
+<https://www.intavia.org/apis/appellation/3/27326> rdfs:label "Károly Baron" .
+
+<https://www.intavia.org/apis/appellation/3/27332> rdfs:label "Mór" .
+
+<https://www.intavia.org/apis/appellation/3/27338> rdfs:label "Moriz" .
+
+<https://www.intavia.org/apis/appellation/3/27343> rdfs:label "Adolf" .
+
+<https://www.intavia.org/apis/appellation/3/27349> rdfs:label "Albert" .
+
+<https://www.intavia.org/apis/appellation/3/27355> rdfs:label "Otakar" .
+
+<https://www.intavia.org/apis/appellation/3/27358> rdfs:label "Robert" .
+
+<https://www.intavia.org/apis/appellation/3/27364> rdfs:label "Endre" .
+
+<https://www.intavia.org/apis/appellation/3/27367> rdfs:label "Josef" .
+
+<https://www.intavia.org/apis/appellation/3/27370> rdfs:label "Julie" .
+
+<https://www.intavia.org/apis/appellation/3/27373> rdfs:label "Karl" .
+
+<https://www.intavia.org/apis/appellation/3/27376> rdfs:label "Louis" .
+
+<https://www.intavia.org/apis/appellation/3/27379> rdfs:label "Wilhelm" .
+
+<https://www.intavia.org/apis/appellation/3/27382> rdfs:label "Max" .
+
+<https://www.intavia.org/apis/appellation/3/27385> rdfs:label "Emil" .
+
+<https://www.intavia.org/apis/appellation/3/27390> rdfs:label "József" .
+
+<https://www.intavia.org/apis/appellation/3/27393> rdfs:label "Franz Seraphin" .
+
+<https://www.intavia.org/apis/appellation/3/27396> rdfs:label "Leopold" .
+
+<https://www.intavia.org/apis/appellation/3/27399> rdfs:label "Theodor d. Ä." .
+
+<https://www.intavia.org/apis/appellation/3/27402> rdfs:label "Theodor d. J." .
+
+<https://www.intavia.org/apis/appellation/3/27405> rdfs:label "Franz" .
+
+<https://www.intavia.org/apis/appellation/3/27408> rdfs:label "Friedrich" .
+
+<https://www.intavia.org/apis/appellation/3/27411> rdfs:label "Johann Christian" .
+
+<https://www.intavia.org/apis/appellation/3/27418> rdfs:label "Viktor" .
+
+<https://www.intavia.org/apis/appellation/3/27421> rdfs:label "Otto" .
+
+<https://www.intavia.org/apis/appellation/3/27424> rdfs:label "Hugo" .
+
+<https://www.intavia.org/apis/appellation/3/27430> rdfs:label "Ferdinand Frh. von" .
+
+<https://www.intavia.org/apis/appellation/3/27433> rdfs:label "Gusztáv Adolf" .
+
+<https://www.intavia.org/apis/appellation/3/27436> rdfs:label "Christian" .
+
+<https://www.intavia.org/apis/appellation/3/27445> rdfs:label "Eduard" .
+
+<https://www.intavia.org/apis/appellation/3/27451> rdfs:label "Wilhelm" .
+
+<https://www.intavia.org/apis/appellation/3/27457> rdfs:label "Edward" .
+
+<https://www.intavia.org/apis/appellation/3/27462> rdfs:label "Rudolf" .
+
+<https://www.intavia.org/apis/appellation/3/27468> rdfs:label "František" .
+
+<https://www.intavia.org/apis/appellation/3/27476> rdfs:label "Josef" .
+
+<https://www.intavia.org/apis/appellation/3/27479> rdfs:label "Franz" .
+
+<https://www.intavia.org/apis/appellation/3/27482> rdfs:label "Achilles" .
+
+<https://www.intavia.org/apis/appellation/3/27489> rdfs:label "August" .
+
+<https://www.intavia.org/apis/appellation/3/27492> rdfs:label "Jakob" .
+
+<https://www.intavia.org/apis/appellation/3/27498> rdfs:label "Josef" .
+
+<https://www.intavia.org/apis/appellation/3/27501> rdfs:label "Michael d. Ä." .
+
+<https://www.intavia.org/apis/appellation/3/27504> rdfs:label "Michael d. J." .
+
+<https://www.intavia.org/apis/appellation/3/27507> rdfs:label "Franz" .
+
+<https://www.intavia.org/apis/appellation/3/27510> rdfs:label "Osias" .
+
+<https://www.intavia.org/apis/appellation/3/27513> rdfs:label "Otto Ritter von" .
+
+<https://www.intavia.org/apis/appellation/3/27516> rdfs:label "János" .
+
+<https://www.intavia.org/apis/appellation/3/27519> rdfs:label "Johann  Edler von" .
+
+<https://www.intavia.org/apis/appellation/3/27524> rdfs:label "Eduard Joseph" .
+
+<https://www.intavia.org/apis/appellation/3/27527> rdfs:label "Karlmann" .
+
+<https://www.intavia.org/apis/appellation/3/27530> rdfs:label "Michael" .
 
 <https://www.intavia.org/apis/birthevent/timespan/26697> crm:P82a_begin_of_the_begin "1776-01-01T00:00:00" ;
     crm:P82b_end_of_the_end "1776-01-01T23:59:59" .
@@ -1493,6 +2924,156 @@
 <https://www.intavia.org/apis/birthevent/timespan/26896> crm:P82a_begin_of_the_begin "1881-09-05T00:00:00" ;
     crm:P82b_end_of_the_end "1881-09-05T23:59:59" .
 
+<https://www.intavia.org/apis/birthevent/timespan/27326> crm:P82a_begin_of_the_begin "1834-12-20T00:00:00" ;
+    crm:P82b_end_of_the_end "1834-12-20T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27332> crm:P82a_begin_of_the_begin "1828-06-19T00:00:00" ;
+    crm:P82b_end_of_the_end "1828-06-19T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27338> crm:P82a_begin_of_the_begin "1838-06-03T00:00:00" ;
+    crm:P82b_end_of_the_end "1838-06-03T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27343> crm:P82a_begin_of_the_begin "1811-05-02T00:00:00" ;
+    crm:P82b_end_of_the_end "1811-05-02T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27349> crm:P82a_begin_of_the_begin "1815-10-15T00:00:00" ;
+    crm:P82b_end_of_the_end "1815-10-15T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27355> crm:P82a_begin_of_the_begin "1880-02-16T00:00:00" ;
+    crm:P82b_end_of_the_end "1880-02-16T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27358> crm:P82a_begin_of_the_begin "1808-11-07T00:00:00" ;
+    crm:P82b_end_of_the_end "1808-11-07T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27364> crm:P82a_begin_of_the_begin "1842-11-01T00:00:00" ;
+    crm:P82b_end_of_the_end "1842-11-01T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27367> crm:P82a_begin_of_the_begin "1866-08-21T00:00:00" ;
+    crm:P82b_end_of_the_end "1866-08-21T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27370> crm:P82a_begin_of_the_begin "1833-09-04T00:00:00" ;
+    crm:P82b_end_of_the_end "1833-09-04T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27373> crm:P82a_begin_of_the_begin "1817-08-13T00:00:00" ;
+    crm:P82b_end_of_the_end "1817-08-13T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27376> crm:P82a_begin_of_the_begin "1848-12-18T00:00:00" ;
+    crm:P82b_end_of_the_end "1848-12-18T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27379> crm:P82a_begin_of_the_begin "1847-06-22T00:00:00" ;
+    crm:P82b_end_of_the_end "1847-06-22T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27382> crm:P82a_begin_of_the_begin "1878-12-07T00:00:00" ;
+    crm:P82b_end_of_the_end "1878-12-07T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27385> crm:P82a_begin_of_the_begin "1838-02-10T00:00:00" ;
+    crm:P82b_end_of_the_end "1838-02-10T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27390> crm:P82a_begin_of_the_begin "1793-02-20T00:00:00" ;
+    crm:P82b_end_of_the_end "1793-02-20T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27393> crm:P82a_begin_of_the_begin "1809-09-17T00:00:00" ;
+    crm:P82b_end_of_the_end "1809-09-17T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27396> crm:P82a_begin_of_the_begin "1851-10-14T00:00:00" ;
+    crm:P82b_end_of_the_end "1851-10-14T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27399> crm:P82a_begin_of_the_begin "1842-07-28T00:00:00" ;
+    crm:P82b_end_of_the_end "1842-07-28T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27402> crm:P82a_begin_of_the_begin "1868-02-16T00:00:00" ;
+    crm:P82b_end_of_the_end "1868-02-16T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27405> crm:P82a_begin_of_the_begin "1868-03-09T00:00:00" ;
+    crm:P82b_end_of_the_end "1868-03-09T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27408> crm:P82a_begin_of_the_begin "1844-01-23T00:00:00" ;
+    crm:P82b_end_of_the_end "1844-01-23T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27411> crm:P82a_begin_of_the_begin "1749-09-21T00:00:00" ;
+    crm:P82b_end_of_the_end "1749-09-21T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27418> crm:P82a_begin_of_the_begin "1871-12-03T00:00:00" ;
+    crm:P82b_end_of_the_end "1871-12-03T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27421> crm:P82a_begin_of_the_begin "1827-08-11T00:00:00" ;
+    crm:P82b_end_of_the_end "1827-08-11T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27424> crm:P82a_begin_of_the_begin "1854-06-16T00:00:00" ;
+    crm:P82b_end_of_the_end "1854-06-16T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27430> crm:P82a_begin_of_the_begin "1793-04-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1793-04-24T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27433> crm:P82a_begin_of_the_begin "1861-12-25T00:00:00" ;
+    crm:P82b_end_of_the_end "1861-12-25T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27436> crm:P82a_begin_of_the_begin "1836-07-01T00:00:00" ;
+    crm:P82b_end_of_the_end "1836-07-01T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27445> crm:P82a_begin_of_the_begin "1866-02-09T00:00:00" ;
+    crm:P82b_end_of_the_end "1866-02-09T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27451> crm:P82a_begin_of_the_begin "1888-02-10T00:00:00" ;
+    crm:P82b_end_of_the_end "1888-02-10T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27457> crm:P82a_begin_of_the_begin "1794-07-02T00:00:00" ;
+    crm:P82b_end_of_the_end "1794-07-02T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27462> crm:P82a_begin_of_the_begin "1895-04-10T00:00:00" ;
+    crm:P82b_end_of_the_end "1895-04-10T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27468> crm:P82a_begin_of_the_begin "1856-03-03T00:00:00" ;
+    crm:P82b_end_of_the_end "1856-03-03T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27476> crm:P82a_begin_of_the_begin "1853-03-23T00:00:00" ;
+    crm:P82b_end_of_the_end "1853-03-23T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27479> crm:P82a_begin_of_the_begin "1807-11-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1807-11-24T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27482> crm:P82a_begin_of_the_begin "1832-05-25T00:00:00" ;
+    crm:P82b_end_of_the_end "1832-05-25T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27489> crm:P82a_begin_of_the_begin "1829-03-28T00:00:00" ;
+    crm:P82b_end_of_the_end "1829-03-28T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27492> crm:P82a_begin_of_the_begin "1841-10-30T00:00:00" ;
+    crm:P82b_end_of_the_end "1841-10-30T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27498> crm:P82a_begin_of_the_begin "1830-05-29T00:00:00" ;
+    crm:P82b_end_of_the_end "1830-05-29T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27501> crm:P82a_begin_of_the_begin "1796-07-02T00:00:00" ;
+    crm:P82b_end_of_the_end "1796-07-02T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27504> crm:P82a_begin_of_the_begin "1824-10-30T00:00:00" ;
+    crm:P82b_end_of_the_end "1824-10-30T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27507> crm:P82a_begin_of_the_begin "1863-03-11T00:00:00" ;
+    crm:P82b_end_of_the_end "1863-03-11T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27510> crm:P82a_begin_of_the_begin "1870-02-13T00:00:00" ;
+    crm:P82b_end_of_the_end "1870-02-13T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27513> crm:P82a_begin_of_the_begin "1828-07-21T00:00:00" ;
+    crm:P82b_end_of_the_end "1828-07-21T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27516> crm:P82a_begin_of_the_begin "1870-04-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1870-04-24T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27519> crm:P82a_begin_of_the_begin "1771-07-02T00:00:00" ;
+    crm:P82b_end_of_the_end "1771-07-02T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27524> crm:P82a_begin_of_the_begin "1848-03-20T00:00:00" ;
+    crm:P82b_end_of_the_end "1848-03-20T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27527> crm:P82a_begin_of_the_begin "1799-08-17T00:00:00" ;
+    crm:P82b_end_of_the_end "1799-08-17T23:59:59" .
+
+<https://www.intavia.org/apis/birthevent/timespan/27530> crm:P82a_begin_of_the_begin "1861-05-26T00:00:00" ;
+    crm:P82b_end_of_the_end "1861-05-26T23:59:59" .
+
 <https://www.intavia.org/apis/deathevent/timespan/26697> crm:P82a_begin_of_the_begin "1847-01-01T00:00:00" ;
     crm:P82b_end_of_the_end "1847-01-01T23:59:59" .
 
@@ -1642,6 +3223,156 @@
 
 <https://www.intavia.org/apis/deathevent/timespan/26896> crm:P82a_begin_of_the_begin "1942-05-17T00:00:00" ;
     crm:P82b_end_of_the_end "1942-05-17T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27326> crm:P82a_begin_of_the_begin "1908-07-05T00:00:00" ;
+    crm:P82b_end_of_the_end "1908-07-05T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27332> crm:P82a_begin_of_the_begin "1899-03-11T00:00:00" ;
+    crm:P82b_end_of_the_end "1899-03-11T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27338> crm:P82a_begin_of_the_begin "1884-08-11T00:00:00" ;
+    crm:P82b_end_of_the_end "1884-08-11T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27343> crm:P82a_begin_of_the_begin "1868-04-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1868-04-24T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27349> crm:P82a_begin_of_the_begin "1902-08-30T00:00:00" ;
+    crm:P82b_end_of_the_end "1902-08-30T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27355> crm:P82a_begin_of_the_begin "1917-12-20T00:00:00" ;
+    crm:P82b_end_of_the_end "1917-12-20T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27358> crm:P82a_begin_of_the_begin "1863-07-15T00:00:00" ;
+    crm:P82b_end_of_the_end "1863-07-15T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27364> crm:P82a_begin_of_the_begin "1919-06-08T00:00:00" ;
+    crm:P82b_end_of_the_end "1919-06-08T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27367> crm:P82a_begin_of_the_begin "1949-01-15T00:00:00" ;
+    crm:P82b_end_of_the_end "1949-01-15T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27370> crm:P82a_begin_of_the_begin "1919-10-12T00:00:00" ;
+    crm:P82b_end_of_the_end "1919-10-12T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27373> crm:P82a_begin_of_the_begin "1886-04-13T00:00:00" ;
+    crm:P82b_end_of_the_end "1886-04-13T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27376> crm:P82a_begin_of_the_begin "1920-03-12T00:00:00" ;
+    crm:P82b_end_of_the_end "1920-03-12T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27379> crm:P82a_begin_of_the_begin "1911-04-07T00:00:00" ;
+    crm:P82b_end_of_the_end "1911-04-07T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27382> crm:P82a_begin_of_the_begin "1949-06-26T00:00:00" ;
+    crm:P82b_end_of_the_end "1949-06-26T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27385> crm:P82a_begin_of_the_begin "1917-02-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1917-02-24T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27390> crm:P82a_begin_of_the_begin "1870-11-04T00:00:00" ;
+    crm:P82b_end_of_the_end "1870-11-04T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27393> crm:P82a_begin_of_the_begin "1871-08-17T00:00:00" ;
+    crm:P82b_end_of_the_end "1871-08-17T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27396> crm:P82a_begin_of_the_begin "1937-07-07T00:00:00" ;
+    crm:P82b_end_of_the_end "1937-07-07T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27399> crm:P82a_begin_of_the_begin "1905-08-27T00:00:00" ;
+    crm:P82b_end_of_the_end "1905-08-27T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27402> crm:P82a_begin_of_the_begin "1925-04-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1925-04-24T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27405> crm:P82a_begin_of_the_begin "1945-05-23T00:00:00" ;
+    crm:P82b_end_of_the_end "1945-05-23T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27408> crm:P82a_begin_of_the_begin "1920-10-15T00:00:00" ;
+    crm:P82b_end_of_the_end "1920-10-15T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27411> crm:P82a_begin_of_the_begin "1827-09-25T00:00:00" ;
+    crm:P82b_end_of_the_end "1827-09-25T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27418> crm:P82a_begin_of_the_begin "1946-10-09T00:00:00" ;
+    crm:P82b_end_of_the_end "1946-10-09T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27421> crm:P82a_begin_of_the_begin "1905-11-28T00:00:00" ;
+    crm:P82b_end_of_the_end "1905-11-28T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27424> crm:P82a_begin_of_the_begin "1944-09-24T00:00:00" ;
+    crm:P82b_end_of_the_end "1944-09-24T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27430> crm:P82a_begin_of_the_begin "1868-04-08T00:00:00" ;
+    crm:P82b_end_of_the_end "1868-04-08T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27433> crm:P82a_begin_of_the_begin "1941-03-31T00:00:00" ;
+    crm:P82b_end_of_the_end "1941-03-31T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27436> crm:P82a_begin_of_the_begin "1902-03-27T00:00:00" ;
+    crm:P82b_end_of_the_end "1902-03-27T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27445> crm:P82a_begin_of_the_begin "1950-07-26T00:00:00" ;
+    crm:P82b_end_of_the_end "1950-07-26T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27451> crm:P82a_begin_of_the_begin "1949-05-01T00:00:00" ;
+    crm:P82b_end_of_the_end "1949-05-01T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27457> crm:P82a_begin_of_the_begin "NoneT00:00:00" ;
+    crm:P82b_end_of_the_end "NoneT23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27462> crm:P82a_begin_of_the_begin "1938-10-10T00:00:00" ;
+    crm:P82b_end_of_the_end "1938-10-10T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27468> crm:P82a_begin_of_the_begin "1938-02-18T00:00:00" ;
+    crm:P82b_end_of_the_end "1938-02-18T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27476> crm:P82a_begin_of_the_begin "1927-10-18T00:00:00" ;
+    crm:P82b_end_of_the_end "1927-10-18T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27479> crm:P82a_begin_of_the_begin "1872-05-22T00:00:00" ;
+    crm:P82b_end_of_the_end "1872-05-22T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27482> crm:P82a_begin_of_the_begin "1893-08-21T00:00:00" ;
+    crm:P82b_end_of_the_end "1893-08-21T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27489> crm:P82a_begin_of_the_begin "1910-03-16T00:00:00" ;
+    crm:P82b_end_of_the_end "1910-03-16T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27492> crm:P82a_begin_of_the_begin "1929-11-10T00:00:00" ;
+    crm:P82b_end_of_the_end "1929-11-10T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27498> crm:P82a_begin_of_the_begin "1887-08-22T00:00:00" ;
+    crm:P82b_end_of_the_end "1887-08-22T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27501> crm:P82a_begin_of_the_begin "1871-03-03T00:00:00" ;
+    crm:P82b_end_of_the_end "1871-03-03T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27504> crm:P82a_begin_of_the_begin "1902-12-25T00:00:00" ;
+    crm:P82b_end_of_the_end "1902-12-25T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27507> crm:P82a_begin_of_the_begin "1928-04-21T00:00:00" ;
+    crm:P82b_end_of_the_end "1928-04-21T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27510> crm:P82a_begin_of_the_begin "1936-11-11T00:00:00" ;
+    crm:P82b_end_of_the_end "1936-11-11T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27513> crm:P82a_begin_of_the_begin "1889-07-15T00:00:00" ;
+    crm:P82b_end_of_the_end "1889-07-15T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27516> crm:P82a_begin_of_the_begin "1937-12-05T00:00:00" ;
+    crm:P82b_end_of_the_end "1937-12-05T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27519> crm:P82a_begin_of_the_begin "1847-03-28T00:00:00" ;
+    crm:P82b_end_of_the_end "1847-03-28T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27524> crm:P82a_begin_of_the_begin "1905-07-09T00:00:00" ;
+    crm:P82b_end_of_the_end "1905-07-09T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27527> crm:P82a_begin_of_the_begin "1866-11-12T00:00:00" ;
+    crm:P82b_end_of_the_end "1866-11-12T23:59:59" .
+
+<https://www.intavia.org/apis/deathevent/timespan/27530> crm:P82a_begin_of_the_begin "1921-09-07T00:00:00" ;
+    crm:P82b_end_of_the_end "1921-09-07T23:59:59" .
 
 <https://www.intavia.org/apis/identifier26697> a crm:E42_Identifier ;
     rdfs:label "26697" .
@@ -1793,6 +3524,156 @@
 <https://www.intavia.org/apis/identifier26896> a crm:E42_Identifier ;
     rdfs:label "26896" .
 
+<https://www.intavia.org/apis/identifier27326> a crm:E42_Identifier ;
+    rdfs:label "27326" .
+
+<https://www.intavia.org/apis/identifier27332> a crm:E42_Identifier ;
+    rdfs:label "27332" .
+
+<https://www.intavia.org/apis/identifier27338> a crm:E42_Identifier ;
+    rdfs:label "27338" .
+
+<https://www.intavia.org/apis/identifier27343> a crm:E42_Identifier ;
+    rdfs:label "27343" .
+
+<https://www.intavia.org/apis/identifier27349> a crm:E42_Identifier ;
+    rdfs:label "27349" .
+
+<https://www.intavia.org/apis/identifier27355> a crm:E42_Identifier ;
+    rdfs:label "27355" .
+
+<https://www.intavia.org/apis/identifier27358> a crm:E42_Identifier ;
+    rdfs:label "27358" .
+
+<https://www.intavia.org/apis/identifier27364> a crm:E42_Identifier ;
+    rdfs:label "27364" .
+
+<https://www.intavia.org/apis/identifier27367> a crm:E42_Identifier ;
+    rdfs:label "27367" .
+
+<https://www.intavia.org/apis/identifier27370> a crm:E42_Identifier ;
+    rdfs:label "27370" .
+
+<https://www.intavia.org/apis/identifier27373> a crm:E42_Identifier ;
+    rdfs:label "27373" .
+
+<https://www.intavia.org/apis/identifier27376> a crm:E42_Identifier ;
+    rdfs:label "27376" .
+
+<https://www.intavia.org/apis/identifier27379> a crm:E42_Identifier ;
+    rdfs:label "27379" .
+
+<https://www.intavia.org/apis/identifier27382> a crm:E42_Identifier ;
+    rdfs:label "27382" .
+
+<https://www.intavia.org/apis/identifier27385> a crm:E42_Identifier ;
+    rdfs:label "27385" .
+
+<https://www.intavia.org/apis/identifier27390> a crm:E42_Identifier ;
+    rdfs:label "27390" .
+
+<https://www.intavia.org/apis/identifier27393> a crm:E42_Identifier ;
+    rdfs:label "27393" .
+
+<https://www.intavia.org/apis/identifier27396> a crm:E42_Identifier ;
+    rdfs:label "27396" .
+
+<https://www.intavia.org/apis/identifier27399> a crm:E42_Identifier ;
+    rdfs:label "27399" .
+
+<https://www.intavia.org/apis/identifier27402> a crm:E42_Identifier ;
+    rdfs:label "27402" .
+
+<https://www.intavia.org/apis/identifier27405> a crm:E42_Identifier ;
+    rdfs:label "27405" .
+
+<https://www.intavia.org/apis/identifier27408> a crm:E42_Identifier ;
+    rdfs:label "27408" .
+
+<https://www.intavia.org/apis/identifier27411> a crm:E42_Identifier ;
+    rdfs:label "27411" .
+
+<https://www.intavia.org/apis/identifier27418> a crm:E42_Identifier ;
+    rdfs:label "27418" .
+
+<https://www.intavia.org/apis/identifier27421> a crm:E42_Identifier ;
+    rdfs:label "27421" .
+
+<https://www.intavia.org/apis/identifier27424> a crm:E42_Identifier ;
+    rdfs:label "27424" .
+
+<https://www.intavia.org/apis/identifier27430> a crm:E42_Identifier ;
+    rdfs:label "27430" .
+
+<https://www.intavia.org/apis/identifier27433> a crm:E42_Identifier ;
+    rdfs:label "27433" .
+
+<https://www.intavia.org/apis/identifier27436> a crm:E42_Identifier ;
+    rdfs:label "27436" .
+
+<https://www.intavia.org/apis/identifier27445> a crm:E42_Identifier ;
+    rdfs:label "27445" .
+
+<https://www.intavia.org/apis/identifier27451> a crm:E42_Identifier ;
+    rdfs:label "27451" .
+
+<https://www.intavia.org/apis/identifier27457> a crm:E42_Identifier ;
+    rdfs:label "27457" .
+
+<https://www.intavia.org/apis/identifier27462> a crm:E42_Identifier ;
+    rdfs:label "27462" .
+
+<https://www.intavia.org/apis/identifier27468> a crm:E42_Identifier ;
+    rdfs:label "27468" .
+
+<https://www.intavia.org/apis/identifier27476> a crm:E42_Identifier ;
+    rdfs:label "27476" .
+
+<https://www.intavia.org/apis/identifier27479> a crm:E42_Identifier ;
+    rdfs:label "27479" .
+
+<https://www.intavia.org/apis/identifier27482> a crm:E42_Identifier ;
+    rdfs:label "27482" .
+
+<https://www.intavia.org/apis/identifier27489> a crm:E42_Identifier ;
+    rdfs:label "27489" .
+
+<https://www.intavia.org/apis/identifier27492> a crm:E42_Identifier ;
+    rdfs:label "27492" .
+
+<https://www.intavia.org/apis/identifier27498> a crm:E42_Identifier ;
+    rdfs:label "27498" .
+
+<https://www.intavia.org/apis/identifier27501> a crm:E42_Identifier ;
+    rdfs:label "27501" .
+
+<https://www.intavia.org/apis/identifier27504> a crm:E42_Identifier ;
+    rdfs:label "27504" .
+
+<https://www.intavia.org/apis/identifier27507> a crm:E42_Identifier ;
+    rdfs:label "27507" .
+
+<https://www.intavia.org/apis/identifier27510> a crm:E42_Identifier ;
+    rdfs:label "27510" .
+
+<https://www.intavia.org/apis/identifier27513> a crm:E42_Identifier ;
+    rdfs:label "27513" .
+
+<https://www.intavia.org/apis/identifier27516> a crm:E42_Identifier ;
+    rdfs:label "27516" .
+
+<https://www.intavia.org/apis/identifier27519> a crm:E42_Identifier ;
+    rdfs:label "27519" .
+
+<https://www.intavia.org/apis/identifier27524> a crm:E42_Identifier ;
+    rdfs:label "27524" .
+
+<https://www.intavia.org/apis/identifier27527> a crm:E42_Identifier ;
+    rdfs:label "27527" .
+
+<https://www.intavia.org/apis/identifier27530> a crm:E42_Identifier ;
+    rdfs:label "27530" .
+
 <https://www.intavia.org/apis/place/10092> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/10092/Lys%C3%A1+nad+Labem>,
         <https://www.intavia.org/apis/placeidentifier/10092> ;
@@ -1813,6 +3694,16 @@
         <https://www.intavia.org/apis/placeidentifier/107278> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/107278/> .
 
+<https://www.intavia.org/apis/place/10744> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/10744/Manchester>,
+        <https://www.intavia.org/apis/placeidentifier/10744> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/10744/> .
+
+<https://www.intavia.org/apis/place/1131> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/1131/Basel>,
+        <https://www.intavia.org/apis/placeidentifier/1131> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/1131/> .
+
 <https://www.intavia.org/apis/place/115624> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/115624/Burshtyn>,
         <https://www.intavia.org/apis/placeidentifier/115624> ;
@@ -1823,10 +3714,20 @@
         <https://www.intavia.org/apis/placeidentifier/117918> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/117918/> .
 
+<https://www.intavia.org/apis/place/13253> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/13253/Sopron>,
+        <https://www.intavia.org/apis/placeidentifier/13253> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/13253/> .
+
 <https://www.intavia.org/apis/place/13714> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/13714/Paris>,
         <https://www.intavia.org/apis/placeidentifier/13714> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/13714/> .
+
+<https://www.intavia.org/apis/place/154> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/154/Salzburg>,
+        <https://www.intavia.org/apis/placeidentifier/154> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/154/> .
 
 <https://www.intavia.org/apis/place/1883> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/1883/Bozen>,
@@ -1838,45 +3739,65 @@
         <https://www.intavia.org/apis/placeidentifier/19215> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/19215/> .
 
+<https://www.intavia.org/apis/place/19385> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/19385/%C4%8C%C3%AD%C5%BEkovice>,
+        <https://www.intavia.org/apis/placeidentifier/19385> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/19385/> .
+
 <https://www.intavia.org/apis/place/2072> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/2072/Pressburg>,
         <https://www.intavia.org/apis/placeidentifier/2072> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2072/> .
+
+<https://www.intavia.org/apis/place/21588> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/21588/Neudorf>,
+        <https://www.intavia.org/apis/placeidentifier/21588> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/21588/> .
 
 <https://www.intavia.org/apis/place/21655> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/21655/Znaim>,
         <https://www.intavia.org/apis/placeidentifier/21655> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/21655/> .
 
+<https://www.intavia.org/apis/place/27458> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/27458/Bristol>,
+        <https://www.intavia.org/apis/placeidentifier/27458> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/27458/> .
+
+<https://www.intavia.org/apis/place/2854> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/2854/Tschernowitz>,
+        <https://www.intavia.org/apis/placeidentifier/2854> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2854/> .
+
 <https://www.intavia.org/apis/place/3001> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/3001/Choltice>,
         <https://www.intavia.org/apis/placeidentifier/3001> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/3001/> .
+
+<https://www.intavia.org/apis/place/3105> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/3105/Cieszyn>,
+        <https://www.intavia.org/apis/placeidentifier/3105> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/3105/> .
 
 <https://www.intavia.org/apis/place/3162> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/3162/Klausenburg>,
         <https://www.intavia.org/apis/placeidentifier/3162> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/3162/> .
 
-<https://www.intavia.org/apis/place/400> a crm:E53_Place ;
-    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/400/Budapest>,
-        <https://www.intavia.org/apis/placeidentifier/400> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/400/> .
-
-<https://www.intavia.org/apis/place/4017> a crm:E53_Place ;
-    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/4017/Dresden>,
-        <https://www.intavia.org/apis/placeidentifier/4017> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4017/> .
+<https://www.intavia.org/apis/place/3703> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/3703/Deva>,
+        <https://www.intavia.org/apis/placeidentifier/3703> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/3703/> .
 
 <https://www.intavia.org/apis/place/4218> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/4218/Eferding>,
         <https://www.intavia.org/apis/placeidentifier/4218> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4218/> .
 
-<https://www.intavia.org/apis/place/4767> a crm:E53_Place ;
-    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/4767/Graz>,
-        <https://www.intavia.org/apis/placeidentifier/4767> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4767/> .
+<https://www.intavia.org/apis/place/5103> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/5103/Galatz>,
+        <https://www.intavia.org/apis/placeidentifier/5103> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/5103/> .
 
 <https://www.intavia.org/apis/place/5281> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/5281/Kl%C3%A1%C5%A1terec+nad+Oh%C5%99%C3%AD>,
@@ -1888,6 +3809,11 @@
         <https://www.intavia.org/apis/placeidentifier/5521> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/5521/> .
 
+<https://www.intavia.org/apis/place/8228> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/8228/Kiskunhalas>,
+        <https://www.intavia.org/apis/placeidentifier/8228> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/8228/> .
+
 <https://www.intavia.org/apis/place/8995> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/8995/Kramsach>,
         <https://www.intavia.org/apis/placeidentifier/8995> ;
@@ -1897,11 +3823,6 @@
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/9657/Lou%C4%8De%C5%88>,
         <https://www.intavia.org/apis/placeidentifier/9657> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/9657/> .
-
-<https://www.intavia.org/apis/place/9735> a crm:E53_Place ;
-    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/9735/Lemberg>,
-        <https://www.intavia.org/apis/placeidentifier/9735> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/9735/> .
 
 <https://www.intavia.org/apis/placeappellation/10092/Lys%C3%A1+nad+Labem> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Lysá nad Labem" .
@@ -1915,11 +3836,20 @@
 <https://www.intavia.org/apis/placeappellation/107278/Doksy> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Doksy" .
 
+<https://www.intavia.org/apis/placeappellation/10744/Manchester> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Manchester" .
+
+<https://www.intavia.org/apis/placeappellation/1131/Basel> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Basel" .
+
 <https://www.intavia.org/apis/placeappellation/115624/Burshtyn> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Burshtyn" .
 
 <https://www.intavia.org/apis/placeappellation/117918/Tienen> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Tienen" .
+
+<https://www.intavia.org/apis/placeappellation/13253/Sopron> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Sopron" .
 
 <https://www.intavia.org/apis/placeappellation/13714/Paris> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Paris" .
@@ -1927,17 +3857,29 @@
 <https://www.intavia.org/apis/placeappellation/14608/Prag> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Prag" .
 
+<https://www.intavia.org/apis/placeappellation/154/Salzburg> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Salzburg" .
+
 <https://www.intavia.org/apis/placeappellation/183/Wien> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Wien" .
 
 <https://www.intavia.org/apis/placeappellation/1883/Bozen> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Bozen" .
 
+<https://www.intavia.org/apis/placeappellation/1910/Boppard> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Boppard" .
+
 <https://www.intavia.org/apis/placeappellation/19215/Trient> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Trient" .
 
+<https://www.intavia.org/apis/placeappellation/19385/%C4%8C%C3%AD%C5%BEkovice> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Čížkovice" .
+
 <https://www.intavia.org/apis/placeappellation/2072/Pressburg> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Pressburg" .
+
+<https://www.intavia.org/apis/placeappellation/21588/Neudorf> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Neudorf" .
 
 <https://www.intavia.org/apis/placeappellation/21655/Znaim> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Znaim" .
@@ -1945,11 +3887,26 @@
 <https://www.intavia.org/apis/placeappellation/26780/%C5%BDehu%C5%A1ice> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Žehušice" .
 
+<https://www.intavia.org/apis/placeappellation/27458/Bristol> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Bristol" .
+
+<https://www.intavia.org/apis/placeappellation/27469/Trhanov> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Trhanov" .
+
+<https://www.intavia.org/apis/placeappellation/2854/Tschernowitz> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Tschernowitz" .
+
 <https://www.intavia.org/apis/placeappellation/3001/Choltice> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Choltice" .
 
+<https://www.intavia.org/apis/placeappellation/3105/Cieszyn> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Cieszyn" .
+
 <https://www.intavia.org/apis/placeappellation/3162/Klausenburg> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Klausenburg" .
+
+<https://www.intavia.org/apis/placeappellation/3703/Deva> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Deva" .
 
 <https://www.intavia.org/apis/placeappellation/400/Budapest> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Budapest" .
@@ -1966,11 +3923,17 @@
 <https://www.intavia.org/apis/placeappellation/4767/Graz> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Graz" .
 
+<https://www.intavia.org/apis/placeappellation/5103/Galatz> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Galatz" .
+
 <https://www.intavia.org/apis/placeappellation/5281/Kl%C3%A1%C5%A1terec+nad+Oh%C5%99%C3%AD> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Klášterec nad Ohří" .
 
 <https://www.intavia.org/apis/placeappellation/5521/Gol%C4%8D%C5%AFv+Jen%C3%ADkov> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Golčův Jeníkov" .
+
+<https://www.intavia.org/apis/placeappellation/8228/Kiskunhalas> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Kiskunhalas" .
 
 <https://www.intavia.org/apis/placeappellation/8995/Kramsach> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Kramsach" .
@@ -1993,11 +3956,20 @@
 <https://www.intavia.org/apis/placeidentifier/107278> a crm:E_42_Identifier ;
     rdfs:label "107278" .
 
+<https://www.intavia.org/apis/placeidentifier/10744> a crm:E_42_Identifier ;
+    rdfs:label "10744" .
+
+<https://www.intavia.org/apis/placeidentifier/1131> a crm:E_42_Identifier ;
+    rdfs:label "1131" .
+
 <https://www.intavia.org/apis/placeidentifier/115624> a crm:E_42_Identifier ;
     rdfs:label "115624" .
 
 <https://www.intavia.org/apis/placeidentifier/117918> a crm:E_42_Identifier ;
     rdfs:label "117918" .
+
+<https://www.intavia.org/apis/placeidentifier/13253> a crm:E_42_Identifier ;
+    rdfs:label "13253" .
 
 <https://www.intavia.org/apis/placeidentifier/13714> a crm:E_42_Identifier ;
     rdfs:label "13714" .
@@ -2005,17 +3977,29 @@
 <https://www.intavia.org/apis/placeidentifier/14608> a crm:E_42_Identifier ;
     rdfs:label "14608" .
 
+<https://www.intavia.org/apis/placeidentifier/154> a crm:E_42_Identifier ;
+    rdfs:label "154" .
+
 <https://www.intavia.org/apis/placeidentifier/183> a crm:E_42_Identifier ;
     rdfs:label "183" .
 
 <https://www.intavia.org/apis/placeidentifier/1883> a crm:E_42_Identifier ;
     rdfs:label "1883" .
 
+<https://www.intavia.org/apis/placeidentifier/1910> a crm:E_42_Identifier ;
+    rdfs:label "1910" .
+
 <https://www.intavia.org/apis/placeidentifier/19215> a crm:E_42_Identifier ;
     rdfs:label "19215" .
 
+<https://www.intavia.org/apis/placeidentifier/19385> a crm:E_42_Identifier ;
+    rdfs:label "19385" .
+
 <https://www.intavia.org/apis/placeidentifier/2072> a crm:E_42_Identifier ;
     rdfs:label "2072" .
+
+<https://www.intavia.org/apis/placeidentifier/21588> a crm:E_42_Identifier ;
+    rdfs:label "21588" .
 
 <https://www.intavia.org/apis/placeidentifier/21655> a crm:E_42_Identifier ;
     rdfs:label "21655" .
@@ -2023,11 +4007,26 @@
 <https://www.intavia.org/apis/placeidentifier/26780> a crm:E_42_Identifier ;
     rdfs:label "26780" .
 
+<https://www.intavia.org/apis/placeidentifier/27458> a crm:E_42_Identifier ;
+    rdfs:label "27458" .
+
+<https://www.intavia.org/apis/placeidentifier/27469> a crm:E_42_Identifier ;
+    rdfs:label "27469" .
+
+<https://www.intavia.org/apis/placeidentifier/2854> a crm:E_42_Identifier ;
+    rdfs:label "2854" .
+
 <https://www.intavia.org/apis/placeidentifier/3001> a crm:E_42_Identifier ;
     rdfs:label "3001" .
 
+<https://www.intavia.org/apis/placeidentifier/3105> a crm:E_42_Identifier ;
+    rdfs:label "3105" .
+
 <https://www.intavia.org/apis/placeidentifier/3162> a crm:E_42_Identifier ;
     rdfs:label "3162" .
+
+<https://www.intavia.org/apis/placeidentifier/3703> a crm:E_42_Identifier ;
+    rdfs:label "3703" .
 
 <https://www.intavia.org/apis/placeidentifier/400> a crm:E_42_Identifier ;
     rdfs:label "400" .
@@ -2044,11 +4043,17 @@
 <https://www.intavia.org/apis/placeidentifier/4767> a crm:E_42_Identifier ;
     rdfs:label "4767" .
 
+<https://www.intavia.org/apis/placeidentifier/5103> a crm:E_42_Identifier ;
+    rdfs:label "5103" .
+
 <https://www.intavia.org/apis/placeidentifier/5281> a crm:E_42_Identifier ;
     rdfs:label "5281" .
 
 <https://www.intavia.org/apis/placeidentifier/5521> a crm:E_42_Identifier ;
     rdfs:label "5521" .
+
+<https://www.intavia.org/apis/placeidentifier/8228> a crm:E_42_Identifier ;
+    rdfs:label "8228" .
 
 <https://www.intavia.org/apis/placeidentifier/8995> a crm:E_42_Identifier ;
     rdfs:label "8995" .
@@ -2065,23 +4070,223 @@
 
 <https://www.intavia.org/person/10> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/100> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/101> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/102> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/103> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/104> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/105> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/106> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/107> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/108> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/109> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/11> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/110> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/111> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/112> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/113> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/114> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/115> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/116> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/117> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/118> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/119> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/12> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/120> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/121> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/122> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/123> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/124> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/125> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/126> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/127> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/128> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/129> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/13> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/130> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/131> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/132> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/133> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/134> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/135> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/136> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/137> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/138> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/139> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/14> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/140> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/141> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/142> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/143> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/144> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/145> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/146> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/147> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/148> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/149> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/15> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/150> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/151> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/152> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/153> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/154> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/155> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/156> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/157> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/158> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/159> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/16> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/160> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/161> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/162> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/163> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/164> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/165> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/166> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/167> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/168> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/169> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/17> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/170> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/171> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/172> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/173> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/174> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/175> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/176> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/177> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/178> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/179> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/18> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/180> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/181> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/182> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/183> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/184> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/185> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/186> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/187> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/188> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/189> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/19> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/190> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/191> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/192> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/193> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/194> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/195> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/196> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/197> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/198> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/199> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/2> a idmcore:Provided_Person .
 
@@ -2151,13 +4356,113 @@
 
 <https://www.intavia.org/person/5> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/50> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/51> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/52> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/53> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/54> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/55> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/56> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/57> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/58> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/59> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/6> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/60> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/61> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/62> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/63> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/64> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/65> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/66> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/67> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/68> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/69> a idmcore:Provided_Person .
 
 <https://www.intavia.org/person/7> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/70> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/71> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/72> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/73> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/74> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/75> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/76> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/77> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/78> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/79> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/8> a idmcore:Provided_Person .
 
+<https://www.intavia.org/person/80> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/81> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/82> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/83> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/84> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/85> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/86> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/87> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/88> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/89> a idmcore:Provided_Person .
+
 <https://www.intavia.org/person/9> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/90> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/91> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/92> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/93> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/94> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/95> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/96> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/97> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/98> a idmcore:Provided_Person .
+
+<https://www.intavia.org/person/99> a idmcore:Provided_Person .
 
 <https://www.intavia.org/apis/birthevent/eventrole/1/26697> a idmrole:born_person .
 
@@ -2259,6 +4564,106 @@
 
 <https://www.intavia.org/apis/birthevent/eventrole/1/26896> a idmrole:born_person .
 
+<https://www.intavia.org/apis/birthevent/eventrole/1/27326> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27332> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27338> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27343> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27349> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27355> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27358> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27364> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27367> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27370> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27373> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27376> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27379> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27382> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27385> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27390> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27393> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27396> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27399> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27402> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27405> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27408> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27411> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27418> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27421> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27424> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27430> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27433> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27436> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27445> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27451> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27457> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27462> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27468> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27476> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27479> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27482> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27489> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27492> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27498> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27501> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27504> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27507> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27510> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27513> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27516> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27519> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27524> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27527> a idmrole:born_person .
+
+<https://www.intavia.org/apis/birthevent/eventrole/1/27530> a idmrole:born_person .
+
 <https://www.intavia.org/apis/deathevent/eventrole/1/26697> a idmrole:deceased_person .
 
 <https://www.intavia.org/apis/deathevent/eventrole/1/26700> a idmrole:deceased_person .
@@ -2359,22 +4764,152 @@
 
 <https://www.intavia.org/apis/deathevent/eventrole/1/26896> a idmrole:deceased_person .
 
-<https://www.intavia.org/apis/place/183> a crm:E53_Place ;
-    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/183/Wien>,
-        <https://www.intavia.org/apis/placeidentifier/183> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/183/> .
+<https://www.intavia.org/apis/deathevent/eventrole/1/27326> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27332> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27338> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27343> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27349> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27355> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27358> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27364> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27367> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27370> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27373> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27376> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27379> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27382> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27385> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27390> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27393> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27396> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27399> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27402> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27405> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27408> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27411> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27418> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27421> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27424> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27430> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27433> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27436> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27445> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27451> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27457> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27462> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27468> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27476> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27479> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27482> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27489> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27492> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27498> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27501> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27504> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27507> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27510> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27513> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27516> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27519> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27524> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27527> a idmrole:deceased_person .
+
+<https://www.intavia.org/apis/deathevent/eventrole/1/27530> a idmrole:deceased_person .
 
 <https://www.intavia.org/apis/place/26780> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/26780/%C5%BDehu%C5%A1ice>,
         <https://www.intavia.org/apis/placeidentifier/26780> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/26780/> .
 
+<https://www.intavia.org/apis/place/27469> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/27469/Trhanov>,
+        <https://www.intavia.org/apis/placeidentifier/27469> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/27469/> .
+
+<https://www.intavia.org/apis/place/4017> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/4017/Dresden>,
+        <https://www.intavia.org/apis/placeidentifier/4017> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4017/> .
+
+<https://www.intavia.org/apis/place/4767> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/4767/Graz>,
+        <https://www.intavia.org/apis/placeidentifier/4767> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4767/> .
+
+<https://www.intavia.org/apis/place/400> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/400/Budapest>,
+        <https://www.intavia.org/apis/placeidentifier/400> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/400/> .
+
+<https://www.intavia.org/apis/place/1910> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/1910/Boppard>,
+        <https://www.intavia.org/apis/placeidentifier/1910> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/1910/> .
+
 <https://www.intavia.org/apis/place/470> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/470/D%C4%9B%C4%8D%C3%ADn>,
         <https://www.intavia.org/apis/placeidentifier/470> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/470/> .
 
+<https://www.intavia.org/apis/place/9735> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/9735/Lemberg>,
+        <https://www.intavia.org/apis/placeidentifier/9735> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/9735/> .
+
 idmrole:female a idmcore:Gender .
+
+<https://www.intavia.org/apis/place/183> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/183/Wien>,
+        <https://www.intavia.org/apis/placeidentifier/183> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/183/> .
 
 <https://www.intavia.org/apis/place/14608> a crm:E53_Place ;
     crm:P1_is_identified_by <https://www.intavia.org/apis/placeappellation/14608/Prag>,

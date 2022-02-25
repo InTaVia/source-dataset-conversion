@@ -22,7 +22,7 @@ placecheck=set()
 #first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
 #first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=30850"
 first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
-"""initial json url to get apis data, when not testing: https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=10&offset=0"""
+"""initial json url to get apis data, when not testing(!!!): https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=10&offset=0"""
 first_response = requests.get(first_url)
 """get data for this URL from REST API"""
 re_list=first_response.json()
@@ -49,23 +49,23 @@ def professions(id, profy):
         return(dapr)
     
 # reactivate when server response problem is solved
-def places(pc):
-    for p in pc:
-        place_response = requests.get(p)
-        place_response = place_response.json()
-         #print(place_response['url'])
-         #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
-        placedata.append({
-            'place_name':place_response['name'],
-            'place_id':place_response['id'],
-            'place_start_date':place_response['start_date'], 
-            'place_end_date':place_response['end_date'], 
-            'place_references':place_response['references'], 
-            'place_lat':place_response['lat'], 
-            'place_lng':place_response['lng'], 
-            'place_source':place_response['source']
-            })
-    return(placedata)
+# def places(pc):
+#     for p in pc:
+#         place_response = requests.get(p)
+#         place_response = place_response.json()
+#          #print(place_response['url'])
+#          #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
+#         placedata.append({
+#             'place_name':place_response['name'],
+#             'place_id':place_response['id'],
+#             'place_start_date':place_response['start_date'], 
+#             'place_end_date':place_response['end_date'], 
+#             'place_references':place_response['references'], 
+#             'place_lat':place_response['lat'], 
+#             'place_lng':place_response['lng'], 
+#             'place_source':place_response['source']
+#             })
+#     return(placedata)
 
 
 
@@ -105,11 +105,12 @@ def relations(person):
 
 def sources(sourcy):
     #get sources for one biography article
-    sourceuri = sourcy['url']
-    source = requests.get(sourceuri)
-    source = source.json()
-    pubinfo = source.get('pubinfo')
-    return(sourceuri, pubinfo)
+    if sourcy != None:
+        sourceuri = sourcy['url']
+        source = requests.get(sourceuri)
+        source = source.json()
+        pubinfo = source.get('pubinfo')
+        return(sourceuri, pubinfo)
 
 def datareturn (d, re):
     for n in range(len(re)):
@@ -121,7 +122,11 @@ def datareturn (d, re):
         person_response = requests.get(personuri)
         person_response = person_response.json()
         sourcx = (x.get('source'))
-        sourceuri, source_pubinfo = sources(sourcx)
+        if sourcx != None:
+            sourceuri, source_pubinfo = sources(sourcx)
+        else:
+            sourceuri = None
+            source_pubinfo = None
         if person_response != None:
             datarelations, pc = relations(person_response)
         d.append({
@@ -137,22 +142,25 @@ def datareturn (d, re):
                 'gender':x.get('gender')
             })
     # reactivate when server problem is solved!
-    places(pc)
+    # places(pc)
     return d,datarelations, pc
 
-while next_page != "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=50":
+print(next_page)
+#while next_page != "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=900":
 #define the point when iterating stops (for test serialization)
-#while next_page != None:
-    """stop iterating over JSON API urls"""
+while next_page != None:
+    """iterate over JSON API urls"""
     first_url=next_page
+    print(next_page)
     first_response = requests.get(first_url)
     re_list=first_response.json()
     """get data from REST API in JSON format"""
     next_page = re_list.get('next')
     datageneral, datarelations, placeset = datareturn(data, response_list)
 else:
-    """iterate over JSON API urls"""
+    """stop iterating over JSON API urls"""
     re_list=first_response.json()
+    print('Done')
     next_page = re_list.get('next')
     response_list = re_list.get('results')
     datageneral, datarelations, placeset  = datareturn(data, response_list)
@@ -168,8 +176,8 @@ occupations_df=pd.DataFrame(dapr)
 occupations_df.head()
 """dataframe with occupations data"""
 # reactivate when server problem is solved!
-places_df=pd.DataFrame(placedata)
-places_df.head()
+# places_df=pd.DataFrame(placedata)
+# places_df.head()
 
 with open('exdataframe.txt', 'w') as f:
       f.write(str(apis_df))
@@ -223,7 +231,7 @@ apis_df = apis_df.applymap(str)
 relations_df = relations_df.applymap(str)
 occupations_df = occupations_df.applymap(str)
 # reactivate when server problem is solved!
-places_df = places_df.applymap(str)
+# places_df = places_df.applymap(str)
 
 g = Graph()
 #Create undirected graph, assigned to g
@@ -358,4 +366,4 @@ exapis = g.serialize(format='turtle')
 
 with open('apisdata.ttl', 'w') as f:
     f.write(str(exapis))
-#"""Write graph data in file.""" 
+#"""Write graph data in file (!!!).""" 
