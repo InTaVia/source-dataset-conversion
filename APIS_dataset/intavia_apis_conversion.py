@@ -18,18 +18,20 @@ dapr= []
 mostprofessions=[]
 placedata=[]
 placecheck=set()
+familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
+#remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
-#first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
+next_page = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
 #first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=30850"
-first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
+#first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
 """initial json url to get apis data, when not testing(!!!): https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=10&offset=0"""
-first_response = requests.get(first_url)
+first_response = requests.get(next_page)
 """get data for this URL from REST API"""
 re_list=first_response.json()
 """get data from REST API in JSON format"""
-previous_page = re_list.get('previous')
+#previous_page = re_list.get('previous')
 """previous json url to get apis data"""
-next_page = re_list.get('next')
+#next_page = re_list.get('next')
 """following REST API url to get apis data"""
 response_list = re_list.get('results')
 """get list with all datasets from the url as dictionaries"""
@@ -145,15 +147,14 @@ def datareturn (d, re):
     # places(pc)
     return d,datarelations, pc
 
-print(next_page)
-#while next_page != "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=900":
+#print(next_page)
+while next_page != "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
-while next_page != None:
+#while next_page != None:
     """iterate over JSON API urls"""
-    first_url=next_page
-    print(next_page)
-    first_response = requests.get(first_url)
+    first_response = requests.get(next_page)
     re_list=first_response.json()
+    response_list = re_list.get('results')
     """get data from REST API in JSON format"""
     next_page = re_list.get('next')
     datageneral, datarelations, placeset = datareturn(data, response_list)
@@ -161,7 +162,6 @@ else:
     """stop iterating over JSON API urls"""
     re_list=first_response.json()
     print('Done')
-    next_page = re_list.get('next')
     response_list = re_list.get('results')
     datageneral, datarelations, placeset  = datareturn(data, response_list)
     
@@ -179,14 +179,7 @@ occupations_df.head()
 # places_df=pd.DataFrame(placedata)
 # places_df.head()
 
-with open('exdataframe.txt', 'w') as f:
-      f.write(str(apis_df))
 
-with open('relationsdataframe.txt', 'w') as f:
-       f.write(str(relations_df))
-
-with open('occdataframe.txt', 'w') as f:
-       f.write(str(occupations_df))
 
 """Import libraries."""
 
@@ -240,6 +233,7 @@ def events(apis_id, edate, crmtype, urltype, roletype):
     """add events according to BioCRM Model"""
     #urltype = 'birthevent'
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef(idmapis+'{}/eventrole/1/'.format(urltype)+row['apis_id'])))
+    #print(row['apis_id'])
     #add eventrole to person proxy
     g.add((URIRef(idmapis+'{}/eventrole/1/'.format(urltype)+row['apis_id']), RDF.type, roletype))
     g.add((roletype, rdfs.subClassOf, idmcore.Event_Role))
@@ -259,8 +253,10 @@ def events(apis_id, edate, crmtype, urltype, roletype):
 
 
 for index, row in apis_df.iterrows():
+    #print(index)
     """Create RDF Triples, according to IDM ontology."""
-    g.add((URIRef(ex+'person/'+str(index)), RDF.type, idmcore.Provided_Person))
+    g.add(((URIRef(ex+'person/'+str(index))), RDF.type, idmcore.Provided_Person))
+    #print(row['apis_id'], index)
     #Person Entity in shared InTaVia named graph
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index))))
     #connect Person Proxy and person in named graph
@@ -288,7 +284,7 @@ for index, row in apis_df.iterrows():
     #define APIS ID as E42 Identifier
     g.add((URIRef(idmapis+'identifier'+row['apis_id']), rdfs.label, (Literal(row['apis_id']))))
     #add label for APIS ID
-    g.add
+    #g.add
     events(row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', idmrole.born_person)
     #add birth event according to APIS
     events(row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', idmrole.deceased_person)
@@ -298,11 +294,8 @@ for index, row in apis_df.iterrows():
     g.add((URIRef(idmrole+row['gender']), RDF.type, idmcore.Gender))
     #define gender as idmcore gender
 
-
 for index, row in relations_df.iterrows():
-    if (row['relationtype_parentid']) == "5412":
-        print(row['relationid'])
-    elif (row['relationtypeurl']) == "https://apis.acdh.oeaw.ac.at/apis/api/vocabularies/personplacerelation/595/":
+    if (row['relationtypeurl']) == "https://apis.acdh.oeaw.ac.at/apis/api/vocabularies/personplacerelation/595/":
         #define serialization for "person born in place relations"
         g.add((URIRef(idmapis+'birthevent/'+row['apis_id']), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
         #add place to birthevent, if available
@@ -323,21 +316,25 @@ for index, row in relations_df.iterrows():
         #add label to APIS Identifier
         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
         #define that individual in APIS named graph and APIS entity are the same
-    # elif (row['relationtypeurl']) == "https://apis.acdh.oeaw.ac.at/apis/api/vocabularies/personpersonrelation/5413/":
-    #     """serializes family relations"""
-    #     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
-    #     #g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmrelations.was_parent_of, (URIRef(idmapis+'familyrelation/'+row['relationid']))))
-    #     #g.add((idmrelations.was_parent_of, RDFS.subClassOf, idmcore.has_family_relation))
-    #     #could also implement subproperties of has_family_relation, bit I don't think it's necessary
-    #     g.add((URIRef(idmapis+'familyrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+'Parentship')))
-    #     #defines that a person has a family relation
-    #     g.add((URIRef(idmrelations+'Parentship'), RDFS.subClassOf, idmcore.Family_Relationship_Role))
-    #     #define exact family role
-    #     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
+    elif (row['relationtypeid']) in familyrelationidlist:
+         """serializes parent/child family relations"""
+         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
+         #print(row['relationurl'], row['relationtypeurl'])
+         relation_id = str(row['relationid'])
+         relationtype_id = str(row['relationtypeid'])
+         relationtype_parentid = str(row['relationtype_parentid'])
+         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+         print(relationtype_parentid)
+         g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+         g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
+         g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
+         #reltype= str(urllib.parse.quote_plus(row['relationtypelabel']))
+         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
+         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index+50000))))
     #     #adds other person-part of the family relation
-    # elif
     else:
-        (row['relationtypeurl'])
+        print(row['relationtypeurl'])
 
 # reactivate when server problem is solved!
 # for index, row in places_df.iterrows():
