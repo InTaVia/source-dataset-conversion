@@ -19,13 +19,14 @@ mostprofessions=[]
 placedata=[]
 placecheck=set()
 familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
+headers = {"accept": "application/json"}
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
-next_page = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
-#first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=30850"
-#first_url = "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=0"
+base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
+next_page = f"{base_url_apis}entities/person/?limit=50&offset=0"
+#next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
 """initial json url to get apis data, when not testing(!!!): https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=10&offset=0"""
-first_response = requests.get(next_page)
+first_response = requests.get(next_page, headers=headers)
 """get data for this URL from REST API"""
 re_list=first_response.json()
 """get data from REST API in JSON format"""
@@ -53,7 +54,7 @@ def professions(id, profy):
 # reactivate when server response problem is solved
 # def places(pc):
 #     for p in pc:
-#         place_response = requests.get(p)
+#         place_response = requests.get(p, headers=headers)
 #         place_response = place_response.json()
 #          #print(place_response['url'])
 #          #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
@@ -109,7 +110,7 @@ def sources(sourcy):
     #get sources for one biography article
     if sourcy != None:
         sourceuri = sourcy['url']
-        source = requests.get(sourceuri)
+        source = requests.get(sourceuri, headers=headers)
         source = source.json()
         pubinfo = source.get('pubinfo')
         return(sourceuri, pubinfo)
@@ -121,7 +122,7 @@ def datareturn (d, re):
         profx = (x.get('profession'))
         professions(apisid, profx)
         personuri = (x.get('url'))
-        person_response = requests.get(personuri)
+        person_response = requests.get(personuri, headers=headers)
         person_response = person_response.json()
         sourcx = (x.get('source'))
         if sourcx != None:
@@ -148,11 +149,11 @@ def datareturn (d, re):
     return d,datarelations, pc
 
 #print(next_page)
-while next_page != "https://apis.acdh.oeaw.ac.at/apis/api/entities/person/?limit=50&offset=100":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
 #while next_page != None:
     """iterate over JSON API urls"""
-    first_response = requests.get(next_page)
+    first_response = requests.get(next_page, headers=headers)
     re_list=first_response.json()
     response_list = re_list.get('results')
     """get data from REST API in JSON format"""
@@ -196,6 +197,8 @@ idmapis=Namespace('https://www.intavia.org/apis/')
 idmbibl=Namespace('https://www.intavia.org/idm-bibl/')
 """Namespace for bibliographic named graph"""
 idmrelations=Namespace('https://www.intavia.org/idm-relations')
+"""Defines namespace for relation ontology."""
+intavia_shared=Namespace('https://www.intavia.org/shared-entities')
 """Defines namespace for relation ontology."""
 ore=Namespace('http://www.openarchives.org/ore/terms/')
 """Defines namespace for schema.org vocabulary."""
@@ -295,7 +298,12 @@ for index, row in apis_df.iterrows():
     #define gender as idmcore gender
 
 for index, row in relations_df.iterrows():
-    if (row['relationtypeurl']) == "https://apis.acdh.oeaw.ac.at/apis/api/vocabularies/personplacerelation/595/":
+    rtype = row['relationtypeurl']
+    relation_id = str(row['relationid'])
+    relationtype_id = str(row['relationtypeid'])
+    relationtype_parentid = str(row['relationtype_parentid'])
+    #print(rtype)
+    if rtype == f"{base_url_apis}vocabularies/personplacerelation/595/":
         #define serialization for "person born in place relations"
         g.add((URIRef(idmapis+'birthevent/'+row['apis_id']), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
         #add place to birthevent, if available
@@ -316,25 +324,36 @@ for index, row in relations_df.iterrows():
         #add label to APIS Identifier
         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
         #define that individual in APIS named graph and APIS entity are the same
-    elif (row['relationtypeid']) in familyrelationidlist:
+    elif relationtype_id in familyrelationidlist:
          """serializes parent/child family relations"""
          g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
-         #print(row['relationurl'], row['relationtypeurl'])
-         relation_id = str(row['relationid'])
-         relationtype_id = str(row['relationtypeid'])
-         relationtype_parentid = str(row['relationtype_parentid'])
-         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-         print(relationtype_parentid)
-         g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
          g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
-         g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
+         #print(row['relationurl'], row['relationtypeurl'])
+         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+         if relationtype_parentid != 'nan':
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+            g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
          #reltype= str(urllib.parse.quote_plus(row['relationtypelabel']))
          g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
          g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
-         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index+50000))))
+         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(intavia_shared+'person/'+str(index+50000))))
     #     #adds other person-part of the family relation
+    elif re.search(r'vocabularies/personinstitutionrelation/.*' , rtype):
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
+        g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+        if relationtype_parentid != 'nan':
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+            g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+        g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+        g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+        g.add((URIRef(idmapis+'group/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
+        g.add((URIRef(idmapis+'group/'+row['relatedentityid']), RDF.type, idmcore.Group))
+        g.add((URIRef(idmapis+'group/'+row['relatedentityid']), owl.sameAs, URIRef(row['relatedentityurl'])))
+        g.add((URIRef(idmapis+'group/'+row['relatedentityid']), crm.P1_is_identified_by, URIRef(idmapis+'groupappellation/'+row['relatedentityid'])))
+        g.add((URIRef(idmapis+'groupappellation/'+row['relatedentityid']), rdfs.label, Literal(row['relatedentitylabel'])))
+        g.add((URIRef(idmapis+'groupappellation/'+row['relatedentityid']), RDF.type, crm.E33_E41_Linguistic_Appellation))
     else:
-        print(row['relationtypeurl'])
+        ("!!!")
 
 # reactivate when server problem is solved!
 # for index, row in places_df.iterrows():
@@ -343,7 +362,7 @@ for index, row in relations_df.iterrows():
 #     #more place details will be added (references, source, place start date, place end date, relations to other places(?))
 
 g.bind('crm', crm)
-g.bind('ex', ex)
+g.bind('intaviashared', intavia_shared)
 g.bind('ore', ore)
 g.bind('edm', edm)
 g.bind('owl', owl)
@@ -359,8 +378,10 @@ g.bind('idmrelations', idmrelations)
 g.bind('owl', owl)
 #Bind namespaces to prefixes for readable output
  
-exapis = g.serialize(format='turtle')   
+exapis = g.serialize(destination='apisdata.ttl', format='turtle')
 
-with open('apisdata.ttl', 'w') as f:
-    f.write(str(exapis))
-#"""Write graph data in file (!!!).""" 
+# exapis = g.serialize(format='turtle')   
+
+# with open('apisdata.ttl', 'w') as f:
+#     f.write(str(exapis))
+# #"""Write graph data in file (!!!).""" 
