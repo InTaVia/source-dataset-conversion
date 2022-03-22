@@ -12,6 +12,103 @@
 # Schema for BiographyNet as CIDOC/BIOC
 #CLASSES
 
+
+# Specific event types (for states)
+
+bgn:birth a crm:E55_Type;
+	rdfs:label "Birth Event" 
+bgn:death a crm:E55_Type;
+	rdfs:label "Death Event" 
+bgn:baptism	 a crm:E55_Type;
+	rdfs:label "Baptism Event" 
+bgn:funeral a crm:E55_Type;
+	rdfs:label "Funeral Event" 
+bgn:marriage a crm:E55_Type;
+	rdfs:label "Marriage Event" 
+
+
+bgn:occupationStateEvent  a crm:E55_Type;
+	rdfs:label "Occupation Event" .
+bgn:educationStateEvent  a crm:E55_Type;
+	rdfs:label "Education Event" .
+bgn:residenceStateEvent a crm:E55_Type;
+	rdfs:label "Residence Event" .
+bgn:floruitStateEvent a crm:E55_Type;
+	rdfs:label "Floruit Event" .
+bgn:faithStateEvent a crm:E55_Type;
+	rdfs:label "Faith Event" .
+bgn:claimtofameStateEvent a crm:E55_Type;
+	rdfs:label "Claim to Fame Event" .
+bgn:categoryStateEvent a crm:E55_Type;
+	rdfs:label "Category Event" .
+	
+# classes for states
+	
+bgn:Residence
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Residence" .
+
+bgn:Education
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Education" .
+bgn:Floruit
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Floruit" .
+bgn:Faith
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Faith" .
+bgn:Claim_to_fame
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Claim to fame" .
+bgn:Category
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Category" .
+	
+# Proprties for states
+bgn:has_category
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_category" ;
+	rdfs:range bgn:Category .
+
+bgn:has_claim_to_fame
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_claim_to_fame" ;
+	rdfs:range bgn:Claim_to_fame .
+
+bgn:has_education
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_education" ;
+	rdfs:range bgn:Education .
+
+bgn:has_faith
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_faith" ;
+	rdfs:range bgn:Faith .
+
+bgn:has_floruit
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_floruit" ;
+	rdfs:range bgn:Floruit .
+
+bgn:has_residence
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_residence" ;
+	rdfs:range bgn:Residence .	
+
+###----	General classes
+	
 bgn:Availability
 	a rdfs:Class ;
 	rdfs:label "Availability" .
@@ -104,10 +201,6 @@ bgn:NotesStmt
 	a rdfs:Class ;
 	rdfs:label "NotesStmt" .
 
-bgn:Occupation
-	a rdfs:Class ;
-	rdfs:subClassOf skos:Concept;
-	rdfs:label "Occupation" .
 
 bgn:Origination
 	a rdfs:Class ;
@@ -139,10 +232,7 @@ bgn:Relation
 	a rdfs:Class ;
 	rdfs:label "Relation" .
 
-bgn:Residence
-	a rdfs:Class ;
-	rdfs:subClassOf skos:Concept;
-	rdfs:label "Residence" .
+
 
 bgn:RevisionDesc
 	a rdfs:Class ;
@@ -243,41 +333,6 @@ bgn:hasPersonDes
 	a rdf:Property ;
 	rdfs:label "hasPersonDes" .
 
-bgn:has_category
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_category" ;
-	rdfs:range bgn:Category .
-
-bgn:has_claim_to_fame
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_claim_to_fame" ;
-	rdfs:range bgn:Claim_to_fame .
-
-bgn:has_education
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_education" ;
-	rdfs:range bgn:Education .
-
-bgn:has_faith
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_faith" ;
-	rdfs:range bgn:Faith .
-
-bgn:has_floruit
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_floruit" ;
-	rdfs:range bgn:Floruit .
-
-bgn:has_residence
-	a rdf:Property ;
-	rdfs:subPropertyOf bioc:bearer_of;
-	rdfs:label "has_residence" ;
-	rdfs:range bgn:Residence .
 
 bgn:head
 	a rdf:Property ;

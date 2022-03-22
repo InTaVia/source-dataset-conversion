@@ -285,12 +285,12 @@ sex_to_gender(Sex,Gender),
 
 
 % NATIONALITY
-%
+% changed to idm rather than bioc
 nationality
 @@
 {S, rdf:type, crm:'E21_Person'}
 ==>
-{S, bioc:has_nationality, bioc:dutch}.
+{S, idm:has_nationality, bioc:dutch}.
 
 % Person names to CIDOC
 % TODO: this needs some refining
@@ -410,7 +410,7 @@ baptismevent
 <=>
 true,
 make_rand_uri(S,['-baptism'],Evt),
-{Evt,crm:'P11_had_participant', S},
+{Evt, crm:'P11_had_participant', S},
 {Evt, rdf:type, crm:'E5_Event'},
 {Evt, crm:'P2_has_type', bgn:baptism},
 {Evt, rdfs:label, Value}, %use Label for now
@@ -530,18 +530,19 @@ occupationstate_event
 <=>
 true,
 literal_to_id(['Occupation-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Occupation'},  % TODO: should be profession?
-	{OURI, skos:prefLabel, Val}, % model as skos?
+	{OURI, rdf:type, bioc:'Occupation'},
+	{OURI, rdfs:label, Val}, % previously prefLabel
 %	{OURI, rdfs:label, Val},
 	{S, bioc:has_occupation, OURI},
-make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-occupationevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	% make_rand_uri(S,['-actorrole'],ARURI), %NO longer needed
+        %{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	%{ARURI, rdf:type, bioc:'Actor_Role'},
+	%{S, bioc:bearer_of,ARURI},
+make_rand_uri(S,['-occupationevent'],Evt), %then make the Event instance
+	{Evt, rdf:type,crm:'E5_Event' },
+	{Evt, crm:'P2_has_type', bgn:occupationStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-occupationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -563,17 +564,16 @@ educationstate_event
 true,
 literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Education'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
+	{OURI, rdfs:label, Val},
 	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
+% make_rand_uri(S,['-actorrole'],ARURI),
+%	{ARURI, bgn:roletype,OURI}, %	{ARURI, rdf:type, bioc:'Actor_Role'},
+%	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-educationevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:educationStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-educationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -593,17 +593,17 @@ residencestate_event
 true,
 literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Residence'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
-	{S, bgn:has_residence, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
+	{OURI, rdfs:label, Val},
+	{S, bgn:has_residence, OURI},
+       %make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
+	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	%{ARURI, rdf:type, bioc:'Actor_Role'},
+	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-residenceevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:residenceStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-residenceevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -625,17 +625,18 @@ floruitstate_event
 true,
 literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Floruit'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
+	{OURI, rdfs:label, Val},
 	{S, bgn:has_floruit, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
+% make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole
+% instance
+	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	%{ARURI, rdf:type, bioc:'Actor_Role'},
+	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-floruitevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:floruitStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-floruitevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -664,17 +665,19 @@ faithstate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Faith'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
+	{OURI, rdfs:label, Val},
 	{S, bgn:has_faith, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
+% make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole
+% instance
+%	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for
+%	this
+%	{ARURI, rdf:type, bioc:'Actor_Role'},
+%	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-faithevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:faithStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-faithevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -729,17 +732,18 @@ claimtofamestate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Claim_to_fame'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
+	{OURI, rdfs:label, Val},
 	{S, bgn:has_claim_to_fame, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-claimtofamerole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{S, bioc:bearer_of,ARURI},
-	{ARURI, rdf:type, bioc:'Actor_Role'},
+% make_rand_uri(S,['-claimtofamerole'],ARURI), %then make the actorrole
+% instance
+	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	%{S, bioc:bearer_of,ARURI},
+	%{ARURI, rdf:type, bioc:'Actor_Role'},
 make_rand_uri(S,['-claimtofameevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:claimtofameStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-claimtofameevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -759,17 +763,18 @@ categorystate_event
 true,
 literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Category'},
-	{OURI, skos:prefLabel, Val}, % model as skos?
-%		{OURI, rdfs:label, Val},
+	{OURI, rdfs:label, Val},
 	{S, bgn:has_category, OURI}, % TODO: fix correct property for this
-make_rand_uri(S,['-categoryrole'],ARURI), %then make the actorrole instance
-	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	{ARURI, rdf:type, bioc:'Actor_Role'},
-	{S, bioc:bearer_of,ARURI},
+% make_rand_uri(S,['-categoryrole'],ARURI), %then make the actorrole
+% instance
+	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
+	%{ARURI, rdf:type, bioc:'Actor_Role'},
+	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-categoryevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E7_Activity'},
+	{Evt, rdf:type,crm:'E5_Event'},
+	{Evt, crm:'P2_has_type', bgn:categoryStateEvent},
 	{Evt, rdfs:label, Val},
-	{Evt, crm:'P11_had_participant',ARURI},
+	{Evt, crm:'P11_had_participant',S},
 make_rand_uri(S,['-categoryevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
