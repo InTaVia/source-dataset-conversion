@@ -3,6 +3,7 @@
 	    delete_bioned/0,
 	    make_rand_uri/2,
 	    make_rand_uri/3,
+	    make_rand_uri_bnode/1,
 	    sex_to_gender/2,
 	    name_list_to_str/3
 	  ]).
@@ -107,11 +108,16 @@ delete_bioned:-
 % UTILITY predicates
 %
 make_rand_uri(InputURI,OutputURI):-
-	random(1,9999999,Rand),
+	random(1,99999999,Rand),
 	atomic_list_concat([InputURI,'-',Rand],OutputURI).
 make_rand_uri(InputURI,List,OutputURI):-
-	random(1,9999999,Rand),
+	random(1,99999999,Rand),
 	atomic_list_concat([InputURI,'-',Rand|List],OutputURI).
+
+make_rand_uri_bnode(OutputURI):-
+	random(1,99999999,Rand),
+	atomic_list_concat(['http://data.biographynet.nl/rdf/','bnode-',Rand],OutputURI).
+
 
 sex_to_gender('1', 'http://ldf.fi/schema/bioc/Male'):-true,!.
 sex_to_gender('2', 'http://ldf.fi/schema/bioc/Female'):-true,!.

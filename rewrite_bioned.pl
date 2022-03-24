@@ -290,7 +290,7 @@ nationality
 @@
 {S, rdf:type, crm:'E21_Person'}
 ==>
-{S, idm:has_nationality, bioc:dutch}.
+{S, bioc:has_nationality, bioc:dutch}.
 
 % Person names to CIDOC
 % TODO: this needs some refining
@@ -543,6 +543,7 @@ make_rand_uri(S,['-occupationevent'],Evt), %then make the Event instance
 	{Evt, crm:'P2_has_type', bgn:occupationStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-occupationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -563,7 +564,7 @@ educationstate_event
 <=>
 true,
 literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Education'},
+	{OURI, rdf:type, bioc:'Education'},
 	{OURI, rdfs:label, Val},
 	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
 % make_rand_uri(S,['-actorrole'],ARURI),
@@ -574,6 +575,7 @@ make_rand_uri(S,['-educationevent'],Evt), %then make the actorroleevent instance
 	{Evt, crm:'P2_has_type', bgn:educationStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-educationevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -604,6 +606,7 @@ make_rand_uri(S,['-residenceevent'],Evt), %then make the actorroleevent instance
 	{Evt, crm:'P2_has_type', bgn:residenceStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-residenceevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -637,6 +640,7 @@ make_rand_uri(S,['-floruitevent'],Evt), %then make the actorroleevent instance
 	{Evt, crm:'P2_has_type', bgn:floruitStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-floruitevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -678,6 +682,7 @@ make_rand_uri(S,['-faithevent'],Evt), %then make the actorroleevent instance
 	{Evt, crm:'P2_has_type', bgn:faithStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-faithevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -744,6 +749,7 @@ make_rand_uri(S,['-claimtofameevent'],Evt), %then make the actorroleevent instan
 	{Evt, crm:'P2_has_type', bgn:claimtofameStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-claimtofameevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -761,7 +767,7 @@ categorystate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
+literal_to_id(['Category-' ,Val], bgn, OURI), % first make the occupation instance
 	{OURI, rdf:type, bgn:'Category'},
 	{OURI, rdfs:label, Val},
 	{S, bgn:has_category, OURI}, % TODO: fix correct property for this
@@ -775,6 +781,7 @@ make_rand_uri(S,['-categoryevent'],Evt), %then make the actorroleevent instance
 	{Evt, crm:'P2_has_type', bgn:categoryStateEvent},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
+	{Evt, bioc:had_participant_in_role, OURI},
 make_rand_uri(S,['-categoryevent_time'],Time), % then make the Event instance
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
@@ -818,7 +825,7 @@ place_appellation
 {OURI, rdf:type, crm:'E53_Place'},
 {OURI, rdfs:label, Place}
 ==>
-literal_to_id(['place-appelation-' ,Place], bgn, APURI),
+literal_to_id(['place-appellation-' ,Place], bgn, APURI),
 {OURI, crm:'P1_is_identified_by', APURI},
 {APURI, rdf:type, crm:'E41_Appellation'},
 {APURI, rdfs:label, Place}.
@@ -859,6 +866,11 @@ not((   rdf(T,P,_),
 P\= 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type')),
 true.
 
+clean_bioport
+@@
+{_,rdf:type,bgn:'Bioport'}
+<=>
+true.
 
 clean_sex
 @@
@@ -866,13 +878,23 @@ clean_sex
 <=>
 true.
 
-
 clean_state
 @@
 {S,rdf:type,bgn:'State'},
 {S,bgn:idno,_}
 <=>
 true.
+
+%TODO: map to idm
+bnodes_to_randids
+@@
+{S,_,_}\
+{S}
+<=>
+rdf_is_bnode(S),
+make_rand_uri_bnode(URI),
+{URI}.
+
 
 % OLD TODO
 

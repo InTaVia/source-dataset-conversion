@@ -13,18 +13,22 @@
 #CLASSES
 
 
+# 
+bioc:dutch a bioc:Nationality;
+	rdfs:label "Dutch".
+
 # Specific event types (for states)
 
 bgn:birth a crm:E55_Type;
-	rdfs:label "Birth Event" 
+	rdfs:label "Birth Event" .
 bgn:death a crm:E55_Type;
-	rdfs:label "Death Event" 
+	rdfs:label "Death Event" .
 bgn:baptism	 a crm:E55_Type;
-	rdfs:label "Baptism Event" 
+	rdfs:label "Baptism Event". 
 bgn:funeral a crm:E55_Type;
-	rdfs:label "Funeral Event" 
+	rdfs:label "Funeral Event" .
 bgn:marriage a crm:E55_Type;
-	rdfs:label "Marriage Event" 
+	rdfs:label "Marriage Event" .
 
 
 bgn:occupationStateEvent  a crm:E55_Type;
@@ -49,10 +53,6 @@ bgn:Residence
 	rdfs:subClassOf bioc:Actor_Role;
 	rdfs:label "Residence" .
 
-bgn:Education
-	a rdfs:Class ;
-	rdfs:subClassOf bioc:Actor_Role;
-	rdfs:label "Education" .
 bgn:Floruit
 	a rdfs:Class ;
 	rdfs:subClassOf bioc:Actor_Role;
