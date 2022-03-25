@@ -6,6 +6,9 @@ Conversion is done using the XMLRDF library (https://semanticweb.cs.vu.nl/xmlrdf
 
 ## Content
 A description of the most important files: 
+
+### bio
+- bionet_xml_preprocess_batch bactch script to convert biografisch portaal XML files into grouped XML files with necessary identifier  information 
 - run_bioned.pl: loads a) necessary prolog predicates for loading and saving the relevant files and b) several auxiliary predicates used in the conversion
 - rewrite_bioned.pl: the rewrite script, consisting of declarative rewrite rules as defined by the XMLRDF library
 - map_schema.ttl: RDF-turtle file defining several predicates used in the initial conversion step (to be loaded before initial conversion)
@@ -27,3 +30,8 @@ A description of the most important files:
 
 Steps 4-8 load the XML testfile, converts it to crude RDF using the map_schema file, executes all the rewrite-rules and loads the schema file.
 
+For full conversion: 
+1. Get XML file from biografisch portaal (not provided here)
+2. In folder ./data/xml/full_preprocessed
+3. Run bionet_xml_preprocess_batch script
+4. In run_bioned.pl: adjust conversion source to the above folder
