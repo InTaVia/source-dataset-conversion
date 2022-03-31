@@ -14,6 +14,7 @@ A description of the most important files:
 - map_schema.ttl: RDF-turtle file defining several predicates used in the initial conversion step (to be loaded before initial conversion)
 - ./data/rdf/bgn_schema.ttl: RDF-turtle file with biographynet-specific triples defining classes and properties (to be loaded after initial conversion)
 - ./data/xml/test/AnnaTest.xml: synthetic biografisch portaal XML document for testing purposes
+- ./data/rdf/AnnaTest.ttl: result of the conversion of the above file
 
 
 ## Conversion steps
