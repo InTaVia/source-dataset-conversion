@@ -1,0 +1,831 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix  ore: <http://www.openarchives.org/ore/terms/> .
+@prefix  idm: <http://www.intavia.eu/idm-core/> .
+@prefix  crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
+@prefix  bgn: <http://data.biographynet.nl/rdf/> .
+
+# Named toplevel resources (159)
+
+bgn:BioDes-99999999_01
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasBioParts bgn:BioParts-99999999_01 ;
+	bgn:hasFileDes bgn:FileDes-99999999_01 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_01 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_01" .
+
+bgn:BioDes-99999999_02
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasFileDes bgn:FileDes-99999999_02 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_02 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_02" .
+
+bgn:BioDes-99999999_03
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasFileDes bgn:FileDes-99999999_03 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_03 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_03" .
+
+bgn:BioDes-99999999_04
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasBioParts bgn:BioParts-99999999_04 ;
+	bgn:hasFileDes bgn:FileDes-99999999_04 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_04 ;
+	bgn:version "1.0" ;
+	bgn:xmlFileID "99999999_04" .
+
+bgn:BioDes-99999999_05
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasBioParts bgn:BioParts-99999999_05 ;
+	bgn:hasFileDes bgn:FileDes-99999999_05 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_05 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_05" .
+
+bgn:BioDes-99999999_06
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasBioParts bgn:BioParts-99999999_06 ;
+	bgn:hasFileDes bgn:FileDes-99999999_06 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_06 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_06" .
+
+bgn:BioDes-99999999_07
+	a bgn:BioDes ,
+	  ore:Aggregation ;
+	bgn:aggregatedPerson bgn:Person-99999999 ;
+	bgn:hasBioParts bgn:BioParts-99999999_07 ;
+	bgn:hasFileDes bgn:FileDes-99999999_07 ;
+	bgn:hasPersonDes bgn:PersonDes-99999999_07 ;
+	bgn:version "1.0.1" ;
+	bgn:xmlFileID "99999999_07" .
+
+bgn:BioParts-99999999_01
+	a bgn:BioParts ;
+	bgn:snippet bgn:bnode-7216246 ,
+		    bgn:bnode-93272277 .
+
+bgn:BioParts-99999999_04
+	a bgn:BioParts ;
+	bgn:hasGraphic bgn:bnode-38758254 ,
+		       bgn:bnode-85654632 ;
+	bgn:text "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet\"></head><body topmargin=\"15\" rightmargin=\"10\" leftmargin=\"10\" bottommargin=\"15\"><p><strong>Testperson, Anna</strong> (geb. Hilversum ca. 1699 – begr. Haarlem 5-12-1739), schilderes van stillevens en  tekenares. Dochter van Pieter Testperson Volgens Weyerman maakte Testperson zich vooral zorgen om zijn dochters...Lorem ipsum etc. </p></span></body></html>" .
+
+bgn:BioParts-99999999_05
+	a bgn:BioParts ;
+	bgn:text "Schilder, tekenaar. Geboren: 1660, Hilversum. Gestorven: 5 december 1739, Velsen (Noord-Holland). Plaats en periode van werkzaamheid: Haarlem, van 1708 tot 1708 Verhuisde officieel van Velsen naar Haarlem in februari 1708) " .
+
+bgn:BioParts-99999999_06
+	a bgn:BioParts ;
+	bgn:text "Testperson (Anna), op eene na de oudste der 99 dochters van Matthias Testperson, schilderde ...Lorem ipsum." .
+
+bgn:BioParts-99999999_07
+	a bgn:BioParts ;
+	bgn:text "Testperson geeneon Lorem ipsum verdienstige Schilderes in Diertjes, ... Ital" .
+
+bgn:Category-Beeldende_kunsten_vormgeving
+	a bgn:Category ;
+	rdfs:label "Beeldende kunsten & vormgeving" .
+
+bgn:Education-Nederlands_recht_Katholieke_Universiteit_Nijmegen
+	a bioc:Education ;
+	rdfs:label "Nederlands recht, Katholieke Universiteit Nijmegen" .
+
+bgn:Education-gymnasium
+	a bioc:Education ;
+	rdfs:label "gymnasium" .
+
+bgn:Faith-Rooms-Katholiek
+	a bgn:Faith ;
+	rdfs:label "Rooms-Katholiek" .
+
+bgn:FileDes-99999999_01
+	a bgn:FileDes .
+
+bgn:FileDes-99999999_02
+	a bgn:FileDes .
+
+bgn:FileDes-99999999_03
+	a bgn:FileDes .
+
+bgn:FileDes-99999999_04
+	a bgn:FileDes ;
+	bgn:author "Testauthor, Beatrice" ;
+	bgn:date bgn:bnode-83281526 ;
+	bgn:publisher bgn:bnode-72547809 ;
+	bgn:ref bgn:bnode-38627172 ;
+	bgn:revisionDesc bgn:bnode-59437993 ;
+	bgn:title "Testperson,  Anna (ca. 1699-1739)" .
+
+bgn:FileDes-99999999_05
+	a bgn:FileDes ;
+	bgn:publisher bgn:bnode-49163342 ;
+	bgn:ref bgn:bnode-85957121 .
+
+bgn:FileDes-99999999_06
+	a bgn:FileDes ;
+	bgn:publisher bgn:bnode-30621792 ;
+	bgn:ref bgn:bnode-60987726 .
+
+bgn:FileDes-99999999_07
+	a bgn:FileDes ;
+	bgn:publisher bgn:bnode-61986968 ;
+	bgn:ref bgn:bnode-2905304 .
+
+bgn:Occupation-schilder
+	a bioc:Occupation ;
+	rdfs:label "schilder" .
+
+bgn:Occupation-tekenaar
+	a bioc:Occupation ;
+	rdfs:label "tekenaar" .
+
+bgn:Person-99999999
+	a idm:Provided_Person ;
+	bgn:personID "99999999" .
+
+bgn:PersonDes-99999999_01
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:has_category bgn:Category-Beeldende_kunsten_vormgeving ;
+	bgn:has_education bgn:Education-Nederlands_recht_Katholieke_Universiteit_Nijmegen ,
+			  bgn:Education-gymnasium ;
+	bgn:has_faith bgn:Faith-Rooms-Katholiek ;
+	bgn:has_residence bgn:Residence-Zevenaar ,
+			  bgn:Residence-s-Gravenhage ;
+	bioc:has_gender bioc:Female ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_01-1789222-id ,
+					 bgn:PersonDes-99999999_01-2081184-id ,
+					 bgn:PersonDes-99999999_01-2224963-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_01 .
+
+bgn:PersonDes-99999999_01-1789222-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_01-2081184-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "bioport" .
+
+bgn:PersonDes-99999999_01-2103254-death-time
+	a crm:E52_Time-Span ;
+	rdfs:label "1739" .
+
+bgn:PersonDes-99999999_01-2224963-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_01-2239025-educationevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Education-gymnasium ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:educationStateEvent ;
+	rdfs:label "gymnasium" .
+
+bgn:PersonDes-99999999_01-2785517-funeral-time
+	a crm:E52_Time-Span ;
+	rdfs:label "1739-12-05" .
+
+bgn:PersonDes-99999999_01-3337232-faithevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Faith-Rooms-Katholiek ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:faithStateEvent ;
+	rdfs:label "Rooms-Katholiek" .
+
+bgn:PersonDes-99999999_01-3907865-baptism
+	a crm:E5_Event ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:baptism ;
+	crm:P7_took_place_at bgn:place-_ .
+
+bgn:PersonDes-99999999_01-4142430-marriage-time
+	a crm:E52_Time-Span ;
+	rdfs:label "1719-12-07" .
+
+bgn:PersonDes-99999999_01-4398978-educationevent_time
+	a crm:E52_Time-Span ;
+	crm:P82b_end_of_the_end "1710-03" .
+
+bgn:PersonDes-99999999_01-5317231-birth-time
+	a crm:E52_Time-Span ;
+	bgn:notAfter "1665" ;
+	bgn:notBefore "1655" ;
+	rdfs:label "ca. 1662" .
+
+bgn:PersonDes-99999999_01-5498642-residenceevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Residence-Zevenaar ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:residenceStateEvent ;
+	rdfs:label "Zevenaar" .
+
+bgn:PersonDes-99999999_01-6172funeral
+	a crm:E5_Event ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:funeral ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-2785517-funeral-time ;
+	crm:P7_took_place_at bgn:place-Haarlem .
+
+bgn:PersonDes-99999999_01-6457993-birth
+	a crm:E67_Birth ;
+	crm:P2_has_type bgn:birth ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-5317231-birth-time ;
+	crm:P7_took_place_at bgn:place-Hilversum ;
+	crm:P98_brought_into_life bgn:PersonDes-99999999_01 .
+
+bgn:PersonDes-99999999_01-67794-residenceevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Residence-s-Gravenhage ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:residenceStateEvent ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-9133558-residenceevent_time ;
+	rdfs:label "'s-Gravenhage" .
+
+bgn:PersonDes-99999999_01-7800406-educationevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Education-Nederlands_recht_Katholieke_Universiteit_Nijmegen ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:educationStateEvent ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-4398978-educationevent_time ;
+	rdfs:label "Nederlands recht, Katholieke Universiteit Nijmegen" .
+
+bgn:PersonDes-99999999_01-7997452marriage
+	a crm:E5_Event ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:marriage ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-4142430-marriage-time ;
+	rdfs:label "gehuwd te 's-Gravenhage" .
+
+bgn:PersonDes-99999999_01-8022824-categoryevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Category-Beeldende_kunsten_vormgeving ;
+	crm:P11_had_participant bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:categoryStateEvent ;
+	rdfs:label "Beeldende kunsten & vormgeving" .
+
+bgn:PersonDes-99999999_01-8922258-death
+	a crm:E5_Event ;
+	crm:P100_was_death_of bgn:PersonDes-99999999_01 ;
+	crm:P2_has_type bgn:death ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_01-2103254-death-time ;
+	crm:P7_took_place_at bgn:place-_ .
+
+bgn:PersonDes-99999999_01-9133558-residenceevent_time
+	a crm:E52_Time-Span ;
+	crm:P82a_begin_of_the_begin "1716" .
+
+bgn:PersonDes-99999999_02
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:has_category bgn:Category-Beeldende_kunsten_vormgeving ;
+	bgn:has_residence bgn:Residence-Den_Haag ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_02-4685517-id ,
+					 bgn:PersonDes-99999999_02-4992526-id ,
+					 bgn:PersonDes-99999999_02-7315318-id ,
+					 bgn:PersonDes-99999999_02-8214168-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_02 .
+
+bgn:PersonDes-99999999_02-2398161-categoryevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Category-Beeldende_kunsten_vormgeving ;
+	crm:P11_had_participant bgn:PersonDes-99999999_02 ;
+	crm:P2_has_type bgn:categoryStateEvent ;
+	rdfs:label "Beeldende kunsten & vormgeving" .
+
+bgn:PersonDes-99999999_02-4685517-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "99999923" .
+
+bgn:PersonDes-99999999_02-4992526-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "bioport" .
+
+bgn:PersonDes-99999999_02-7041282-residenceevent_time
+	a crm:E52_Time-Span ;
+	crm:P82a_begin_of_the_begin "1716" ;
+	crm:P82b_end_of_the_end "1719" .
+
+bgn:PersonDes-99999999_02-7315318-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999923" .
+
+bgn:PersonDes-99999999_02-8214168-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_02-8721176-residenceevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Residence-Den_Haag ;
+	crm:P11_had_participant bgn:PersonDes-99999999_02 ;
+	crm:P2_has_type bgn:residenceStateEvent ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_02-7041282-residenceevent_time ;
+	rdfs:label "Den Haag" .
+
+bgn:PersonDes-99999999_03
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:has_category bgn:Category-Beeldende_kunsten_vormgeving ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_03-2410088-id ,
+					 bgn:PersonDes-99999999_03-3614974-id ,
+					 bgn:PersonDes-99999999_03-804689-id ,
+					 bgn:PersonDes-99999999_03-9193633-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_03 .
+
+bgn:PersonDes-99999999_03-2410088-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_03-3614974-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "99999945" .
+
+bgn:PersonDes-99999999_03-7566760-categoryevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Category-Beeldende_kunsten_vormgeving ;
+	crm:P11_had_participant bgn:PersonDes-99999999_03 ;
+	crm:P2_has_type bgn:categoryStateEvent ;
+	rdfs:label "Beeldende kunsten & vormgeving" .
+
+bgn:PersonDes-99999999_03-804689-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "bioport" .
+
+bgn:PersonDes-99999999_03-9193633-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999945" .
+
+bgn:PersonDes-99999999_04
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:persName bgn:bnode-94858530 ,
+		     "Dalen, Anna van" ;
+	bioc:has_gender bioc:Female ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_04-5492806-id ,
+					 bgn:PersonDes-99999999_04-8792693-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_04 .
+
+bgn:PersonDes-99999999_04-2751910-death
+	a crm:E5_Event ;
+	crm:P100_was_death_of bgn:PersonDes-99999999_04 ;
+	crm:P2_has_type bgn:death ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_04-3016902-death-time .
+
+bgn:PersonDes-99999999_04-3016902-death-time
+	a crm:E52_Time-Span ;
+	rdfs:label "1739" .
+
+bgn:PersonDes-99999999_04-5268032-birth-time
+	a crm:E52_Time-Span ;
+	rdfs:label "1699" .
+
+bgn:PersonDes-99999999_04-5492806-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "AnnaTest" .
+
+bgn:PersonDes-99999999_04-8792693-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "dvn" .
+
+bgn:PersonDes-99999999_04-8983028-birth
+	a crm:E67_Birth ;
+	crm:P2_has_type bgn:birth ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_04-5268032-birth-time ;
+	crm:P98_brought_into_life bgn:PersonDes-99999999_04 ;
+	rdfs:label "ca. 1699" .
+
+bgn:PersonDes-99999999_05
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:persName "Testperson, Anna" ;
+	bioc:has_gender bioc:Female ;
+	bioc:has_nationality bioc:dutch ;
+	bioc:has_occupation bgn:Occupation-schilder ,
+			    bgn:Occupation-tekenaar ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_05-34221-id ,
+					 bgn:PersonDes-99999999_05-4001966-id ,
+					 bgn:PersonDes-99999999_05-719412-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_05 .
+
+bgn:PersonDes-99999999_05-1859256-death-time
+	a crm:E52_Time-Span ;
+	bgn:notAfter "1739-12-05" ;
+	bgn:notBefore "1739-11" .
+
+bgn:PersonDes-99999999_05-34221-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "rkdartists" .
+
+bgn:PersonDes-99999999_05-3525625-occupationevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Occupation-tekenaar ;
+	crm:P11_had_participant bgn:PersonDes-99999999_05 ;
+	crm:P2_has_type bgn:occupationStateEvent ;
+	rdfs:label "tekenaar" .
+
+bgn:PersonDes-99999999_05-4001966-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "47698" .
+
+bgn:PersonDes-99999999_05-7171431-death
+	a crm:E5_Event ;
+	crm:P100_was_death_of bgn:PersonDes-99999999_05 ;
+	crm:P2_has_type bgn:death ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_05-1859256-death-time ;
+	crm:P7_took_place_at bgn:place-Velsen_Noord-Holland .
+
+bgn:PersonDes-99999999_05-719412-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_05-7468071-birth-time
+	a crm:E52_Time-Span ;
+	bgn:notAfter "1660" ;
+	bgn:notBefore "1659" .
+
+bgn:PersonDes-99999999_05-8505133-occupationevent
+	a crm:E5_Event ;
+	bioc:had_participant_in_role bgn:Occupation-schilder ;
+	crm:P11_had_participant bgn:PersonDes-99999999_05 ;
+	crm:P2_has_type bgn:occupationStateEvent ;
+	rdfs:label "schilder" .
+
+bgn:PersonDes-99999999_05-9698880-birth
+	a crm:E67_Birth ;
+	crm:P2_has_type bgn:birth ;
+	crm:P4_has_time-span bgn:PersonDes-99999999_05-7468071-birth-time ;
+	crm:P7_took_place_at bgn:place-Hilversum ;
+	crm:P98_brought_into_life bgn:PersonDes-99999999_05 .
+
+bgn:PersonDes-99999999_06
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:persName bgn:bnode-75596970 ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_06-1067357-id ,
+					 bgn:PersonDes-99999999_06-417214-id ,
+					 bgn:PersonDes-99999999_06-5047260-id ,
+					 bgn:PersonDes-99999999_06-6718025-id ,
+					 bgn:PersonDes-99999999_06-7485098-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_06 .
+
+bgn:PersonDes-99999999_06-1067357-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_06-417214-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "vdaa" .
+
+bgn:PersonDes-99999999_06-5047260-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "9996969" .
+
+bgn:PersonDes-99999999_06-6718025-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999443" .
+
+bgn:PersonDes-99999999_06-7485098-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "dbnl_id" ;
+	rdfs:label "with009" .
+
+bgn:PersonDes-99999999_07
+	a crm:E21_Person ,
+	  idm:Person_Proxy ;
+	bgn:persName "Testperson, Anna" ;
+	bioc:has_nationality bioc:dutch ;
+	crm:P48_has_preferred_identifier bgn:PersonDes-99999999_07-2511709-id ,
+					 bgn:PersonDes-99999999_07-2871172-id ,
+					 bgn:PersonDes-99999999_07-8102093-id ,
+					 bgn:PersonDes-99999999_07-9054293-id ;
+	idm:person_proxy_for bgn:Person-99999999 ;
+	ore:proxyIn bgn:BioDes-99999999_07 .
+
+bgn:PersonDes-99999999_07-2511709-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999999" .
+
+bgn:PersonDes-99999999_07-2871172-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "source" ;
+	rdfs:label "weyerman" .
+
+bgn:PersonDes-99999999_07-8102093-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "bioport" ;
+	rdfs:label "99999945" .
+
+bgn:PersonDes-99999999_07-9054293-id
+	a crm:E42_Identifier ;
+	crm:P2_has_type "id" ;
+	rdfs:label "99999.xml" .
+
+bgn:Residence-Den_Haag
+	a bgn:Residence ;
+	rdfs:label "Den Haag" .
+
+bgn:Residence-Zevenaar
+	a bgn:Residence ;
+	rdfs:label "Zevenaar" .
+
+bgn:Residence-s-Gravenhage
+	a bgn:Residence ;
+	rdfs:label "'s-Gravenhage" .
+
+bgn:bnode-10757742
+	a bgn:Idno .
+
+bgn:bnode-11279783
+	a bgn:Idno .
+
+bgn:bnode-11685789
+	a bgn:Idno .
+
+bgn:bnode-12613247
+	a bgn:Name ;
+	bgn:type "geslachtsnaam" ;
+	rdf:value "Testperson" .
+
+bgn:bnode-13689980
+	a bgn:Idno .
+
+bgn:bnode-17037462
+	a bgn:Idno .
+
+bgn:bnode-17698058
+	a bgn:Idno .
+
+bgn:bnode-22226702
+	a bgn:Idno .
+
+bgn:bnode-24139504
+	a bgn:Idno .
+
+bgn:bnode-27711829
+	a bgn:Idno .
+
+bgn:bnode-2905304
+	a bgn:Ref ;
+	bgn:target "http://digbijzcoll.library.uu.nl/lees_gfx.php?lang=nl&W=Off&BoekID=39&PageOrder=245.00&style=fmw" .
+
+bgn:bnode-30621792
+	a bgn:Publisher ;
+	bgn:name "Van der Aa (Instituut voor Nederlandse Geschiedenis)" ;
+	bgn:ref bgn:bnode-44177728 .
+
+bgn:bnode-33134075
+	a bgn:Idno .
+
+bgn:bnode-36500393
+	a bgn:Idno .
+
+bgn:bnode-38627172
+	a bgn:Ref ;
+	bgn:target "http://example.org/exampleauthor" .
+
+bgn:bnode-38758254
+	a bgn:Graphic ;
+	bgn:url "http://resources.huygens.knaw.nl/vrouwenlexicon/plaatjes/Testperson.jpg" .
+
+bgn:bnode-41697291
+	a bgn:Idno .
+
+bgn:bnode-44177728
+	a bgn:Ref ;
+	bgn:target "http://www.inghist.nl/retroboeken/vdaa" .
+
+bgn:bnode-45923766
+	a bgn:Idno .
+
+bgn:bnode-48196232
+	a bgn:Idno .
+
+bgn:bnode-48563432
+	a bgn:Idno .
+
+bgn:bnode-49163342
+	a bgn:Publisher ;
+	bgn:name "Rijksbureau voor Kunsthistorische Documentatie" ;
+	bgn:ref bgn:bnode-62529528 .
+
+bgn:bnode-50725737
+	a bgn:Idno .
+
+bgn:bnode-54113845
+	a bgn:State .
+
+bgn:bnode-57110269
+	a bgn:State .
+
+bgn:bnode-58893635
+	a bgn:Ref ;
+	bgn:target "http://resources.huygens.knaw.nl/vrouwenlexicon" .
+
+bgn:bnode-59437993
+	a bgn:RevisionDesc ;
+	bgn:changed bgn:bnode-9384578 .
+
+bgn:bnode-59720662
+	a bgn:Idno .
+
+bgn:bnode-60987726
+	a bgn:Ref ;
+	bgn:target "http://www.example.org/page_number=344" .
+
+bgn:bnode-61986968
+	a bgn:Publisher ;
+	bgn:name "XXX" ;
+	bgn:ref bgn:bnode-79647832 .
+
+bgn:bnode-62529528
+	a bgn:Ref ;
+	bgn:target "http://www.rkd.nl/" .
+
+bgn:bnode-6411604
+	a bgn:Idno .
+
+bgn:bnode-64757957
+	a bgn:Name ;
+	bgn:type "voornaam" ;
+	rdf:value "Anna" .
+
+bgn:bnode-65698778
+	a bgn:State .
+
+bgn:bnode-69593167
+	a bgn:Idno .
+
+bgn:bnode-7216246
+	a bgn:Snippet ;
+	bgn:sourceId "vdaa/w0739" .
+
+bgn:bnode-72458796
+	a bgn:Idno .
+
+bgn:bnode-72547809
+	a bgn:Publisher ;
+	bgn:name "Digitaal Vrouwenlexicon van Nederland" ;
+	bgn:ref bgn:bnode-58893635 .
+
+bgn:bnode-74871024
+	a bgn:State .
+
+bgn:bnode-75596970
+	a bgn:PersName ;
+	bgn:name bgn:bnode-12613247 ;
+	rdf:value "Anna " .
+
+bgn:bnode-76146777
+	a bgn:State .
+
+bgn:bnode-76765367
+	a bgn:Idno .
+
+bgn:bnode-78232393
+	a bgn:Idno .
+
+bgn:bnode-79647832
+	a bgn:Ref ;
+	bgn:target "http://digbijzcoll.library.uu.nl" .
+
+bgn:bnode-83281526
+	a bgn:Date ;
+	bgn:when "2010-04-22" .
+
+bgn:bnode-83857461
+	a bgn:Idno .
+
+bgn:bnode-85654632
+	a bgn:Graphic ;
+	bgn:url "http://resources.huygens.knaw.nl/vrouwenlexicon/plaatjes/382AnnaTestperson.jpg" .
+
+bgn:bnode-85957121
+	a bgn:Ref ;
+	bgn:target "http://www.exmaple.org/rkd/someuri" .
+
+bgn:bnode-86314201
+	a bgn:State .
+
+bgn:bnode-90625394
+	a bgn:State .
+
+bgn:bnode-92107564
+	bgn:biodes bgn:BioDes-99999999_01 ,
+		   bgn:BioDes-99999999_02 ,
+		   bgn:BioDes-99999999_03 ,
+		   bgn:BioDes-99999999_04 ,
+		   bgn:BioDes-99999999_05 ,
+		   bgn:BioDes-99999999_06 ,
+		   bgn:BioDes-99999999_07 .
+
+bgn:bnode-9296878
+	a bgn:Idno .
+
+bgn:bnode-93272277
+	a bgn:Snippet ;
+	bgn:sourceId "dvn/TestpersonAnna" .
+
+bgn:bnode-9384578
+	a bgn:Changed ;
+	bgn:when "2016-04-27" .
+
+bgn:bnode-94858530
+	a bgn:PersName ;
+	bgn:name bgn:bnode-64757957 ,
+		 bgn:bnode-9676967 .
+
+bgn:bnode-9676967
+	a bgn:Name ;
+	bgn:type "geslachtsnaam" ;
+	rdf:value "Testperson" .
+
+bgn:bnode-98274387
+	a bgn:Idno .
+
+bgn:bnode-98453927
+	a bgn:State .
+
+bgn:place-Haarlem
+	a crm:E53_Place ;
+	crm:P1_is_identified_by bgn:place-appellation-Haarlem ;
+	rdfs:label "Haarlem" .
+
+bgn:place-Hilversum
+	a crm:E53_Place ;
+	crm:P1_is_identified_by bgn:place-appellation-Hilversum ;
+	rdfs:label "Hilversum" .
+
+bgn:place-Velsen_Noord-Holland
+	a crm:E53_Place ;
+	crm:P1_is_identified_by bgn:place-appellation-Velsen_Noord-Holland ;
+	rdfs:label "Velsen (Noord-Holland)" .
+
+bgn:place-_
+	a crm:E53_Place ;
+	crm:P1_is_identified_by bgn:place-appellation-_ .
+
+bgn:place-appellation-Haarlem
+	a crm:E41_Appellation ;
+	rdfs:label "Haarlem" .
+
+bgn:place-appellation-Hilversum
+	a crm:E41_Appellation ;
+	rdfs:label "Hilversum" .
+
+bgn:place-appellation-Velsen_Noord-Holland
+	a crm:E41_Appellation ;
+	rdfs:label "Velsen (Noord-Holland)" .
+
+bgn:place-appellation-_
+	a crm:E41_Appellation .
+
+bioc:Female
+	a bioc:Gender .
