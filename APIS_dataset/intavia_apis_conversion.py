@@ -131,9 +131,10 @@ def relations(person):
         for d in da:
             if d['relatedentitytype']=="Place":
                 placecheck.add(d['relatedentityurl'])
+        print('relation done')
         return(da, placecheck)
 
-def sources(sourcy):
+""" def sources(sourcy):
     #get sources for one biography article
     if sourcy != None:
         sourceuri = sourcy['url']
@@ -141,10 +142,11 @@ def sources(sourcy):
         source = source.json()
         pubinfo = source.get('pubinfo')
         #print(sourceuri, pubinfo)
-        return(sourceuri, pubinfo)
+        return(sourceuri, pubinfo) """
 
 def datareturn (d, re):
     for n in range(len(re)):
+        print('Person')
         x = re[n]
         apisid = x.get('id')
         profx = (x.get('profession'))
@@ -152,12 +154,12 @@ def datareturn (d, re):
         personuri = (x.get('url'))
         person_response = requests.get(personuri, headers=headers)
         person_response = person_response.json()
-        sourcx = (x.get('source'))
-        if sourcx != None:
-            sourceuri, source_pubinfo = sources(sourcx)
-        else:
-            sourceuri = None
-            source_pubinfo = None
+        # sourcx = (x.get('source'))
+        # if sourcx != None:
+        #     sourceuri, source_pubinfo = sources(sourcx)
+        # else:
+        #     sourceuri = None
+        #     source_pubinfo = None
         if person_response != None:
             datarelations, pc = relations(person_response)
         d.append({
@@ -165,8 +167,8 @@ def datareturn (d, re):
                 'name':x.get('name'),
                 'surname':x.get('first_name'),
                 'url':x.get('url'),
-                'sourceuri':sourceuri,
-                'publication_info':source_pubinfo,
+                #'sourceuri':sourceuri,
+                #'publication_info':source_pubinfo,
                 'references':x.get('references'),
                 'bdate':x.get('start_date'),
                 'ddate':x.get('end_date'),
@@ -176,7 +178,7 @@ def datareturn (d, re):
     # places(pc)
     return d,datarelations, pc
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=400":
 #define the point when iterating stops (for test serialization)
 #while next_page != None:
     """iterate over JSON API urls"""
@@ -189,15 +191,15 @@ while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 else:
     """stop iterating over JSON API urls"""
     re_list=first_response.json()
-    print('Done')
     response_list = re_list.get('results')
     datageneral, datarelations, placeset  = datareturn(data, response_list)
 
-# while next_page != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+
+#while next_page != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
-#     #while next_page != None:
 while next_page_institution != None:
+    print('Institution page')
     """iterate over JSON API urls (institutions)"""
     first_response_institution = requests.get(next_page_institution, headers=headers)
     re_list_institution=first_response_institution.json()
@@ -282,25 +284,29 @@ institutions_df = institutions_df.applymap(str)
 g = Graph()
 #Create undirected graph, assigned to g
 
-def events(apis_id, edate, crmtype, urltype, roletype):
+def events(apis_id, edate, crmtype, urltype, roletype, relationlabel):
     """add events according to BioCRM Model"""
     #urltype = 'birthevent'
-    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef(idmapis+'{}/eventrole/1/'.format(urltype)+row['apis_id'])))
+    #print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
+    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])))
     #print(row['apis_id'])
     #add eventrole to person proxy
-    g.add((URIRef(idmapis+'{}/eventrole/1/'.format(urltype)+row['apis_id']), RDF.type, roletype))
-    g.add((roletype, rdfs.subClassOf, idmcore.Event_Role))
+    g.add(((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])), RDF.type, idmrole.roletype))
+    g.add((idmrole.roletype, rdfs.subClassOf, idmcore.Event_Role))
     #suggestion to add specific event role
-    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), idmcore.had_participant_in_role, (URIRef(idmapis+urltype+'/eventrole/1/'+row['apis_id']))))
+    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), idmcore.had_participant_in_role, URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])))
     #connect event and event role
     g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDF.type, crmtype))
     #define crm classification
-    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), crm.P4_has_time_span, URIRef(idmapis+urltype+'/timespan/'+row['apis_id'])))
-    #add time-sspan to event
-    g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82a_begin_of_the_begin, (Literal(edate+'T00:00:00'))))
-    #add begin of time-span
-    g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82b_end_of_the_end, (Literal(edate+'T23:59:59'))))
-    #add end of time-span
+    g.add((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id']), RDFS.label, idmrole.roletype))
+    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDFS.label, Literal(relationlabel)))
+    if edate != "None":
+        g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), crm.P4_has_time_span, URIRef(idmapis+urltype+'/timespan/'+row['apis_id'])))
+        #add time-sspan to event
+        g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82a_begin_of_the_begin, (Literal(edate+'T00:00:00'))))
+        #add begin of time-span
+        g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82b_end_of_the_end, (Literal(edate+'T23:59:59'))))
+        #add end of time-span
     return g
 
 
@@ -338,20 +344,20 @@ for index, row in apis_df.iterrows():
     g.add((URIRef(idmapis+'identifier'+row['apis_id']), rdfs.label, (Literal(row['apis_id']))))
     #add label for APIS ID
     #g.add
-    events(row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', idmrole.born_person)
+    events(row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', Literal('born_person'), (Literal("Birth of "+row['surname']+'  '+row['name'])))
     #add birth event according to APIS
-    events(row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', idmrole.deceased_person)
+    events(row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
     #add death event according to APIS
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_gender, URIRef(idmrole+row['gender'])))
     #add gender to person
     g.add((URIRef(idmrole+row['gender']), RDF.type, idmcore.Gender))
     #define gender as idmcore gender
-    g.add((URIRef(idmbibl+'source'+row['apis_id']), crm.P70_documents, URIRef(idmapis+'personproxy/'+row['apis_id'])))
-    g.add((URIRef(idmbibl+'source'+row['apis_id']), RDF.type, crm.E31_Document))
-    g.add((URIRef(idmbibl+'source'+row['apis_id']), RDF.type, bf.Work))
-    sourceid = (row['sourceuri'])[-4:-1]
-    g.add((URIRef(idmbibl+'source'+row['apis_id']), owl.sameAs, URIRef(row['sourceuri'])))
-    g.add((URIRef(idmbibl), bf.hasPart, URIRef(idmbibl+'source'+row['apis_id'])))
+    # g.add((URIRef(idmbibl+'source'+row['apis_id']), crm.P70_documents, URIRef(idmapis+'personproxy/'+row['apis_id'])))
+    # g.add((URIRef(idmbibl+'source'+row['apis_id']), RDF.type, crm.E31_Document))
+    # g.add((URIRef(idmbibl+'source'+row['apis_id']), RDF.type, bf.Work))
+    # sourceid = (row['sourceuri'])[-4:-1]
+    # g.add((URIRef(idmbibl+'source'+row['apis_id']), owl.sameAs, URIRef(row['sourceuri'])))
+    # g.add((URIRef(idmbibl), bf.hasPart, URIRef(idmbibl+'source'+row['apis_id'])))
 
 for index, row in relations_df.iterrows():
     rtype = row['relationtypeurl']
@@ -399,14 +405,35 @@ for index, row in relations_df.iterrows():
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
         if relationtype_parentid != 'nan':
             #adds parent class for relationship types
-            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
-        g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))    
         #defines relationship as idm group relationship
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
         #group which is part of this relation
+    elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/'+row['relationid'])))
+        g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
+        g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDFS.label, Literal(row['relationtypelabel'])))
+        g.add(((URIRef(idmrelations+relationtype_id)), RDFS.subClassOf, (URIRef(idmcore.Person_Relationship_Role))))
+        g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'personrelation/'+row['relationid'])))
+        print(str(row['relationlabel']))
+        # #connect personproxy and institutions with grouprelationship
+        # g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
+        # g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+        # if relationtype_parentid != 'nan':
+        #     #adds parent class for relationship types
+        #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+        #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+        # #defines relationship as idm group relationship
+        # g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+        # g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
+        # #group which is part of this relation
+    elif re.search(r'vocabularies/personeventrelation/.*', rtype):
+        events(str(row['apis_id']), 'None', crm.E7_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
+        print('generalevent done')
+        #add general event according to APIS
     else:
-        ("!!!")
+        print("not included: "+row['relationid']+ row['relationtypelabel']+ row['relatedentityid']+ row['relatedentitylabel']+ row['relationtypeurl'])
 
 for index, row in institutions_df.iterrows():
     g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
