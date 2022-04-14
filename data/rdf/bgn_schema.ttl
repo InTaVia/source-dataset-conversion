@@ -17,6 +17,10 @@
 bioc:dutch a bioc:Nationality;
 	rdfs:label "Dutch".
 
+
+bgn:Family_Relation a rdfs:Class;
+	rdfs:label "Family Relation".
+
 # Specific event types (for events and states), now modeled as subclasses
 
 #bgn:Birth a crm:E55_Type;	rdfs:label "Birth Event" .
@@ -57,13 +61,16 @@ bgn:CategoryStateEvent a rdfs:Class;
 	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Category Event" .
 	
-# classes for states (Education and Occupation are left out)
+# classes for states (Education and Occupation are left out as they should be defined in Bioc?)
+	bgn:Education
+	a rdfs:Class ;
+	rdfs:subClassOf idm:Education;
+	rdfs:label "Education" .
 	
 bgn:Residence
 	a rdfs:Class ;
 	rdfs:subClassOf bioc:Actor_Role;
 	rdfs:label "Residence" .
-
 bgn:Floruit
 	a rdfs:Class ;
 	rdfs:subClassOf bioc:Actor_Role;
