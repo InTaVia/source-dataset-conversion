@@ -1,0 +1,38 @@
+#!/bin/bash
+
+shopt -s nocaseglob
+
+
+dbr=$'\n\n'
+counter=0
+counterb=0
+echo -e "\nProcessing files... \n"
+
+
+for fullfilename in data/xml/full/*.xml      # data/xml/sample/*.xml      # data/xml/full/*.xml
+do
+  newfile=''
+
+  filecontents=$(<$fullfilename)
+
+  filenameext=$(basename "$fullfilename")
+  filename="${filenameext%.*}"
+  persid="${filename%_*}"
+  suffix="${filename##*_}"
+
+  newfile=$(echo "$filecontents" | sed "s/\(<biodes\)/\1 xmlFileID="'"'$filename'"'" personID="'"'$persid'"'"/I")
+
+  ((counter++))
+  ((counterb++))
+
+
+  echo "$newfile" > data/xml/full_preprocessed/$filenameext
+
+  echo -ne "\rFiles done: $counter "
+done
+
+shopt -u nocaseglob
+
+
+echo -e "\nDONE! Result files are in 'data/xml/full_preprocessed/'\n"
+

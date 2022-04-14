@@ -21,13 +21,15 @@ A description of the most important files:
 
 1. Download, install SWI-Prolog and Cliopatria (see https://cliopatria.swi-prolog.org/home)
 2. In the repository folder, start a new ClioPatria instance, this results in a run.pl file
-3. ./run.pl: starts ClioPatria server (on localhost:3020 by default)
-4. in the Prolog shell: ?- [run_bioned]. 
+3. ./run.pl: starts ClioPatria server (on localhost:3020 by default). Also opens a prolog shell where the following commands are to be run:
+4.  ?- [run_bioned]. 
 5.  ?- [rewrite_bioned]. 
-6.  ?- rdf_load('map_schema.ttl').
+6.  ?- rdf_load('mapschema.ttl').
 7.  ?- load_xml_test_dir.
 8.  ?- rewrite.
 9.  ?- rdf_load('./data/rdf/bgn_schema.ttl').
+
+You can view the results in the cliopatria web UI (Places->Graphs->bioned)
 
 Steps 4-8 load the XML testfile, converts it to crude RDF using the map_schema file, executes all the rewrite-rules and loads the schema file.
 

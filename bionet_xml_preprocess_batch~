@@ -1,0 +1,63 @@
+#!/bin/bash
+
+shopt -s nocaseglob
+
+newfile=''
+sbr=$'\n'
+dbr=$'\n\n'
+counter=0
+counterb=0
+counterc=0
+counterd=1
+echo -e "\nProcessing files... \n"
+
+echo "<bioport>" >> data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+
+for fullfilename in data/xml/full/*.xml      # data/xml/sample/*.xml      # data/xml/full/*.xml
+do
+  filecontents=$(<$fullfilename)
+
+  filename=$(basename "$fullfilename")
+  filename="${filename%.*}"
+  persid="${filename%_*}"
+  suffix="${filename##*_}"
+
+  newfile="$newfile$dbr"$(echo "$filecontents" | sed "s/\(<biodes\)/\1 xmlFileID="'"'$filename'"'" personID="'"'$persid'"'"/I")
+
+  ((counter++))
+  ((counterb++))
+  ((counterc++))
+
+  if [[ $counterc -gt 1000 ]]
+  then
+    echo "$newfile$dbr</bioport>$sbr" >> data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+    newfile=''
+    counterb=0
+    counterc=0
+    ((counterd++))
+    echo "<bioport>" >> data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+  fi
+
+  if [[ $counterb -gt 400 ]]
+  then
+    echo "$newfile" >> data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+    newfile=''
+    counterb=0
+  fi
+
+  echo -ne "\rFiles done: $counter "
+done
+
+shopt -u nocaseglob
+
+
+if [[ $counterc -gt 0 ]]
+  then
+    echo "$newfile$dbr</bioport>$sbr" >> data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+  else
+    rm data/xml/full_preprocessed/bioport_xml_batch_$counterd.xml
+    ((counterd--))
+fi
+
+echo -e "\nDONE! $counterc Result files of type 'bioport_xml_batch_[X].xml' \nhave been written to data/xml/full_preprocessed/\n"
+

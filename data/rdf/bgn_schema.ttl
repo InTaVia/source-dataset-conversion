@@ -2,7 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix  ore: <http://www.openarchives.org/ore/terms/> .
-@prefix bioc: <http://www.ldf.fi/schema/bioc/> .
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
 @prefix  crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix  bgn: <http://data.biographynet.nl/rdf/> .
 @prefix  map: <http://cs.vu.nl/eculture/map/> .
@@ -17,36 +17,47 @@
 bioc:dutch a bioc:Nationality;
 	rdfs:label "Dutch".
 
-# Specific event types (for states)
+# Specific event types (for events and states), now modeled as subclasses
 
-bgn:birth a crm:E55_Type;
-	rdfs:label "Birth Event" .
-bgn:death a crm:E55_Type;
+#bgn:Birth a crm:E55_Type;	rdfs:label "Birth Event" .
+
+bgn:Death a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Death Event" .
-bgn:baptism	 a crm:E55_Type;
+bgn:Baptism	a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Baptism Event". 
-bgn:funeral a crm:E55_Type;
+bgn:Funeral a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Funeral Event" .
-bgn:marriage a crm:E55_Type;
+bgn:Marriage a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Marriage Event" .
 
 
-bgn:occupationStateEvent  a crm:E55_Type;
+bgn:OccupationStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Occupation Event" .
-bgn:educationStateEvent  a crm:E55_Type;
+bgn:EducationStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Education Event" .
-bgn:residenceStateEvent a crm:E55_Type;
+bgn:ResidenceStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Residence Event" .
-bgn:floruitStateEvent a crm:E55_Type;
+bgn:FloruitStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Floruit Event" .
-bgn:faithStateEvent a crm:E55_Type;
+bgn:FaithStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Faith Event" .
-bgn:claimtofameStateEvent a crm:E55_Type;
+bgn:ClaimtofameStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Claim to Fame Event" .
-bgn:categoryStateEvent a crm:E55_Type;
+bgn:CategoryStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
 	rdfs:label "Category Event" .
 	
-# classes for states
+# classes for states (Education and Occupation are left out)
 	
 bgn:Residence
 	a rdfs:Class ;
