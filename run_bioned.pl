@@ -5,7 +5,9 @@
 	    make_rand_uri/3,
 	    make_rand_uri_bnode/1,
 	    sex_to_gender/2,
-	    name_list_to_str/3
+	    name_list_to_str/3,
+	    load_xml_test_dir/0,
+	    load_ontologies/0
 	  ]).
 
 user:file_search_path(data,       data).
@@ -35,7 +37,10 @@ load_ontologies :-
 	rdf_load_library(skos),
 	rdf_load_library(rdfs),
      /*   rdf_load('prov-o.ttl'),    */
-	rdf_load_library(owl).
+	rdf_load_library(owl),
+	rdf_load('./data/rdf/cidoc.rdf'),
+	rdf_load('./data/rdf/bgn_schema.ttl'),
+	rdf_load('./data/rdf/intavia_idm1.ttl').
 
 :- initialization			% run *after* loading this file
 	rdf_set_cache_options([ global_directory('cache/rdf'),
@@ -63,7 +68,7 @@ load_xml_dir:-
 %	append(X, Y, Z),
 	maplist(load_biodes_file, X).
 
-load_testxml_dir:-
+load_xml_test_dir:-
 	expand_file_name('data/xml/test/*.xml', X),
 %	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
 %	append(X, Y, Z),

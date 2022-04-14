@@ -347,7 +347,8 @@ true,
 make_rand_uri(S,['-birth'],Evt),
 {Evt, crm:'P98_brought_into_life', S},
 {Evt, rdf:type, crm:'E67_Birth'},
-{Evt, crm:'P2_has_type', bgn:birth},
+% {Evt, crm:'P2_has_type', bgn:birth}, Now no longer uses p2, but rdf
+% type
 {Evt, rdfs:label, Value}, %use Label for now
 {Evt, crm:'P7_took_place_at', Place},
 make_rand_uri(S,['-birth-time'],Time), % make the time t instance
@@ -382,8 +383,9 @@ deathevent
 true,
 make_rand_uri(S,['-death'],Evt),
 {Evt, crm:'P100_was_death_of', S},
-{Evt, rdf:type, crm:'E5_Event'},
-{Evt, crm:'P2_has_type', bgn:death},
+{Evt, rdf:type, bgn:'Death'},
+%{Evt, rdf:type, crm:'E5_Event'},
+%{Evt, crm:'P2_has_type', bgn:death},
 {Evt, rdfs:label, Value}, %use Label for now
 {Evt, crm:'P7_took_place_at', Place},
 %{Evt, crm:'P4_has_time-span', Date},
@@ -411,8 +413,9 @@ baptismevent
 true,
 make_rand_uri(S,['-baptism'],Evt),
 {Evt, crm:'P11_had_participant', S},
-{Evt, rdf:type, crm:'E5_Event'},
-{Evt, crm:'P2_has_type', bgn:baptism},
+{Evt, rdf:type, bgn:'Baptism'},
+%{Evt, rdf:type, crm:'E5_Event'},
+%{Evt, crm:'P2_has_type', bgn:baptism},
 {Evt, rdfs:label, Value}, %use Label for now
 {Evt, crm:'P7_took_place_at', Place},
 %{Evt, crm:'P4_has_time-span', Date},
@@ -440,8 +443,10 @@ marriageevent
 true,
 make_rand_uri(S,['marriage'],Evt),
 {Evt, crm:'P11_had_participant', S},
-{Evt, rdf:type, crm:'E5_Event'},
-{Evt, crm:'P2_has_type', bgn:marriage},
+{Evt, rdf:type, bgn:'Marriage'},
+
+%{Evt, rdf:type, crm:'E5_Event'},
+%{Evt, crm:'P2_has_type', bgn:marriage},
 {Evt, rdfs:label, Value}, %use Label for now
 {Evt, crm:'P7_took_place_at', Place},
 %{Evt, crm:'P4_has_time-span', Date},
@@ -468,8 +473,9 @@ funeralevent
 true,
 make_rand_uri(S,['funeral'],Evt),
 {Evt, crm:'P11_had_participant', S},
-{Evt, rdf:type, crm:'E5_Event'},
-{Evt, crm:'P2_has_type', bgn:funeral},
+{Evt, rdf:type, bgn:'Funeral'},
+%{Evt, rdf:type, crm:'E5_Event'},
+%{Evt, crm:'P2_has_type', bgn:funeral},
 {Evt, rdfs:label, Value}, %use Label for now
 {Evt, crm:'P7_took_place_at', Place},
 %{Evt, crm:'P4_has_time-span', Date},
@@ -539,8 +545,8 @@ literal_to_id(['Occupation-' ,Val], bgn, OURI), % first make the occupation inst
 	%{ARURI, rdf:type, bioc:'Actor_Role'},
 	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-occupationevent'],Evt), %then make the Event instance
-	{Evt, rdf:type,crm:'E5_Event' },
-	{Evt, crm:'P2_has_type', bgn:occupationStateEvent},
+%	{Evt, rdf:type,crm:'E5_Event' },
+	{Evt, rdf:type, bgn:'OccupationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -571,8 +577,7 @@ literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation insta
 %	{ARURI, bgn:roletype,OURI}, %	{ARURI, rdf:type, bioc:'Actor_Role'},
 %	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-educationevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:educationStateEvent},
+	{Evt, rdf:type, bgn:'EducationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -602,8 +607,7 @@ literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation insta
 	%{ARURI, rdf:type, bioc:'Actor_Role'},
 	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-residenceevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:residenceStateEvent},
+	{Evt, rdf:type, bgn:'ResidenceStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -636,8 +640,7 @@ literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation insta
 	%{ARURI, rdf:type, bioc:'Actor_Role'},
 	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-floruitevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:floruitStateEvent},
+	{Evt, rdf:type, bgn:'FloruitStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -678,8 +681,7 @@ literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 %	{ARURI, rdf:type, bioc:'Actor_Role'},
 %	{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-faithevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:faithStateEvent},
+	{Evt, rdf:type, bgn:'FaithStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -745,8 +747,7 @@ literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
 	%{S, bioc:bearer_of,ARURI},
 	%{ARURI, rdf:type, bioc:'Actor_Role'},
 make_rand_uri(S,['-claimtofameevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:claimtofameStateEvent},
+	{Evt, rdf:type, bgn:'ClaimtofameStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},
@@ -777,8 +778,7 @@ literal_to_id(['Category-' ,Val], bgn, OURI), % first make the occupation instan
 	%{ARURI, rdf:type, bioc:'Actor_Role'},
 	%{S, bioc:bearer_of,ARURI},
 make_rand_uri(S,['-categoryevent'],Evt), %then make the actorroleevent instance
-	{Evt, rdf:type,crm:'E5_Event'},
-	{Evt, crm:'P2_has_type', bgn:categoryStateEvent},
+	{Evt, rdf:type, bgn:'CategoryStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
 	{Evt, bioc:had_participant_in_role, OURI},

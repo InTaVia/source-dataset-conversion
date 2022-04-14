@@ -1,0 +1,46 @@
+#!/bin/bash
+
+shopt -s nocaseglob
+
+newfile=''
+dbr=$'\n\n'
+counter=0
+counterb=0
+echo -e "\nProcessing files... \n"
+
+echo "<bioport>" > bioport_xml_merged.xml
+
+for fullfilename in data/xml/full/*.xml      # data/xml/sample/*.xml      # data/xml/full/*.xml
+do
+  filecontents=$(<$fullfilename)
+
+  filename=$(basename "$fullfilename")
+  filename="${filename%.*}"
+  persid="${filename%_*}"
+  suffix="${filename##*_}"
+
+  newfile="$newfile$dbr"$(echo "$filecontents" | sed "s/\(<biodes\)/\1 xmlFileID="'"'$filename'"'" personID="'"'$persid'"'"/I")
+
+  ((counter++))
+  ((counterb++))
+
+  if [[ $counterb -gt 400 ]]
+  then
+    echo "$newfile" >> bioport_xml_merged.xml
+    newfile=''
+    counterb=0    
+  fi
+
+  echo -ne "\rFiles done: $counter "
+done
+
+shopt -u nocaseglob
+
+newfile="$newfile$dbr</bioport>"
+
+echo -e "\nWriting file..."
+
+echo "$newfile" >> bioport_xml_merged.xml
+
+echo -e "\nDONE! Result file is 'bioport_xml_merged.xml'\n"
+
