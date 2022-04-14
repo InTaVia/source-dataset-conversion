@@ -1,0 +1,556 @@
+@prefix  idm: <https://intavia.org/idm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix  ore: <http://www.openarchives.org/ore/terms/> .
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
+@prefix  crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix  bgn: <http://data.biographynet.nl/rdf/> .
+@prefix  map: <http://cs.vu.nl/eculture/map/> .
+@prefix  dct: <http://purl.org/dc/terms/PhysicalResource> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Schema for BiographyNet as CIDOC/BIOC
+#CLASSES
+
+
+# 
+bioc:dutch a bioc:Nationality;
+	rdfs:label "Dutch".
+
+
+bgn:Family_Relation a rdfs:Class;
+	rdfs:label "Family Relation".
+
+# Specific event types (for events and states), now modeled as subclasses
+
+#bgn:Birth a crm:E55_Type;	rdfs:label "Birth Event" .
+
+bgn:Death a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Death Event" .
+bgn:Baptism	a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Baptism Event". 
+bgn:Funeral a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Funeral Event" .
+bgn:Marriage a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Marriage Event" .
+
+
+bgn:OccupationStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Occupation Event" .
+bgn:EducationStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Education Event" .
+bgn:ResidenceStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Residence Event" .
+bgn:FloruitStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Floruit Event" .
+bgn:FaithStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Faith Event" .
+bgn:ClaimtofameStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Claim to Fame Event" .
+bgn:CategoryStateEvent a rdfs:Class; 
+	rdfs:subClassOf crm:E5_Event ;
+	rdfs:label "Category Event" .
+	
+# classes for states (Education and Occupation are left out as they should be defined in Bioc?)
+	bgn:Education
+	a rdfs:Class ;
+	rdfs:subClassOf idm:Education;
+	rdfs:label "Education" .
+	
+bgn:Residence
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Residence" .
+bgn:Floruit
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Floruit" .
+bgn:Faith
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Faith" .
+bgn:Claim_to_fame
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Claim to fame" .
+bgn:Category
+	a rdfs:Class ;
+	rdfs:subClassOf bioc:Actor_Role;
+	rdfs:label "Category" .
+	
+# Proprties for states
+bgn:has_category
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_category" ;
+	rdfs:range bgn:Category .
+
+bgn:has_claim_to_fame
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_claim_to_fame" ;
+	rdfs:range bgn:Claim_to_fame .
+
+bgn:has_education
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_education" ;
+	rdfs:range bgn:Education .
+
+bgn:has_faith
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_faith" ;
+	rdfs:range bgn:Faith .
+
+bgn:has_floruit
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_floruit" ;
+	rdfs:range bgn:Floruit .
+
+bgn:has_residence
+	a rdf:Property ;
+	rdfs:subPropertyOf bioc:bearer_of;
+	rdfs:label "has_residence" ;
+	rdfs:range bgn:Residence .	
+
+###----	General classes
+	
+bgn:Availability
+	a rdfs:Class ;
+	rdfs:label "Availability" .
+
+bgn:Bibl
+	a rdfs:Class ;
+	rdfs:label "Bibl" .
+
+bgn:BioDes
+	a rdfs:Class ;
+	rdfs:label "BioDes" .
+
+bgn:BioParts
+	a rdfs:Class ;
+	rdfs:label "BioParts" .
+
+bgn:Bioghist
+	a rdfs:Class ;
+	rdfs:label "Bioghist" .
+
+bgn:Bioport
+	a rdfs:Class ;
+	rdfs:label "Bioport" .
+
+bgn:CONTROLE
+	a rdfs:Class ;
+	rdfs:label "CONTROLE" .
+
+bgn:Category
+	a rdfs:Class ;
+	rdfs:label "Category" .
+
+bgn:Change
+	a rdfs:Class ;
+	rdfs:label "Change" .
+
+bgn:Changed
+	a rdfs:Class ;
+	rdfs:label "Changed" .
+
+bgn:Claim_to_fame
+	a rdfs:Class ;
+	rdfs:subClassOf skos:Concept;
+	rdfs:label "Claim_to_fame" .
+
+bgn:Date
+	a rdfs:Class ;
+	rdfs:label "Date" .
+
+bgn:Education
+	a rdfs:Class ;
+	rdfs:subClassOf skos:Concept;
+	rdfs:label "Education" .
+
+bgn:Extrafield
+	a rdfs:Class ;
+	rdfs:label "Extrafield" .
+
+bgn:Faith
+	a rdfs:Class ;
+	rdfs:subClassOf skos:Concept;
+	rdfs:label "Faith" .
+
+bgn:Figure
+	a rdfs:Class ;
+	rdfs:label "Figure" .
+
+bgn:FileDes
+	a rdfs:Class ;
+	rdfs:label "FileDes" .
+
+bgn:Floruit
+	a rdfs:Class ;
+	rdfs:subClassOf skos:Concept;
+	rdfs:label "Floruit" .
+
+bgn:Graphic
+	a rdfs:Class ;
+	rdfs:label "Graphic" .
+
+bgn:Idno
+	a rdfs:Class ;
+	rdfs:label "Idno" .
+
+bgn:Note
+	a rdfs:Class ;
+	rdfs:label "Note" .
+
+bgn:NotesStmt
+	a rdfs:Class ;
+	rdfs:label "NotesStmt" .
+
+
+bgn:Origination
+	a rdfs:Class ;
+	rdfs:label "Origination" .
+
+bgn:P
+	a rdfs:Class ;
+	rdfs:label "P" .
+
+bgn:Place
+	a rdfs:Class ;
+	rdfs:subClassOf skos:Concept;
+	rdfs:label "Place" .
+
+bgn:Publisher
+	a rdfs:Class ;
+	rdfs:subClassOf dct:Agent;
+	rdfs:label "Publisher" .
+
+bgn:Ref
+	a rdfs:Class ;
+	rdfs:label "Ref" .
+
+bgn:Region
+	a rdfs:Class ;
+	rdfs:label "Region" .
+
+bgn:Relation
+	a rdfs:Class ;
+	rdfs:label "Relation" .
+
+
+
+bgn:RevisionDesc
+	a rdfs:Class ;
+	rdfs:label "RevisionDesc" .
+
+bgn:Snippet
+	a rdfs:Class ;
+	rdfs:label "Snippet" .
+
+bgn:Text
+	a rdfs:Class ;
+	rdfs:label "Text" .
+
+#PROPERTIES
+
+bgn:aggregatedPerson
+	a rdf:Property ;
+	rdfs:label "aggregatedPerson" ;
+	rdfs:range idm:Provided_Person .
+
+bgn:author
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:creator;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "author" ;
+	rdfs:range rdfs:Literal .
+
+bgn:availability
+	a rdf:Property ;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "availability" ;
+	rdfs:range bgn:Availability .
+
+bgn:bibl
+	a rdf:Property ;
+	rdfs:label "bibl" .
+
+bgn:biodes
+	a rdf:Property ;
+	rdfs:domain bgn:Bioport ;
+	rdfs:label "biodes" .
+
+bgn:bioghist
+	a rdf:Property ;
+	rdfs:domain bgn:Text ;
+	rdfs:label "bioghist" ;
+	rdfs:range bgn:Bioghist .
+
+bgn:change
+	a rdf:Property ;
+	rdfs:domain bgn:RevisionDesc ;
+	rdfs:label "change" ;
+	rdfs:range bgn:Change .
+
+bgn:changed
+	a rdf:Property ;
+	rdfs:domain bgn:RevisionDesc ;
+	rdfs:label "changed" ;
+	rdfs:range bgn:Changed .
+
+bgn:date
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:date;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "date" ;
+	rdfs:range bgn:Date .
+
+bgn:extrafield
+	a rdf:Property ;
+	rdfs:label "extrafield" ;
+	rdfs:range bgn:Extrafield .
+
+bgn:hasBioParts
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:hasPart;
+	rdfs:label "hasBioParts" ;
+	rdfs:range bgn:BioParts .
+
+bgn:hasFigure
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:hasPart;
+	rdfs:domain bgn:BioParts ;
+	rdfs:label "hasFigure" ;
+	rdfs:range bgn:Figure .
+
+bgn:hasFileDes
+	a rdf:Property ;
+	rdfs:label "hasFileDes" ;
+	rdfs:range bgn:FileDes .
+
+bgn:hasGraphic
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:hasPart;
+	rdfs:label "hasGraphic" ;
+	rdfs:range bgn:Graphic .
+
+bgn:hasPersonDes
+	a rdf:Property ;
+	rdfs:label "hasPersonDes" .
+
+
+bgn:head
+	a rdf:Property ;
+	rdfs:label "head" ;
+	rdfs:range rdfs:Literal .
+
+bgn:id
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:identifier;
+	map:xmlname "id" ;
+	rdfs:label "id" ;
+	rdfs:range rdfs:Literal .
+
+bgn:idno
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:identifier;
+	map:xmlname "idno" ;
+	rdfs:label "idno" ;
+	rdfs:range rdfs:Literal .
+
+bgn:label
+	a rdf:Property ;
+	rdfs:subPropertyOf rdfs:label;
+	map:xmlname "label" ;
+	rdfs:domain bgn:Origination ;
+	rdfs:label "label" ;
+	rdfs:range rdfs:Literal .
+
+bgn:name
+	a rdf:Property ;
+	map:xmlname "name" ;
+	rdfs:subPropertyOf rdfs:label;
+	rdfs:domain bgn:Publisher ;
+	rdfs:label "name" ;
+	rdfs:range rdfs:Literal .
+
+bgn:normal
+	a rdf:Property ;
+	map:xmlname "normal" ;
+	rdfs:domain rdf:XMLLiteral ;
+	rdfs:label "normal" ;
+	rdfs:range rdfs:Literal .
+
+bgn:notAfter
+	a rdf:Property ;
+	map:xmlname "notAfter" ;
+	rdfs:domain crm:E52_Time-Span ;
+	rdfs:label "notAfter" ;
+	rdfs:range rdfs:Literal .
+
+bgn:notBefore
+	a rdf:Property ;
+	map:xmlname "notBefore" ;
+	rdfs:domain crm:E52_Time-Span ;
+	rdfs:label "notBefore" ;
+	rdfs:range rdfs:Literal .
+
+bgn:note
+	a rdf:Property ;
+	rdfs:label "note" ;
+	rdfs:range bgn:Note .
+
+bgn:notesStmt
+	a rdf:Property ;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "notesStmt" ;
+	rdfs:range bgn:NotesStmt .
+
+bgn:num
+	a rdf:Property ;
+	rdfs:domain bgn:Bibl ;
+	rdfs:label "num" ;
+	rdfs:range rdfs:Literal .
+
+bgn:origination
+	a rdf:Property ;
+	rdfs:domain bgn:CONTROLE ;
+	rdfs:label "origination" ;
+	rdfs:range bgn:Origination .
+
+bgn:p
+	a rdf:Property ;
+	rdfs:label "p" .
+
+bgn:passive
+	a rdf:Property ;
+	map:xmlname "passive" ;
+	rdfs:domain bgn:Relation ;
+	rdfs:label "passive" ;
+	rdfs:range rdfs:Literal .
+
+bgn:person
+	a rdf:Property ;
+	rdfs:label "person" .
+
+bgn:personID
+	a rdf:Property ;
+	map:xmlname "personID" ;
+	rdfs:domain idm:Provided_Person ;
+	rdfs:label "personID" ;
+	rdfs:range rdfs:Literal .
+
+bgn:place
+	a rdf:Property ;
+	rdfs:domain bgn:State ;
+	rdfs:label "place" ;
+	rdfs:range rdfs:Literal .
+
+bgn:publisher
+	a rdf:Property ;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "publisher" ;
+	rdfs:range bgn:Publisher .
+
+bgn:ref
+	a rdf:Property ;
+	rdfs:label "ref" ;
+	rdfs:range bgn:Ref .
+
+bgn:region
+	a rdf:Property ;
+	rdfs:domain bgn:Place ;
+	rdfs:label "region" ;
+	rdfs:range bgn:Region .
+
+bgn:revisionDesc
+	a rdf:Property ;
+	rdfs:domain bgn:FileDes ;
+	rdfs:label "revisionDesc" ;
+	rdfs:range bgn:RevisionDesc .
+
+bgn:roletype
+	a rdf:Property ;
+	rdfs:domain bioc:Actor_Role ;
+	rdfs:label "roletype" .
+
+bgn:snippet
+	a rdf:Property ;
+	rdfs:domain bgn:BioParts ;
+	rdfs:label "snippet" ;
+	rdfs:range bgn:Snippet .
+
+bgn:sourceId
+	a rdf:Property ;
+	map:xmlname "source_id" ;
+	rdfs:domain bgn:Snippet ;
+	rdfs:label "sourceId" ;
+	rdfs:range rdfs:Literal .
+
+bgn:status
+	a rdf:Property ;
+	map:xmlname "status" ;
+	rdfs:domain bgn:Availability ;
+	rdfs:label "status" ;
+	rdfs:range rdfs:Literal .
+
+bgn:target
+	a rdf:Property ;
+	map:xmlname "target" ;
+	rdfs:label "target" ;
+	rdfs:range rdfs:Literal .
+
+bgn:text
+	a rdf:Property ;
+	rdfs:domain bgn:BioParts ;
+	rdfs:label "text" .
+
+bgn:title
+	a rdf:Property ;
+	rdfs:subPropertyOf dct:title;
+	rdfs:label "title" ;
+	rdfs:range rdfs:Literal .
+
+bgn:type
+	a rdf:Property ;
+	map:xmlname "type" ;
+	rdfs:label "type" ;
+	rdfs:range rdfs:Literal .
+
+bgn:url
+	a rdf:Property ;
+	map:xmlname "url" ;
+	rdfs:domain bgn:Graphic ;
+	rdfs:label "url" ;
+	rdfs:range rdfs:Literal .
+
+bgn:version
+	a rdf:Property ;
+	map:xmlname "version" ;
+	rdfs:label "version" ;
+	rdfs:range rdfs:Literal .
+
+bgn:when
+	a rdf:Property ;
+	map:xmlname "when" ;
+	rdfs:label "when" ;
+	rdfs:range rdfs:Literal .
+
+bgn:xmlFileID
+	a rdf:Property ;
+	map:xmlname "xmlFileID" ;
+	rdfs:label "xmlFileID" ;
+	rdfs:range rdfs:Literal .
