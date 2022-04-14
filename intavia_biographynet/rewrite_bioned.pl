@@ -837,7 +837,9 @@ place_to_resource
 @@
 {Evt, crm:'P7_took_place_at', literal(Place)}
 <=>
-literal_to_id(['place-' ,Place], bgn, OURI),
+catch(literal_to_id(['place-' ,Place], bgn, OURI),E, (print_message(error, E),
+                    true)
+                  ),
 {OURI, rdf:type, crm:'E53_Place'},
 {OURI, rdfs:label, literal(Place)},
 {Evt, crm:'P7_took_place_at', OURI}.
