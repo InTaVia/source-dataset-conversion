@@ -570,7 +570,7 @@ educationstate_event
 <=>
 true,
 literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bioc:'Education'},
+	{OURI, rdf:type, bgn:'Education'},
 	{OURI, rdfs:label, Val},
 	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
 % make_rand_uri(S,['-actorrole'],ARURI),
@@ -811,14 +811,37 @@ rdf(A, bgn:id, Code),
 
 
 % PLACE Literals to resources
+%
+%
+place_to_resource_regions % for regions TO CHECK
+@@
+{Evt, crm:'P7_took_place_at', Place},
+	{Place, rdf:value, literal(Val)},
+	{Place, bgn:region, Region},
+	{Region, rdf:value, literal(ValReg)}
+<=>
+literal_to_id(['place-' ,Val,'-region-',ValReg], bgn, OURI),
+{OURI, rdf:type, crm:'E53_Place'},
+{OURI, rdfs:label, literal(Place)},
+{Evt, crm:'P7_took_place_at', OURI}.
+
+
 place_to_resource
 @@
-{Evt, crm:'P7_took_place_at', Place}
+{_, crm:'P7_took_place_at', literal('')}
+<=>
+true.
+
+
+place_to_resource
+@@
+{Evt, crm:'P7_took_place_at', literal(Place)}
 <=>
 literal_to_id(['place-' ,Place], bgn, OURI),
 {OURI, rdf:type, crm:'E53_Place'},
-{OURI, rdfs:label, Place},
+{OURI, rdfs:label, literal(Place)},
 {Evt, crm:'P7_took_place_at', OURI}.
+
 
 place_appellation
 @@

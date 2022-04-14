@@ -91,8 +91,8 @@ load(File) :-
 
 
 run_bioned:-
-	load_xml_dir,
         rdf_load('mapschema.ttl'),
+	load_xml_dir,
 	rewrite,
 	save_bioned.
 
