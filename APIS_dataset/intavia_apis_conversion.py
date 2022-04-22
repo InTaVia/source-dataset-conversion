@@ -11,6 +11,8 @@ from SPARQLWrapper import SPARQLWrapper, N3
 from lxml import etree
 import re
 import urllib.parse
+import datetime
+
 
 data=[]
 data_institutions=[]
@@ -23,7 +25,7 @@ familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 headers = {"accept": "application/json"}
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
-base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
+base_url_apis = "http://localhost:8000/apis/api/"
 next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
 #next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
 """initial json url to get apis data"""
@@ -46,22 +48,27 @@ re_list_institution=first_response_institution.json()
 response_list_institution = re_list_institution.get('results')
 """get list with all datasets from the url as dictionaries"""
 
+urls_places_already_fetched = []
+
 def datareturn_institution (d, re):
     for n in range(len(re)):
         x = re[n]
-        institutionid = x.get('id')
-        data_institutions.append({
-                'institution_id':x.get('id'),
-                'institution_name':x.get('name'),
-                'institution_url':x.get('url'),
-                'institution_source':x.get('source'),
-                'institution_references':x.get('references'),
-                'institution_start_date':x.get('start_date'),
-                'institution_end_date':x.get('end_date'),
-                'institution_start_date_written':x.get('start_date_written'),
-                'institution_end_date_written':x.get('end_date_written'),
-                'institution_text':x.get('text')
-            })
+        try:
+            institutionid = x.get('id')
+            data_institutions.append({
+                    'institution_id':x.get('id'),
+                    'institution_name':x.get('name'),
+                    'institution_url':x.get('url'),
+                    'institution_source':x.get('source'),
+                    'institution_references':x.get('references'),
+                    'institution_start_date':x.get('start_date'),
+                    'institution_end_date':x.get('end_date'),
+                    'institution_start_date_written':x.get('start_date_written'),
+                    'institution_end_date_written':x.get('end_date_written'),
+                    'institution_text':x.get('text')
+                })
+        except:
+            print('exception in institutions')
     return(data_institutions)
 
 def professions(id, profy):
@@ -69,33 +76,45 @@ def professions(id, profy):
     if profy != None:
         for k in range(len(profy)):
             p = profy[k]
-            dapr.append({
-                'apis_id':id,
-                'professionlabel':p.get('label'),
-                'professionid':p.get('id'),
-                'professionparentid':p.get('parent_id'),
-                'professionurl':p.get('url')
-            })
+            try:
+                dapr.append({
+                    'apis_id':id,
+                    'professionlabel':p.get('label'),
+                    'professionid':p.get('id'),
+                    'professionparentid':p.get('parent_id'),
+                    'professionurl':p.get('url')
+                })
+            except:
+                print('exception in professions')
         return(dapr)
     
 # reactivate when server response problem is solved
-# def places(pc):
-#     for p in pc:
-#         place_response = requests.get(p, headers=headers)
-#         place_response = place_response.json()
-#          #print(place_response['url'])
-#          #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
-#         placedata.append({
-#             'place_name':place_response['name'],
-#             'place_id':place_response['id'],
-#             'place_start_date':place_response['start_date'], 
-#             'place_end_date':place_response['end_date'], 
-#             'place_references':place_response['references'], 
-#             'place_lat':place_response['lat'], 
-#             'place_lng':place_response['lng'], 
-#             'place_source':place_response['source']
-#             })
-#     return(placedata)
+def places(pc):
+    print("starting places")
+    for p in pc:
+        if p in urls_places_already_fetched:
+            continue
+        else:
+            urls_places_already_fetched.append(p)
+        place_response = requests.get(p, headers=headers)
+        place_response = place_response.json()
+         #print(place_response['url'])
+         #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
+        try:
+            placedata.append({
+                'place_name':place_response['name'],
+                'place_id':place_response['id'],
+                'place_start_date':place_response['start_date'], 
+                'place_end_date':place_response['end_date'], 
+                'place_references':place_response['references'], 
+                'place_lat':place_response['lat'], 
+                'place_lng':place_response['lng'], 
+                'place_source':place_response['source']
+                })
+        except:
+            print('exception in places')
+    print("finished places")
+    return(placedata)
 
 
 
@@ -109,30 +128,34 @@ def relations(person):
     for l in range(len(rs)):
         y = rs[l]
         # y is one relation for a person
-        relationsid = (y.get('id'))
-        relationslabel = y.get('label')
-        relationsurl = y.get('url')
-        relationtype = y.get('relation_type')
-        relatedentity = y.get('related_entity')
-        da.append({
-            'apis_id':apis_id,
-            'relationid':relationsid,
-            'relationlabel':relationslabel,
-            'relationurl':relationsurl,
-            'relationtypeid':relationtype.get('id'),
-            'relationtypelabel':relationtype.get('label'),
-            'relationtypeurl':relationtype.get('url'),
-            'relationtype_parentid':relationtype.get('parent_id'),
-            'relatedentityid':relatedentity['id'],
-            'relatedentitylabel':relatedentity.get('label'),
-            'relatedentityurl':relatedentity.get('url'),
-            'relatedentitytype':relatedentity.get('type')
-         })
+        try:
+            relationsid = (y.get('id'))
+            relationslabel = y.get('label')
+            relationsurl = y.get('url')
+            relationtype = y.get('relation_type')
+            relatedentity = y.get('related_entity')
+            da.append({
+                'apis_id':apis_id,
+                'relationid':relationsid,
+                'relationlabel':relationslabel,
+                'relationurl':relationsurl,
+                'relationtypeid':relationtype.get('id'),
+                'relationtypelabel':relationtype.get('label'),
+                'relationtypeurl':relationtype.get('url'),
+                'relationtype_parentid':relationtype.get('parent_id'),
+                'relatedentityid':relatedentity['id'],
+                'relatedentitylabel':relatedentity.get('label'),
+                'relatedentityurl':relatedentity.get('url'),
+                'relatedentitytype':relatedentity.get('type')
+            })
+        except:
+            print('exception in relations')
+            pass
         for d in da:
             if d['relatedentitytype']=="Place":
                 placecheck.add(d['relatedentityurl'])
         print('relation done')
-        return(da, placecheck)
+    return(da, placecheck)
 
 """ def sources(sourcy):
     #get sources for one biography article
@@ -162,27 +185,31 @@ def datareturn (d, re):
         #     source_pubinfo = None
         if person_response != None:
             datarelations, pc = relations(person_response)
-        d.append({
-                'apis_id':x.get('id'),
-                'name':x.get('name'),
-                'surname':x.get('first_name'),
-                'url':x.get('url'),
-                #'sourceuri':sourceuri,
-                #'publication_info':source_pubinfo,
-                'references':x.get('references'),
-                'bdate':x.get('start_date'),
-                'ddate':x.get('end_date'),
-                'gender':x.get('gender')
-            })
+        try:
+            d.append({
+                    'apis_id':x.get('id'),
+                    'name':x.get('name'),
+                    'surname':x.get('first_name'),
+                    'url':x.get('url'),
+                    #'sourceuri':sourceuri,
+                    #'publication_info':source_pubinfo,
+                    'references':x.get('references'),
+                    'bdate':x.get('start_date'),
+                    'ddate':x.get('end_date'),
+                    'gender':x.get('gender')
+                })
+        except:
+            print('exception in persons')
     # reactivate when server problem is solved!
-    # places(pc)
+    places(pc)
     return d,datarelations, pc
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=400":
+#while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
-#while next_page != None:
+while next_page != None:
     """iterate over JSON API urls"""
     first_response = requests.get(next_page, headers=headers)
+    print(f"getting {next_page}")
     re_list=first_response.json()
     response_list = re_list.get('results')
     """get data from REST API in JSON format"""
@@ -195,12 +222,12 @@ else:
     datageneral, datarelations, placeset  = datareturn(data, response_list)
 
 
-#while next_page != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+#while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
 while next_page_institution != None:
-    print('Institution page')
     """iterate over JSON API urls (institutions)"""
+    print(f'getting {next_page_institution}')
     first_response_institution = requests.get(next_page_institution, headers=headers)
     re_list_institution=first_response_institution.json()
     response_list_institution = re_list_institution.get('results')
@@ -226,7 +253,7 @@ occupations_df.head()
 institutions_df=pd.DataFrame(data_institutions)
 institutions_df.head
 # reactivate when server problem is solved!
-# places_df=pd.DataFrame(placedata)
+places_df=pd.DataFrame(placedata)
 # places_df.head()
 
 
@@ -235,19 +262,19 @@ institutions_df.head
 
 crm=Namespace('http://www.cidoc-crm.org/cidoc-crm/')
 """Defines namespace for CIDOC CRM."""
-ex=Namespace('https://www.intavia.org/')
+ex=Namespace('http://www.intavia.eu/')
 """Defines namespace for own ontology."""
-idmcore=Namespace('https://www.intavia.org/idm-core/')
+idmcore=Namespace('http://www.intavia.eu/idm-core/')
 """Defines namespace for own ontology."""
-idmrole=Namespace('https://www.intavia.org/idm-role/')
+idmrole=Namespace('http://www.intavia.eu/idm-role/')
 """Defines namespace for role ontology."""
-idmapis=Namespace('https://www.intavia.org/apis/')
+idmapis=Namespace('http://www.intavia.eu/apis/')
 """Namespace for InTaVia named graph"""
-idmbibl=Namespace('https://www.intavia.org/idm-bibl/')
+idmbibl=Namespace('http://www.intavia.eu/idm-bibl/')
 """Namespace for bibliographic named graph"""
-idmrelations=Namespace('https://www.intavia.org/idm-relations')
+idmrelations=Namespace('http://www.intavia.eu/idm-relations')
 """Defines namespace for relation ontology."""
-intavia_shared=Namespace('https://www.intavia.org/shared-entities')
+intavia_shared=Namespace('http://www.intavia.eu/shared-entities')
 """Defines namespace for relation ontology."""
 ore=Namespace('http://www.openarchives.org/ore/terms/')
 """Defines namespace for schema.org vocabulary."""
@@ -275,11 +302,11 @@ bf=Namespace('http://id.loc.gov/ontologies/bibframe/')
 """Defines bibframe namespace."""
 
 apis_df = apis_df.applymap(str)
-relations_df = relations_df.applymap(str)
+#relations_df = relations_df.applymap(str)
 occupations_df = occupations_df.applymap(str)
 institutions_df = institutions_df.applymap(str)
 # reactivate when server problem is solved!
-# places_df = places_df.applymap(str)
+places_df = places_df.applymap(str)
 
 g = Graph()
 #Create undirected graph, assigned to g
@@ -298,7 +325,9 @@ def events(apis_id, edate, crmtype, urltype, roletype, relationlabel):
     #connect event and event role
     g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDF.type, crmtype))
     #define crm classification
-    g.add((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id']), RDFS.label, idmrole.roletype))
+    if isinstance(roletype, str):
+        roletype = Literal(roletype)
+    g.add((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id']), RDFS.label, roletype))
     g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDFS.label, Literal(relationlabel)))
     if edate != "None":
         g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), crm.P4_has_time_span, URIRef(idmapis+urltype+'/timespan/'+row['apis_id'])))
@@ -361,7 +390,9 @@ for index, row in apis_df.iterrows():
 
 for col in relations_df.columns:
     if col.endswith("id"):
-        relations_df[col] = relations_df[col].astype(int)
+        relations_df[col] = relations_df[col].astype(float).fillna(0).astype(int).astype(str)
+    else:
+        relations_df[col] = relations_df[col].astype(str)
 for index, row in relations_df.iterrows():
     rtype = row['relationtypeurl']
     relation_id = str(row['relationid'])
@@ -394,7 +425,7 @@ for index, row in relations_df.iterrows():
          g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
          #print(row['relationurl'], row['relationtypeurl'])
          g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-         if relationtype_parentid != 'nan':
+         if relationtype_parentid != '0':
             g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
             g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
          #reltype= str(urllib.parse.quote_plus(row['relationtypelabel']))
@@ -406,7 +437,7 @@ for index, row in relations_df.iterrows():
         #connect personproxy and institutions with grouprelationship
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-        if relationtype_parentid != 'nan':
+        if relationtype_parentid != '0':
             #adds parent class for relationship types
             g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))    
         #defines relationship as idm group relationship
@@ -423,7 +454,7 @@ for index, row in relations_df.iterrows():
         # #connect personproxy and institutions with grouprelationship
         # g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
         # g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-        # if relationtype_parentid != 'nan':
+        # if relationtype_parentid != '0':
         #     #adds parent class for relationship types
         #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
         #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
@@ -441,9 +472,7 @@ for index, row in relations_df.iterrows():
 for index, row in institutions_df.iterrows():
     g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
     g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), idmcore.group_proxy_for, URIRef(ex+'group/'+str(index))))
-    #connect Group Proxy and person in named graph
-    g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), RDF.type, idmcore.Group_Proxy))
-    #define Person Proxy
+    #connect Group Proxy and person in named graphbgn:BioDes
     g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), RDF.type, idmcore.Group))
     #defines group class
     g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), owl.sameAs, URIRef(row['institution_url'])))
@@ -478,8 +507,8 @@ for index, row in institutions_df.iterrows():
 
 
 # reactivate when server problem is solved!
-# for index, row in places_df.iterrows():
-#     g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
+for index, row in places_df.iterrows():
+    g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
 #     #suggestion for serialization of space primitives according to ISO 6709, to be discussed
 #     #more place details will be added (references, source, place start date, place end date, relations to other places(?))
 
@@ -500,7 +529,7 @@ g.bind('idmrelations', idmrelations)
 g.bind('owl', owl)
 #Bind namespaces to prefixes for readable output
  
-exapis = g.serialize(destination='apisdata.ttl', format='turtle')
+exapis = g.serialize(destination=f'apisdata_{datetime.datetime.now().strftime("%d-%m-%Y")}.ttl', format='turtle')
 
 # exapis = g.serialize(format='turtle')   
 
