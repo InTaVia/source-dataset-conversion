@@ -29,9 +29,12 @@ A description of the most important files:
 8.  ?- rewrite.
 9.  ?- rdf_load('./data/rdf/bgn_schema.ttl').
 
-You can view the results in the cliopatria web UI (Places->Graphs->bioned)
+You can view the results in the cliopatria web UI (Places->Graphs->bioned). 
 
 Steps 4-8 load the XML testfile, converts it to crude RDF using the map_schema file, executes all the rewrite-rules and loads the schema file.
+
+To save the result as RDF turtle, use 
+1. ?- rdf_save_turtle(FILENAME, [graph(bioned)]).
 
 For full conversion: 
 1. Get XML file from biografisch portaal (not provided here)

@@ -146,3 +146,30 @@ name_list_to_str(N,[H|T],Str):-
 	name_list_to_str(N,T,Rest),
 	atomic_list_concat([H,' ',Rest],Str).
 
+
+
+% Data enrichment predicates
+%
+% wikipedia_uri(?A,-B). returns a pair Provided person URI and wikipedia
+% URL
+wikipedia_uri(ProvidedPerson,WikipediaURL):-
+	rdf(A,bgn:target,literal(WikipediaURL)),
+	sub_atom(WikipediaURL,_,_,_,'http://nl.wikipedia.org/wiki/'), rdf(FD,bgn:ref,A),
+	rdf(FD,rdf:type,_Type),
+	rdf(BD,bgn:hasFileDes,FD),
+	rdf(BD,bgn:aggregatedPerson,ProvidedPerson).
+
+% input is a wiki url, output is a dbpedia url
+wiki2db(Wiki,DB):-
+	atomic_list_concat(Subs,'/',Wiki),
+	reverse(Subs,[Term|_]),
+	atomic_list_concat(['http://nl.dbpedia.org/resource/',Term],DB).
+
+
+% for a name (last part of wiki url), fetch the wikidata Q item
+wikipedia2wikidata(NameAtom,WDURI):-
+ atomic_list_concat(['https://nl.wikipedia.org/w/api.php?action=query&prop=pageprops&format=json&titles=',NameAtom],URI),
+ http_open(URI,S,[]),
+json_read(S,json([_,query=json([_,(pages=json([(_=json(L))]))])])),reverse(L,[pageprops=json(List)|_]),reverse(List,[wikibase_item=Qiki|_]),
+	atomic_list_concat(['http://www.wikidata.org/entity/',Qiki],WDURI).
+
