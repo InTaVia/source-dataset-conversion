@@ -359,6 +359,9 @@ for index, row in apis_df.iterrows():
     # g.add((URIRef(idmbibl+'source'+row['apis_id']), owl.sameAs, URIRef(row['sourceuri'])))
     # g.add((URIRef(idmbibl), bf.hasPart, URIRef(idmbibl+'source'+row['apis_id'])))
 
+for col in relations_df.columns:
+    if col.endswith("id"):
+        relations_df[col] = relations_df[col].astype(int)
 for index, row in relations_df.iterrows():
     rtype = row['relationtypeurl']
     relation_id = str(row['relationid'])
