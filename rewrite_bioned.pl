@@ -302,7 +302,7 @@ personnameCidoc
 make_rand_uri(S,['-name'],NameURI),
 atom(Val),
 {S, crm:'P1_is_identified_by', NameURI},
-	{NameURI, rdf:type, crm:'E41_Appellation'},
+	{NameURI, rdf:type, crm:'E33_E41_Linguistic_Appellation'},
 	{NameURI, rdfs:label, literal(Val)}.
 
 
@@ -313,7 +313,7 @@ personnameCidocComplex
 make_rand_uri(S,['-name'],NameURI),
 name_list_to_str(NameURI, List,Val),
 {S, crm:'P1_is_identified_by', NameURI},
-	{NameURI, rdf:type, crm:'E41_Appellation'},
+	{NameURI, rdf:type, crm:'E33_E41_Linguistic_Appellation'},
 	{NameURI, rdfs:label, literal(Val)}.
 
 cleanpersname
@@ -852,7 +852,7 @@ place_appellation
 ==>
 literal_to_id(['place-appellation-' ,Place], bgn, APURI),
 {OURI, crm:'P1_is_identified_by', APURI},
-{APURI, rdf:type, crm:'E41_Appellation'},
+{APURI, rdf:type, crm:'E33_E41_Linguistic_Appellation'},
 {APURI, rdfs:label, Place}.
 
 
