@@ -1,0 +1,3336 @@
+@base             <hiscolinks> .
+@prefix   status: <https://iisg.amsterdam/resource/hisco/code/status/> .
+@prefix relation: <https://iisg.amsterdam/resource/hisco/code/relation/> .
+@prefix  product: <https://iisg.amsterdam/resource/hisco/code/product/> .
+@prefix    hisco: <https://iisg.amsterdam/resource/hisco/code/hisco/> .
+@prefix      owl: <http://www.w3.org/2002/07/owl#> .
+@prefix      bgn: <http://data.biographynet.nl/rdf/> .
+
+# Named toplevel resources (579)
+
+bgn:Occupation-Aannemer
+	owl:sameAs hisco:21240 .
+
+bgn:Occupation-Advocaat
+	owl:sameAs hisco:12110 .
+
+bgn:Occupation-Ambtenaar
+	owl:sameAs hisco:\-1 .
+
+bgn:Occupation-Apotheker
+	owl:sameAs hisco:06710 .
+
+bgn:Occupation-Architect
+	owl:sameAs hisco:02120 ,
+		   hisco:39310 .
+
+bgn:Occupation-Arts
+	owl:sameAs hisco:06105 .
+
+bgn:Occupation-Assessor
+	owl:sameAs hisco:12110 ,
+		   hisco:12210 .
+
+bgn:Occupation-Bankier
+	owl:sameAs hisco:44140 .
+
+bgn:Occupation-Beeldhouwer
+	owl:sameAs hisco:16120 .
+
+bgn:Occupation-Boer
+	owl:sameAs hisco:61110 .
+
+bgn:Occupation-Burgemeester
+	owl:sameAs hisco:20110 .
+
+bgn:Occupation-Chemicus
+	owl:sameAs hisco:01110 .
+
+bgn:Occupation-Directeur
+	owl:sameAs hisco:21110 .
+
+bgn:Occupation-Docent
+	owl:sameAs hisco:13100 .
+
+bgn:Occupation-Fabrikant
+	owl:sameAs hisco:21110 ,
+		   hisco:21220 ,
+		   hisco:99999 .
+
+bgn:Occupation-Fotograaf
+	owl:sameAs hisco:16310 .
+
+bgn:Occupation-Goud-_en_zilversmid
+	owl:sameAs hisco:88050 .
+
+bgn:Occupation-Goudsmid
+	owl:sameAs hisco:88050 .
+
+bgn:Occupation-Graveur
+	owl:sameAs hisco:16150 ,
+		   hisco:88080 ,
+		   hisco:89420 ,
+		   hisco:92400 .
+
+bgn:Occupation-Handelaar
+	owl:sameAs hisco:41025 .
+
+bgn:Occupation-Herbergier
+	owl:sameAs hisco:51020 .
+
+bgn:Occupation-Hoofdonderwijzer
+	owl:sameAs hisco:13320 .
+
+bgn:Occupation-Ingenieur
+	owl:sameAs hisco:02000 .
+
+bgn:Occupation-Journalist
+	owl:sameAs hisco:15915 ,
+		   hisco:15930 .
+
+bgn:Occupation-Jurist
+	owl:sameAs hisco:12000 .
+
+bgn:Occupation-Kantonrechter
+	owl:sameAs hisco:12210 .
+
+bgn:Occupation-Kapper
+	owl:sameAs hisco:57025 .
+
+bgn:Occupation-Koopman
+	owl:sameAs hisco:41025 .
+
+bgn:Occupation-Kunstschilder
+	owl:sameAs hisco:16130 .
+
+bgn:Occupation-Landbouwer
+	owl:sameAs hisco:61220 .
+
+bgn:Occupation-Leraar
+	owl:sameAs hisco:13200 .
+
+bgn:Occupation-Maire
+	owl:sameAs hisco:20110 .
+
+bgn:Occupation-Masseuse
+	owl:sameAs hisco:07640 .
+
+bgn:Occupation-Medicus
+	owl:sameAs hisco:06100 .
+
+bgn:Occupation-Meubelmaker
+	owl:sameAs hisco:81120 .
+
+bgn:Occupation-Militair
+	owl:sameAs hisco:58300 .
+
+bgn:Occupation-Minister
+	owl:sameAs hisco:\-1 ,
+		   hisco:14120 ,
+		   hisco:20110 .
+
+bgn:Occupation-Musicus
+	owl:sameAs hisco:17140 .
+
+bgn:Occupation-Notaris
+	owl:sameAs hisco:12310 .
+
+bgn:Occupation-Officier
+	owl:sameAs hisco:58320 .
+
+bgn:Occupation-Onderwijzer
+	owl:sameAs hisco:13320 .
+
+bgn:Occupation-Organist
+	owl:sameAs hisco:17140 .
+
+bgn:Occupation-Papierfabrikant
+	owl:sameAs hisco:21110 ,
+		   hisco:73400 .
+
+bgn:Occupation-Pianist
+	owl:sameAs hisco:17140 .
+
+bgn:Occupation-Predikant
+	owl:sameAs hisco:14120 .
+
+bgn:Occupation-Publicist
+	owl:sameAs hisco:15120 ,
+		   hisco:44230 .
+
+bgn:Occupation-Rentenier
+	owl:sameAs hisco:\-1 .
+
+bgn:Occupation-Schaapherder
+	owl:sameAs hisco:62430 .
+
+bgn:Occupation-Scheepstimmerman
+	owl:sameAs hisco:95455 .
+
+bgn:Occupation-Schilder
+	owl:sameAs hisco:93120 .
+
+bgn:Occupation-Schipper
+	owl:sameAs hisco:04217 .
+
+bgn:Occupation-Schoolmeester
+	owl:sameAs hisco:13320 .
+
+bgn:Occupation-Schrijver
+	owl:sameAs hisco:15120 ,
+		   hisco:39320 .
+
+bgn:Occupation-Sergeant
+	owl:sameAs hisco:58330 .
+
+bgn:Occupation-Slager
+	owl:sameAs hisco:77310 .
+
+bgn:Occupation-Tekenaar
+	owl:sameAs hisco:03110 ,
+		   hisco:16130 .
+
+bgn:Occupation-Timmerman
+	owl:sameAs hisco:95410 .
+
+bgn:Occupation-Uitgever
+	owl:sameAs hisco:21110 .
+
+bgn:Occupation-Veldwachter
+	owl:sameAs hisco:58220 .
+
+bgn:Occupation-Violoncellist
+	owl:sameAs hisco:17140 .
+
+bgn:Occupation-Werktuigkundige
+	owl:sameAs hisco:03510 .
+
+bgn:Occupation-Winkelier
+	owl:sameAs hisco:41030 .
+
+bgn:Occupation-aannemer_van_publieke_werken
+	owl:sameAs hisco:21240 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-accountant
+	owl:sameAs hisco:11010 ,
+		   hisco:33110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-acteur
+	owl:sameAs hisco:17320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-actrice
+	owl:sameAs hisco:17320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-adelborst
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-adjudant
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-adjunct-commies_ter_secretarie
+	owl:sameAs hisco:39310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-adjunct-houtvester
+	owl:sameAs hisco:63220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-administrateur
+	owl:sameAs hisco:20210 ,
+		   hisco:21940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-administrateur_der_domeinen
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-administratief_medewerker
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-administratrice
+	owl:sameAs hisco:21940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-advocaat
+	owl:sameAs hisco:12110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-advocaat-generaal
+	owl:sameAs hisco:12110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-advocaat_en_procureur
+	owl:sameAs hisco:12110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-afzetter
+	owl:sameAs hisco:97125 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-agent_van_het_domein
+	owl:sameAs hisco:22425 ,
+		   hisco:58220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-agrarier
+	owl:sameAs hisco:61110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambachtsheer
+	owl:sameAs hisco:\-1 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:51 .
+
+bgn:Occupation-ambachtsman
+	owl:sameAs hisco:99900 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar_belastingdienst
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar_bij_de_registratie
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar_eerste_klasse
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar_ministerie
+	owl:sameAs hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ambtenaar_politie
+	owl:sameAs hisco:39990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-antiquair
+	owl:sameAs hisco:41030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-apotheker_en_koopman
+	owl:sameAs hisco:6710 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-arbeider_werkman
+	owl:sameAs hisco:99900 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-archeoloog
+	owl:sameAs hisco:19290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-architect
+	owl:sameAs hisco:02120 ,
+		   hisco:02210 ,
+		   hisco:2120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-architecte
+	owl:sameAs hisco:02120 ,
+		   hisco:2120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-archivaris
+	owl:sameAs hisco:19130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-arts
+	owl:sameAs hisco:6105 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-aspirant-controleur
+	owl:sameAs hisco:94980 ,
+		   product:\-9 ,
+		   relation:22 ,
+		   status:\-9 .
+
+bgn:Occupation-aspirant-ingenieur
+	owl:sameAs hisco:2000 ,
+		   product:\-9 ,
+		   relation:22 ,
+		   status:\-9 .
+
+bgn:Occupation-assistent-accountant
+	owl:sameAs hisco:11010 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-assistent_accountant
+	owl:sameAs hisco:11010 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-assurantie-agent
+	owl:sameAs hisco:44120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-auditeur-militair
+	owl:sameAs hisco:11020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-auteur
+	owl:sameAs hisco:15120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bakenmeester
+	owl:sameAs hisco:98990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-bakkersleerling
+	owl:sameAs hisco:77610 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-baljuw
+	owl:sameAs hisco:12210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bankbediende
+	owl:sameAs hisco:33140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-bankier
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bankwerker
+	owl:sameAs hisco:83210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-bedrijfsadviseur
+	owl:sameAs hisco:12910 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-beeldend_kunstenaar
+	owl:sameAs hisco:16100 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-beeldgieter
+	owl:sameAs hisco:16120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-beeldhouwer
+	owl:sameAs hisco:16120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-beeldsnijder
+	owl:sameAs hisco:16120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-behanger
+	owl:sameAs hisco:95925 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-behangselfabrikant
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-belastingambtenaar
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-belastingontvanger
+	owl:sameAs hisco:31020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-beroepsofficier
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bestuurder
+	owl:sameAs hisco:98500 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bestuurster
+	owl:sameAs hisco:98500 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bibliothecaris
+	owl:sameAs hisco:19120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-binnenhuisarchitect
+	owl:sameAs hisco:16230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bioloog
+	owl:sameAs hisco:5110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekbinder
+	owl:sameAs hisco:92625 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekbinder_en_boekverkoper
+	owl:sameAs hisco:92625 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekdrukker_uitgever
+	owl:sameAs hisco:92110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekhandelaar
+	owl:sameAs hisco:41025 ,
+		   product:32 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekhouder
+	owl:sameAs hisco:33110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boekverkoper
+	owl:sameAs hisco:45125 ,
+		   product:32 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boerenarbeider
+	owl:sameAs hisco:62105 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-boerenknecht
+	owl:sameAs hisco:62105 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-boerin
+	owl:sameAs hisco:61110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-boetseerder
+	owl:sameAs hisco:16120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bosbouwkundige
+	owl:sameAs hisco:5340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bouwkundig_tekenaar
+	owl:sameAs hisco:03390 ,
+		   hisco:3140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-bouwvakarbeider
+	owl:sameAs hisco:95000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-bouwvakker
+	owl:sameAs hisco:95000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-briljantsnijder
+	owl:sameAs hisco:88030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-burgemeester
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-cabaretier
+	owl:sameAs hisco:17390 ,
+		   hisco:51020 ,
+		   hisco:51050 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-cadet
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:41 .
+
+bgn:Occupation-cartograaf
+	owl:sameAs hisco:3160 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-chef_werkplaats
+	owl:sameAs hisco:22110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-chemicus
+	owl:sameAs hisco:1110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-cineast
+	owl:sameAs hisco:17430 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-circusartieste
+	owl:sameAs hisco:17590 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ciseleur
+	owl:sameAs hisco:81945 ,
+		   hisco:88080 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-commies
+	owl:sameAs hisco:31000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-componist
+	owl:sameAs hisco:17120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-componiste
+	owl:sameAs hisco:17120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-conseiller_de_prefecture
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-conservator
+	owl:sameAs hisco:19140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-controleur
+	owl:sameAs hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-controleur_der_belastingen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-curator
+	owl:sameAs hisco:19140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-dagbladuitgever
+	owl:sameAs hisco:21110 ,
+		   product:32 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-danseres
+	owl:sameAs hisco:17230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-decoratieschilder
+	owl:sameAs hisco:93920 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-decorschilder
+	owl:sameAs hisco:93920 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-diamantslijper
+	owl:sameAs hisco:88030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-dichter
+	owl:sameAs hisco:15990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-dierkundige
+	owl:sameAs hisco:5280 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-diplomaat
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-directeur_administratiekantoor
+	owl:sameAs hisco:22110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-directeur_der_belastingen
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-directeur_der_registratie_en_domeinen
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-directeur_steenkolenhandel
+	owl:sameAs hisco:21300 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-dirigent
+	owl:sameAs hisco:17135 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-districtscommissaris
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-docent
+	owl:sameAs hisco:13000 ,
+		   hisco:99999 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-dominee
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-doopsgezind_predikant
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-drukker
+	owl:sameAs hisco:92110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-econoom
+	owl:sameAs hisco:9010 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-edelsmid
+	owl:sameAs hisco:88050 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_luitenant
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_luitenant_bij_de_vestingartillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_luitenant_bij_het_tweede_regiment_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_luitenant_der_cavalerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-eerste_luitenant_der_huzaren
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_luitenant_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-eerste_stuurman_bij_de_koopvaardij
+	owl:sameAs hisco:4230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-elektricien
+	owl:sameAs hisco:85510 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-elektrotechnicus
+	owl:sameAs hisco:3405 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-emailleur
+	owl:sameAs hisco:72890 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-emballeur
+	owl:sameAs hisco:97152 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-entertainer
+	owl:sameAs hisco:17990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-entomoloog
+	owl:sameAs hisco:5190 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-etaleur
+	owl:sameAs hisco:16250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-etser
+	owl:sameAs hisco:16150 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-evangelist
+	owl:sameAs hisco:14120 ,
+		   hisco:14130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fabriekmeester
+	owl:sameAs hisco:21220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-fabrieksarbeider
+	owl:sameAs hisco:99930 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fabrikant
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-farmaceut
+	owl:sameAs hisco:6710 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fietsjongen
+	owl:sameAs hisco:37040 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-filosoof
+	owl:sameAs hisco:19290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-financieel_ambtenaar
+	owl:sameAs hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fotograaf
+	owl:sameAs hisco:16310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fotografe
+	owl:sameAs hisco:16310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fotohandelaar
+	owl:sameAs hisco:41025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fotoredacteur
+	owl:sameAs hisco:15920 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fourier
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-fruitkweker
+	owl:sameAs hisco:61230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-geheim_agent
+	owl:sameAs hisco:58990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-genealoog
+	owl:sameAs hisco:19260 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-generaal-majoor
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-geograaf
+	owl:sameAs hisco:19250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-geoloog
+	owl:sameAs hisco:1330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-gepensioneerd
+	owl:sameAs hisco:\-1 ,
+		   hisco:\-2 ,
+		   product:\-9 ,
+		   relation:21 ,
+		   status:\-9 .
+
+bgn:Occupation-gereformeerd_predikant
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-gezantschapsattache
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-gezworene
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-glasetser
+	owl:sameAs hisco:89430 ,
+		   hisco:95720 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-glasgraveur
+	owl:sameAs hisco:89420 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-glasschilder
+	owl:sameAs hisco:89520 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-glazenmaker
+	owl:sameAs hisco:89100 ,
+		   hisco:95720 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-goudsmid
+	owl:sameAs hisco:88050 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-gouvernementssecretaris
+	owl:sameAs hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-gouverneur-generaal
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-graficus
+	owl:sameAs hisco:16200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-grafisch_ontwerper
+	owl:sameAs hisco:16200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-graveur
+	owl:sameAs hisco:16150 ,
+		   hisco:88080 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-guillocheur
+	owl:sameAs hisco:83420 .
+
+bgn:Occupation-handelaar
+	owl:sameAs hisco:41025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-handelsreiziger
+	owl:sameAs hisco:43220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-havenarbeider
+	owl:sameAs hisco:97120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-heemraad
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-heraldicus
+	owl:sameAs hisco:\-3 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-herenboer
+	owl:sameAs hisco:61120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-historicus
+	owl:sameAs hisco:19260 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hoedenwinkel
+	owl:sameAs hisco:41030 ,
+		   product:28 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hoefsmid
+	owl:sameAs hisco:83110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hoffotograaf
+	owl:sameAs hisco:16310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hofmaarschalk
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hoogleraar
+	owl:sameAs hisco:13100 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:42 .
+
+bgn:Occupation-horlogemaker
+	owl:sameAs hisco:84222 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-houtdraaier
+	owl:sameAs hisco:81230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-houtfabrikant
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-houtgraveur
+	owl:sameAs hisco:81945 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-houtvester
+	owl:sameAs hisco:63220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-hovenier
+	owl:sameAs hisco:61270 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-huis-_en_decoratieschilder
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-huisschilder
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-huisschildersgezel
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:22 .
+
+bgn:Occupation-hulp_in_de_huishouding
+	owl:sameAs hisco:54020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-hulponderwijzer
+	owl:sameAs hisco:13320 ,
+		   hisco:13990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-hypotheekbewaarder
+	owl:sameAs hisco:31020 ,
+		   hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-illustrator
+	owl:sameAs hisco:3170 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-in_dienst_bij_de_mobiele_schutterij
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-in_militaire_dienst
+	owl:sameAs hisco:58300 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-in_zeedienst
+	owl:sameAs hisco:98135 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-indoloog
+	owl:sameAs hisco:19240 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-infanterist
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ingenieur
+	owl:sameAs hisco:02000 ,
+		   hisco:2000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-inspecteur_der_belastingen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-inspecteur_der_directe_belastingen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-inspecteur_der_veenderijen
+	owl:sameAs hisco:22520 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-inspecteur_registratie_en_domeinen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-instrumentmaker
+	owl:sameAs hisco:84230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ivoordraaier
+	owl:sameAs hisco:94990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ivoorsnijder
+	owl:sameAs hisco:94990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-journalist
+	owl:sameAs hisco:15915 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-journaliste
+	owl:sameAs hisco:15915 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-jurist
+	owl:sameAs hisco:12000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-juriste
+	owl:sameAs hisco:12000 ,
+		   hisco:12210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kalligraaf
+	owl:sameAs hisco:16290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kamerbehanger
+	owl:sameAs hisco:95925 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kandidaat-notaris
+	owl:sameAs hisco:12310 ,
+		   product:\-9 ,
+		   relation:22 ,
+		   status:\-9 .
+
+bgn:Occupation-kantoorbediende
+	owl:sameAs hisco:39310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-kapitein
+	owl:sameAs hisco:4217 ,
+		   hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein-adjudant
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein-ter-zee
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein_der_artillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein_ter_koopvaardij
+	owl:sameAs hisco:4215 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kapitein_ter_zee
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kappersbediende
+	owl:sameAs hisco:57025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-keramist
+	owl:sameAs hisco:89300 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kinderverzorgster
+	owl:sameAs hisco:54035 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kleermaker
+	owl:sameAs hisco:79100 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kluftheer
+	owl:sameAs hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-koffiehuisbediende
+	owl:sameAs hisco:53210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-kolonel_bij_de_generale_staf
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kolonel_der_genie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koloniaal_ambtenaar
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koopman
+	owl:sameAs hisco:41025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koopman_en_assuradeur
+	owl:sameAs hisco:41025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koopman_en_bankier
+	owl:sameAs hisco:41025 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koopman_in_textiel
+	owl:sameAs hisco:41025 ,
+		   product:26 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-koperbewerker
+	owl:sameAs hisco:87330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-koperslager
+	owl:sameAs hisco:87330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kopiist
+	owl:sameAs hisco:39990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-korporaal
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kuiper
+	owl:sameAs hisco:81930 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunstcriticus
+	owl:sameAs hisco:15130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunstdraaier
+	owl:sameAs hisco:81230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunsthaarwerker
+	owl:sameAs hisco:94990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunsthandelaar
+	owl:sameAs hisco:41020 ,
+		   hisco:41025 ,
+		   product:38 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunsthistoricus
+	owl:sameAs hisco:19260 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunstnijveraar
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-kunstschilder
+	owl:sameAs hisco:16130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lakwerker
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-land-_en_bosarbeider
+	owl:sameAs hisco:62210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-land-_en_veenarbeider
+	owl:sameAs hisco:62210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landarbeider
+	owl:sameAs hisco:62210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-landbouwer
+	owl:sameAs hisco:61220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landbouwkundig_adviseur
+	owl:sameAs hisco:5360 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landbouwkundige
+	owl:sameAs hisco:5320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landbouwonderwijzer
+	owl:sameAs hisco:13270 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landeigenaar
+	owl:sameAs hisco:\-1 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-landmeter
+	owl:sameAs hisco:3020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-landsadvocaat
+	owl:sameAs hisco:12910 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-leerling-letterzetter
+	owl:sameAs hisco:92120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-leerling-sigarenmaker
+	owl:sameAs hisco:78200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-leerling-smid
+	owl:sameAs hisco:83110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-leerling-timmerman
+	owl:sameAs hisco:95410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-leerlooier
+	owl:sameAs hisco:76145 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-leerwerker
+	owl:sameAs hisco:80310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-legerofficier
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-leraar
+	owl:sameAs hisco:13200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-leraar_geschiedenis
+	owl:sameAs hisco:13240 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lettergieter
+	owl:sameAs hisco:72420 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-letterkundige
+	owl:sameAs hisco:19520 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lettersnijder
+	owl:sameAs hisco:92430 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lid_gemeentebestuur
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-liftmonteur
+	owl:sameAs hisco:85160 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lijstenmaker
+	owl:sameAs hisco:81990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lijstenvergulder
+	owl:sameAs hisco:72890 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-literator
+	owl:sameAs hisco:19520 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-lithograaf
+	owl:sameAs hisco:92415 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-loonadministrateur
+	owl:sameAs hisco:21940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-loopjongen
+	owl:sameAs hisco:37040 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-los_landarbeider
+	owl:sameAs hisco:62210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luchtmachtofficier
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant-generaal
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant-kolonel
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant-ter-zee
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_bij_de_marine
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_der_artillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_der_genie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_ter_zee
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_ter_zee_eerste_klasse
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-luitenant_ter_zee_tweede_klasse
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-maatschappelijk_werker
+	owl:sameAs hisco:19310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-maatschappelijk_werkster
+	owl:sameAs hisco:19310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-machinist_ter_koopvaardij
+	owl:sameAs hisco:98220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-maire
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-majoor
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-majoor_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-makelaar
+	owl:sameAs hisco:44100 ,
+		   hisco:44130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-makelaar_en_taxateur
+	owl:sameAs hisco:44130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-makelaar_in_koffie_en_thee
+	owl:sameAs hisco:43230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-marine-officier
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-marineofficier
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-matroos
+	owl:sameAs hisco:98135 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-medailleur
+	owl:sameAs hisco:88090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-medicus
+	owl:sameAs hisco:6105 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:42 .
+
+bgn:Occupation-meester_goud-_en_zilversmid
+	owl:sameAs hisco:88050 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:21 .
+
+bgn:Occupation-meesterknecht_smederij
+	owl:sameAs hisco:83110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-metaalbewerker
+	owl:sameAs hisco:83000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-metselaar
+	owl:sameAs hisco:95120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-meubelfabriek
+	owl:sameAs hisco:81120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-meubelmaker
+	owl:sameAs hisco:81120 ,
+		   product:38 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-meubelmakersgezel
+	owl:sameAs hisco:81120 ,
+		   product:38 ,
+		   relation:\-9 ,
+		   status:22 .
+
+bgn:Occupation-mijnbouwkundige
+	owl:sameAs hisco:2210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-militair
+	owl:sameAs hisco:58300 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-militaire_dienst
+	owl:sameAs hisco:58300 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-miniatuurschilder
+	owl:sameAs hisco:16130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-minister
+	owl:sameAs hisco:14120 ,
+		   hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-minister_van_staat
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-missionaris
+	owl:sameAs hisco:14130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-modelleur
+	owl:sameAs hisco:72500 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-modelmaker
+	owl:sameAs hisco:72500 ,
+		   hisco:89220 ,
+		   hisco:89242 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-modetekenaar
+	owl:sameAs hisco:16290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-museumdirecteur
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-musica
+	owl:sameAs hisco:17140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-musicienne
+	owl:sameAs hisco:17140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-musicus
+	owl:sameAs hisco:17140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-muzikant
+	owl:sameAs hisco:17140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-natuurkundige
+	owl:sameAs hisco:1210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-natuurwetenschapper
+	owl:sameAs hisco:1210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-non-actief
+	owl:sameAs hisco:\-3 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-non_actief
+	owl:sameAs hisco:\-3 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-notaris
+	owl:sameAs hisco:12310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier-ingenieur
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_bij_de_artillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_bij_de_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_bij_de_veldartillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_der_artillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_der_cavalerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_der_cavallerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_van_administratie_derde_klasse
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_van_administratie_eerste_klasse
+	owl:sameAs hisco:21940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-officier_van_administratie_tweede_klasse
+	owl:sameAs hisco:21940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-onder-intendant
+	owl:sameAs hisco:30000 .
+
+bgn:Occupation-onder-luitenant
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-ondergronds_mijnwerker
+	owl:sameAs hisco:71105 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-onderintendant
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-onderintendant_tweede_klasse
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-onderneemster
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-ondernemer
+	owl:sameAs hisco:21110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-onderofficier
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-onderwijzer
+	owl:sameAs hisco:13000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-onderwijzer_lagere_school
+	owl:sameAs hisco:13320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-onderwijzeres
+	owl:sameAs hisco:13320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ontvanger
+	owl:sameAs hisco:31020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ontvanger_der_registratie
+	owl:sameAs hisco:31020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ontvanger_van_belastingen
+	owl:sameAs hisco:31020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ontvanger_van_de_registratie
+	owl:sameAs hisco:31020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ontwerper
+	owl:sameAs hisco:16200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-opperhofmaarschalk
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-opperhoutvester
+	owl:sameAs hisco:63220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-opperkamerheer
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-opperrabbijn
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-opperstalmeester
+	owl:sameAs hisco:62460 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-opticien
+	owl:sameAs hisco:07500 ,
+		   hisco:07530 ,
+		   hisco:7530 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ornamenttekenaar
+	owl:sameAs hisco:3110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-paragnost
+	owl:sameAs hisco:19960 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-particulier_economisch_adviseur
+	owl:sameAs hisco:9020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-patroonschilder
+	owl:sameAs hisco:93990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-pedagoog
+	owl:sameAs hisco:19290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-pensioen
+	owl:sameAs hisco:\-2 ,
+		   product:\-9 ,
+		   relation:21 ,
+		   status:\-9 .
+
+bgn:Occupation-pentekenaar
+	owl:sameAs hisco:16190 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-personeelschef
+	owl:sameAs hisco:21980 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-piloot
+	owl:sameAs hisco:4125 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-plafondschilder
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-plantkundige
+	owl:sameAs hisco:5120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-plateelbakker
+	owl:sameAs hisco:89350 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-plateelschilder
+	owl:sameAs hisco:89530 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-pluimveehouder
+	owl:sameAs hisco:61260 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-politieofficier
+	owl:sameAs hisco:58220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-poppenmaker
+	owl:sameAs hisco:94940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-porseleinschilder
+	owl:sameAs hisco:89430 ,
+		   hisco:89530 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-postmeester
+	owl:sameAs hisco:22220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-predikant
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-priester
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-procuratiehouder
+	owl:sameAs hisco:33940 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-procureur
+	owl:sameAs hisco:12110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-professor
+	owl:sameAs hisco:13100 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:42 .
+
+bgn:Occupation-proponent
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:42 .
+
+bgn:Occupation-provoost
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-psychiater
+	owl:sameAs hisco:19230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-psycholoog
+	owl:sameAs hisco:19230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-publicist
+	owl:sameAs hisco:15915 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-publiciste
+	owl:sameAs hisco:44230 .
+
+bgn:Occupation-r_k_bisschop
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-r_k_priester
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-raadsheer
+	owl:sameAs hisco:12210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rabbijn
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rechter
+	owl:sameAs hisco:12210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rechtskundig_adviseur
+	owl:sameAs hisco:12410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-reclameontwerper
+	owl:sameAs hisco:15950 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-reclameschilder
+	owl:sameAs hisco:16220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-reclametekenaar
+	owl:sameAs hisco:16220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-redacteur
+	owl:sameAs hisco:15920 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-redactrice
+	owl:sameAs hisco:15920 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-regisseur
+	owl:sameAs hisco:17330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-registeraccountant
+	owl:sameAs hisco:11010 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rekenmeester
+	owl:sameAs hisco:21950 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-rentenier
+	owl:sameAs hisco:\-1 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-rentmeester
+	owl:sameAs hisco:21950 ,
+		   hisco:21990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-repetitor
+	owl:sameAs hisco:17135 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-restaurator
+	owl:sameAs hisco:16160 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rietvlechter
+	owl:sameAs hisco:94290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rijksadvocaat
+	owl:sameAs hisco:12110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rijksambtenaar
+	owl:sameAs hisco:12410 ,
+		   hisco:31090 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-rijtuigschilder
+	owl:sameAs hisco:93990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-ritmeester
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-romanschrijver
+	owl:sameAs hisco:15120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-scheepsbouwkundige
+	owl:sameAs hisco:2290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-scheikundige
+	owl:sameAs hisco:1110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schilder
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schilderes
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schildersbedrijf
+	owl:sameAs hisco:93120 ,
+		   product:32 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-schildersgezel
+	owl:sameAs hisco:93120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:22 .
+
+bgn:Occupation-schippersknecht
+	owl:sameAs hisco:98190 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-schoenmaker
+	owl:sameAs hisco:80110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schoolmeester
+	owl:sameAs hisco:13320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schoolopziener
+	owl:sameAs hisco:13950 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schrijfster
+	owl:sameAs hisco:39320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schrijnwerker
+	owl:sameAs hisco:81120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-schrijver
+	owl:sameAs hisco:39320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-schulte
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-secretaresse
+	owl:sameAs hisco:32120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-secretaris-generaal
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-secretaris_van_staat
+	owl:sameAs hisco:20210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sergeant
+	owl:sameAs hisco:58330 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sierkunstenaar
+	owl:sameAs hisco:16230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sigarenmaker
+	owl:sameAs hisco:78200 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-smid
+	owl:sameAs hisco:83110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sociaal_werker
+	owl:sameAs hisco:19310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sociaal_werkster
+	owl:sameAs hisco:19310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-socioloog
+	owl:sameAs hisco:19220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-spoorwegbouwkundige
+	owl:sameAs hisco:2240 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sporter
+	owl:sameAs hisco:18020 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-staatsraad_in_buitengewone_dienst
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-staatssecretaris
+	owl:sameAs hisco:20110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-staljongen
+	owl:sameAs hisco:62460 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-stedenbouwkundige
+	owl:sameAs hisco:2130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-steendrukker
+	owl:sameAs hisco:92250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-steenfabrikant
+	owl:sameAs hisco:21110 ,
+		   product:15 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-steengraveur
+	owl:sameAs hisco:82060 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-steenhouwer
+	owl:sameAs hisco:82000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-sterrenkundige
+	owl:sameAs hisco:1350 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-stoelenmatter
+	owl:sameAs hisco:94250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-surnumerair
+	owl:sameAs hisco:30000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-surnumerair_der_belastingen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-surnumerair_der_directe_belastingen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-surnumerair_der_directe_belastingen_invoerrechten_en_accijnzen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-surnumerair_der_registratie_en_domeinen
+	owl:sameAs hisco:31030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-taalkundige
+	owl:sameAs hisco:19290 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tandheelkundige
+	owl:sameAs hisco:6310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tandtechnicus
+	owl:sameAs hisco:84250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tegelbakker
+	owl:sameAs hisco:89360 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tegelschilder
+	owl:sameAs hisco:89530 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tekenaar
+	owl:sameAs hisco:3110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tekenleraar
+	owl:sameAs hisco:13250 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tekstschrijver
+	owl:sameAs hisco:39320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-theoloog
+	owl:sameAs hisco:14120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:42 .
+
+bgn:Occupation-tijdelijk_onderwijzer
+	owl:sameAs hisco:13320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-timmerman
+	owl:sameAs hisco:95410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-timmermansknecht
+	owl:sameAs hisco:95410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-timmermansleerling
+	owl:sameAs hisco:95410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:23 .
+
+bgn:Occupation-toneelschrijver
+	owl:sameAs hisco:15120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-toneelspeler
+	owl:sameAs hisco:17320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tuinarbeider
+	owl:sameAs hisco:62700 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:32 .
+
+bgn:Occupation-tuinarchitect
+	owl:sameAs hisco:2140 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tuindersknecht
+	owl:sameAs hisco:62700 ,
+		   hisco:62740 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-tweede_luitenant
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tweede_luitenant_cavalerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tweede_luitenant_der_artillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tweede_luitenant_der_infanterie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tweede_luitenant_ter_zee
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-tweede_luitenant_vestingartillerie
+	owl:sameAs hisco:58320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-typograaf
+	owl:sameAs hisco:92110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-uitgever
+	owl:sameAs hisco:21110 ,
+		   product:32 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-vaandrig
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vakbondsbestuurder
+	owl:sameAs hisco:19490 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-veilinghouder
+	owl:sameAs hisco:44320 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:11 .
+
+bgn:Occupation-verfhandelaar
+	owl:sameAs hisco:41025 ,
+		   product:35 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-verkoopleider
+	owl:sameAs hisco:45125 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:31 .
+
+bgn:Occupation-verlof
+	owl:sameAs hisco:\-2 ,
+		   product:\-9 ,
+		   relation:21 ,
+		   status:\-9 .
+
+bgn:Occupation-vertaalster
+	owl:sameAs hisco:19530 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vertaler
+	owl:sameAs hisco:15990 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vervener
+	owl:sameAs hisco:62970 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-verzamelaar
+	owl:sameAs hisco:99999 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-verzekeringsagent
+	owl:sameAs hisco:44120 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vliegtuigbouwkundige
+	owl:sameAs hisco:4150 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-voetbaltrainer
+	owl:sameAs hisco:18030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vormgever
+	owl:sameAs hisco:16000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vrederechter
+	owl:sameAs hisco:12210 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-vrijwilliger_bij_de_artillerie
+	owl:sameAs hisco:58340 ,
+		   product:\-9 ,
+		   relation:31 ,
+		   status:\-9 .
+
+bgn:Occupation-waarnemend_notaris
+	owl:sameAs hisco:12310 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-waterbouwkundige
+	owl:sameAs hisco:2255 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-weerkundige
+	owl:sameAs hisco:1340 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-werkloos
+	owl:sameAs hisco:\-3 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-werktuigbouwkundige
+	owl:sameAs hisco:2410 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-werkzaam_bij_de_koopvaardij
+	owl:sameAs hisco:45230 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-werkzaam_in_de_tuinbouw
+	owl:sameAs hisco:61270 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-werkzaam_in_het_onderwijs
+	owl:sameAs hisco:13000 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-wever
+	owl:sameAs hisco:75400 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-winkelbediende
+	owl:sameAs hisco:45130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:33 .
+
+bgn:Occupation-winkelier
+	owl:sameAs hisco:41030 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-wiskundige
+	owl:sameAs hisco:8220 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zanger
+	owl:sameAs hisco:17145 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zangeres
+	owl:sameAs hisco:17145 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zeefdrukker
+	owl:sameAs hisco:92110 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zeekapitein
+	owl:sameAs hisco:4215 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zeevarende
+	owl:sameAs hisco:98135 ,
+		   hisco:98190 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zilversmid
+	owl:sameAs hisco:88050 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zinkograaf
+	owl:sameAs hisco:92490 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zonder_beroep
+	owl:sameAs hisco:\-2 ,
+		   hisco:\-3 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zooloog
+	owl:sameAs hisco:5130 ,
+		   product:\-9 ,
+		   relation:\-9 ,
+		   status:\-9 .
+
+bgn:Occupation-zuivelconsulent
+	owl:sameAs hisco:5360 ,
+		   product:22 ,
+		   relation:\-9 ,
+		   status:\-9 .
