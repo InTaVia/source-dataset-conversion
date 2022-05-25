@@ -361,7 +361,6 @@ def events(apis_id, edate, crmtype, urltype, roletype, relationlabel):
     g.add((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id']), RDFS.label, roletype))
     g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDFS.label, Literal(relationlabel)))
     if edate != "None":
-
         g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+urltype+'/timespan/'+row['apis_id'])))
         #add time-span to event
         g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82a_begin_of_the_begin, (Literal(edate+'T00:00:00'))))
@@ -477,6 +476,11 @@ for index, row in relations_df.iterrows():
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
         #group which is part of this relation
+        g.add((URIRef(idmapis+'career/'+row['relationid']), RDF.type, idmcore.Career))
+        # g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationslabel']))) -> key error -> ausbessern
+        g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.had_participant_in_role, idmrole.Institution))
+        g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid']))),
+        g.add((URIRef(idmapis+'career/'+row['relationid']+row['apis_id']), idmcore.had_participant_in_role, idmrole.row['relationtypeid']))
     elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/'+row['relationid'])))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
@@ -499,6 +503,9 @@ for index, row in relations_df.iterrows():
         #add general event according to APIS
     else:
         print("not included: "+row['relationid']+ row['relationtypelabel']+ row['relatedentityid']+ row['relatedentitylabel']+ row['relationtypeurl'])
+
+
+
 
 for index, row in institutions_df.iterrows():
     g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
@@ -539,6 +546,7 @@ for index, row in institutions_df.iterrows():
 for index, row in occupations_df.iterrows():
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_occupation, URIRef(idmapis+'occupation/'+row['professionid'])))
     g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.label, Literal(row['professionlabel'])))
+    g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, idmcore.Occupation))
     if row['professionparentid'] != None:
         g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, URIRef(idmapis+'occupation/'+row['professionparentid'])))
         g.add((URIRef(idmapis+'occupation/'+row['professionparentid']), rdfs.subClassOf, idmcore.Occupation))
