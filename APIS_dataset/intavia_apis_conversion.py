@@ -225,7 +225,7 @@ def datareturn (d, re):
     # return d,datarelations, pc
     return d,datarelations
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=150":
 #define the point when iterating stops (for test serialization)
 #while next_page != None:
     """iterate over JSON API urls"""
@@ -245,10 +245,10 @@ else:
     datageneral, datarelations = datareturn(data, response_list)
 
 
-#while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
-while next_page_institution != None:
+#while next_page_institution != None:
     """iterate over JSON API urls (institutions)"""
     print(f'getting {next_page_institution}')
     first_response_institution = requests.get(next_page_institution, headers=headers)
@@ -480,9 +480,9 @@ for index, row in relations_df.iterrows():
         # g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationslabel']))) -> key error -> ausbessern
         g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.had_participant_in_role, idmrole.Institution))
         g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid']))),
-        g.add((URIRef(idmapis+'career/'+row['relationid']+row['apis_id']), idmcore.had_participant_in_role, idmrole.row['relationtypeid']))
+        g.add((URIRef(idmapis+'career/'+row['relationid']+row['apis_id']), idmcore.had_participant_in_role, URIRef(idmrole + row['relationtypeid'])))
     elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
-        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/'+row['relationid'])))
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDFS.label, Literal(row['relationtypelabel'])))
         g.add(((URIRef(idmrelations+relationtype_id)), RDFS.subClassOf, (URIRef(idmcore.Person_Relationship_Role))))
@@ -547,9 +547,10 @@ for index, row in occupations_df.iterrows():
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_occupation, URIRef(idmapis+'occupation/'+row['professionid'])))
     g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.label, Literal(row['professionlabel'])))
     g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, idmcore.Occupation))
-    if row['professionparentid'] != None:
-        g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, URIRef(idmapis+'occupation/'+row['professionparentid'])))
-        g.add((URIRef(idmapis+'occupation/'+row['professionparentid']), rdfs.subClassOf, idmcore.Occupation))
+    if row['professionparentid'] != "nan":
+        professionparentid = row['professionparentid'][:-2]
+        g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, URIRef(idmapis+'occupation/'+professionparentid)))
+        g.add((URIRef(idmapis+'occupation/'+professionparentid), rdfs.subClassOf, idmcore.Occupation))
 
 
 
