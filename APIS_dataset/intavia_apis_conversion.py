@@ -128,7 +128,10 @@ def reldetails(relationuri):
         rd_end_date = rd_json.get('end_date')
         rd_end_date_written = rd_json.get('end_date_written')
         rd_end_end_date = rd_json.get('end_end_date')
-    return (rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date)
+        #rd_institution = None
+        #if re.search(r'/personinstitutionrelation/.*' , rd_url):
+            #rd_institution = rd_json.get('related_institution')
+        return (rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date)
 
 
 
@@ -146,9 +149,10 @@ def relations(person):
             relationsid = (y.get('id'))
             relationslabel = y.get('label')
             relationsurl = y.get('url')
-            rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date = reldetails(relationsurl)
+            rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date= reldetails(relationsurl)
             relationtype = y.get('relation_type')
             relatedentity = y.get('related_entity')
+            #for person-institution-relation
             da.append({
                 'apis_id':apis_id,
                 'relationid':relationsid,
@@ -325,7 +329,7 @@ bf=Namespace('http://id.loc.gov/ontologies/bibframe/')
 """Defines bibframe namespace."""
 
 apis_df = apis_df.applymap(str)
-#relations_df = relations_df.applymap(str)
+relations_df = relations_df.applymap(str)
 occupations_df = occupations_df.applymap(str)
 institutions_df = institutions_df.applymap(str)
 # reactivate when server problem is solved!
@@ -467,39 +471,48 @@ for index, row in relations_df.iterrows():
     #     #adds other person-part of the family relation
     elif re.search(r'vocabularies/personinstitutionrelation/.*' , rtype):
         #connect personproxy and institutions with grouprelationship
-        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
+        # Person has a specific group relation
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+        #defines type of grouprelation
         if relationtype_parentid != '0':
-            #adds parent class for relationship types
+            # if the relationtype has a superclass, it is added here
             g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))   
-        #defines relationship as idm group relationship
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+        # add label to relationtype
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
         #group which is part of this relation
         g.add((URIRef(idmapis+'career/'+row['relationid']), RDF.type, idmcore.Career))
-        # g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationslabel']))) -> key error -> ausbessern
-        g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.had_participant_in_role, idmrole.Institution))
-        g.add((URIRef(idmapis+'career/'+row['relationid']+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid']))),
-        g.add((URIRef(idmapis+'career/'+row['relationid']+row['apis_id']), idmcore.had_participant_in_role, URIRef(idmrole + row['relationtypeid'])))
+        # add career event of type idmcore:career
+        g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationlabel'])))
+        # label for career event
+        g.add((URIRef(idmapis+'career/'+row['relationid']), idmcore.had_participant_in_role, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+        # role of participating person in the career event
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+        # person which inheres this role
+        g.add((URIRef(idmapis+'career/'+row['relationid']), idmcore.had_participant_in_role, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
+        # role of institution/ group in the career event
+        g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
+        # institution/ group which inheres this role
     elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDFS.label, Literal(row['relationtypelabel'])))
         g.add(((URIRef(idmrelations+relationtype_id)), RDFS.subClassOf, (URIRef(idmcore.Person_Relationship_Role))))
         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'personrelation/'+row['relationid'])))
-        # #connect personproxy and institutions with grouprelationship
-        # g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
-        # g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-        # if relationtype_parentid != '0':
-        #     #adds parent class for relationship types
-        #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
-        #     g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
-        # #defines relationship as idm group relationship
-        # g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
-        # g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
-        # #group which is part of this relation
+        #connect personproxy and institutions with grouprelationship
+        g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
+        g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+        if relationtype_parentid != '0':
+            #adds parent class for relationship types
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+        #defines relationship as idm group relationship
+        g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+        g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
+        #group which is part of this relation
     elif re.search(r'vocabularies/personeventrelation/.*', rtype):
-        events(str(row['apis_id']), 'None', crm.E7_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
+        events(str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
         #add general event according to APIS
     else:
         print("not included: "+row['relationid']+ row['relationtypelabel']+ row['relatedentityid']+ row['relatedentitylabel']+ row['relationtypeurl'])
