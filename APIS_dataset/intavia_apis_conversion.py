@@ -26,6 +26,7 @@ placecheck=set()
 placerelationscheck=set()
 familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 headers = {"accept": "application/json"}
+not_included=[]
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
 base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
@@ -72,7 +73,7 @@ def datareturn_institution (d, re):
                 })
         except:
             print('exception in institutions:')
-            print(x)
+            #print(x)
     return(data_institutions)
 
 def professions(id, profy):
@@ -234,7 +235,7 @@ def datareturn (d, re):
     #return d,datarelations, pc
     return d,datarelations
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
 #while next_page != None:
     """iterate over JSON API urls"""
@@ -254,7 +255,7 @@ else:
     datageneral, datarelations = datareturn(data, response_list)
 
 
-while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=150":
+while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
 #while next_page_institution != None:
@@ -273,6 +274,7 @@ else:
     response_list_institution = re_list_institution.get('results')
     data_institutions  = datareturn_institution(data_institutions, response_list_institution)
     #print(placecheck)
+    print('not included: '+ str(not_included))
 
 apis_df=pd.DataFrame(datageneral)
 apis_df.head()
@@ -377,7 +379,7 @@ def events(relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabe
     """add events according to BioCRM Model"""
     #urltype = 'birthevent'
     roletype = str(urllib.parse.quote_plus(roletype))
-    print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
+    #print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))
     #print(row['apis_id'])
     #add eventrole to person proxy
@@ -468,14 +470,17 @@ for index, row in relations_df.iterrows():
         #define serialization for "person born in place relations"
         g.add((URIRef(idmapis+'birthevent/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
         placedetails(relations_df)
+        break
     elif rtype == f"{base_url_apis}vocabularies/personplacerelation/596/":
         #define serialization for "person died in place relations"
         g.add((URIRef(idmapis+'deathevent/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
         placedetails(relations_df)
+        break
     elif re.search(r'vocabularies/personplacerelation/.*', rtype):
         events(relation_id, str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
         g.add((URIRef(idmapis+'event/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
         placedetails(relations_df)
+        break
     elif relationtype_id in familyrelationidlist:
          """serializes parent/child family relations"""
          g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
@@ -489,7 +494,8 @@ for index, row in relations_df.iterrows():
          g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
          g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
          g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(intavia_shared+'person/'+str(index+50000))))
-    #     #adds other person-part of the family relation
+         break
+         #adds other person-part of the family relation
     elif re.search(r'vocabularies/personinstitutionrelation/.*' , rtype):
         #connect personproxy and institutions with grouprelationship
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
@@ -515,17 +521,22 @@ for index, row in relations_df.iterrows():
         # role of institution/ group in the career event
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
         # institution/ group which inheres this role
-        if row['rd_start_date'] != "None":
-            g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
+        g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
+        if (row['rd_start_date'] != 'None') and (row['rd_end_date'] != 'None'):
             g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])+' - '+ row['rd_end_date_written']))
-            #print((row['rd_start_date_written'])+' - '+(row['rd_end_date_written']))
-            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00'))))
-            #if re.search('-01-01', row['institution_start_date']) != None:
-                #start_date_year = (row['institution_start_date'])[0:4]
-                #g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59'))))
-            #else:
-        if row['rd_end_date'] != "None":
-            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
+        elif ((row['rd_start_date'] != 'None') and (row['rd_end_date']=='None')):
+            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])))
+        elif ((row['rd_start_date'] == 'None') and (row['rd_end_date']!='None')):
+            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal('time-span end:' + row['rd_end_date_written'])))
+        else:
+            continue
+        #g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00'))))
+        #if re.search('-01-01', row['institution_start_date']) != None:
+            #start_date_year = (row['institution_start_date'])[0:4]
+            #g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59'))))
+        #else:
+    # if row['rd_end_date'] != "None":
+    #     g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
     elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
@@ -546,10 +557,9 @@ for index, row in relations_df.iterrows():
     elif re.search(r'vocabularies/personeventrelation/.*', rtype):
         events(relation_id, str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
         #add general event according to APIS
-    elif rtype == f"{base_url_apis}vocabularies/personplacerelation/":
-        print('TO DO: ' + str(row['relationtypelabel']))
     else:
-        print("not included: "+row['relationid']+" "+ row['relationtypelabel']+" "+ row['relatedentityid']+" "+ row['relatedentitylabel']+" "+ row['relationtypeurl'])
+        not_included.append(row['relationid']+row['relationtypeurl'])
+        #print("not included: "+row['relationid']+row['relationtypeurl'])
 
 
 
