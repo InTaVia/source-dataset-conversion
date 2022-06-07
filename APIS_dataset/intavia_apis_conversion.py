@@ -1,6 +1,8 @@
+from cProfile import label
 from operator import index, le
 from pydoc import ModuleScanner
 from unittest import result
+from numpy import r_
 import requests
 import pandas as pd
 import json
@@ -21,6 +23,7 @@ dapr= []
 mostprofessions=[]
 placedata=[]
 placecheck=set()
+placerelationscheck=set()
 familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 headers = {"accept": "application/json"}
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
@@ -88,7 +91,7 @@ def professions(id, profy):
                 print('exception in professions')
         return(dapr)
     
-# reactivate when server response problem is solved
+#reactivate when server response problem is solved
 # def places(pc):
 #     print("starting places")
 #     for p in pc:
@@ -112,7 +115,7 @@ def professions(id, profy):
 #                 'place_source':place_response['source']
 #                 })
 #         except:
-#             print('exception in places')
+#             print('exception in places (see def places')
 #     print("finished places")
 #     return(placedata)
 
@@ -180,6 +183,7 @@ def relations(person):
         for d in da:
             if d['relatedentitytype']=="Place":
                 placecheck.add(d['relatedentityurl'])
+                placerelationscheck.add(str(d['relationtypelabel']) + str(d['relationtypeurl']))
     return(da, placecheck)
 
 """ def sources(sourcy):
@@ -224,12 +228,12 @@ def datareturn (d, re):
                 })
         except:
             print('exception in persons')
-    # reactivate when server problem is solved!
-    # places(pc)
-    # return d,datarelations, pc
+    #reactivate when server problem is solved!
+    #places(pc)
+    #return d,datarelations, pc
     return d,datarelations
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=150":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
 #define the point when iterating stops (for test serialization)
 #while next_page != None:
     """iterate over JSON API urls"""
@@ -239,7 +243,7 @@ while next_page != f"{base_url_apis}entities/person/?limit=50&offset=150":
     response_list = re_list.get('results')
     """get data from REST API in JSON format"""
     next_page = re_list.get('next')
-    #datageneral, datarelations, placeset = datareturn(data, response_list)
+    #datageneral, datarelations, placecheck = datareturn(data, response_list)
     datageneral, datarelations = datareturn(data, response_list)
 else:
     """stop iterating over JSON API urls"""
@@ -249,7 +253,7 @@ else:
     datageneral, datarelations = datareturn(data, response_list)
 
 
-while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=150":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
 #while next_page_institution != None:
@@ -267,6 +271,7 @@ else:
     print('Institutions Done')
     response_list_institution = re_list_institution.get('results')
     data_institutions  = datareturn_institution(data_institutions, response_list_institution)
+    #print(placecheck)
 
 apis_df=pd.DataFrame(datageneral)
 apis_df.head()
@@ -280,7 +285,7 @@ occupations_df.head()
 institutions_df=pd.DataFrame(data_institutions)
 institutions_df.head
 # reactivate when server problem is solved!
-#places_df=pd.DataFrame(placedata)
+# places_df=pd.DataFrame(placedata)
 # places_df.head()
 
 
@@ -345,25 +350,47 @@ def parallelproperties(apis_id, crmtype, urltype):
         g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), crm.P100_was_death_of, URIRef(idmapis+'personproxy/'+row['apis_id'])))
     return g
 
+def placedetails(r_dataframe):
+    for index, row in r_dataframe.iterrows():
+        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), RDF.type, crm.E53_Place))
+        #define place as Cidoc E53 Place
+        relatedentitylabel = urllib.parse.quote_plus(row['relatedentitylabel'])
+        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, (URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel))))
+        #add appellation to place
+        g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDF.type, crm.E33_E41_Linguistic_Appellation))
+        #define appellation as linguistic appellation 
+        g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDFS.label, Literal(row['relatedentitylabel'])))
+        #add label to appellation
+        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, URIRef(idmapis+'placeidentifier/'+row['relatedentityid'])))
+        #add APIS Identifier as Identifier
+        g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDF.type, crm.E_42_Identifier))
+        #define APIS Identifier as E42 Identifier (could add a class APIS-Identifier or model a Identifier Assignment Event)
+        g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDFS.label, Literal(row['relatedentityid'])))
+        #add label to APIS Identifier
+        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
+        #define that individual in APIS named graph and APIS entity are the same
+    return(g)
 
-def events(apis_id, edate, crmtype, urltype, roletype, relationlabel):
+
+def events(relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabel):
     """add events according to BioCRM Model"""
     #urltype = 'birthevent'
-    #print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
-    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])))
+    roletype = str(urllib.parse.quote_plus(roletype))
+    print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
+    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.inheres_in, URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))
     #print(row['apis_id'])
     #add eventrole to person proxy
-    g.add(((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])), RDF.type, idmrole.roletype))
-    g.add((idmrole.roletype, rdfs.subClassOf, idmcore.Event_Role))
+    g.add(((URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))), RDF.type, (URIRef(idmrole+roletype))))
+    g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, idmcore.Event_Role)))
     #suggestion to add specific event role
-    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), idmcore.had_participant_in_role, URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id'])))
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))))
     #connect event and event role
-    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDF.type, crmtype))
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), RDF.type, crmtype))
     #define crm classification
     if isinstance(roletype, str):
         roletype = Literal(roletype)
-    g.add((URIRef((idmapis+'{}/eventrole/'+str(index)+'/').format(urltype)+row['apis_id']), RDFS.label, roletype))
-    g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), RDFS.label, Literal(relationlabel)))
+    g.add((((URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))), RDFS.label, Literal(roletype))))
+    g.add((((URIRef(idmapis+urltype+'/'+relation_id))), RDFS.label, Literal(relationlabel)))
     if edate != "None":
         g.add((URIRef(idmapis+urltype+'/'+row['apis_id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+urltype+'/timespan/'+row['apis_id'])))
         #add time-span to event
@@ -372,6 +399,8 @@ def events(apis_id, edate, crmtype, urltype, roletype, relationlabel):
         g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82b_end_of_the_end, (Literal(edate+'T23:59:59'))))
         #add end of time-span
     parallelproperties(apis_id, crmtype, urltype)
+    # if place != "None":
+    #     placedetails()
     return g
 
 
@@ -409,9 +438,9 @@ for index, row in apis_df.iterrows():
     g.add((URIRef(idmapis+'identifier'+row['apis_id']), rdfs.label, (Literal(row['apis_id']))))
     #add label for APIS ID
     #g.add
-    events(row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', Literal('born_person'), (Literal("Birth of "+row['surname']+'  '+row['name'])))
+    events("1", row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', Literal('born_person'), (Literal("Birth of "+row['surname']+'  '+row['name'])))
     #add birth event according to APIS
-    events(row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
+    events("2", row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
     #add death event according to APIS
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_gender, URIRef(idmrole+row['gender'])))
     #add gender to person
@@ -436,25 +465,16 @@ for index, row in relations_df.iterrows():
     relationtype_parentid = row['relationtype_parentid']
     if rtype == f"{base_url_apis}vocabularies/personplacerelation/595/":
         #define serialization for "person born in place relations"
-        g.add((URIRef(idmapis+'birthevent/'+row['apis_id']), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
-        #add place to birthevent, if available
-        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), RDF.type, crm.E53_Place))
-        #define place as Cidoc E53 Place
-        relatedentitylabel = urllib.parse.quote_plus(row['relatedentitylabel'])
-        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, (URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel))))
-        #add appellation to place
-        g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDF.type, crm.E33_E41_Linguistic_Appellation))
-        #define appellation as linguistic appellation 
-        g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDFS.label, Literal(row['relatedentitylabel'])))
-        #add label to appellation
-        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, URIRef(idmapis+'placeidentifier/'+row['relatedentityid'])))
-        #add APIS Identifier as Identifier
-        g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDF.type, crm.E_42_Identifier))
-        #define APIS Identifier as E42 Identifier (could add a class APIS-Identifier or model a Identifier Assignment Event)
-        g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDFS.label, Literal(row['relatedentityid'])))
-        #add label to APIS Identifier
-        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
-        #define that individual in APIS named graph and APIS entity are the same
+        g.add((URIRef(idmapis+'birthevent/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
+        placedetails(relations_df)
+    elif rtype == f"{base_url_apis}vocabularies/personplacerelation/596/":
+        #define serialization for "person died in place relations"
+        g.add((URIRef(idmapis+'deathevent/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
+        placedetails(relations_df)
+    elif re.search(r'vocabularies/personplacerelation/.*', rtype):
+        events(relation_id, str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
+        g.add((URIRef(idmapis+'event/'+relation_id), crm.P7_took_place_at, URIRef(idmapis+'place/'+row['relatedentityid'])))
+        placedetails(relations_df)
     elif relationtype_id in familyrelationidlist:
          """serializes parent/child family relations"""
          g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
@@ -474,11 +494,11 @@ for index, row in relations_df.iterrows():
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
         # Person has a specific group relation
         g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-        #defines type of grouprelation
+        #define type of grouprelation
         if relationtype_parentid != '0':
             # if the relationtype has a superclass, it is added here
-            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))   
-        g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
+            g.add((URIRef(idmrelations+relationtype_id), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))   
+        g.add((URIRef(idmapis+'grouprelation/'+relation_id), rdfs.label, Literal(row['relationtypelabel'])))
         # add label to relationtype
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
         #group which is part of this relation
@@ -494,6 +514,17 @@ for index, row in relations_df.iterrows():
         # role of institution/ group in the career event
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
         # institution/ group which inheres this role
+        if row['rd_start_date'] != "None":
+            g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
+            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])+' - '+ row['rd_end_date_written']))
+            #print((row['rd_start_date_written'])+' - '+(row['rd_end_date_written']))
+            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00'))))
+            #if re.search('-01-01', row['institution_start_date']) != None:
+                #start_date_year = (row['institution_start_date'])[0:4]
+                #g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59'))))
+            #else:
+        if row['rd_end_date'] != "None":
+            g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
     elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
         g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
@@ -512,10 +543,12 @@ for index, row in relations_df.iterrows():
         g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
         #group which is part of this relation
     elif re.search(r'vocabularies/personeventrelation/.*', rtype):
-        events(str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
+        events(relation_id, str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
         #add general event according to APIS
+    elif rtype == f"{base_url_apis}vocabularies/personplacerelation/":
+        print('TO DO: ' + str(row['relationtypelabel']))
     else:
-        print("not included: "+row['relationid']+ row['relationtypelabel']+ row['relatedentityid']+ row['relatedentitylabel']+ row['relationtypeurl'])
+        print("not included: "+row['relationid']+" "+ row['relationtypelabel']+" "+ row['relatedentityid']+" "+ row['relatedentitylabel']+" "+ row['relationtypeurl'])
 
 
 
@@ -591,9 +624,3 @@ g.bind('owl', owl)
 #Bind namespaces to prefixes for readable output
  
 exapis = g.serialize(destination=f'apisdata_{datetime.datetime.now().strftime("%d-%m-%Y")}.ttl', format='turtle')
-
-# exapis = g.serialize(format='turtle')   
-
-# with open('apisdata.ttl', 'w') as f:
-#     f.write(str(exapis))
-# #"""Write graph data in file (!!!).""" 
