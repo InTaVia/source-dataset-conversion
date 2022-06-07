@@ -71,7 +71,8 @@ def datareturn_institution (d, re):
                     'institution_text':x.get('text')
                 })
         except:
-            print('exception in institutions')
+            print('exception in institutions:')
+            print(x)
     return(data_institutions)
 
 def professions(id, profy):
@@ -88,7 +89,7 @@ def professions(id, profy):
                     'professionurl':p.get('url')
                 })
             except:
-                print('exception in professions')
+                print('exception in professions: ')
         return(dapr)
     
 #reactivate when server response problem is solved
@@ -383,7 +384,7 @@ def events(relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabe
     g.add(((URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))), RDF.type, (URIRef(idmrole+roletype))))
     g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, idmcore.Event_Role)))
     #suggestion to add specific event role
-    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))))
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id+row['apis_id'])), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))))
     #connect event and event role
     g.add(((URIRef(idmapis+urltype+'/'+relation_id)), RDF.type, crmtype))
     #define crm classification
@@ -438,9 +439,9 @@ for index, row in apis_df.iterrows():
     g.add((URIRef(idmapis+'identifier'+row['apis_id']), rdfs.label, (Literal(row['apis_id']))))
     #add label for APIS ID
     #g.add
-    events("1", row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', Literal('born_person'), (Literal("Birth of "+row['surname']+'  '+row['name'])))
+    events(row['apis_id'], row['apis_id'], row['bdate'], crm.E67_Birth, 'birthevent', Literal('born_person'), (Literal("Birth of "+row['surname']+'  '+row['name'])))
     #add birth event according to APIS
-    events("2", row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
+    events(row['apis_id'], row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
     #add death event according to APIS
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.has_gender, URIRef(idmrole+row['gender'])))
     #add gender to person
