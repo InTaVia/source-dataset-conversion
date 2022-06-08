@@ -417,6 +417,7 @@ for index, row in apis_df.iterrows():
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index))))
     #connect Person Proxy and person in named graph
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), RDF.type, idmcore.Person_Proxy))
+    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), RDF.type, crm.E21_Person))
     #define Person Proxy
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), owl.sameAs, (URIRef(row['url']))))
     #define that individual in APIS named graph and APIS entity are the same
