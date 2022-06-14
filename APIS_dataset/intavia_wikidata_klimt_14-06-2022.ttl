@@ -1,0 +1,109 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix idmcore: <http://www.intavia.eu/idm-core/> .
+@prefix idmrole: <http://www.intavia.eu/idm-role/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+
+<http://www.intavia.eu/wd/appellation/1/Q3466> rdfs:label "Gustav Klimt" .
+
+<http://www.intavia.eu/wd/event/production/Q1445107/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: Danaë" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q1445107> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q3305213> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q1445107/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q1445107/Q34661> .
+
+<http://www.intavia.eu/wd/event/production/Q2324643/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: Judith and the Head of Holofernes" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q2324643> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q3305213> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q2324643/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q2324643/Q34661> .
+
+<http://www.intavia.eu/wd/event/production/Q354396/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: Portrait of Adele Bloch-Bauer I" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q354396> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q3305213> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q354396/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q354396/Q34661> .
+
+<http://www.intavia.eu/wd/event/production/Q3829156/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: The Three Ages of the Woman" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q3829156> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q3305213> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q3829156/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q3829156/Q34661> .
+
+<http://www.intavia.eu/wd/event/production/Q684689/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: Beethoven Frieze" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q684689> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q16905563>,
+        <http://www.intavia.eu/wd/Q219423> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q684689/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q684689/Q34661> .
+
+<http://www.intavia.eu/wd/event/production/Q698487/Q34661> a crm:E12_Production ;
+    rdfs:label "Gustav Klimt created: The Kiss" ;
+    crm:P108_has_produced <http://www.intavia.eu/wd/choproxy/Q698487> ;
+    crm:P32_used_general_technique <http://www.intavia.eu/wd/Q3305213> ;
+    crm:P4_has_time-span <http://www.intavia.eu/wd/creation/timespan/Q698487/Q34661> ;
+    idmcore:had_participant_in_role <http://www.intavia.eu/wd/eventrole/production/Q698487/Q34661> .
+
+<http://www.intavia.eu/wd/personproxy/Q34661> a crm:E21_Person,
+        idmcore:Person_Proxy ;
+    idmcore:bearer_of <http://www.intavia.eu/wd/eventrole/production/Q1445107/Q34661>,
+        <http://www.intavia.eu/wd/eventrole/production/Q2324643/Q34661>,
+        <http://www.intavia.eu/wd/eventrole/production/Q354396/Q34661>,
+        <http://www.intavia.eu/wd/eventrole/production/Q3829156/Q34661>,
+        <http://www.intavia.eu/wd/eventrole/production/Q684689/Q34661>,
+        <http://www.intavia.eu/wd/eventrole/production/Q698487/Q34661> ;
+    idmcore:person_proxy_for <http://www.intavia.eu/person/100100> ;
+    owl:sameAs wikidata:Q34661 .
+
+<http://www.intavia.eu/wd/Q16905563> rdfs:label "cycle of paintings" .
+
+<http://www.intavia.eu/wd/Q219423> rdfs:label "mural" .
+
+<http://www.intavia.eu/wd/choproxy/Q1445107> rdfs:label "Danaë" .
+
+<http://www.intavia.eu/wd/choproxy/Q2324643> rdfs:label "Judith and the Head of Holofernes" .
+
+<http://www.intavia.eu/wd/choproxy/Q354396> rdfs:label "Portrait of Adele Bloch-Bauer I" .
+
+<http://www.intavia.eu/wd/choproxy/Q3829156> rdfs:label "The Three Ages of the Woman" .
+
+<http://www.intavia.eu/wd/choproxy/Q684689> rdfs:label "Beethoven Frieze" .
+
+<http://www.intavia.eu/wd/choproxy/Q698487> rdfs:label "The Kiss" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q1445107/Q34661> crm:P82a_begin_of_the_begin "1907-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q2324643/Q34661> crm:P82a_begin_of_the_begin "1901-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q354396/Q34661> crm:P82a_begin_of_the_begin "1907-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q3829156/Q34661> crm:P82a_begin_of_the_begin "1905-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q684689/Q34661> crm:P82a_begin_of_the_begin "1901-01-01T00:00:00Z",
+        "1902-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/creation/timespan/Q698487/Q34661> crm:P82a_begin_of_the_begin "1907-01-01T00:00:00Z" .
+
+<http://www.intavia.eu/wd/eventrole/production/Q1445107/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/eventrole/production/Q2324643/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/eventrole/production/Q354396/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/eventrole/production/Q3829156/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/eventrole/production/Q684689/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/eventrole/production/Q698487/Q34661> a idmrole:responsibleArtist .
+
+<http://www.intavia.eu/wd/Q3305213> rdfs:label "painting" .
+
+idmrole:responsibleArtist a <http://www.intavia.eu/idm-role//eventrole> ;
+    rdfs:label "responsible artist" .
+

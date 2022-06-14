@@ -30,8 +30,7 @@ not_included=[]
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
 base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
-next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
-#next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
+next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
 """initial json url to get apis data"""
 first_response = requests.get(next_page, headers=headers)
 """get data for this URL from REST API"""
@@ -235,9 +234,9 @@ def datareturn (d, re):
     #return d,datarelations, pc
     return d,datarelations
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
+#while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
-#while next_page != None:
+while next_page != None:
     """iterate over JSON API urls"""
     first_response = requests.get(next_page, headers=headers)
     print(f"getting {next_page}")
@@ -255,10 +254,10 @@ else:
     datageneral, datarelations = datareturn(data, response_list)
 
 
-while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+#while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
-#while next_page_institution != None:
+while next_page_institution != None:
     """iterate over JSON API urls (institutions)"""
     print(f'getting {next_page_institution}')
     first_response_institution = requests.get(next_page_institution, headers=headers)
@@ -386,7 +385,7 @@ def events(relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabe
     g.add(((URIRef((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))), RDF.type, (URIRef(idmrole+roletype))))
     g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, idmcore.Event_Role)))
     #suggestion to add specific event role
-    g.add(((URIRef(idmapis+urltype+'/'+relation_id+row['apis_id'])), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))))
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}/').format(urltype, relation_id))))))
     #connect event and event role
     g.add(((URIRef(idmapis+urltype+'/'+relation_id)), RDF.type, crmtype))
     #define crm classification
