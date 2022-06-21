@@ -15,7 +15,6 @@ import re
 import urllib.parse
 import datetime
 
-
 data=[]
 data_institutions=[]
 da=[]
@@ -30,11 +29,12 @@ not_included=[]
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
 base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
-next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
+base_url_apis2 = "https://apis.acdh.oeaw.ac.at/apis/api2/"
+next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
 """initial json url to get apis data"""
 first_response = requests.get(next_page, headers=headers)
 """get data for this URL from REST API"""
-re_list=first_response.json()
+re_list = first_response.json()
 """get data from REST API in JSON format"""
 #previous_page = re_list.get('previous')
 """previous json url to get apis data"""
@@ -42,7 +42,6 @@ re_list=first_response.json()
 """following REST API url to get apis data"""
 response_list = re_list.get('results')
 """get list with all datasets from the url as dictionaries"""
-
 next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
 first_response_institution = requests.get(next_page_institution, headers=headers)
 """get data for this URL from REST API"""
@@ -50,6 +49,8 @@ re_list_institution=first_response_institution.json()
 """get data from REST API in JSON format"""
 response_list_institution = re_list_institution.get('results')
 """get list with all datasets from the url as dictionaries"""
+
+
 
 urls_places_already_fetched = []
 
@@ -92,33 +93,63 @@ def professions(id, profy):
                 print('exception in professions: ')
         return(dapr)
     
+def geonamesref(place_id):
+    if place_id != None:
+        try:
+            placeurl = f"{base_url_apis2}entity/{place_id}/?format=json"
+            pl_ref_response = requests.get(placeurl, headers=headers)
+            pl_ref_json = pl_ref_response.json()
+            pl_ref = pl_ref_json.get('uris')
+        except json.decoder.JSONDecodeError:
+            print("TIMEOUT in geonamesref function (api2), TRY AGAIN")
+            pl_ref_response = requests.get(placeurl, headers=headers)
+            pl_ref_json = pl_ref_response.json()
+            pl_ref = pl_ref_json.get('uris')
+        for uri in pl_ref:
+            if (uri['uri'].startswith("https://apis-edits.acdh-dev.oeaw.ac.at/")) or (uri['uri'].startswith("https://apis.acdh.oeaw.ac.at/")):
+                georef = None
+            else:
+                print("Placereference!")
+                print(uri["uri"])
+                return(uri["uri"])
+
 #reactivate when server response problem is solved
-# def places(pc):
-#     print("starting places")
-#     for p in pc:
-#         if p in urls_places_already_fetched:
-#             continue
-#         else:
-#             urls_places_already_fetched.append(p)
-#         place_response = requests.get(p, headers=headers)
-#         place_response = place_response.json()
-#          #print(place_response['url'])
-#          #place_url, place_id, place_name, place_start_date, place_end_date, place_references, place_lat, place_lng, place_source = place_response['related_entity']
-#         try:
-#             placedata.append({
-#                 'place_name':place_response['name'],
-#                 'place_id':place_response['id'],
-#                 'place_start_date':place_response['start_date'], 
-#                 'place_end_date':place_response['end_date'], 
-#                 'place_references':place_response['references'], 
-#                 'place_lat':place_response['lat'], 
-#                 'place_lng':place_response['lng'], 
-#                 'place_source':place_response['source']
-#                 })
-#         except:
-#             print('exception in places (see def places')
-#     print("finished places")
-#     return(placedata)
+def places(pc):
+    print("starting places")
+    print(pc)
+    for p in pc:
+        if p in urls_places_already_fetched:
+            continue
+        else:
+            try:
+                urls_places_already_fetched.append(p)
+                place_response = requests.get(p, headers=headers)
+                place_response = place_response.json()
+                place_id = place_response['id']
+                georef = geonamesref(place_id)
+            except json.decoder.JSONDecodeError:
+                print("TIMEOUT, TRY AGAIN")
+                place_response = requests.get(p, headers=headers)
+                place_response = place_response.json()
+                place_id = place_response['id']
+                georef = geonamesref(place_id)
+        try:
+            placedata.append({
+                'place_name':place_response['name'],
+                'place_id':place_response['id'],
+                'place_start_date':place_response['start_date'], 
+                'place_end_date':place_response['end_date'], 
+                'place_references':place_response['references'], 
+                'place_lat':place_response['lat'], 
+                'place_lng':place_response['lng'], 
+                'place_source':place_response['source'],
+                'georef': georef
+                })
+            print(placedata)
+        except:
+            print('exception in places (see def places')
+    print("finished places")
+    return(placedata)
 
 def reldetails(relationuri):
     if relationuri != None:
@@ -136,7 +167,6 @@ def reldetails(relationuri):
         #if re.search(r'/personinstitutionrelation/.*' , rd_url):
             #rd_institution = rd_json.get('related_institution')
         return (rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date)
-
 
 
 def relations(person):
@@ -197,12 +227,27 @@ def relations(person):
         #print(sourceuri, pubinfo)
         return(sourceuri, pubinfo) """
 
+def linkentity(apisid):
+    while apisid != None:
+        personlink = f"{base_url_apis2}entity/{apisid}/?format=json"
+        person2_response = requests.get(personlink, headers=headers)
+        person2_response = person2_response.json()
+        uris = person2_response.get('uris')
+        for uri in uris:
+            if (uri["uri"].startswith("https://apis-edits.acdh-dev.oeaw.ac.at/")) or (uri["uri"].startswith("https://apis.acdh.oeaw.ac.at/apis/api2/")):
+                return(None)
+            else:
+                print(uri["uri"])
+                return(uri["uri"])
+
+
 def datareturn (d, re):
     for n in range(len(re)):
         x = re[n]
         apisid = x.get('id')
         profx = (x.get('profession'))
         professions(apisid, profx)
+        externallink = linkentity(apisid)
         personuri = (x.get('url'))
         person_response = requests.get(personuri, headers=headers)
         person_response = person_response.json()
@@ -225,14 +270,15 @@ def datareturn (d, re):
                     'references':x.get('references'),
                     'bdate':x.get('start_date'),
                     'ddate':x.get('end_date'),
-                    'gender':x.get('gender')
+                    'gender':x.get('gender'),
+                    'sameAs':externallink
                 })
         except:
             print('exception in persons')
     #reactivate when server problem is solved!
-    #places(pc)
-    #return d,datarelations, pc
-    return d,datarelations
+    places(pc)
+    return d,datarelations, pc
+    #return d,datarelations
 
 #while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
@@ -244,14 +290,14 @@ while next_page != None:
     response_list = re_list.get('results')
     """get data from REST API in JSON format"""
     next_page = re_list.get('next')
-    #datageneral, datarelations, placecheck = datareturn(data, response_list)
-    datageneral, datarelations = datareturn(data, response_list)
+    datageneral, datarelations, placecheck = datareturn(data, response_list)
+    #datageneral, datarelations = datareturn(data, response_list)
 else:
     """stop iterating over JSON API urls"""
     re_list=first_response.json()
     response_list = re_list.get('results')
-    #datageneral, datarelations, placeset  = datareturn(data, response_list)
-    datageneral, datarelations = datareturn(data, response_list)
+    datageneral, datarelations, placeset  = datareturn(data, response_list)
+    #datageneral, datarelations = datareturn(data, response_list)
 
 
 #while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
@@ -272,8 +318,9 @@ else:
     print('Institutions Done')
     response_list_institution = re_list_institution.get('results')
     data_institutions  = datareturn_institution(data_institutions, response_list_institution)
-    #print(placecheck)
+    print("Placecheck: "+ placecheck)
     print('not included: '+ str(not_included))
+
 
 apis_df=pd.DataFrame(datageneral)
 apis_df.head()
@@ -287,8 +334,8 @@ occupations_df.head()
 institutions_df=pd.DataFrame(data_institutions)
 institutions_df.head
 # reactivate when server problem is solved!
-# places_df=pd.DataFrame(placedata)
-# places_df.head()
+places_df=pd.DataFrame(placedata)
+places_df.head()
 
 
 
@@ -340,7 +387,7 @@ relations_df = relations_df.applymap(str)
 occupations_df = occupations_df.applymap(str)
 institutions_df = institutions_df.applymap(str)
 # reactivate when server problem is solved!
-#places_df = places_df.applymap(str)
+places_df = places_df.applymap(str)
 
 g = Graph()
 #Create undirected graph, assigned to g
@@ -370,6 +417,8 @@ def placedetails(r_dataframe):
         g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDFS.label, Literal(row['relatedentityid'])))
         #add label to APIS Identifier
         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
+        #define that individual in APIS named graph and APIS entity are the same
+        g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['georef']))))
         #define that individual in APIS named graph and APIS entity are the same
     return(g)
 
@@ -401,8 +450,8 @@ def events(relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabe
         g.add((URIRef(idmapis+urltype+'/timespan/'+row['apis_id']), crm.P82b_end_of_the_end, (Literal(edate+'T23:59:59'))))
         #add end of time-span
     parallelproperties(apis_id, crmtype, urltype)
-    # if place != "None":
-    #     placedetails()
+    if place != "None":
+        placedetails()
     return g
 
 
@@ -420,6 +469,8 @@ for index, row in apis_df.iterrows():
     #define Person Proxy
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), owl.sameAs, (URIRef(row['url']))))
     #define that individual in APIS named graph and APIS entity are the same
+    g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), owl.sameAs, (URIRef(row['sameAs']))))
+    #define that individual in APIS named graph and entity from the external source are the same
     g.add((URIRef(idmapis+'personproxy/'+row['apis_id']), crm.P1_is_identified_by, URIRef(idmapis+'appellation/'+'1/'+row['apis_id'])))
     #add main appellation from APIS data set
     g.add((URIRef(idmapis+'appellation/'+'1/'+row['apis_id']), rdfs.label, (Literal(row['surname']+'  '+row['name']))))
@@ -612,10 +663,10 @@ for index, row in occupations_df.iterrows():
 
 
 # reactivate when server problem is solved!
-# for index, row in places_df.iterrows():
-#     g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
-#     #suggestion for serialization of space primitives according to ISO 6709, to be discussed
-#     #more place details will be added (references, source, place start date, place end date, relations to other places(?))
+for index, row in places_df.iterrows():
+    g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
+    #suggestion for serialization of space primitives according to ISO 6709, to be discussed
+    #more place details will be added (references, source, place start date, place end date, relations to other places(?))
 
 g.bind('crm', crm)
 g.bind('intaviashared', intavia_shared)
