@@ -285,9 +285,9 @@ def datareturn (d, re):
     return d,datarelations, pc
     #return d,datarelations
 
-while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
+#while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
 #define the point when iterating stops (for test serialization)
-#while next_page != None:
+while next_page != None:
     """iterate over JSON API urls"""
     first_response = requests.get(next_page, headers=headers)
     print(f"getting {next_page}")
@@ -305,10 +305,10 @@ else:
     #datageneral, datarelations = datareturn(data, response_list)
 
 
-while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+#while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
-#while next_page_institution != None:
+while next_page_institution != None:
     """iterate over JSON API urls (institutions)"""
     print(f'getting {next_page_institution}')
     first_response_institution = requests.get(next_page_institution, headers=headers)
