@@ -26,6 +26,7 @@ placerelationscheck=set()
 familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 headers = {"accept": "application/json"}
 not_included=[]
+urls_places_already_fetched = []
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
 base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
@@ -51,9 +52,6 @@ response_list_institution = re_list_institution.get('results')
 """get list with all datasets from the url as dictionaries"""
 
 
-
-urls_places_already_fetched = []
-
 def datareturn_institution (d, re):
     for n in range(len(re)):
         x = re[n]
@@ -72,7 +70,7 @@ def datareturn_institution (d, re):
                     'institution_text':x.get('text')
                 })
         except:
-            print('exception in institutions:')
+            print(f"exception in institutions: {x}")
     return(data_institutions)
 
 def professions(id, profy):
@@ -89,7 +87,7 @@ def professions(id, profy):
                     'professionurl':p.get('url')
                 })
             except:
-                print('exception in professions: ')
+                print(f"exception in professions: {p}")
         return(dapr)
     
 def geonamesref(place_id):
@@ -100,7 +98,7 @@ def geonamesref(place_id):
             pl_ref_json = pl_ref_response.json()
             pl_ref = pl_ref_json.get('uris')
         except json.decoder.JSONDecodeError:
-            print("TIMEOUT in geonamesref function (api2) for: {place_id}")
+            print(f"TIMEOUT in geonamesref function (api2) for: {place_id}")
             return(None)
             #pass
             # pl_ref_response = requests.get(placeurl, headers=headers)
@@ -110,14 +108,11 @@ def geonamesref(place_id):
             if (uri['uri'].startswith("https://apis-edits.acdh-dev.oeaw.ac.at/")) or (uri['uri'].startswith("https://apis.acdh.oeaw.ac.at/")):
                 georef = None
             else:
-                print("Placereference!")
-                print(uri["uri"])
                 return(uri["uri"])
 
 #reactivate when server response problem is solved
 def places(pc):
-    print("starting places")
-    print(pc)
+    print("getting places from apis API")
     for p in pc:
         if p in urls_places_already_fetched:
             continue
@@ -131,11 +126,6 @@ def places(pc):
             except json.decoder.JSONDecodeError:
                 print(f"TIMEOUT (api1) for: {p}")
                 return(None)
-                #pass
-                # place_response = requests.get(p, headers=headers)
-                # place_response = place_response.json()
-                # place_id = place_response['id']
-                # georef = geonamesref(place_id)
         try:
             placedata.append({
                 'apis_place_url':place_response['url'],
@@ -149,10 +139,8 @@ def places(pc):
                 'place_source':place_response['source'],
                 'georef': georef
                 })
-            print(placedata)
         except:
-            print('exception in places (see def places')
-    print("finished places")
+            print(f"exception in places: {p}")
     return(placedata)
 
 def reldetails(relationuri):
@@ -178,8 +166,9 @@ def relations(person):
     apis_id = person.get('id')
     #get person ID (APIS ID)
     rs = person.get('relations')
+    print(rs)
     #get relations for this person from REST API
-    relvalues = []
+    #relvalues = []
     for l in range(len(rs)):
         y = rs[l]
         # y is one relation for a person
@@ -190,7 +179,6 @@ def relations(person):
             rd_url, rd_id, rd_start_date, rd_start_start_date, rd_start_date_written, rd_end_date, rd_end_date_written, rd_end_end_date= reldetails(relationsurl)
             relationtype = y.get('relation_type')
             relatedentity = y.get('related_entity')
-            #for person-institution-relation
             da.append({
                 'apis_id':apis_id,
                 'relationid':relationsid,
@@ -213,7 +201,8 @@ def relations(person):
                 'rd_end_end_date':rd_end_end_date,
             })
         except:
-            print('exception in relations')
+            print('exception in relations:')
+            print(y)
             pass
         for d in da:
             if d['relatedentitytype']=="Place":
@@ -242,7 +231,6 @@ def linkentity(apisid):
             if (uri["uri"].startswith("https://apis-edits.acdh-dev.oeaw.ac.at/")) or (uri["uri"].startswith("https://apis.acdh.oeaw.ac.at/apis/api2/")):
                 return(None)
             else:
-                print(uri["uri"])
                 return(uri["uri"])
 
 
@@ -280,14 +268,14 @@ def datareturn (d, re):
                 })
         except:
             print('exception in persons')
-    #reactivate when server problem is solved!
+            print(x)
     places(pc)
     return d,datarelations, pc
     #return d,datarelations
 
-#while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
 #define the point when iterating stops (for test serialization)
-while next_page != None:
+#while next_page != None:
     """iterate over JSON API urls"""
     first_response = requests.get(next_page, headers=headers)
     print(f"getting {next_page}")
@@ -305,10 +293,10 @@ else:
     #datageneral, datarelations = datareturn(data, response_list)
 
 
-#while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
 #     """iterate over APIS dataset (Institutions)"""
 #     #define the point when iterating over institutions stops 
-while next_page_institution != None:
+#while next_page_institution != None:
     """iterate over JSON API urls (institutions)"""
     print(f'getting {next_page_institution}')
     first_response_institution = requests.get(next_page_institution, headers=headers)
@@ -536,20 +524,24 @@ for index, row in relations_df.iterrows():
         placedetails(relations_df)
         break
     elif relationtype_id in familyrelationidlist:
-         """serializes parent/child family relations"""
-         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_family_relation, URIRef(idmapis+'familyrelation/'+row['relationid'])))
+         """serializes family relations"""
+         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_family_relation, URIRef(f"{idmapis}familyrelation/{relation_id}")))
+         # Person has this specific family relation
+         g.add((URIRef(f"{idmapis}personproxy/{row['relatedentityid']}"), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
+         # the other person that has this family relation is defined
+         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationlabel'])))
+         # the specific familyrelation gets a label
+         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+         # defines type of familyrelation
+         g.add((URIRef(idmrelations+relationtype_id, RDFS.label, Literal(row['relationtypelabel']))))
          g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
          #print(row['relationurl'], row['relationtypeurl'])
-         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
          if relationtype_parentid != '0':
             g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
             g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
          #reltype= str(urllib.parse.quote_plus(row['relationtypelabel']))
-         g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
-         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'familyrelation/'+row['relationid'])))
-         g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(intavia_shared+'person/'+str(index+50000))))
+         #g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.person_proxy_for, URIRef(intavia_shared+'person/'+str(index+50000))))
          break
-         #adds other person-part of the family relation
     elif re.search(r'vocabularies/personinstitutionrelation/.*' , rtype):
         #connect personproxy and institutions with grouprelationship
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
@@ -616,7 +608,7 @@ for index, row in relations_df.iterrows():
         #add general event according to APIS
     else:
         not_included.append(row['relationid']+row['relationtypeurl'])
-        #print("not included: "+row['relationid']+row['relationtypeurl'])
+        print(f"not included in relations: {row['relationid']} {row['relationtypeurl']}")
 
 
 
@@ -668,7 +660,6 @@ for index, row in occupations_df.iterrows():
 
 
 
-# reactivate when server problem is solved!
 for index, row in places_df.iterrows():
     nameforuri = str(urllib.parse.quote_plus(row['place_name']))
     g.add((URIRef(idmapis+'place/'+row['place_id']), RDF.type, crm.E53_Place))
