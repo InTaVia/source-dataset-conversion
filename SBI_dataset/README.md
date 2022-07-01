@@ -1,6 +1,12 @@
 # Conversion of the SBI data to the InTaVia RDF graph
 
-This project uses the following requirements:
+This project provides the Conversion of the SBI data to the InTaVia RDF graph.
+
+The example (subset) converted data is available in the `sbi.ttl` file.
+
+## Running the converter
+
+The converter has the following requirements:
 
 - `Python 3.10`
 - `pipenv`
