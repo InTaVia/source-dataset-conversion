@@ -388,9 +388,10 @@ def events(g, relation_id, apis_id, edate, crmtype, urltype, roletype, relationl
     """add events according to BioCRM Model"""
     roletype = str(urllib.parse.quote_plus(roletype))
     print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
-    g.add((URIRef(f"{idmapis}personproxy/{apis_id}"), idmcore.inheres_in, URIRef((f"idmapis/{urltype}/eventrole/{relation_id}"))))
+    #g.add((URIRef(f"{idmapis}personproxy/{apis_id}"), idmcore.inheres_in, URIRef((f"idmapis/{urltype}/eventrole/{relation_id}"))))
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), idmcore.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
     #add eventrole to person proxy
-    g.add(((URIRef((idmapis+'{}/eventrole/{}').format(urltype, relation_id))), RDF.type, (URIRef(idmrole+roletype))))
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), RDF.type, URIRef(idmrole+roletype)))
     g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, idmcore.Event_Role)))
     #suggestion to add specific event role
     g.add(((URIRef(idmapis+urltype+'/'+relation_id)), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}').format(urltype, relation_id))))))
@@ -416,10 +417,10 @@ def persondata_graph(g, apis_df):
     for index, row in apis_df.iterrows():
         #print(index)
         """Create RDF Triples, according to IDM ontology."""
-        g.add(((URIRef(ex+'person/'+str(index))), RDF.type, idmcore.Provided_Person))
+        #g.add(((URIRef(ex+'person/'+str(index))), RDF.type, idmcore.Provided_Person))
         #print(row['apis_id'], index)
         #Person Entity in shared InTaVia named graph
-        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index))))
+        #sg.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.person_proxy_for, URIRef(ex+'person/'+str(index))))
         #connect Person Proxy and person in named graph
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), RDF.type, idmcore.Person_Proxy))
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), RDF.type, crm.E21_Person))
@@ -477,7 +478,9 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
         rtype = row['relationtypeurl']
         relation_id = str(row['relationid'])
         relationtype_id = str(row['relationtypeid'])
-        relationtype_parentid = row['relationtype_parentid']
+        if row['relationtype_parentid'] != "nan":
+                # if the relationtype has a superclass, it is added here
+                relationtype_parentid = row['relationtype_parentid'][:-2]
         if relationtype_id == '595':
         #if rtype == f"{base_url_apis}vocabularies/personplacerelation/595/":
             #define serialization for "person born in place relations"
@@ -504,7 +507,7 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             g.add((URIRef(idmrelations+relationtype_id), RDFS.label, Literal(row['relationtypelabel'])))
             g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
             #print(row['relationurl'], row['relationtypeurl'])
-            if relationtype_parentid != '0':
+            if relationtype_parentid != 'nan':
                 g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
                 g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
             print (f" familyrelation serialized for: {row['apis_id']}")
@@ -525,7 +528,7 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             # Person has a specific group relation
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
             #define type of grouprelation
-            if relationtype_parentid != '0':
+            if relationtype_parentid != "nan":
                 # if the relationtype has a superclass, it is added here
                 g.add((URIRef(idmrelations+relationtype_id), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), rdfs.label, Literal(row['relationtypelabel'])))
@@ -547,24 +550,24 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
             print (f" personinstitutionrelation serialized for: {row['apis_id']}")
             if (row['rd_start_date'] != 'None') and (row['rd_end_date'] != 'None'):
-                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00'))))
-                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
+                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00', datatype=XSD.dateTime))))
+                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
                 g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])+' - '+ row['rd_end_date_written']))
             elif ((row['rd_start_date'] != 'None') and (row['rd_end_date']=='None')):
-                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00'))))
+                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00', datatype=XSD.dateTime))))
                 g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])))
             elif ((row['rd_start_date'] == 'None') and (row['rd_end_date']!='None')):
-                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
+                g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
                 g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal('time-span end:' + row['rd_end_date_written'])))
                 #return g
             else:
                 continue
             # if re.search('-01-01', row['institution_start_date']) != None:
             #     start_date_year = (row['institution_start_date'])[0:4]
-                #g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59'))))
+                #g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59', datatype=XSD.dateTime))))
             # else:
             #     if row['rd_end_date'] != "None":
-            #         g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59'))))
+            #         g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
         #elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         elif "personpersonrelation" in rtype:
             g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
@@ -575,7 +578,7 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             #connect personproxy and institutions with grouprelationship
             g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
-            if relationtype_parentid != '0':
+            if relationtype_parentid != "nan":
                 #adds parent class for relationship types
                 g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
                 g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
@@ -600,8 +603,8 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
 
 def institutiondata_graph(g, institutions_df):
     for index, row in institutions_df.iterrows():
-        g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
-        g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), idmcore.group_proxy_for, URIRef(ex+'group/'+str(index))))
+        #g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
+        #g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), idmcore.group_proxy_for, URIRef(ex+'group/'+str(index))))
         #connect Group Proxy and person in named graphbgn:BioDes
         g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), RDF.type, idmcore.Group))
         #defines group class
@@ -616,7 +619,7 @@ def institutiondata_graph(g, institutions_df):
             g.add((URIRef(idmapis+'groupstart/'+row['institution_id']), RDF.type, crm.E63_Beginning_of_Existence))
             g.add((URIRef(idmapis+'groupstart/'+row['institution_id']), crm.P92_brought_into_existence, URIRef(idmapis+'groupproxy/'+row['institution_id'])))
             g.add((URIRef(idmapis+'groupstart/'+row['institution_id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'groupstart/timespan/'+row['institution_id'])))
-            g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82a_begin_of_the_begin, (Literal(row['institution_start_date']+'T00:00:00'))))
+            g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82a_begin_of_the_begin, (Literal(row['institution_start_date']+'T00:00:00', datatype=XSD.dateTime))))
             if re.search('-01-01', row['institution_start_date']) != None:
                 start_date_year = (row['institution_start_date'])[0:4]
                 g.add((URIRef(idmapis+'groupstart/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(start_date_year+'-12-31'+'T23:59:59'))))
@@ -627,12 +630,12 @@ def institutiondata_graph(g, institutions_df):
             g.add((URIRef(idmapis+'groupend/'+row['institution_id']), RDF.type, crm.E64_End_of_Existence))
             g.add((URIRef(idmapis+'groupend/'+row['institution_id']), crm.P93_took_out_of_existence, URIRef(idmapis+'groupproxy/'+row['institution_id'])))
             g.add((URIRef(idmapis+'groupend/'+row['institution_id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'groupend/timespan/'+row['institution_id'])))
-            g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82a_begin_of_the_begin, (Literal(row['institution_end_date']+'T00:00:00'))))
+            g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82a_begin_of_the_begin, (Literal(row['institution_end_date']+'T00:00:00', datatype=XSD.dateTime))))
             if re.search('-01-01', row['institution_end_date']) != None:
                 end_date_year = (row['institution_end_date'])[0:4]
-                g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(end_date_year+'-12-31'+'T23:59:59'))))
+                g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(end_date_year+'-12-31'+'T23:59:59', datatype=XSD.dateTime))))
             else:
-                g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(row['institution_end_date']+'T23:59:59'))))
+                g.add((URIRef(idmapis+'groupend/timespan/'+row['institution_id']), crm.P82b_end_of_the_end, (Literal(row['institution_end_date']+'T23:59:59', datatype=XSD.dateTime))))
         #End of Existence for this group
 
 def occupations_graph(g, occupations_df):
@@ -665,9 +668,10 @@ def places_graph(g, places_df):
         #add label to APIS Identifier
         g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['apis_place_url']))))
         #define that individual in APIS named graph and APIS entity are the same
-        g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
-        if row['georef'] != None:
-            g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['georef']))))
+        if row['place_lat'] != "nan":
+            g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
+            if row['georef'] != "None":
+                g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['georef']))))
             #define that individual in APIS named graph and APIS entity are the same
         # suggestion for serialization of space primitives according to ISO 6709, to be discussed
         # more place details will be added (references, source, place start date, place end date, relations to other places(?))

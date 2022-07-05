@@ -1006,47 +1006,38 @@
 
 <http://www.intavia.eu/apis/groupproxy/156297> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/156297> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/0> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/156297/> .
 
 <http://www.intavia.eu/apis/groupproxy/157062> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157062> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/4> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157062/> .
 
 <http://www.intavia.eu/apis/groupproxy/157250> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157250> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/6> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157250/> .
 
 <http://www.intavia.eu/apis/groupproxy/157267> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157267> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/7> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157267/> .
 
 <http://www.intavia.eu/apis/groupproxy/157269> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157269> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/8> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157269/> .
 
 <http://www.intavia.eu/apis/groupproxy/158560> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158560> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/11> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158560/> .
 
 <http://www.intavia.eu/apis/groupproxy/160119> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/160119> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/17> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/160119/> .
 
 <http://www.intavia.eu/apis/groupproxy/160423> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/160423> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/18> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/160423/> .
 
 <http://www.intavia.eu/apis/groupproxy/160654> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/160654> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/20> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/160654/> .
 
 <http://www.intavia.eu/apis/groupproxy/160857> idmcore:inheres_in <http://www.intavia.eu/apis/grouprelation/160860>,
@@ -1060,72 +1051,58 @@
 
 <http://www.intavia.eu/apis/groupproxy/161282> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/161282> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/21> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/161282/> .
 
 <http://www.intavia.eu/apis/groupproxy/161642> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/161642> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/23> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/161642/> .
 
 <http://www.intavia.eu/apis/groupproxy/161987> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/161987> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/25> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/161987/> .
 
 <http://www.intavia.eu/apis/groupproxy/162253> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/162253> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/26> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/162253/> .
 
 <http://www.intavia.eu/apis/groupproxy/164392> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164392> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/28> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164392/> .
 
 <http://www.intavia.eu/apis/groupproxy/164394> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164394> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/29> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164394/> .
 
 <http://www.intavia.eu/apis/groupproxy/164397> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164397> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/30> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164397/> .
 
 <http://www.intavia.eu/apis/groupproxy/164401> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164401> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/31> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164401/> .
 
 <http://www.intavia.eu/apis/groupproxy/164403> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164403> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/32> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164403/> .
 
 <http://www.intavia.eu/apis/groupproxy/164408> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164408> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/33> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164408/> .
 
 <http://www.intavia.eu/apis/groupproxy/164426> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164426> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/34> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164426/> .
 
 <http://www.intavia.eu/apis/groupproxy/164430> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164430> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/36> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164430/> .
 
 <http://www.intavia.eu/apis/groupproxy/164450> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164450> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/39> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164450/> .
 
 <http://www.intavia.eu/apis/groupproxy/164507> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164507> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/47> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164507/> .
 
 <http://www.intavia.eu/apis/groupproxy/34567> idmcore:inheres_in <http://www.intavia.eu/apis/grouprelation/160806> .
@@ -1285,79 +1262,10 @@
         <http://www.intavia.eu/apis/occupation/166>,
         <http://www.intavia.eu/apis/occupation/660> .
 
-<http://www.intavia.eu/apis/personproxy/27133> idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155779>,
-        <http://www.intavia.eu/apis/grouprelation/155782>,
-        <http://www.intavia.eu/apis/grouprelation/155784> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/135>,
-        <http://www.intavia.eu/apis/occupation/157>,
-        <http://www.intavia.eu/apis/occupation/661> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155782>,
-        <http://www.intavia.eu/apis/personrelation/155784> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155779/27133>,
-        <idmapis/event/eventrole/155780> .
-
 <http://www.intavia.eu/apis/personproxy/27136> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/141>,
         <http://www.intavia.eu/apis/occupation/188>,
         <http://www.intavia.eu/apis/occupation/217>,
         <http://www.intavia.eu/apis/occupation/662> .
-
-<http://www.intavia.eu/apis/personproxy/27139> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/110635> ;
-    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/110641>,
-        <http://www.intavia.eu/apis/grouprelation/110642>,
-        <http://www.intavia.eu/apis/grouprelation/110646>,
-        <http://www.intavia.eu/apis/grouprelation/110651>,
-        <http://www.intavia.eu/apis/grouprelation/110653>,
-        <http://www.intavia.eu/apis/grouprelation/110657>,
-        <http://www.intavia.eu/apis/grouprelation/110659>,
-        <http://www.intavia.eu/apis/grouprelation/110662>,
-        <http://www.intavia.eu/apis/grouprelation/110663>,
-        <http://www.intavia.eu/apis/grouprelation/110665>,
-        <http://www.intavia.eu/apis/grouprelation/110666>,
-        <http://www.intavia.eu/apis/grouprelation/110671>,
-        <http://www.intavia.eu/apis/grouprelation/110672>,
-        <http://www.intavia.eu/apis/grouprelation/110673>,
-        <http://www.intavia.eu/apis/grouprelation/110674>,
-        <http://www.intavia.eu/apis/grouprelation/110675>,
-        <http://www.intavia.eu/apis/grouprelation/110676>,
-        <http://www.intavia.eu/apis/grouprelation/110677>,
-        <http://www.intavia.eu/apis/grouprelation/110678>,
-        <http://www.intavia.eu/apis/grouprelation/110679> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
-        <http://www.intavia.eu/apis/occupation/663> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/110646>,
-        <http://www.intavia.eu/apis/personrelation/110657>,
-        <http://www.intavia.eu/apis/personrelation/110659>,
-        <http://www.intavia.eu/apis/personrelation/110662> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/110641/27139>,
-        <http://www.intavia.eu/apis/personrole/110642/27139>,
-        <http://www.intavia.eu/apis/personrole/110651/27139>,
-        <http://www.intavia.eu/apis/personrole/110653/27139>,
-        <http://www.intavia.eu/apis/personrole/110663/27139>,
-        <http://www.intavia.eu/apis/personrole/110665/27139>,
-        <http://www.intavia.eu/apis/personrole/110666/27139>,
-        <http://www.intavia.eu/apis/personrole/110671/27139>,
-        <http://www.intavia.eu/apis/personrole/110672/27139>,
-        <http://www.intavia.eu/apis/personrole/110673/27139>,
-        <http://www.intavia.eu/apis/personrole/110674/27139>,
-        <http://www.intavia.eu/apis/personrole/110675/27139>,
-        <http://www.intavia.eu/apis/personrole/110676/27139>,
-        <http://www.intavia.eu/apis/personrole/110677/27139>,
-        <http://www.intavia.eu/apis/personrole/110678/27139>,
-        <http://www.intavia.eu/apis/personrole/110679/27139>,
-        <idmapis/event/eventrole/110638>,
-        <idmapis/event/eventrole/110647>,
-        <idmapis/event/eventrole/110648>,
-        <idmapis/event/eventrole/110652>,
-        <idmapis/event/eventrole/110667> .
-
-<http://www.intavia.eu/apis/personproxy/27142> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/153278> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
-        <http://www.intavia.eu/apis/occupation/146>,
-        <http://www.intavia.eu/apis/occupation/664> ;
-    idmcore:inheres_in <idmapis/event/eventrole/137607>,
-        <idmapis/event/eventrole/137608>,
-        <idmapis/event/eventrole/137609>,
-        <idmapis/event/eventrole/137610> .
 
 <http://www.intavia.eu/apis/personproxy/27145> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
         <http://www.intavia.eu/apis/occupation/134>,
@@ -1373,12 +1281,6 @@
 
 <http://www.intavia.eu/apis/personproxy/27154> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/157>,
         <http://www.intavia.eu/apis/occupation/471> .
-
-<http://www.intavia.eu/apis/personproxy/27157> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
-        <http://www.intavia.eu/apis/occupation/134>,
-        <http://www.intavia.eu/apis/occupation/139>,
-        <http://www.intavia.eu/apis/occupation/667> ;
-    idmcore:inheres_in <idmapis/event/eventrole/105658> .
 
 <http://www.intavia.eu/apis/personproxy/27163> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/134>,
         <http://www.intavia.eu/apis/occupation/143>,
@@ -1459,42 +1361,6 @@
 <http://www.intavia.eu/apis/personproxy/27253> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/134>,
         <http://www.intavia.eu/apis/occupation/679> .
 
-<http://www.intavia.eu/apis/personproxy/27261> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/160854>,
-        <http://www.intavia.eu/apis/familyrelation/160856> ;
-    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/160860>,
-        <http://www.intavia.eu/apis/grouprelation/160864>,
-        <http://www.intavia.eu/apis/grouprelation/160866>,
-        <http://www.intavia.eu/apis/grouprelation/160869>,
-        <http://www.intavia.eu/apis/grouprelation/160870>,
-        <http://www.intavia.eu/apis/grouprelation/160871>,
-        <http://www.intavia.eu/apis/grouprelation/160879>,
-        <http://www.intavia.eu/apis/grouprelation/160881>,
-        <http://www.intavia.eu/apis/grouprelation/160882>,
-        <http://www.intavia.eu/apis/grouprelation/160883>,
-        <http://www.intavia.eu/apis/grouprelation/160884>,
-        <http://www.intavia.eu/apis/grouprelation/160888>,
-        <http://www.intavia.eu/apis/grouprelation/160889>,
-        <http://www.intavia.eu/apis/grouprelation/160890> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
-        <http://www.intavia.eu/apis/occupation/215> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/160860>,
-        <http://www.intavia.eu/apis/personrelation/160866>,
-        <http://www.intavia.eu/apis/personrelation/160869>,
-        <http://www.intavia.eu/apis/personrelation/160871>,
-        <http://www.intavia.eu/apis/personrelation/160882>,
-        <http://www.intavia.eu/apis/personrelation/160884>,
-        <http://www.intavia.eu/apis/personrelation/160888>,
-        <http://www.intavia.eu/apis/personrelation/160889>,
-        <http://www.intavia.eu/apis/personrelation/160890> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/160864/27261>,
-        <http://www.intavia.eu/apis/personrole/160870/27261>,
-        <http://www.intavia.eu/apis/personrole/160879/27261>,
-        <http://www.intavia.eu/apis/personrole/160881/27261>,
-        <http://www.intavia.eu/apis/personrole/160883/27261>,
-        <idmapis/event/eventrole/160861>,
-        <idmapis/event/eventrole/160867>,
-        <idmapis/event/eventrole/160880> .
-
 <http://www.intavia.eu/apis/personproxy/27268> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
         <http://www.intavia.eu/apis/occupation/141>,
         <http://www.intavia.eu/apis/occupation/680> .
@@ -1503,75 +1369,11 @@
         <http://www.intavia.eu/apis/occupation/129>,
         <http://www.intavia.eu/apis/occupation/442> .
 
-<http://www.intavia.eu/apis/personproxy/27281> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/160796>,
-        <http://www.intavia.eu/apis/familyrelation/160800>,
-        <http://www.intavia.eu/apis/familyrelation/160802>,
-        <http://www.intavia.eu/apis/familyrelation/160804> ;
-    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/160805>,
-        <http://www.intavia.eu/apis/grouprelation/160806>,
-        <http://www.intavia.eu/apis/grouprelation/160808>,
-        <http://www.intavia.eu/apis/grouprelation/160851> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
-        <http://www.intavia.eu/apis/occupation/681> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/160806>,
-        <http://www.intavia.eu/apis/personrelation/160851> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/160805/27281>,
-        <http://www.intavia.eu/apis/personrole/160808/27281>,
-        <idmapis/event/eventrole/160807>,
-        <idmapis/event/eventrole/160809>,
-        <idmapis/event/eventrole/160810>,
-        <idmapis/event/eventrole/160811>,
-        <idmapis/event/eventrole/160812>,
-        <idmapis/event/eventrole/160813>,
-        <idmapis/event/eventrole/160814>,
-        <idmapis/event/eventrole/160815>,
-        <idmapis/event/eventrole/160818>,
-        <idmapis/event/eventrole/160819>,
-        <idmapis/event/eventrole/160820>,
-        <idmapis/event/eventrole/160823>,
-        <idmapis/event/eventrole/160824>,
-        <idmapis/event/eventrole/160827>,
-        <idmapis/event/eventrole/160828>,
-        <idmapis/event/eventrole/160829>,
-        <idmapis/event/eventrole/160832>,
-        <idmapis/event/eventrole/160833>,
-        <idmapis/event/eventrole/160836>,
-        <idmapis/event/eventrole/160839>,
-        <idmapis/event/eventrole/160842>,
-        <idmapis/event/eventrole/160845>,
-        <idmapis/event/eventrole/160846>,
-        <idmapis/event/eventrole/160849>,
-        <idmapis/event/eventrole/160850>,
-        <idmapis/event/eventrole/160852> .
-
 <http://www.intavia.eu/apis/personproxy/27284> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/135>,
         <http://www.intavia.eu/apis/occupation/682> .
 
 <http://www.intavia.eu/apis/personproxy/27291> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/151>,
         <http://www.intavia.eu/apis/occupation/678> .
-
-<http://www.intavia.eu/apis/personproxy/27294> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/151>,
-        <http://www.intavia.eu/apis/occupation/683> ;
-    idmcore:inheres_in <idmapis/event/eventrole/99669>,
-        <idmapis/event/eventrole/99670>,
-        <idmapis/event/eventrole/99671>,
-        <idmapis/event/eventrole/99672>,
-        <idmapis/event/eventrole/99673>,
-        <idmapis/event/eventrole/99674>,
-        <idmapis/event/eventrole/99675>,
-        <idmapis/event/eventrole/99676>,
-        <idmapis/event/eventrole/99677>,
-        <idmapis/event/eventrole/99678>,
-        <idmapis/event/eventrole/99679>,
-        <idmapis/event/eventrole/99680>,
-        <idmapis/event/eventrole/99681>,
-        <idmapis/event/eventrole/99682>,
-        <idmapis/event/eventrole/99683>,
-        <idmapis/event/eventrole/99684>,
-        <idmapis/event/eventrole/99685>,
-        <idmapis/event/eventrole/99686>,
-        <idmapis/event/eventrole/99687>,
-        <idmapis/event/eventrole/99688> .
 
 <http://www.intavia.eu/apis/personproxy/27297> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/146>,
         <http://www.intavia.eu/apis/occupation/149>,
@@ -1610,6 +1412,267 @@
 
 <http://www.intavia.eu/apis/personproxy/93071> idmcore:inheres_in <http://www.intavia.eu/apis/personrelation/160851> .
 
+<idmapis/birthevent/eventrole/27118> a idmrole:born_person ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/deathevent/eventrole/27118> a idmrole:deceased_person ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/105658> a <http://www.intavia.eu/idm-role/publizierte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27157> .
+
+<idmapis/event/eventrole/110638> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27139> .
+
+<idmapis/event/eventrole/110647> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27139> .
+
+<idmapis/event/eventrole/110648> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27139> .
+
+<idmapis/event/eventrole/110652> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27139> .
+
+<idmapis/event/eventrole/110667> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27139> .
+
+<idmapis/event/eventrole/137607> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27142> .
+
+<idmapis/event/eventrole/137608> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27142> .
+
+<idmapis/event/eventrole/137609> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27142> .
+
+<idmapis/event/eventrole/137610> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27142> .
+
+<idmapis/event/eventrole/155749> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155752> a <http://www.intavia.eu/idm-role/nahm+Teil+an> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155753> a <http://www.intavia.eu/idm-role/k%C3%A4mpfte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155754> a <http://www.intavia.eu/idm-role/k%C3%A4mpfte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155757> a <http://www.intavia.eu/idm-role/nahm+Teil+an> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155760> a <http://www.intavia.eu/idm-role/war+gefangen+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155761> a <http://www.intavia.eu/idm-role/fl%C3%BCchtete+nach> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155762> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155763> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155764> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155765> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155766> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155770> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27317> .
+
+<idmapis/event/eventrole/155780> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27133> .
+
+<idmapis/event/eventrole/155790> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155791> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155792> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155794> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155801> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155813> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155814> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155815> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155816> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155817> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155821> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/155822> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27118> .
+
+<idmapis/event/eventrole/160807> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160809> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160810> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160811> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160812> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160813> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160814> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160815> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160818> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160819> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160820> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160823> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160824> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160827> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160828> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160829> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160832> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160833> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160836> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160839> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160842> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160845> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160846> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160849> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160850> a <http://www.intavia.eu/idm-role/wirkte+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160852> a <http://www.intavia.eu/idm-role/gewann+einen+Preis+bei> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27281> .
+
+<idmapis/event/eventrole/160861> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27261> .
+
+<idmapis/event/eventrole/160867> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27261> .
+
+<idmapis/event/eventrole/160880> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27261> .
+
+<idmapis/event/eventrole/99669> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99670> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99671> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99672> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99673> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99674> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99675> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99676> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99677> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99678> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99679> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99680> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99681> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99682> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99683> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99684> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99685> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99686> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99687> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
+<idmapis/event/eventrole/99688> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personproxy/27294> .
+
 <http://www.intavia.eu/apis/appellation/1/27118> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Nikola  Tesla" ;
     crm:P148_has_component <http://www.intavia.eu/apis/appellation/2/27118>,
@@ -1619,393 +1682,306 @@
 
 <http://www.intavia.eu/apis/appellation/3/27118> rdfs:label "Nikola" .
 
-<http://www.intavia.eu/apis/birthevent/eventrole/27118> a idmrole:born_person ;
-    rdfs:label "born_person" .
+<http://www.intavia.eu/apis/birthevent/eventrole/27118> rdfs:label "born_person" .
 
 <http://www.intavia.eu/apis/birthevent/timespan/27118> crm:P82a_begin_of_the_begin "1856-07-10T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1856-07-10T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110642> rdfs:label "1900-01-01 - 1901" ;
-    crm:P82a_begin_of_the_begin "1900-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1901-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1900-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1901-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110651> rdfs:label "1909-01-01 - 1910" ;
-    crm:P82a_begin_of_the_begin "1909-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1910-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1909-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1910-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110653> rdfs:label "1914-01-01 - 1920" ;
-    crm:P82a_begin_of_the_begin "1914-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1920-07-01T23:59:59" .
+    crm:P82a_begin_of_the_begin "1914-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1920-07-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110663> rdfs:label "1920-01-01 - 1926" ;
-    crm:P82a_begin_of_the_begin "1920-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1926-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1920-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1926-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110665> rdfs:label "1926-01-01 - 1941" ;
-    crm:P82a_begin_of_the_begin "1926-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1941-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1926-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1941-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110666> rdfs:label "1946-01-01" ;
-    crm:P82a_begin_of_the_begin "1946-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1946-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110671> rdfs:label "1926-01-01" ;
-    crm:P82a_begin_of_the_begin "1926-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1926-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110672> rdfs:label "1910-01-01" ;
-    crm:P82a_begin_of_the_begin "1910-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1910-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110673> rdfs:label "1914-01-01" ;
-    crm:P82a_begin_of_the_begin "1914-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1914-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110674> rdfs:label "1919-01-01 - 1938" ;
-    crm:P82a_begin_of_the_begin "1919-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1938-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1919-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110675> rdfs:label "1920-01-01" ;
-    crm:P82a_begin_of_the_begin "1920-07-01T00:00:00" .
+    crm:P82a_begin_of_the_begin "1920-07-01T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110676> rdfs:label "1937-01-01" ;
-    crm:P82a_begin_of_the_begin "1937-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1937-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110677> rdfs:label "1941-01-01" ;
-    crm:P82a_begin_of_the_begin "1941-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1941-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110678> rdfs:label "1913-01-01" ;
-    crm:P82a_begin_of_the_begin "1913-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1913-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/110679> rdfs:label "1939-01-01 - 1940" ;
-    crm:P82a_begin_of_the_begin "1939-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1940-07-01T23:59:59" .
+    crm:P82a_begin_of_the_begin "1939-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1940-07-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153596> rdfs:label "1863-01-01" ;
-    crm:P82a_begin_of_the_begin "1863-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1863-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153599> rdfs:label "time-span end:1868" ;
-    crm:P82b_end_of_the_end "1868-07-01T23:59:59" .
+    crm:P82b_end_of_the_end "1868-07-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153604> rdfs:label "1868-01-01" ;
-    crm:P82a_begin_of_the_begin "1868-07-01T00:00:00" .
+    crm:P82a_begin_of_the_begin "1868-07-01T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153605> rdfs:label "time-span end:1870" ;
-    crm:P82b_end_of_the_end "1870-07-02T23:59:59" .
+    crm:P82b_end_of_the_end "1870-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153606> rdfs:label "1870-01-01 - 1873" ;
-    crm:P82a_begin_of_the_begin "1870-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1873-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1870-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1873-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153609> rdfs:label "1875-01-01 - 1883" ;
-    crm:P82a_begin_of_the_begin "1875-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1883-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1875-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1883-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153610> rdfs:label "1883-01-01" ;
-    crm:P82a_begin_of_the_begin "1883-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1883-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153611> rdfs:label "1900-01-01" ;
-    crm:P82a_begin_of_the_begin "1900-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1900-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153613> rdfs:label "1892-01-01" ;
-    crm:P82a_begin_of_the_begin "1892-07-01T00:00:00" .
+    crm:P82a_begin_of_the_begin "1892-07-01T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/153614> rdfs:label "1898-01-01" ;
-    crm:P82a_begin_of_the_begin "1898-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1898-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/155778> rdfs:label "1867-01-01" ;
-    crm:P82a_begin_of_the_begin "1867-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1867-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/155793> rdfs:label "1875-01-01 - 1879" ;
-    crm:P82a_begin_of_the_begin "1875-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1879-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1875-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1879-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/155797> rdfs:label "1881-01-01" ;
-    crm:P82a_begin_of_the_begin "1881-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1881-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/155804> rdfs:label "1884-01-01 - 1885" ;
-    crm:P82a_begin_of_the_begin "1884-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1885-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1884-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1885-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/155807> rdfs:label "1885-01-01" ;
-    crm:P82a_begin_of_the_begin "1885-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1885-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160808> rdfs:label "1893-01-01 - 1894" ;
-    crm:P82a_begin_of_the_begin "1893-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1894-07-02T23:59:59" .
+    crm:P82a_begin_of_the_begin "1893-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1894-07-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160864> rdfs:label "1782-01-01 - 1784" ;
-    crm:P82a_begin_of_the_begin "1782-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1784-07-01T23:59:59" .
+    crm:P82a_begin_of_the_begin "1782-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1784-07-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160870> rdfs:label "1784-01-01" ;
-    crm:P82a_begin_of_the_begin "1784-07-01T00:00:00" .
+    crm:P82a_begin_of_the_begin "1784-07-01T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160879> rdfs:label "1785-01-01" ;
-    crm:P82a_begin_of_the_begin "1785-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1785-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160881> rdfs:label "1786-01-01" ;
-    crm:P82a_begin_of_the_begin "1786-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1786-07-02T00:00:00"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/career/timespan/160883> rdfs:label "1802-01-01" ;
-    crm:P82a_begin_of_the_begin "1802-07-02T00:00:00" .
+    crm:P82a_begin_of_the_begin "1802-07-02T00:00:00"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/deathevent/eventrole/27118> a idmrole:deceased_person ;
-    rdfs:label "deceased_person" .
+<http://www.intavia.eu/apis/deathevent/eventrole/27118> rdfs:label "deceased_person" .
 
 <http://www.intavia.eu/apis/deathevent/timespan/27118> crm:P82a_begin_of_the_begin "1943-01-07T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1943-01-07T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/event/eventrole/105658> a <http://www.intavia.eu/idm-role/publizierte+in> ;
-    rdfs:label "publizierte+in" .
+<http://www.intavia.eu/apis/event/eventrole/105658> rdfs:label "publizierte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/110638> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/110638> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/110647> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/110647> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/110648> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/110648> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/110652> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/110652> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/110667> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/110667> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/137607> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/137607> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/137608> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/137608> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/137609> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/137609> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/137610> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/137610> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155749> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155749> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155752> a <http://www.intavia.eu/idm-role/nahm+Teil+an> ;
-    rdfs:label "nahm+Teil+an" .
+<http://www.intavia.eu/apis/event/eventrole/155752> rdfs:label "nahm+Teil+an" .
 
-<http://www.intavia.eu/apis/event/eventrole/155753> a <http://www.intavia.eu/idm-role/k%C3%A4mpfte+in> ;
-    rdfs:label "k%C3%A4mpfte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155753> rdfs:label "k%C3%A4mpfte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155754> a <http://www.intavia.eu/idm-role/k%C3%A4mpfte+in> ;
-    rdfs:label "k%C3%A4mpfte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155754> rdfs:label "k%C3%A4mpfte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155757> a <http://www.intavia.eu/idm-role/nahm+Teil+an> ;
-    rdfs:label "nahm+Teil+an" .
+<http://www.intavia.eu/apis/event/eventrole/155757> rdfs:label "nahm+Teil+an" .
 
-<http://www.intavia.eu/apis/event/eventrole/155760> a <http://www.intavia.eu/idm-role/war+gefangen+in> ;
-    rdfs:label "war+gefangen+in" .
+<http://www.intavia.eu/apis/event/eventrole/155760> rdfs:label "war+gefangen+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155761> a <http://www.intavia.eu/idm-role/fl%C3%BCchtete+nach> ;
-    rdfs:label "fl%C3%BCchtete+nach" .
+<http://www.intavia.eu/apis/event/eventrole/155761> rdfs:label "fl%C3%BCchtete+nach" .
 
-<http://www.intavia.eu/apis/event/eventrole/155762> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
-    rdfs:label "migrierte+nach" .
+<http://www.intavia.eu/apis/event/eventrole/155762> rdfs:label "migrierte+nach" .
 
-<http://www.intavia.eu/apis/event/eventrole/155763> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
-    rdfs:label "migrierte+nach" .
+<http://www.intavia.eu/apis/event/eventrole/155763> rdfs:label "migrierte+nach" .
 
-<http://www.intavia.eu/apis/event/eventrole/155764> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
-    rdfs:label "migrierte+nach" .
+<http://www.intavia.eu/apis/event/eventrole/155764> rdfs:label "migrierte+nach" .
 
-<http://www.intavia.eu/apis/event/eventrole/155765> a <http://www.intavia.eu/idm-role/migrierte+nach> ;
-    rdfs:label "migrierte+nach" .
+<http://www.intavia.eu/apis/event/eventrole/155765> rdfs:label "migrierte+nach" .
 
-<http://www.intavia.eu/apis/event/eventrole/155766> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155766> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155770> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155770> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155780> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155780> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155790> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/155790> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155791> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/155791> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155792> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/155792> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155794> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/155794> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155801> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155801> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155813> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
-    rdfs:label "hielt+einen+Vortrag+in" .
+<http://www.intavia.eu/apis/event/eventrole/155813> rdfs:label "hielt+einen+Vortrag+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155814> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
-    rdfs:label "hielt+einen+Vortrag+in" .
+<http://www.intavia.eu/apis/event/eventrole/155814> rdfs:label "hielt+einen+Vortrag+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155815> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
-    rdfs:label "hielt+einen+Vortrag+in" .
+<http://www.intavia.eu/apis/event/eventrole/155815> rdfs:label "hielt+einen+Vortrag+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155816> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
-    rdfs:label "hielt+einen+Vortrag+in" .
+<http://www.intavia.eu/apis/event/eventrole/155816> rdfs:label "hielt+einen+Vortrag+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155817> a <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> ;
-    rdfs:label "hielt+einen+Vortrag+in" .
+<http://www.intavia.eu/apis/event/eventrole/155817> rdfs:label "hielt+einen+Vortrag+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155821> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155821> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/155822> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/155822> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160807> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/160807> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160809> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160809> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160810> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160810> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160811> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160811> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160812> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160812> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160813> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160813> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160814> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160814> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160815> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160815> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160818> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160818> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160819> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160819> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160820> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160820> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160823> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160823> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160824> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160824> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160827> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160827> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160828> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160828> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160829> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160829> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160832> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160832> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160833> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160833> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160836> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160836> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160839> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160839> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160842> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160842> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160845> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160845> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160846> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160846> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160849> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160849> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160850> a <http://www.intavia.eu/idm-role/wirkte+in> ;
-    rdfs:label "wirkte+in" .
+<http://www.intavia.eu/apis/event/eventrole/160850> rdfs:label "wirkte+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160852> a <http://www.intavia.eu/idm-role/gewann+einen+Preis+bei> ;
-    rdfs:label "gewann+einen+Preis+bei" .
+<http://www.intavia.eu/apis/event/eventrole/160852> rdfs:label "gewann+einen+Preis+bei" .
 
-<http://www.intavia.eu/apis/event/eventrole/160861> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/160861> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160867> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/160867> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/160880> a <http://www.intavia.eu/idm-role/ausgebildet+in> ;
-    rdfs:label "ausgebildet+in" .
+<http://www.intavia.eu/apis/event/eventrole/160880> rdfs:label "ausgebildet+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99669> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99669> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99670> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99670> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99671> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99671> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99672> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99672> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99673> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99673> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99674> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99674> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99675> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99675> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99676> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99676> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99677> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99677> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99678> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99678> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99679> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99679> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99680> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99680> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99681> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99681> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99682> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99682> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99683> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99683> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99684> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99684> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99685> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99685> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99686> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99686> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99687> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99687> rdfs:label "trat+auf+in" .
 
-<http://www.intavia.eu/apis/event/eventrole/99688> a <http://www.intavia.eu/idm-role/trat+auf+in> ;
-    rdfs:label "trat+auf+in" .
+<http://www.intavia.eu/apis/event/eventrole/99688> rdfs:label "trat+auf+in" .
 
 <http://www.intavia.eu/apis/familyrelation/110635> a idmrelations:5411 ;
     rdfs:label "Tessenow, Heinrich (war verheiratet) Tessenow, Elly Mathilde" ;
@@ -2225,56 +2201,56 @@
 <http://www.intavia.eu/apis/groupappellation/98127> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Hochschule für Bodenkultur (Wien)" .
 
-<http://www.intavia.eu/apis/groupend/timespan/157000> crm:P82a_begin_of_the_begin "1909-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1909-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/157000> crm:P82a_begin_of_the_begin "1909-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1909-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/157007> crm:P82a_begin_of_the_begin "1967-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1967-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/157007> crm:P82a_begin_of_the_begin "1967-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1967-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/157015> crm:P82a_begin_of_the_begin "1952-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1952-07-01T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/157015> crm:P82a_begin_of_the_begin "1952-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1952-07-01T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/157221> crm:P82a_begin_of_the_begin "1972-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1972-07-01T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/157221> crm:P82a_begin_of_the_begin "1972-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1972-07-01T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/158040> crm:P82a_begin_of_the_begin "1918-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1918-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/158040> crm:P82a_begin_of_the_begin "1918-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1918-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/158828> crm:P82a_begin_of_the_begin "1902-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1902-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/158828> crm:P82a_begin_of_the_begin "1902-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1902-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/158952> crm:P82a_begin_of_the_begin "1986-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1986-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/158952> crm:P82a_begin_of_the_begin "1986-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1986-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/159531> crm:P82a_begin_of_the_begin "1938-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1938-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/159531> crm:P82a_begin_of_the_begin "1938-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/159581> crm:P82a_begin_of_the_begin "1948-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1948-07-01T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/159581> crm:P82a_begin_of_the_begin "1948-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1948-07-01T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/160467> crm:P82a_begin_of_the_begin "1938-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1938-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/160467> crm:P82a_begin_of_the_begin "1938-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/161310> crm:P82a_begin_of_the_begin "1950-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1950-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/161310> crm:P82a_begin_of_the_begin "1950-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1950-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/161693> crm:P82a_begin_of_the_begin "1953-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1953-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/161693> crm:P82a_begin_of_the_begin "1953-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1953-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/162264> crm:P82a_begin_of_the_begin "1427-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1427-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/162264> crm:P82a_begin_of_the_begin "1427-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1427-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/164429> crm:P82a_begin_of_the_begin "1928-07-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1928-07-01T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/164429> crm:P82a_begin_of_the_begin "1928-07-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1928-07-01T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/164462> crm:P82a_begin_of_the_begin "1934-07-02T00:00:00" ;
-    crm:P82b_end_of_the_end "1934-07-02T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/164462> crm:P82a_begin_of_the_begin "1934-07-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1934-07-02T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/164469> crm:P82a_begin_of_the_begin "1939-08-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1939-08-01T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/164469> crm:P82a_begin_of_the_begin "1939-08-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1939-08-01T23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/apis/groupend/timespan/98127> crm:P82a_begin_of_the_begin "1975-01-01T00:00:00" ;
-    crm:P82b_end_of_the_end "1975-12-31T23:59:59" .
+<http://www.intavia.eu/apis/groupend/timespan/98127> crm:P82a_begin_of_the_begin "1975-01-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1975-12-31T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/apis/groupproxy/101290> idmcore:inheres_in <http://www.intavia.eu/apis/grouprole/110676/101290> .
 
@@ -2326,17 +2302,14 @@
 
 <http://www.intavia.eu/apis/groupproxy/158353> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158353> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/10> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158353/> .
 
 <http://www.intavia.eu/apis/groupproxy/158564> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158564> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/12> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158564/> .
 
 <http://www.intavia.eu/apis/groupproxy/159531> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/159531> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/15> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/159531/> .
 
 <http://www.intavia.eu/apis/groupproxy/160862> idmcore:inheres_in <http://www.intavia.eu/apis/grouprole/160864/160862> .
@@ -2345,47 +2318,38 @@
 
 <http://www.intavia.eu/apis/groupproxy/161310> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/161310> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/22> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/161310/> .
 
 <http://www.intavia.eu/apis/groupproxy/164431> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164431> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/37> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164431/> .
 
 <http://www.intavia.eu/apis/groupproxy/164433> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164433> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/38> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164433/> .
 
 <http://www.intavia.eu/apis/groupproxy/164453> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164453> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/40> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164453/> .
 
 <http://www.intavia.eu/apis/groupproxy/164455> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164455> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/41> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164455/> .
 
 <http://www.intavia.eu/apis/groupproxy/164458> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164458> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/42> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164458/> .
 
 <http://www.intavia.eu/apis/groupproxy/164464> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164464> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/44> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164464/> .
 
 <http://www.intavia.eu/apis/groupproxy/164469> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164469> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/45> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164469/> .
 
 <http://www.intavia.eu/apis/groupproxy/164476> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164476> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/46> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164476/> .
 
 <http://www.intavia.eu/apis/groupproxy/94022> idmcore:inheres_in <http://www.intavia.eu/apis/grouprole/160881/94022> .
@@ -2396,7 +2360,6 @@
 
 <http://www.intavia.eu/apis/groupproxy/95194> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/95194> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/48> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/95194/> .
 
 <http://www.intavia.eu/apis/groupproxy/96259> idmcore:inheres_in <http://www.intavia.eu/apis/grouprole/153613/96259> .
@@ -2605,76 +2568,76 @@
     rdfs:label "war Restaurator" ;
     idmcore:inheres_in <http://www.intavia.eu/apis/groupproxy/151427> .
 
-<http://www.intavia.eu/apis/groupstart/timespan/157000> crm:P82a_begin_of_the_begin "1871-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/157000> crm:P82a_begin_of_the_begin "1871-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1871-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/157007> crm:P82a_begin_of_the_begin "1887-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/157007> crm:P82a_begin_of_the_begin "1887-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1887-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/157015> crm:P82a_begin_of_the_begin "1925-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/157015> crm:P82a_begin_of_the_begin "1925-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1925-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/157221> crm:P82a_begin_of_the_begin "1863-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/157221> crm:P82a_begin_of_the_begin "1863-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1863-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/158040> crm:P82a_begin_of_the_begin "1892-07-01T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/158040> crm:P82a_begin_of_the_begin "1892-07-01T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1892-07-01T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/158353> crm:P82a_begin_of_the_begin "1999-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/158353> crm:P82a_begin_of_the_begin "1999-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1999-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/158564> crm:P82a_begin_of_the_begin "2003-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/158564> crm:P82a_begin_of_the_begin "2003-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "2003-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/158828> crm:P82a_begin_of_the_begin "1872-07-01T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/158828> crm:P82a_begin_of_the_begin "1872-07-01T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1872-07-01T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/158952> crm:P82a_begin_of_the_begin "1921-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/158952> crm:P82a_begin_of_the_begin "1921-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1921-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/159581> crm:P82a_begin_of_the_begin "1899-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/159581> crm:P82a_begin_of_the_begin "1899-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1899-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/160467> crm:P82a_begin_of_the_begin "1925-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/160467> crm:P82a_begin_of_the_begin "1925-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1925-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/161693> crm:P82a_begin_of_the_begin "1909-01-12T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/161693> crm:P82a_begin_of_the_begin "1909-01-12T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1909-01-12T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/162264> crm:P82a_begin_of_the_begin "1402-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/162264> crm:P82a_begin_of_the_begin "1402-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1402-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164429> crm:P82a_begin_of_the_begin "2006-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164429> crm:P82a_begin_of_the_begin "2006-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "2006-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164431> crm:P82a_begin_of_the_begin "1987-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164431> crm:P82a_begin_of_the_begin "1987-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1987-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164433> crm:P82a_begin_of_the_begin "1754-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164433> crm:P82a_begin_of_the_begin "1754-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1754-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164453> crm:P82a_begin_of_the_begin "1873-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164453> crm:P82a_begin_of_the_begin "1873-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1873-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164455> crm:P82a_begin_of_the_begin "1901-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164455> crm:P82a_begin_of_the_begin "1901-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1901-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164458> crm:P82a_begin_of_the_begin "1909-10-23T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164458> crm:P82a_begin_of_the_begin "1909-10-23T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1909-10-23T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164462> crm:P82a_begin_of_the_begin "1869-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164462> crm:P82a_begin_of_the_begin "1869-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1869-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164464> crm:P82a_begin_of_the_begin "1866-10-09T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164464> crm:P82a_begin_of_the_begin "1866-10-09T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1866-10-09T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/164476> crm:P82a_begin_of_the_begin "1878-07-02T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/164476> crm:P82a_begin_of_the_begin "1878-07-02T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1878-07-02T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/95194> crm:P82a_begin_of_the_begin "1803-01-01T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/95194> crm:P82a_begin_of_the_begin "1803-01-01T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1803-12-31T23:59:59" .
 
-<http://www.intavia.eu/apis/groupstart/timespan/98127> crm:P82a_begin_of_the_begin "1872-01-01T00:00:00" ;
+<http://www.intavia.eu/apis/groupstart/timespan/98127> crm:P82a_begin_of_the_begin "1872-01-01T00:00:00"^^xsd:dateTime ;
     crm:P82b_end_of_the_end "1872-12-31T23:59:59" .
 
 <http://www.intavia.eu/apis/identifier/27118> a crm:E42_Identifier ;
@@ -2823,101 +2786,40 @@
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/128>,
         idmcore:Occupation .
 
+<http://www.intavia.eu/apis/personproxy/27133> idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155779>,
+        <http://www.intavia.eu/apis/grouprelation/155782>,
+        <http://www.intavia.eu/apis/grouprelation/155784> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/135>,
+        <http://www.intavia.eu/apis/occupation/157>,
+        <http://www.intavia.eu/apis/occupation/661> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155782>,
+        <http://www.intavia.eu/apis/personrelation/155784> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155779/27133> .
+
+<http://www.intavia.eu/apis/personproxy/27157> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
+        <http://www.intavia.eu/apis/occupation/134>,
+        <http://www.intavia.eu/apis/occupation/139>,
+        <http://www.intavia.eu/apis/occupation/667> .
+
 <http://www.intavia.eu/apis/personproxy/27307> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/155746> ;
     idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
         <http://www.intavia.eu/apis/occupation/134>,
         <http://www.intavia.eu/apis/occupation/149>,
         <http://www.intavia.eu/apis/occupation/685> .
 
-<http://www.intavia.eu/apis/personproxy/27317> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/155743>,
-        <http://www.intavia.eu/apis/familyrelation/155745>,
-        <http://www.intavia.eu/apis/familyrelation/155746>,
-        <http://www.intavia.eu/apis/familyrelation/155748> ;
-    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155758>,
-        <http://www.intavia.eu/apis/grouprelation/155759>,
-        <http://www.intavia.eu/apis/grouprelation/155772>,
-        <http://www.intavia.eu/apis/grouprelation/155774>,
-        <http://www.intavia.eu/apis/grouprelation/155775>,
-        <http://www.intavia.eu/apis/grouprelation/155778> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/134>,
-        <http://www.intavia.eu/apis/occupation/143>,
-        <http://www.intavia.eu/apis/occupation/157>,
-        <http://www.intavia.eu/apis/occupation/224> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155758>,
-        <http://www.intavia.eu/apis/personrelation/155759> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155772/27317>,
-        <http://www.intavia.eu/apis/personrole/155774/27317>,
-        <http://www.intavia.eu/apis/personrole/155775/27317>,
-        <http://www.intavia.eu/apis/personrole/155778/27317>,
-        <idmapis/event/eventrole/155749>,
-        <idmapis/event/eventrole/155752>,
-        <idmapis/event/eventrole/155753>,
-        <idmapis/event/eventrole/155754>,
-        <idmapis/event/eventrole/155757>,
-        <idmapis/event/eventrole/155760>,
-        <idmapis/event/eventrole/155761>,
-        <idmapis/event/eventrole/155762>,
-        <idmapis/event/eventrole/155763>,
-        <idmapis/event/eventrole/155764>,
-        <idmapis/event/eventrole/155765>,
-        <idmapis/event/eventrole/155766>,
-        <idmapis/event/eventrole/155770> .
+<http://www.intavia.eu/apis/place/107244> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "48.89417 17.99226" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/107244/Ve%C4%BEk%C3%A9+Z%C3%A1blatie>,
+        <http://www.intavia.eu/apis/placeidentifier/107244> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/107244/>,
+        <https://sws.geonames.org/3056850/> .
 
-<http://www.intavia.eu/apis/place/10015> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.30639 14.28611" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/10015/Linz>,
-        <http://www.intavia.eu/apis/placeidentifier/10015> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/10015/>,
-        <https://sws.geonames.org/2772400/> .
-
-<http://www.intavia.eu/apis/place/100609> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.68085 11.20125" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/100609/Murnau+am+Staffelsee>,
-        <http://www.intavia.eu/apis/placeidentifier/100609> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/100609/>,
-        <https://sws.geonames.org/2867445/> .
-
-<http://www.intavia.eu/apis/place/10285> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.33249 19.66708" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/10285/Lu%C4%8Denec>,
-        <http://www.intavia.eu/apis/placeidentifier/10285> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/10285/>,
-        <https://sws.geonames.org/3058986/> .
-
-<http://www.intavia.eu/apis/place/11643> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.37787 18.20353" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/11643/M%C3%B3r>,
-        <http://www.intavia.eu/apis/placeidentifier/11643> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/11643/>,
-        <https://sws.geonames.org/3047927/> .
-
-<http://www.intavia.eu/apis/place/12165> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "40.85631 14.24641" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/12165/Neapel>,
-        <http://www.intavia.eu/apis/placeidentifier/12165> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/12165/>,
-        <https://sws.geonames.org/3172394/> .
-
-<http://www.intavia.eu/apis/place/121764> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "53.01416 9.0263" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/121764/Achim>,
-        <http://www.intavia.eu/apis/placeidentifier/121764> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/121764/>,
-        <https://sws.geonames.org/2959681/> .
-
-<http://www.intavia.eu/apis/place/127058> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "49.47359 20.16695" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/127058/Harklowa>,
-        <http://www.intavia.eu/apis/placeidentifier/127058> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/127058/>,
-        <https://sws.geonames.org/771132/> .
-
-<http://www.intavia.eu/apis/place/128656> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "50.5717 16.30597" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/128656/K%C5%99inice>,
-        <http://www.intavia.eu/apis/placeidentifier/128656> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/128656/>,
-        <https://sws.geonames.org/3072716/> .
+<http://www.intavia.eu/apis/place/110636> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "53.37846 11.59264" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/110636/Neustadt-Glewe>,
+        <http://www.intavia.eu/apis/placeidentifier/110636> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/110636/>,
+        <https://sws.geonames.org/2864036/> .
 
 <http://www.intavia.eu/apis/place/131584> a crm:E53_Place ;
     crm:P168_place_is_defined_by "49.62739 23.69952" ;
@@ -2940,47 +2842,12 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/14394/>,
         <https://sws.geonames.org/3192224/> .
 
-<http://www.intavia.eu/apis/place/15183> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.85851 8.20965" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/15183/Rastatt>,
-        <http://www.intavia.eu/apis/placeidentifier/15183> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/15183/>,
-        <https://sws.geonames.org/2850257/> .
-
-<http://www.intavia.eu/apis/place/155767> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.12852 16.27148" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/155767/Sankt+Michael+im+Burgenland>,
-        <http://www.intavia.eu/apis/placeidentifier/155767> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/155767/>,
-        <https://sws.geonames.org/2766497/> .
-
 <http://www.intavia.eu/apis/place/155818> a crm:E53_Place ;
     crm:P168_place_is_defined_by "38.83388 -104.82136" ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/155818/Colorado+Springs>,
         <http://www.intavia.eu/apis/placeidentifier/155818> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/155818/>,
         <https://sws.geonames.org/5417598/> .
-
-<http://www.intavia.eu/apis/place/15763> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "54.0887 12.14049" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/15763/Rostock>,
-        <http://www.intavia.eu/apis/placeidentifier/15763> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/15763/>,
-        <https://sws.geonames.org/2844588/> .
-
-<http://www.intavia.eu/apis/place/15982> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.42681 12.848" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/15982/Saalfelden+am+Steinernen+Meer>,
-        <http://www.intavia.eu/apis/placeidentifier/15982> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/15982/>,
-        <https://sws.geonames.org/2766922/> .
-
-<http://www.intavia.eu/apis/place/160537> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.2557 11.43359" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/160537/Ambras+Castle>,
-        <http://www.intavia.eu/apis/placeidentifier/160537> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/160537/>,
-        <https://sws.geonames.org/3319531/> .
 
 <http://www.intavia.eu/apis/place/160830> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.39295 11.81766" ;
@@ -2989,20 +2856,6 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/160830/>,
         <https://sws.geonames.org/7873710/> .
 
-<http://www.intavia.eu/apis/place/160834> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.83236 12.74945" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/160834/Schloss+Bruck>,
-        <http://www.intavia.eu/apis/placeidentifier/160834> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/160834/>,
-        <https://sws.geonames.org/11704122/> .
-
-<http://www.intavia.eu/apis/place/160840> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.66451 10.58496" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/160840/Schluderns>,
-        <http://www.intavia.eu/apis/placeidentifier/160840> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/160840/>,
-        <https://sws.geonames.org/6535931/> .
-
 <http://www.intavia.eu/apis/place/160847> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.23333 11.38333" ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/160847/Mutters>,
@@ -3010,12 +2863,12 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/160847/>,
         <https://sws.geonames.org/2770974/> .
 
-<http://www.intavia.eu/apis/place/16310> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.586 11.08571" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/16310/Sankt+Pankraz>,
-        <http://www.intavia.eu/apis/placeidentifier/16310> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/16310/>,
-        <https://sws.geonames.org/3167905/> .
+<http://www.intavia.eu/apis/place/16272> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "46.96278 14.79167" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/16272/Bad+Sankt+Leonhard+im+Lavanttal>,
+        <http://www.intavia.eu/apis/placeidentifier/16272> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/16272/>,
+        <https://sws.geonames.org/2782049/> .
 
 <http://www.intavia.eu/apis/place/17971> a crm:E53_Place ;
     crm:P168_place_is_defined_by "46.86588 11.47922" ;
@@ -3031,13 +2884,6 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/193/>,
         <https://sws.geonames.org/3056326/> .
 
-<http://www.intavia.eu/apis/place/19668> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.13333 10.93333" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/19668/Umhausen>,
-        <http://www.intavia.eu/apis/placeidentifier/19668> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/19668/>,
-        <https://sws.geonames.org/2763164/> .
-
 <http://www.intavia.eu/apis/place/2> a crm:E53_Place ;
     crm:P168_place_is_defined_by "51.5 10.5" ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/2/Deutschland>,
@@ -3052,47 +2898,12 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2085/>,
         <https://sws.geonames.org/3078577/> .
 
-<http://www.intavia.eu/apis/place/20961> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.0 12.53333" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/20961/Matrei+in+Osttirol>,
-        <http://www.intavia.eu/apis/placeidentifier/20961> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/20961/>,
-        <https://sws.geonames.org/2771828/> .
-
-<http://www.intavia.eu/apis/place/216> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.25 11.45" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/216/Aldrans>,
-        <http://www.intavia.eu/apis/placeidentifier/216> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/216/>,
-        <https://sws.geonames.org/2782813/> .
-
-<http://www.intavia.eu/apis/place/2197> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "50.20923 15.83277" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/2197/K%C3%B6niggr%C3%A4tz>,
-        <http://www.intavia.eu/apis/placeidentifier/2197> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2197/>,
-        <https://sws.geonames.org/3074967/> .
-
 <http://www.intavia.eu/apis/place/2314> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.41667 15.28333" ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/2314/Bruck+an+der+Mur>,
         <http://www.intavia.eu/apis/placeidentifier/2314> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2314/>,
         <https://sws.geonames.org/2781371/> .
-
-<http://www.intavia.eu/apis/place/24586> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "50.85045 4.34878" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/24586/Br%C3%BCssel>,
-        <http://www.intavia.eu/apis/placeidentifier/24586> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/24586/>,
-        <https://sws.geonames.org/2800866/> .
-
-<http://www.intavia.eu/apis/place/25495> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "41.85003 -87.65005" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/25495/Chicago>,
-        <http://www.intavia.eu/apis/placeidentifier/25495> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/25495/>,
-        <https://sws.geonames.org/4887398/> .
 
 <http://www.intavia.eu/apis/place/25528> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.25 9.91667" ;
@@ -3101,26 +2912,12 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/25528/>,
         <https://sws.geonames.org/2762300/> .
 
-<http://www.intavia.eu/apis/place/2657> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "43.55135 7.01275" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/2657/Cannes>,
-        <http://www.intavia.eu/apis/placeidentifier/2657> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2657/>,
-        <https://sws.geonames.org/3028808/> .
-
-<http://www.intavia.eu/apis/place/2719> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "49.91099 15.38972" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/2719/Tschaslau>,
-        <http://www.intavia.eu/apis/placeidentifier/2719> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/2719/>,
-        <https://sws.geonames.org/3078234/> .
-
-<http://www.intavia.eu/apis/place/27239> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.46667 20.9" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/27239/Nagyb%C3%A1nhegyes>,
-        <http://www.intavia.eu/apis/placeidentifier/27239> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/27239/>,
-        <https://sws.geonames.org/717434/> .
+<http://www.intavia.eu/apis/place/25535> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "46.5 11.33333" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/25535/Trentino+-+S%C3%BCdtirol>,
+        <http://www.intavia.eu/apis/placeidentifier/25535> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/25535/>,
+        <https://sws.geonames.org/3165244/> .
 
 <http://www.intavia.eu/apis/place/27262> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.48906 12.06174" ;
@@ -3136,54 +2933,26 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/27272/>,
         <https://sws.geonames.org/8951851/> .
 
-<http://www.intavia.eu/apis/place/27285> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.18017 13.79582" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/27285/Meggenhofen>,
-        <http://www.intavia.eu/apis/placeidentifier/27285> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/27285/>,
-        <https://sws.geonames.org/2771716/> .
+<http://www.intavia.eu/apis/place/4984> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "47.347 11.84939" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/4984/F%C3%BCgen>,
+        <http://www.intavia.eu/apis/placeidentifier/4984> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4984/>,
+        <https://sws.geonames.org/2779154/> .
 
-<http://www.intavia.eu/apis/place/4017> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "51.05089 13.73832" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/4017/Dresden>,
-        <http://www.intavia.eu/apis/placeidentifier/4017> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4017/>,
-        <https://sws.geonames.org/2935022/> .
+<http://www.intavia.eu/apis/place/4996> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "46.08333 18.23333" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/4996/F%C3%BCnfkirchen>,
+        <http://www.intavia.eu/apis/placeidentifier/4996> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4996/>,
+        <https://sws.geonames.org/3046526/> .
 
-<http://www.intavia.eu/apis/place/404> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "53.57532 10.01534" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/404/Hamburg>,
-        <http://www.intavia.eu/apis/placeidentifier/404> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/404/>,
-        <https://sws.geonames.org/2911298/> .
-
-<http://www.intavia.eu/apis/place/5> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.0 20.0" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/5/Ungarn>,
-        <http://www.intavia.eu/apis/placeidentifier/5> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/5/>,
-        <https://sws.geonames.org/719819/> .
-
-<http://www.intavia.eu/apis/place/5222> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.20222 6.14569" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/5222/Genf>,
-        <http://www.intavia.eu/apis/placeidentifier/5222> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/5222/>,
-        <https://sws.geonames.org/2660646/> .
-
-<http://www.intavia.eu/apis/place/5584> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "44.54611 15.37472" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/5584/Gospi%C4%87>,
-        <http://www.intavia.eu/apis/placeidentifier/5584> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/5584/>,
-        <https://sws.geonames.org/3199873/> .
-
-<http://www.intavia.eu/apis/place/6291> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.28333 11.51667" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/6291/Hall+in+Tirol+%28%E2%80%9ESolbad+Hall%E2%80%9C%29>,
-        <http://www.intavia.eu/apis/placeidentifier/6291> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/6291/>,
-        <https://sws.geonames.org/2764958/> .
+<http://www.intavia.eu/apis/place/55051> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "39.162 -84.45689" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/55051/Cincinnati>,
+        <http://www.intavia.eu/apis/placeidentifier/55051> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/55051/>,
+        <https://sws.geonames.org/4508722/> .
 
 <http://www.intavia.eu/apis/place/6939> a crm:E53_Place ;
     crm:P168_place_is_defined_by "49.06975 17.45969" ;
@@ -3198,13 +2967,6 @@
         <http://www.intavia.eu/apis/placeidentifier/7117> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/7117/>,
         <https://sws.geonames.org/2775307/> .
-
-<http://www.intavia.eu/apis/place/7397> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.16667 27.6" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/7397/Ia%C5%9Fi>,
-        <http://www.intavia.eu/apis/placeidentifier/7397> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/7397/>,
-        <https://sws.geonames.org/675810/> .
 
 <http://www.intavia.eu/apis/place/8263> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.44637 12.39215" ;
@@ -3227,34 +2989,6 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/8746/>,
         <https://sws.geonames.org/3059436/> .
 
-<http://www.intavia.eu/apis/place/894> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.03046 14.19914" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/894/Pfarrkirchen+bei+Bad+Hall>,
-        <http://www.intavia.eu/apis/placeidentifier/894> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/894/>,
-        <https://sws.geonames.org/2768935/> .
-
-<http://www.intavia.eu/apis/place/9182> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.91447 20.87514" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/9182/Krompachy>,
-        <http://www.intavia.eu/apis/placeidentifier/9182> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/9182/>,
-        <https://sws.geonames.org/724377/> .
-
-<http://www.intavia.eu/apis/place/931> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.7606 8.23975" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/931/Baden-Baden>,
-        <http://www.intavia.eu/apis/placeidentifier/931> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/931/>,
-        <https://sws.geonames.org/2953504/> .
-
-<http://www.intavia.eu/apis/place/95190> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.5 25.0" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/95190/Siebenb%C3%BCrgen>,
-        <http://www.intavia.eu/apis/placeidentifier/95190> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/95190/>,
-        <https://d-nb.info/gnd/119160-3> .
-
 <http://www.intavia.eu/apis/place/97038> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.25 11.33333" ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/97038/Tirol>,
@@ -3262,32 +2996,11 @@
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/97038/>,
         <https://sws.geonames.org/2763586/> .
 
-<http://www.intavia.eu/apis/placeappellation/10015/Linz> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Linz" .
+<http://www.intavia.eu/apis/placeappellation/107244/Ve%C4%BEk%C3%A9+Z%C3%A1blatie> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Veľké Záblatie" .
 
-<http://www.intavia.eu/apis/placeappellation/100609/Murnau+am+Staffelsee> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Murnau am Staffelsee" .
-
-<http://www.intavia.eu/apis/placeappellation/10265/London> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "London" .
-
-<http://www.intavia.eu/apis/placeappellation/10285/Lu%C4%8Denec> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Lučenec" .
-
-<http://www.intavia.eu/apis/placeappellation/11643/M%C3%B3r> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Mór" .
-
-<http://www.intavia.eu/apis/placeappellation/12165/Neapel> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Neapel" .
-
-<http://www.intavia.eu/apis/placeappellation/121764/Achim> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Achim" .
-
-<http://www.intavia.eu/apis/placeappellation/127058/Harklowa> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Harklowa" .
-
-<http://www.intavia.eu/apis/placeappellation/128656/K%C5%99inice> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Křinice" .
+<http://www.intavia.eu/apis/placeappellation/110636/Neustadt-Glewe> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Neustadt-Glewe" .
 
 <http://www.intavia.eu/apis/placeappellation/131584/Komarno> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Komarno" .
@@ -3295,62 +3008,26 @@
 <http://www.intavia.eu/apis/placeappellation/1318/Beraun> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Beraun" .
 
-<http://www.intavia.eu/apis/placeappellation/13714/Paris> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Paris" .
-
-<http://www.intavia.eu/apis/placeappellation/1390/Berlin> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Berlin" .
-
 <http://www.intavia.eu/apis/placeappellation/14394/Pula> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Pula" .
-
-<http://www.intavia.eu/apis/placeappellation/15183/Rastatt> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Rastatt" .
-
-<http://www.intavia.eu/apis/placeappellation/155767/Sankt+Michael+im+Burgenland> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Sankt Michael im Burgenland" .
 
 <http://www.intavia.eu/apis/placeappellation/155818/Colorado+Springs> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Colorado Springs" .
 
-<http://www.intavia.eu/apis/placeappellation/15763/Rostock> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Rostock" .
-
-<http://www.intavia.eu/apis/placeappellation/15982/Saalfelden+am+Steinernen+Meer> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Saalfelden am Steinernen Meer" .
-
-<http://www.intavia.eu/apis/placeappellation/160537/Ambras+Castle> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Ambras Castle" .
-
 <http://www.intavia.eu/apis/placeappellation/160830/Strass+im+Zillertal> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Strass im Zillertal" .
-
-<http://www.intavia.eu/apis/placeappellation/160834/Schloss+Bruck> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Schloss Bruck" .
-
-<http://www.intavia.eu/apis/placeappellation/160840/Schluderns> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Schluderns" .
 
 <http://www.intavia.eu/apis/placeappellation/160847/Mutters> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Mutters" .
 
-<http://www.intavia.eu/apis/placeappellation/16310/Sankt+Pankraz> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Sankt Pankraz" .
-
-<http://www.intavia.eu/apis/placeappellation/16544/Sighi%C8%99oara> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Sighișoara" .
+<http://www.intavia.eu/apis/placeappellation/16272/Bad+Sankt+Leonhard+im+Lavanttal> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Bad Sankt Leonhard im Lavanttal" .
 
 <http://www.intavia.eu/apis/placeappellation/17971/Stilves> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Stilves" .
 
-<http://www.intavia.eu/apis/placeappellation/18362/Szarvas> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Szarvas" .
-
 <http://www.intavia.eu/apis/placeappellation/193/Albertirsa> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Albertirsa" .
-
-<http://www.intavia.eu/apis/placeappellation/19668/Umhausen> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Umhausen" .
 
 <http://www.intavia.eu/apis/placeappellation/2/Deutschland> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Deutschland" .
@@ -3358,35 +3035,14 @@
 <http://www.intavia.eu/apis/placeappellation/2085/Braunau> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Braunau" .
 
-<http://www.intavia.eu/apis/placeappellation/20961/Matrei+in+Osttirol> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Matrei in Osttirol" .
-
-<http://www.intavia.eu/apis/placeappellation/216/Aldrans> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Aldrans" .
-
-<http://www.intavia.eu/apis/placeappellation/2197/K%C3%B6niggr%C3%A4tz> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Königgrätz" .
-
 <http://www.intavia.eu/apis/placeappellation/2314/Bruck+an+der+Mur> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Bruck an der Mur" .
-
-<http://www.intavia.eu/apis/placeappellation/24586/Br%C3%BCssel> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Brüssel" .
-
-<http://www.intavia.eu/apis/placeappellation/25495/Chicago> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Chicago" .
 
 <http://www.intavia.eu/apis/placeappellation/25528/Vorarlberg> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Vorarlberg" .
 
-<http://www.intavia.eu/apis/placeappellation/2657/Cannes> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Cannes" .
-
-<http://www.intavia.eu/apis/placeappellation/2719/Tschaslau> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Tschaslau" .
-
-<http://www.intavia.eu/apis/placeappellation/27239/Nagyb%C3%A1nhegyes> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Nagybánhegyes" .
+<http://www.intavia.eu/apis/placeappellation/25535/Trentino+-+S%C3%BCdtirol> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Trentino - Südtirol" .
 
 <http://www.intavia.eu/apis/placeappellation/27262/W%C3%B6rgl> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Wörgl" .
@@ -3394,41 +3050,26 @@
 <http://www.intavia.eu/apis/placeappellation/27272/Caines> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Caines" .
 
-<http://www.intavia.eu/apis/placeappellation/27285/Meggenhofen> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Meggenhofen" .
+<http://www.intavia.eu/apis/placeappellation/4767/Graz> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Graz" .
 
-<http://www.intavia.eu/apis/placeappellation/400/Budapest> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Budapest" .
+<http://www.intavia.eu/apis/placeappellation/4984/F%C3%BCgen> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Fügen" .
 
-<http://www.intavia.eu/apis/placeappellation/4017/Dresden> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Dresden" .
+<http://www.intavia.eu/apis/placeappellation/4996/F%C3%BCnfkirchen> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Fünfkirchen" .
 
-<http://www.intavia.eu/apis/placeappellation/404/Hamburg> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Hamburg" .
+<http://www.intavia.eu/apis/placeappellation/54993/Philadelphia> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Philadelphia" .
 
-<http://www.intavia.eu/apis/placeappellation/5/Ungarn> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Ungarn" .
-
-<http://www.intavia.eu/apis/placeappellation/5222/Genf> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Genf" .
-
-<http://www.intavia.eu/apis/placeappellation/5584/Gospi%C4%87> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Gospić" .
-
-<http://www.intavia.eu/apis/placeappellation/6291/Hall+in+Tirol+%28%E2%80%9ESolbad+Hall%E2%80%9C%29> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Hall in Tirol („Solbad Hall“)" .
-
-<http://www.intavia.eu/apis/placeappellation/6700/Innsbruck> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Innsbruck" .
+<http://www.intavia.eu/apis/placeappellation/55051/Cincinnati> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Cincinnati" .
 
 <http://www.intavia.eu/apis/placeappellation/6939/Uhersk%C3%A9+Hradi%C5%A1t%C4%9B> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Uherské Hradiště" .
 
 <http://www.intavia.eu/apis/placeappellation/7117/Imst> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Imst" .
-
-<http://www.intavia.eu/apis/placeappellation/7397/Ia%C5%9Fi> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Iaşi" .
 
 <http://www.intavia.eu/apis/placeappellation/8263/Kitzb%C3%BChel> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Kitzbühel" .
@@ -3439,53 +3080,17 @@
 <http://www.intavia.eu/apis/placeappellation/8746/Komorn> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Komorn" .
 
-<http://www.intavia.eu/apis/placeappellation/894/Pfarrkirchen+bei+Bad+Hall> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Pfarrkirchen bei Bad Hall" .
-
-<http://www.intavia.eu/apis/placeappellation/8968/Krakau> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Krakau" .
-
 <http://www.intavia.eu/apis/placeappellation/898/Bad+Ischl> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Bad Ischl" .
-
-<http://www.intavia.eu/apis/placeappellation/9182/Krompachy> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Krompachy" .
-
-<http://www.intavia.eu/apis/placeappellation/931/Baden-Baden> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Baden-Baden" .
-
-<http://www.intavia.eu/apis/placeappellation/95190/Siebenb%C3%BCrgen> a crm:E33_E41_Linguistic_Appellation ;
-    rdfs:label "Siebenbürgen" .
 
 <http://www.intavia.eu/apis/placeappellation/97038/Tirol> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Tirol" .
 
-<http://www.intavia.eu/apis/placeidentifier/10015> a crm:E_42_Identifier ;
-    rdfs:label "10015" .
+<http://www.intavia.eu/apis/placeidentifier/107244> a crm:E_42_Identifier ;
+    rdfs:label "107244" .
 
-<http://www.intavia.eu/apis/placeidentifier/100609> a crm:E_42_Identifier ;
-    rdfs:label "100609" .
-
-<http://www.intavia.eu/apis/placeidentifier/10265> a crm:E_42_Identifier ;
-    rdfs:label "10265" .
-
-<http://www.intavia.eu/apis/placeidentifier/10285> a crm:E_42_Identifier ;
-    rdfs:label "10285" .
-
-<http://www.intavia.eu/apis/placeidentifier/11643> a crm:E_42_Identifier ;
-    rdfs:label "11643" .
-
-<http://www.intavia.eu/apis/placeidentifier/12165> a crm:E_42_Identifier ;
-    rdfs:label "12165" .
-
-<http://www.intavia.eu/apis/placeidentifier/121764> a crm:E_42_Identifier ;
-    rdfs:label "121764" .
-
-<http://www.intavia.eu/apis/placeidentifier/127058> a crm:E_42_Identifier ;
-    rdfs:label "127058" .
-
-<http://www.intavia.eu/apis/placeidentifier/128656> a crm:E_42_Identifier ;
-    rdfs:label "128656" .
+<http://www.intavia.eu/apis/placeidentifier/110636> a crm:E_42_Identifier ;
+    rdfs:label "110636" .
 
 <http://www.intavia.eu/apis/placeidentifier/131584> a crm:E_42_Identifier ;
     rdfs:label "131584" .
@@ -3493,62 +3098,26 @@
 <http://www.intavia.eu/apis/placeidentifier/1318> a crm:E_42_Identifier ;
     rdfs:label "1318" .
 
-<http://www.intavia.eu/apis/placeidentifier/13714> a crm:E_42_Identifier ;
-    rdfs:label "13714" .
-
-<http://www.intavia.eu/apis/placeidentifier/1390> a crm:E_42_Identifier ;
-    rdfs:label "1390" .
-
 <http://www.intavia.eu/apis/placeidentifier/14394> a crm:E_42_Identifier ;
     rdfs:label "14394" .
-
-<http://www.intavia.eu/apis/placeidentifier/15183> a crm:E_42_Identifier ;
-    rdfs:label "15183" .
-
-<http://www.intavia.eu/apis/placeidentifier/155767> a crm:E_42_Identifier ;
-    rdfs:label "155767" .
 
 <http://www.intavia.eu/apis/placeidentifier/155818> a crm:E_42_Identifier ;
     rdfs:label "155818" .
 
-<http://www.intavia.eu/apis/placeidentifier/15763> a crm:E_42_Identifier ;
-    rdfs:label "15763" .
-
-<http://www.intavia.eu/apis/placeidentifier/15982> a crm:E_42_Identifier ;
-    rdfs:label "15982" .
-
-<http://www.intavia.eu/apis/placeidentifier/160537> a crm:E_42_Identifier ;
-    rdfs:label "160537" .
-
 <http://www.intavia.eu/apis/placeidentifier/160830> a crm:E_42_Identifier ;
     rdfs:label "160830" .
-
-<http://www.intavia.eu/apis/placeidentifier/160834> a crm:E_42_Identifier ;
-    rdfs:label "160834" .
-
-<http://www.intavia.eu/apis/placeidentifier/160840> a crm:E_42_Identifier ;
-    rdfs:label "160840" .
 
 <http://www.intavia.eu/apis/placeidentifier/160847> a crm:E_42_Identifier ;
     rdfs:label "160847" .
 
-<http://www.intavia.eu/apis/placeidentifier/16310> a crm:E_42_Identifier ;
-    rdfs:label "16310" .
-
-<http://www.intavia.eu/apis/placeidentifier/16544> a crm:E_42_Identifier ;
-    rdfs:label "16544" .
+<http://www.intavia.eu/apis/placeidentifier/16272> a crm:E_42_Identifier ;
+    rdfs:label "16272" .
 
 <http://www.intavia.eu/apis/placeidentifier/17971> a crm:E_42_Identifier ;
     rdfs:label "17971" .
 
-<http://www.intavia.eu/apis/placeidentifier/18362> a crm:E_42_Identifier ;
-    rdfs:label "18362" .
-
 <http://www.intavia.eu/apis/placeidentifier/193> a crm:E_42_Identifier ;
     rdfs:label "193" .
-
-<http://www.intavia.eu/apis/placeidentifier/19668> a crm:E_42_Identifier ;
-    rdfs:label "19668" .
 
 <http://www.intavia.eu/apis/placeidentifier/2> a crm:E_42_Identifier ;
     rdfs:label "2" .
@@ -3556,35 +3125,14 @@
 <http://www.intavia.eu/apis/placeidentifier/2085> a crm:E_42_Identifier ;
     rdfs:label "2085" .
 
-<http://www.intavia.eu/apis/placeidentifier/20961> a crm:E_42_Identifier ;
-    rdfs:label "20961" .
-
-<http://www.intavia.eu/apis/placeidentifier/216> a crm:E_42_Identifier ;
-    rdfs:label "216" .
-
-<http://www.intavia.eu/apis/placeidentifier/2197> a crm:E_42_Identifier ;
-    rdfs:label "2197" .
-
 <http://www.intavia.eu/apis/placeidentifier/2314> a crm:E_42_Identifier ;
     rdfs:label "2314" .
-
-<http://www.intavia.eu/apis/placeidentifier/24586> a crm:E_42_Identifier ;
-    rdfs:label "24586" .
-
-<http://www.intavia.eu/apis/placeidentifier/25495> a crm:E_42_Identifier ;
-    rdfs:label "25495" .
 
 <http://www.intavia.eu/apis/placeidentifier/25528> a crm:E_42_Identifier ;
     rdfs:label "25528" .
 
-<http://www.intavia.eu/apis/placeidentifier/2657> a crm:E_42_Identifier ;
-    rdfs:label "2657" .
-
-<http://www.intavia.eu/apis/placeidentifier/2719> a crm:E_42_Identifier ;
-    rdfs:label "2719" .
-
-<http://www.intavia.eu/apis/placeidentifier/27239> a crm:E_42_Identifier ;
-    rdfs:label "27239" .
+<http://www.intavia.eu/apis/placeidentifier/25535> a crm:E_42_Identifier ;
+    rdfs:label "25535" .
 
 <http://www.intavia.eu/apis/placeidentifier/27262> a crm:E_42_Identifier ;
     rdfs:label "27262" .
@@ -3592,41 +3140,26 @@
 <http://www.intavia.eu/apis/placeidentifier/27272> a crm:E_42_Identifier ;
     rdfs:label "27272" .
 
-<http://www.intavia.eu/apis/placeidentifier/27285> a crm:E_42_Identifier ;
-    rdfs:label "27285" .
+<http://www.intavia.eu/apis/placeidentifier/4767> a crm:E_42_Identifier ;
+    rdfs:label "4767" .
 
-<http://www.intavia.eu/apis/placeidentifier/400> a crm:E_42_Identifier ;
-    rdfs:label "400" .
+<http://www.intavia.eu/apis/placeidentifier/4984> a crm:E_42_Identifier ;
+    rdfs:label "4984" .
 
-<http://www.intavia.eu/apis/placeidentifier/4017> a crm:E_42_Identifier ;
-    rdfs:label "4017" .
+<http://www.intavia.eu/apis/placeidentifier/4996> a crm:E_42_Identifier ;
+    rdfs:label "4996" .
 
-<http://www.intavia.eu/apis/placeidentifier/404> a crm:E_42_Identifier ;
-    rdfs:label "404" .
+<http://www.intavia.eu/apis/placeidentifier/54993> a crm:E_42_Identifier ;
+    rdfs:label "54993" .
 
-<http://www.intavia.eu/apis/placeidentifier/5> a crm:E_42_Identifier ;
-    rdfs:label "5" .
-
-<http://www.intavia.eu/apis/placeidentifier/5222> a crm:E_42_Identifier ;
-    rdfs:label "5222" .
-
-<http://www.intavia.eu/apis/placeidentifier/5584> a crm:E_42_Identifier ;
-    rdfs:label "5584" .
-
-<http://www.intavia.eu/apis/placeidentifier/6291> a crm:E_42_Identifier ;
-    rdfs:label "6291" .
-
-<http://www.intavia.eu/apis/placeidentifier/6700> a crm:E_42_Identifier ;
-    rdfs:label "6700" .
+<http://www.intavia.eu/apis/placeidentifier/55051> a crm:E_42_Identifier ;
+    rdfs:label "55051" .
 
 <http://www.intavia.eu/apis/placeidentifier/6939> a crm:E_42_Identifier ;
     rdfs:label "6939" .
 
 <http://www.intavia.eu/apis/placeidentifier/7117> a crm:E_42_Identifier ;
     rdfs:label "7117" .
-
-<http://www.intavia.eu/apis/placeidentifier/7397> a crm:E_42_Identifier ;
-    rdfs:label "7397" .
 
 <http://www.intavia.eu/apis/placeidentifier/8263> a crm:E_42_Identifier ;
     rdfs:label "8263" .
@@ -3637,146 +3170,29 @@
 <http://www.intavia.eu/apis/placeidentifier/8746> a crm:E_42_Identifier ;
     rdfs:label "8746" .
 
-<http://www.intavia.eu/apis/placeidentifier/894> a crm:E_42_Identifier ;
-    rdfs:label "894" .
-
-<http://www.intavia.eu/apis/placeidentifier/8968> a crm:E_42_Identifier ;
-    rdfs:label "8968" .
-
 <http://www.intavia.eu/apis/placeidentifier/898> a crm:E_42_Identifier ;
     rdfs:label "898" .
-
-<http://www.intavia.eu/apis/placeidentifier/9182> a crm:E_42_Identifier ;
-    rdfs:label "9182" .
-
-<http://www.intavia.eu/apis/placeidentifier/931> a crm:E_42_Identifier ;
-    rdfs:label "931" .
-
-<http://www.intavia.eu/apis/placeidentifier/95190> a crm:E_42_Identifier ;
-    rdfs:label "95190" .
 
 <http://www.intavia.eu/apis/placeidentifier/97038> a crm:E_42_Identifier ;
     rdfs:label "97038" .
 
-<http://www.intavia.eu/group/0> a idmcore:Provided_Group .
+idmrelations:5613 rdfs:subClassOf idmrelations:5612 .
 
-<http://www.intavia.eu/group/1> a idmcore:Provided_Group .
+idmrelations:5616 rdfs:subClassOf idmrelations:5611 .
 
-<http://www.intavia.eu/group/10> a idmcore:Provided_Group .
+idmrelations:5667 rdfs:subClassOf idmrelations:5398 .
 
-<http://www.intavia.eu/group/11> a idmcore:Provided_Group .
+idmrelations:5677 rdfs:subClassOf idmrelations:5611 .
 
-<http://www.intavia.eu/group/12> a idmcore:Provided_Group .
+idmrelations:5690 rdfs:subClassOf idmrelations:5611 .
 
-<http://www.intavia.eu/group/13> a idmcore:Provided_Group .
+idmrelations:5777 rdfs:subClassOf idmrelations:5611 .
 
-<http://www.intavia.eu/group/14> a idmcore:Provided_Group .
+idmrelations:5888 rdfs:subClassOf idmrelations:5612 .
 
-<http://www.intavia.eu/group/15> a idmcore:Provided_Group .
+idmrelations:5902 rdfs:subClassOf idmrelations:5612 .
 
-<http://www.intavia.eu/group/16> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/17> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/18> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/19> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/2> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/20> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/21> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/22> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/23> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/24> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/25> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/26> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/27> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/28> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/29> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/3> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/30> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/31> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/32> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/33> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/34> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/35> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/36> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/37> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/38> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/39> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/4> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/40> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/41> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/42> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/43> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/44> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/45> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/46> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/47> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/48> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/49> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/5> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/6> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/7> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/8> a idmcore:Provided_Group .
-
-<http://www.intavia.eu/group/9> a idmcore:Provided_Group .
-
-idmrelations:5613 rdfs:subClassOf idmrelations:5612.0 .
-
-idmrelations:5616 rdfs:subClassOf idmrelations:5611.0 .
-
-idmrelations:5622 rdfs:subClassOf idmrelations:nan .
-
-idmrelations:5667 rdfs:subClassOf idmrelations:5398.0 .
-
-idmrelations:5677 rdfs:subClassOf idmrelations:5611.0 .
-
-idmrelations:5690 rdfs:subClassOf idmrelations:5611.0 .
-
-idmrelations:5777 rdfs:subClassOf idmrelations:5611.0 .
-
-idmrelations:5888 rdfs:subClassOf idmrelations:nan .
-
-idmrelations:5902 rdfs:subClassOf idmrelations:nan .
-
-idmrelations:6592 rdfs:subClassOf idmrelations:nan .
+idmrelations:6592 rdfs:subClassOf idmrelations:5622 .
 
 idmrole:born_person rdfs:subClassOf idmcore:Event_Role .
 
@@ -3791,8 +3207,6 @@ idmrole:male a idmcore:Gender .
 <http://www.intavia.eu/idm-role/publizierte+in> rdfs:subClassOf idmcore:Event_Role .
 
 <http://www.intavia.eu/idm-role/war+gefangen+in> rdfs:subClassOf idmcore:Event_Role .
-
-<http://www.intavia.eu/person/0> a idmcore:Provided_Person .
 
 <http://www.intavia.eu/apis/familyrelation/153590> a idmrelations:5413 ;
     rdfs:label "Teuber, Oskar Karl (war Elternteil von) Teuber, Maurus" ;
@@ -3824,72 +3238,58 @@ idmrole:male a idmcore:Gender .
 
 <http://www.intavia.eu/apis/groupproxy/157000> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157000> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/1> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157000/> .
 
 <http://www.intavia.eu/apis/groupproxy/157007> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157007> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/2> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157007/> .
 
 <http://www.intavia.eu/apis/groupproxy/157015> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157015> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/3> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157015/> .
 
 <http://www.intavia.eu/apis/groupproxy/157221> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/157221> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/5> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/157221/> .
 
 <http://www.intavia.eu/apis/groupproxy/158040> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158040> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/9> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158040/> .
 
 <http://www.intavia.eu/apis/groupproxy/158828> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158828> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/13> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158828/> .
 
 <http://www.intavia.eu/apis/groupproxy/158952> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/158952> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/14> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/158952/> .
 
 <http://www.intavia.eu/apis/groupproxy/159581> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/159581> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/16> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/159581/> .
 
 <http://www.intavia.eu/apis/groupproxy/160467> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/160467> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/19> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/160467/> .
 
 <http://www.intavia.eu/apis/groupproxy/161693> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/161693> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/24> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/161693/> .
 
 <http://www.intavia.eu/apis/groupproxy/162264> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/162264> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/27> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/162264/> .
 
 <http://www.intavia.eu/apis/groupproxy/164429> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164429> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/35> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164429/> .
 
 <http://www.intavia.eu/apis/groupproxy/164462> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/164462> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/43> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/164462/> .
 
 <http://www.intavia.eu/apis/groupproxy/98127> a idmcore:Group ;
     crm:P1_is_identified_by <http://www.intavia.eu/apis/groupappellation/98127> ;
-    idmcore:group_proxy_for <http://www.intavia.eu/group/49> ;
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/institution/98127/> .
 
 <http://www.intavia.eu/apis/groupproxy/98141> idmcore:inheres_in <http://www.intavia.eu/apis/grouprole/110677/98141>,
@@ -3994,56 +3394,6 @@ idmrole:male a idmcore:Gender .
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/151>,
         idmcore:Occupation .
 
-<http://www.intavia.eu/apis/personproxy/27118> a crm:E21_Person,
-        idmcore:Person_Proxy ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/appellation/1/27118>,
-        <http://www.intavia.eu/apis/identifier/27118> ;
-    idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/155787>,
-        <http://www.intavia.eu/apis/familyrelation/155789> ;
-    idmcore:has_gender idmrole:male ;
-    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155793>,
-        <http://www.intavia.eu/apis/grouprelation/155797>,
-        <http://www.intavia.eu/apis/grouprelation/155800>,
-        <http://www.intavia.eu/apis/grouprelation/155804>,
-        <http://www.intavia.eu/apis/grouprelation/155807>,
-        <http://www.intavia.eu/apis/grouprelation/155810>,
-        <http://www.intavia.eu/apis/grouprelation/155812>,
-        <http://www.intavia.eu/apis/grouprelation/155826>,
-        <http://www.intavia.eu/apis/grouprelation/155828>,
-        <http://www.intavia.eu/apis/grouprelation/155832>,
-        <http://www.intavia.eu/apis/grouprelation/159411> ;
-    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/135>,
-        <http://www.intavia.eu/apis/occupation/157>,
-        <http://www.intavia.eu/apis/occupation/166>,
-        <http://www.intavia.eu/apis/occupation/658> ;
-    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155812>,
-        <http://www.intavia.eu/apis/personrelation/155826>,
-        <http://www.intavia.eu/apis/personrelation/155828>,
-        <http://www.intavia.eu/apis/personrelation/155832>,
-        <http://www.intavia.eu/apis/personrelation/159411> ;
-    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155793/27118>,
-        <http://www.intavia.eu/apis/personrole/155797/27118>,
-        <http://www.intavia.eu/apis/personrole/155800/27118>,
-        <http://www.intavia.eu/apis/personrole/155804/27118>,
-        <http://www.intavia.eu/apis/personrole/155807/27118>,
-        <http://www.intavia.eu/apis/personrole/155810/27118>,
-        <idmapis/birthevent/eventrole/27118>,
-        <idmapis/deathevent/eventrole/27118>,
-        <idmapis/event/eventrole/155790>,
-        <idmapis/event/eventrole/155791>,
-        <idmapis/event/eventrole/155792>,
-        <idmapis/event/eventrole/155794>,
-        <idmapis/event/eventrole/155801>,
-        <idmapis/event/eventrole/155813>,
-        <idmapis/event/eventrole/155814>,
-        <idmapis/event/eventrole/155815>,
-        <idmapis/event/eventrole/155816>,
-        <idmapis/event/eventrole/155817>,
-        <idmapis/event/eventrole/155821>,
-        <idmapis/event/eventrole/155822> ;
-    idmcore:person_proxy_for <http://www.intavia.eu/person/0> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27118/> .
-
 <http://www.intavia.eu/apis/personproxy/27167> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/153591>,
         <http://www.intavia.eu/apis/familyrelation/98170> ;
     idmcore:has_occupation <http://www.intavia.eu/apis/occupation/151>,
@@ -4135,40 +3485,12 @@ idmrole:male a idmcore:Gender .
 <http://www.intavia.eu/apis/personrelation/98171> a idmrelations:5420 ;
     rdfs:label "stand in Kontakt" .
 
-<http://www.intavia.eu/apis/place/10265> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "51.50853 -0.12574" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/10265/London>,
-        <http://www.intavia.eu/apis/placeidentifier/10265> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/10265/>,
-        <https://sws.geonames.org/2643743/> .
-
-<http://www.intavia.eu/apis/place/13714> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "48.85341 2.3488" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/13714/Paris>,
-        <http://www.intavia.eu/apis/placeidentifier/13714> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/13714/>,
-        <https://sws.geonames.org/2988507/> .
-
-<http://www.intavia.eu/apis/place/16544> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.22141 24.79279" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/16544/Sighi%C8%99oara>,
-        <http://www.intavia.eu/apis/placeidentifier/16544> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/16544/>,
-        <https://sws.geonames.org/8436351/> .
-
-<http://www.intavia.eu/apis/place/400> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.49801 19.03991" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/400/Budapest>,
-        <http://www.intavia.eu/apis/placeidentifier/400> ;
-    owl:sameAs <None>,
-        <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/400/> .
-
-<http://www.intavia.eu/apis/place/8968> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "50.06143 19.93658" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/8968/Krakau>,
-        <http://www.intavia.eu/apis/placeidentifier/8968> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/8968/>,
-        <https://sws.geonames.org/3094802/> .
+<http://www.intavia.eu/apis/place/54993> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "39.95233 -75.16379" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/54993/Philadelphia>,
+        <http://www.intavia.eu/apis/placeidentifier/54993> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/54993/>,
+        <https://sws.geonames.org/4560349/> .
 
 <http://www.intavia.eu/apis/place/898> a crm:E53_Place ;
     crm:P168_place_is_defined_by "47.71109 13.61893" ;
@@ -4177,33 +3499,23 @@ idmrole:male a idmcore:Gender .
     owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/898/>,
         <https://sws.geonames.org/2782052/> .
 
-idmrelations:5412 rdfs:label "war verwandt" ;
-    rdfs:subClassOf idmcore:Family_Relationship_Role,
-        idmrelations:nan .
-
-idmrelations:5412.0 rdfs:subClassOf idmcore:Family_Relationship_Role .
-
-idmrelations:5421 rdfs:subClassOf idmcore:Group_Relationship_Role,
-        idmcore:Person_Relationship_Role,
-        idmrelations:nan .
-
 idmrelations:5423 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
 idmrelations:5424 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
 idmrelations:5608 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:nan .
+        idmrelations:5420 .
 
-idmrelations:5657 rdfs:subClassOf idmrelations:nan .
+idmrelations:5657 rdfs:subClassOf idmrelations:5622 .
 
 idmrelations:6590 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5421.0 .
+        idmrelations:5421 .
 
 <http://www.intavia.eu/idm-role/k%C3%A4mpfte+in> rdfs:subClassOf idmcore:Event_Role .
 
@@ -4213,23 +3525,48 @@ idmrelations:6590 rdfs:subClassOf idmcore:Group_Relationship_Role,
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/151>,
         idmcore:Occupation .
 
-<http://www.intavia.eu/apis/place/1390> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "52.52437 13.41053" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/1390/Berlin>,
-        <http://www.intavia.eu/apis/placeidentifier/1390> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/1390/>,
-        <https://sws.geonames.org/2950159/> .
+<http://www.intavia.eu/apis/personproxy/27261> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/160854>,
+        <http://www.intavia.eu/apis/familyrelation/160856> ;
+    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/160860>,
+        <http://www.intavia.eu/apis/grouprelation/160864>,
+        <http://www.intavia.eu/apis/grouprelation/160866>,
+        <http://www.intavia.eu/apis/grouprelation/160869>,
+        <http://www.intavia.eu/apis/grouprelation/160870>,
+        <http://www.intavia.eu/apis/grouprelation/160871>,
+        <http://www.intavia.eu/apis/grouprelation/160879>,
+        <http://www.intavia.eu/apis/grouprelation/160881>,
+        <http://www.intavia.eu/apis/grouprelation/160882>,
+        <http://www.intavia.eu/apis/grouprelation/160883>,
+        <http://www.intavia.eu/apis/grouprelation/160884>,
+        <http://www.intavia.eu/apis/grouprelation/160888>,
+        <http://www.intavia.eu/apis/grouprelation/160889>,
+        <http://www.intavia.eu/apis/grouprelation/160890> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
+        <http://www.intavia.eu/apis/occupation/215> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/160860>,
+        <http://www.intavia.eu/apis/personrelation/160866>,
+        <http://www.intavia.eu/apis/personrelation/160869>,
+        <http://www.intavia.eu/apis/personrelation/160871>,
+        <http://www.intavia.eu/apis/personrelation/160882>,
+        <http://www.intavia.eu/apis/personrelation/160884>,
+        <http://www.intavia.eu/apis/personrelation/160888>,
+        <http://www.intavia.eu/apis/personrelation/160889>,
+        <http://www.intavia.eu/apis/personrelation/160890> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/160864/27261>,
+        <http://www.intavia.eu/apis/personrole/160870/27261>,
+        <http://www.intavia.eu/apis/personrole/160879/27261>,
+        <http://www.intavia.eu/apis/personrole/160881/27261>,
+        <http://www.intavia.eu/apis/personrole/160883/27261> .
 
-<http://www.intavia.eu/apis/place/18362> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "46.86667 20.55" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/18362/Szarvas>,
-        <http://www.intavia.eu/apis/placeidentifier/18362> ;
-    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/18362/>,
-        <https://sws.geonames.org/715466/> .
+idmrelations:5388 rdfs:subClassOf idmcore:Family_Relationship_Role .
 
-idmrelations:5395 rdfs:subClassOf idmrelations:nan .
+idmrelations:5395 rdfs:subClassOf idmrelations:5388 .
 
-idmrelations:5665 rdfs:subClassOf idmrelations:5611.0 .
+idmrelations:5421 rdfs:subClassOf idmcore:Group_Relationship_Role,
+        idmcore:Person_Relationship_Role,
+        idmrelations:5420 .
+
+idmrelations:5665 rdfs:subClassOf idmrelations:5611 .
 
 <http://www.intavia.eu/apis/occupation/129> rdfs:label "Literatur, Buch- und Zeitungswesen >> Schriftsteller" ;
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/128>,
@@ -4244,6 +3581,11 @@ idmrelations:5665 rdfs:subClassOf idmrelations:5611.0 .
 <http://www.intavia.eu/apis/occupation/442> rdfs:label "Literatur, Buch- und Zeitungswesen >> Journalist" ;
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/128>,
         idmcore:Occupation .
+
+<http://www.intavia.eu/apis/personproxy/27142> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/153278> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/128>,
+        <http://www.intavia.eu/apis/occupation/146>,
+        <http://www.intavia.eu/apis/occupation/664> .
 
 <http://www.intavia.eu/apis/personproxy/27179> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/153589>,
         <http://www.intavia.eu/apis/familyrelation/153590>,
@@ -4286,28 +3628,17 @@ idmrelations:5665 rdfs:subClassOf idmrelations:5611.0 .
         <http://www.intavia.eu/apis/personrole/153613/27179>,
         <http://www.intavia.eu/apis/personrole/153614/27179> .
 
-<http://www.intavia.eu/apis/place/6700> a crm:E53_Place ;
-    crm:P168_place_is_defined_by "47.26266 11.39454" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/6700/Innsbruck>,
-        <http://www.intavia.eu/apis/placeidentifier/6700> ;
-    owl:sameAs <None>,
-        <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/6700/> .
-
-idmrelations:5420 rdfs:subClassOf idmcore:Group_Relationship_Role,
-        idmcore:Person_Relationship_Role,
-        idmrelations:nan .
-
 idmrelations:5422 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
-idmrelations:5611 rdfs:subClassOf idmrelations:nan .
+idmrelations:5612 rdfs:subClassOf idmcore:Family_Relationship_Role .
 
-idmrelations:5689 rdfs:subClassOf idmrelations:5611.0 .
+idmrelations:5689 rdfs:subClassOf idmrelations:5611 .
 
 idmrelations:6479 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
 <http://www.intavia.eu/idm-role/migrierte+nach> rdfs:subClassOf idmcore:Event_Role .
 
@@ -4321,28 +3652,79 @@ idmrelations:6479 rdfs:subClassOf idmcore:Group_Relationship_Role,
     rdfs:subClassOf <http://www.intavia.eu/apis/occupation/143>,
         idmcore:Occupation .
 
+<http://www.intavia.eu/apis/personproxy/27139> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/110635> ;
+    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/110641>,
+        <http://www.intavia.eu/apis/grouprelation/110642>,
+        <http://www.intavia.eu/apis/grouprelation/110646>,
+        <http://www.intavia.eu/apis/grouprelation/110651>,
+        <http://www.intavia.eu/apis/grouprelation/110653>,
+        <http://www.intavia.eu/apis/grouprelation/110657>,
+        <http://www.intavia.eu/apis/grouprelation/110659>,
+        <http://www.intavia.eu/apis/grouprelation/110662>,
+        <http://www.intavia.eu/apis/grouprelation/110663>,
+        <http://www.intavia.eu/apis/grouprelation/110665>,
+        <http://www.intavia.eu/apis/grouprelation/110666>,
+        <http://www.intavia.eu/apis/grouprelation/110671>,
+        <http://www.intavia.eu/apis/grouprelation/110672>,
+        <http://www.intavia.eu/apis/grouprelation/110673>,
+        <http://www.intavia.eu/apis/grouprelation/110674>,
+        <http://www.intavia.eu/apis/grouprelation/110675>,
+        <http://www.intavia.eu/apis/grouprelation/110676>,
+        <http://www.intavia.eu/apis/grouprelation/110677>,
+        <http://www.intavia.eu/apis/grouprelation/110678>,
+        <http://www.intavia.eu/apis/grouprelation/110679> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
+        <http://www.intavia.eu/apis/occupation/663> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/110646>,
+        <http://www.intavia.eu/apis/personrelation/110657>,
+        <http://www.intavia.eu/apis/personrelation/110659>,
+        <http://www.intavia.eu/apis/personrelation/110662> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/110641/27139>,
+        <http://www.intavia.eu/apis/personrole/110642/27139>,
+        <http://www.intavia.eu/apis/personrole/110651/27139>,
+        <http://www.intavia.eu/apis/personrole/110653/27139>,
+        <http://www.intavia.eu/apis/personrole/110663/27139>,
+        <http://www.intavia.eu/apis/personrole/110665/27139>,
+        <http://www.intavia.eu/apis/personrole/110666/27139>,
+        <http://www.intavia.eu/apis/personrole/110671/27139>,
+        <http://www.intavia.eu/apis/personrole/110672/27139>,
+        <http://www.intavia.eu/apis/personrole/110673/27139>,
+        <http://www.intavia.eu/apis/personrole/110674/27139>,
+        <http://www.intavia.eu/apis/personrole/110675/27139>,
+        <http://www.intavia.eu/apis/personrole/110676/27139>,
+        <http://www.intavia.eu/apis/personrole/110677/27139>,
+        <http://www.intavia.eu/apis/personrole/110678/27139>,
+        <http://www.intavia.eu/apis/personrole/110679/27139> .
+
 idmrelations:5413 rdfs:label "war Elternteil von" ;
     rdfs:subClassOf idmcore:Family_Relationship_Role,
-        idmrelations:nan .
+        idmrelations:5412,
+        idmrelations:5612 .
 
 <http://www.intavia.eu/idm-role/hielt+einen+Vortrag+in> rdfs:subClassOf idmcore:Event_Role .
 
 <http://www.intavia.eu/apis/occupation/141> rdfs:label "Religionen und Theologie" ;
     rdfs:subClassOf idmcore:Occupation .
 
+<http://www.intavia.eu/apis/place/4767> a crm:E53_Place ;
+    crm:P168_place_is_defined_by "47.06667 15.45" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/placeappellation/4767/Graz>,
+        <http://www.intavia.eu/apis/placeidentifier/4767> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/place/4767/> .
+
 idmrelations:5411 rdfs:label "war verheiratet" ;
     rdfs:subClassOf idmcore:Family_Relationship_Role,
-        idmrelations:5412.0 .
+        idmrelations:5412 .
 
 idmrelations:5417 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
-idmrelations:5697 rdfs:subClassOf idmrelations:5622.0 .
+idmrelations:5697 rdfs:subClassOf idmrelations:5622 .
 
 idmrelations:5775 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:nan .
+        idmrelations:5420 .
 
 <http://www.intavia.eu/apis/occupation/135> rdfs:label "Naturwissenschaft" ;
     rdfs:subClassOf idmcore:Occupation .
@@ -4353,16 +3735,25 @@ idmrelations:5775 rdfs:subClassOf idmcore:Group_Relationship_Role,
 <http://www.intavia.eu/apis/occupation/157> rdfs:label "Technik" ;
     rdfs:subClassOf idmcore:Occupation .
 
-idmrelations:5398 rdfs:subClassOf idmrelations:nan .
+idmrelations:5412 rdfs:label "war verwandt" ;
+    rdfs:subClassOf idmcore:Family_Relationship_Role,
+        idmrelations:5388,
+        idmrelations:5412,
+        idmrelations:5420 .
 
-idmrelations:5642 rdfs:subClassOf idmrelations:5622.0 .
+idmrelations:5622 rdfs:subClassOf idmrelations:5622 .
+
+idmrelations:5642 rdfs:subClassOf idmrelations:5622 .
 
 <http://www.intavia.eu/apis/occupation/139> rdfs:label "Bildende und angewandte Kunst" ;
     rdfs:subClassOf idmcore:Occupation .
 
+idmrelations:5398 rdfs:subClassOf idmrelations:5388,
+        idmrelations:5611 .
+
 idmrelations:5414 rdfs:label "war Kind von" ;
     rdfs:subClassOf idmcore:Family_Relationship_Role,
-        idmrelations:5412.0 .
+        idmrelations:5412 .
 
 <http://www.intavia.eu/idm-role/ausgebildet+in> rdfs:subClassOf idmcore:Event_Role .
 
@@ -4371,24 +3762,104 @@ idmrelations:5414 rdfs:label "war Kind von" ;
 
 idmrelations:5418 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
 idmrelations:5432 rdfs:subClassOf idmcore:Group_Relationship_Role,
         idmcore:Person_Relationship_Role,
-        idmrelations:5420.0 .
+        idmrelations:5420 .
 
 <http://www.intavia.eu/apis/occupation/143> rdfs:label "Militär" ;
     rdfs:subClassOf idmcore:Occupation .
 
-idmrelations:nan rdfs:subClassOf idmcore:Family_Relationship_Role .
+idmrelations:5611 rdfs:subClassOf idmrelations:5611,
+        idmrelations:5622 .
+
+<http://www.intavia.eu/apis/personproxy/27317> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/155743>,
+        <http://www.intavia.eu/apis/familyrelation/155745>,
+        <http://www.intavia.eu/apis/familyrelation/155746>,
+        <http://www.intavia.eu/apis/familyrelation/155748> ;
+    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155758>,
+        <http://www.intavia.eu/apis/grouprelation/155759>,
+        <http://www.intavia.eu/apis/grouprelation/155772>,
+        <http://www.intavia.eu/apis/grouprelation/155774>,
+        <http://www.intavia.eu/apis/grouprelation/155775>,
+        <http://www.intavia.eu/apis/grouprelation/155778> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/134>,
+        <http://www.intavia.eu/apis/occupation/143>,
+        <http://www.intavia.eu/apis/occupation/157>,
+        <http://www.intavia.eu/apis/occupation/224> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155758>,
+        <http://www.intavia.eu/apis/personrelation/155759> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155772/27317>,
+        <http://www.intavia.eu/apis/personrole/155774/27317>,
+        <http://www.intavia.eu/apis/personrole/155775/27317>,
+        <http://www.intavia.eu/apis/personrole/155778/27317> .
+
+idmrelations:5420 rdfs:subClassOf idmcore:Family_Relationship_Role,
+        idmcore:Group_Relationship_Role,
+        idmcore:Person_Relationship_Role,
+        idmrelations:5412 .
+
+<http://www.intavia.eu/apis/personproxy/27118> a crm:E21_Person,
+        idmcore:Person_Proxy ;
+    crm:P1_is_identified_by <http://www.intavia.eu/apis/appellation/1/27118>,
+        <http://www.intavia.eu/apis/identifier/27118> ;
+    idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/155787>,
+        <http://www.intavia.eu/apis/familyrelation/155789> ;
+    idmcore:has_gender idmrole:male ;
+    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/155793>,
+        <http://www.intavia.eu/apis/grouprelation/155797>,
+        <http://www.intavia.eu/apis/grouprelation/155800>,
+        <http://www.intavia.eu/apis/grouprelation/155804>,
+        <http://www.intavia.eu/apis/grouprelation/155807>,
+        <http://www.intavia.eu/apis/grouprelation/155810>,
+        <http://www.intavia.eu/apis/grouprelation/155812>,
+        <http://www.intavia.eu/apis/grouprelation/155826>,
+        <http://www.intavia.eu/apis/grouprelation/155828>,
+        <http://www.intavia.eu/apis/grouprelation/155832>,
+        <http://www.intavia.eu/apis/grouprelation/159411> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/135>,
+        <http://www.intavia.eu/apis/occupation/157>,
+        <http://www.intavia.eu/apis/occupation/166>,
+        <http://www.intavia.eu/apis/occupation/658> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/155812>,
+        <http://www.intavia.eu/apis/personrelation/155826>,
+        <http://www.intavia.eu/apis/personrelation/155828>,
+        <http://www.intavia.eu/apis/personrelation/155832>,
+        <http://www.intavia.eu/apis/personrelation/159411> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/155793/27118>,
+        <http://www.intavia.eu/apis/personrole/155797/27118>,
+        <http://www.intavia.eu/apis/personrole/155800/27118>,
+        <http://www.intavia.eu/apis/personrole/155804/27118>,
+        <http://www.intavia.eu/apis/personrole/155807/27118>,
+        <http://www.intavia.eu/apis/personrole/155810/27118> ;
+    owl:sameAs <https://apis.acdh.oeaw.ac.at/apis/api/entities/person/27118/> .
 
 <http://www.intavia.eu/apis/occupation/128> rdfs:label "Literatur, Buch- und Zeitungswesen" ;
     rdfs:subClassOf idmcore:Occupation .
+
+<http://www.intavia.eu/apis/personproxy/27294> idmcore:has_occupation <http://www.intavia.eu/apis/occupation/151>,
+        <http://www.intavia.eu/apis/occupation/683> .
 
 <http://www.intavia.eu/idm-role/trat+auf+in> rdfs:subClassOf idmcore:Event_Role .
 
 <http://www.intavia.eu/apis/occupation/151> rdfs:label "Musik und darstellende Kunst" ;
     rdfs:subClassOf idmcore:Occupation .
+
+<http://www.intavia.eu/apis/personproxy/27281> idmcore:has_family_relation <http://www.intavia.eu/apis/familyrelation/160796>,
+        <http://www.intavia.eu/apis/familyrelation/160800>,
+        <http://www.intavia.eu/apis/familyrelation/160802>,
+        <http://www.intavia.eu/apis/familyrelation/160804> ;
+    idmcore:has_group_relation <http://www.intavia.eu/apis/grouprelation/160805>,
+        <http://www.intavia.eu/apis/grouprelation/160806>,
+        <http://www.intavia.eu/apis/grouprelation/160808>,
+        <http://www.intavia.eu/apis/grouprelation/160851> ;
+    idmcore:has_occupation <http://www.intavia.eu/apis/occupation/139>,
+        <http://www.intavia.eu/apis/occupation/681> ;
+    idmcore:has_person_relation <http://www.intavia.eu/apis/personrelation/160806>,
+        <http://www.intavia.eu/apis/personrelation/160851> ;
+    idmcore:inheres_in <http://www.intavia.eu/apis/personrole/160805/27281>,
+        <http://www.intavia.eu/apis/personrole/160808/27281> .
 
 <http://www.intavia.eu/idm-role/wirkte+in> rdfs:subClassOf idmcore:Event_Role .
 
