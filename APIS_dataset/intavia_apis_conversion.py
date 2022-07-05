@@ -359,42 +359,18 @@ def parallelproperties(g, apis_id, crmtype, urltype):
     else:
         return g
 
-# def placedetails(g, r_dataframe):
-#     for index, row in r_dataframe.iterrows():
-#         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), RDF.type, crm.E53_Place))
-#         #define place as Cidoc E53 Place
-#         relatedentitylabel = urllib.parse.quote_plus(row['relatedentitylabel'])
-#         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, (URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel))))
-#         #add appellation to place
-#         g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDF.type, crm.E33_E41_Linguistic_Appellation))
-#         #define appellation as linguistic appellation 
-#         g.add(((URIRef(idmapis+'placeappellation/'+row['relatedentityid']+'/'+relatedentitylabel)), RDFS.label, Literal(row['relatedentitylabel'])))
-#         #add label to appellation
-#         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), crm.P1_is_identified_by, URIRef(idmapis+'placeidentifier/'+row['relatedentityid'])))
-#         #add APIS Identifier as Identifier
-#         g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDF.type, crm.E_42_Identifier))
-#         #define APIS Identifier as E42 Identifier (could add a class APIS-Identifier or model a Identifier Assignment Event)
-#         g.add((URIRef(idmapis+'placeidentifier/'+row['relatedentityid']), RDFS.label, Literal(row['relatedentityid'])))
-#         #add label to APIS Identifier
-#         g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['relatedentityurl']))))
-#         #define that individual in APIS named graph and APIS entity are the same
-#         if row['georef'] != None:
-#             g.add((URIRef(idmapis+'place/'+row['relatedentityid']), owl.sameAs, (URIRef(row['georef']))))
-#             #define that individual in APIS named graph and APIS entity are the same
-#         return g
-
-
 def events(g, relation_id, apis_id, edate, crmtype, urltype, roletype, relationlabel):
     """add events according to BioCRM Model"""
     roletype = str(urllib.parse.quote_plus(roletype))
     print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
-    #g.add((URIRef(f"{idmapis}personproxy/{apis_id}"), idmcore.inheres_in, URIRef((f"idmapis/{urltype}/eventrole/{relation_id}"))))
-    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), idmcore.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
+    #g.add((URIRef(f"{idmapis}personproxy/{apis_id}"), bioc.inheres_in, URIRef((f"idmapis/{urltype}/eventrole/{relation_id}"))))
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
     #add eventrole to person proxy
     g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), RDF.type, URIRef(idmrole+roletype)))
-    g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, idmcore.Event_Role)))
+    g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, bioc.Event_Role)))
+    g.add(((URIRef(idmrole+roletype), RDFS.label, Literal(roletype))))
     #suggestion to add specific event role
-    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), idmcore.had_participant_in_role, (URIRef(((idmapis+'{}/eventrole/{}').format(urltype, relation_id))))))
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), bioc.had_participant_in_role, (URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"))))
     #connect event and event role
     g.add(((URIRef(idmapis+urltype+'/'+relation_id)), RDF.type, crmtype))
     #define crm classification
@@ -424,6 +400,7 @@ def persondata_graph(g, apis_df):
         #connect Person Proxy and person in named graph
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), RDF.type, idmcore.Person_Proxy))
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), RDF.type, crm.E21_Person))
+        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), RDFS.label, (Literal(row['surname']+'  '+row['name']))))
         #define Person Proxy
         g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), owl.sameAs, (URIRef(row['url']))))
         #define that individual in APIS named graph and APIS entity are the same
@@ -454,10 +431,10 @@ def persondata_graph(g, apis_df):
         #add birth event according to APIS
         g = events(g, row['apis_id'], row['apis_id'], row['ddate'], crm.E69_Death, 'deathevent', Literal('deceased_person'), (Literal("Death of "+row['surname']+'  '+row['name'])))
         #add death event according to APIS
-        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_gender, URIRef(idmrole+row['gender'])))
+        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_gender, URIRef(bioc+row['gender'])))
         #add gender to person
-        g.add((URIRef(idmrole+row['gender']), RDF.type, idmcore.Gender))
-        return g
+        g.add((URIRef(bioc+row['gender']), RDF.type, bioc.Gender))
+    return g
         #define gender as idmcore gender
         # g.add((URIRef(idmbibl+'source'+row['apis_id']), crm.P70_documents, URIRef(f"{idmapis}personproxy/{row['apis_id']}")))
         # g.add((URIRef(idmbibl+'source'+row['apis_id']), RDF.type, crm.E31_Document))
@@ -496,20 +473,20 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             print (f" relation 596 serialized for: {row['apis_id']}")
         elif relationtype_id in familyrelationidlist:
             """serializes family relations"""
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_family_relation, URIRef(f"{idmapis}familyrelation/{relation_id}")))
+            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_family_relation, URIRef(f"{idmapis}familyrelation/{relation_id}")))
             # Person has this specific family relation
-            g.add((URIRef(idmapis+'familyrelation/'+row['relationid']), idmcore.inheres_in, (URIRef(f"{idmapis}personproxy/{row['relatedentityid']}"))))
+            g.add((URIRef(idmapis+'familyrelation/'+row['relationid']), bioc.inheres_in, (URIRef(f"{idmapis}personproxy/{row['relatedentityid']}"))))
             # the other person that has this family relation is defined
             g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDFS.label, Literal(row['relationlabel'])))
             # the specific familyrelation gets a label
             g.add((URIRef(idmapis+'familyrelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
             # defines type of familyrelation
             g.add((URIRef(idmrelations+relationtype_id), RDFS.label, Literal(row['relationtypelabel'])))
-            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
+            g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(bioc.Family_Relationship_Role)))
             #print(row['relationurl'], row['relationtypeurl'])
             if relationtype_parentid != 'nan':
                 g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
-                g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(idmcore.Family_Relationship_Role)))
+                g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(bioc.Family_Relationship_Role)))
             print (f" familyrelation serialized for: {row['apis_id']}")
             #return g
             #reltype= str(urllib.parse.quote_plus(row['relationtypelabel']))
@@ -524,7 +501,7 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
         #elif re.search(r'vocabularies/personinstitutionrelation/.*' , rtype):
         elif "/personinstitutionrelation/" in rtype:
             #connect personproxy and institutions with grouprelationship
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
+            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_group_relation, URIRef(idmapis+'grouprelation/'+relation_id)))
             # Person has a specific group relation
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
             #define type of grouprelation
@@ -533,19 +510,21 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
                 g.add((URIRef(idmrelations+relationtype_id), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), rdfs.label, Literal(row['relationtypelabel'])))
             # add label to relationtype
-            g.add((URIRef(idmapis+'grouprelation/'+relation_id), idmcore.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid'])))
+            g.add((URIRef(idmapis+'grouprelation/'+relation_id), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid'])))
             #group which is part of this relation
             g.add((URIRef(idmapis+'career/'+row['relationid']), RDF.type, idmcore.Career))
             # add career event of type idmcore:career
+            g.add((idmcore.Career, rdfs.subClassOf, crm.E5_Event,))
             g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationlabel'])))
             # label for career event
-            g.add((URIRef(idmapis+'career/'+row['relationid']), idmcore.had_participant_in_role, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+            g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
             # role of participating person in the career event
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.inheres_in, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.inheres_in, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
             # person which inheres this role
-            g.add((URIRef(idmapis+'career/'+row['relationid']), idmcore.had_participant_in_role, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
+            g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
             # role of institution/ group in the career event
-            g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
+            g.add((URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid']), RDF.type, bioc.Group_Relationship_Role))
+            g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
             # institution/ group which inheres this role
             g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
             print (f" personinstitutionrelation serialized for: {row['apis_id']}")
@@ -570,21 +549,21 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             #         g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
         #elif re.search(r'vocabularies/personpersonrelation/.*' , rtype):
         elif "personpersonrelation" in rtype:
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
+            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_person_relation, URIRef(idmapis+'personrelation/' +row['relationid'])))
             g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDF.type, URIRef(idmrelations+relationtype_id)))
             g.add((URIRef(idmapis+'personrelation/'+row['relationid']), RDFS.label, Literal(row['relationtypelabel'])))
-            g.add(((URIRef(idmrelations+relationtype_id)), RDFS.subClassOf, (URIRef(idmcore.Person_Relationship_Role))))
-            g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'personrelation/'+row['relationid'])))
+            g.add(((URIRef(idmrelations+relationtype_id)), RDFS.subClassOf, (URIRef(bioc.Person_Relationship_Role))))
+            g.add((URIRef(idmapis+'personproxy/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'personrelation/'+row['relationid'])))
             #connect personproxy and institutions with grouprelationship
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
+            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_group_relation, URIRef(idmapis+'grouprelation/'+row['relationid'])))
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
             if relationtype_parentid != "nan":
                 #adds parent class for relationship types
                 g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmrelations+relationtype_parentid)))
-                g.add((URIRef(idmrelations+relationtype_id), RDFS.subClassOf, URIRef(idmcore.Group_Relationship_Role)))
+                g.add((URIRef(idmrelations+relationtype_parentid), RDFS.subClassOf, URIRef(bioc.Group_Relationship_Role)))
             #defines relationship as idm group relationship
             g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDFS.label, Literal(row['relationtypelabel'])))
-            g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), idmcore.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
+            g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'grouprelation/'+relation_id)))
             print (f" personpersonrelation serialized for: {row['apis_id']}")
             #return g
             #group which is part of this relation
@@ -593,7 +572,7 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             g = events(g, relation_id, str(row['apis_id']), 'None', crm.E5_Event, 'event', str(row['relationtypelabel']), str(row['relationlabel']))
             print (f" personeventsrelation serialized for: {row['apis_id']}")
             #add general event according to APIS
-            #return g
+            return g
         else:
             not_included.append(row['relationid']+row['relationtypeurl'])
             print(f"not included in relations: {row['relationid']} {row['relationtypeurl']}")
@@ -606,7 +585,7 @@ def institutiondata_graph(g, institutions_df):
         #g.add(((URIRef(ex+'group/'+str(index))), RDF.type, idmcore.Provided_Group))
         #g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), idmcore.group_proxy_for, URIRef(ex+'group/'+str(index))))
         #connect Group Proxy and person in named graphbgn:BioDes
-        g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), RDF.type, idmcore.Group))
+        g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), RDF.type, crm.E74_Group))
         #defines group class
         g.add((URIRef(idmapis+'groupproxy/'+row['institution_id']), owl.sameAs, URIRef(row['institution_url'])))
         #defines group as the same group in the APIS dataset
@@ -640,13 +619,15 @@ def institutiondata_graph(g, institutions_df):
 
 def occupations_graph(g, occupations_df):
     for index, row in occupations_df.iterrows():
-        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), idmcore.has_occupation, URIRef(idmapis+'occupation/'+row['professionid'])))
+        g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.has_occupation, URIRef(idmapis+'occupation/'+row['professionid'])))
         g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.label, Literal(row['professionlabel'])))
-        g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, idmcore.Occupation))
         if row['professionparentid'] != "nan":
             professionparentid = row['professionparentid'][:-2]
             g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, URIRef(idmapis+'occupation/'+professionparentid)))
-            g.add((URIRef(idmapis+'occupation/'+professionparentid), rdfs.subClassOf, idmcore.Occupation))
+            g.add((URIRef(idmapis+'occupation/'+professionparentid), rdfs.subClassOf, bioc.Occupation))
+        else:
+            g.add((URIRef(idmapis+'occupation/'+row['professionid']), rdfs.subClassOf, bioc.Occupation))
+
 
 
 def places_graph(g, places_df):
