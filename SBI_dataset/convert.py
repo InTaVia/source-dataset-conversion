@@ -79,8 +79,8 @@ def create_graph(people):
         # ---------------------------------------------------------------------
         # Gender
 
-        g.add((person_proxy_uri, Namespaces.idm_core.has_gender, URIRef(f'{Namespaces.idm_role}{person.gender}')))
-        g.add((URIRef(f'{Namespaces.idm_role}{person.gender}'), Namespaces.rdf.type, Namespaces.idm_core.Gender))
+        g.add((person_proxy_uri, Namespaces.bioc.has_gender, URIRef(f'{Namespaces.bioc}{person.gender}')))
+        g.add((URIRef(f'{Namespaces.bioc}{person.gender}'), Namespaces.rdf.type, Namespaces.bioc.Gender))
 
         # ---------------------------------------------------------------------
         # Name
@@ -199,6 +199,8 @@ class Namespaces:
     intavia = Namespace('http://www.intavia.eu/')
     intavia_sbi = Namespace('http://www.intavia.eu/sbi/')
 
+    bioc = Namespace('http://www.ldf.fi/schema/bioc/')
+
     idm_core = Namespace('http://www.intavia.eu/idm-core/')
     idm_role = Namespace('http://www.intavia.eu/idm-role/')
     idm_nametype = Namespace('http://www.intavia.eu/nametype/')
@@ -207,6 +209,7 @@ class Namespaces:
     def bind_to_graph(cls, graph):
         graph.bind('crm', cls.crm)
         graph.bind('owl', cls.owl)
+        graph.bind('bioc', cls.bioc)
         graph.bind('idm_core', cls.idm_core)
         graph.bind('idm_role', cls.idm_role)
         graph.bind('idm_nametype', cls.idm_nametype)
