@@ -10,11 +10,14 @@ Options:
     --count=<count> Limit the number of people to convert.
 """
 
+import urllib
+import hashlib
+import calendar
 from lxml import etree
 from docopt import docopt
+from decimal import Decimal
 from dataclasses import dataclass
 from rdflib import Graph, Literal, Namespace, URIRef
-import urllib
 
 
 def main(file_name, output_file_name, count=None):
@@ -23,30 +26,8 @@ def main(file_name, output_file_name, count=None):
     graph.serialize(destination=output_file_name, format='turtle')
 
 
-def load_people(file_name, count=None):
-    """Load data from the provided URL or file, pase it and convert it to the Person class."""
-
-    if is_url(file_name):
-        xml = etree.fromstring(urllib.request.urlopen(file_name).read())
-    else:
-        xml = etree.parse(file_name)
-
-    people = list(xpath_element(xml, '//tei:text/tei:body/tei:listPerson/tei:person[@role="main"]'))
-    if count:
-        people = people[:int(count)]
-
-    for xml_person in people:
-        persName = xpath_element(xml_person, 'tei:persName')[0]
-        person = Person(
-            id=xml_person.get('{http://www.w3.org/XML/1998/namespace}id'),
-            name=xpath_value(persName, 'tei:name'),
-            first_name=xpath_value(persName, 'tei:forename'),
-            last_name=xpath_value(persName, 'tei:surname'),
-            gender=parse_gender(xml_person),
-        )
-
-        yield person
-
+# -----------------------------------------------------------------------------
+# Create the InTavia RDF graph from the available people data.
 
 def create_graph(people):
     """Create RDF graph of the provided people."""
@@ -111,10 +92,32 @@ def create_graph(people):
             g.add((URIRef(name_uri(f'4/{person.id}')), Namespaces.rdfs.label, Literal(person.name)))
             g.add((URIRef(name_uri(f'4/{person.id}')), Namespaces.crm.P2_has_type, Namespaces.idm_nametype.name))
 
+        # ---------------------------------------------------------------------
+        # Birth and death
+
+        for i, birth in enumerate(person.birth, 1):
+            birth_event_uri = URIRef(f'{Namespaces.intavia_sbi}birthevent/{person.id}/{i}')
+            g.add((birth_event_uri, Namespaces.rdf.type, Namespaces.crm.E67_Birth))
+            g.add((birth_event_uri, Namespaces.crm.P98_brought_into_life, person_proxy_uri))
+            if birth.date:
+                g.add((birth_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(f'{Namespaces.intavia_sbi}timespan/birth/{person.id}/{i}')))
+                add_date_to_graph(g, birth.date)
+            if birth.place:
+                g.add((birth_event_uri, Namespaces.crm.P7_took_place_at, birth.place.proxy_uri))
+                add_place_to_graph(g, birth.place)
+
+        for i, death in enumerate(person.death, 1):
+            death_event_uri = URIRef(f'{Namespaces.intavia_sbi}deathevent/{person.id}/{i}')
+            g.add((death_event_uri, Namespaces.rdf.type, Namespaces.crm.E69_Death))
+            g.add((death_event_uri, Namespaces.crm.P100_was_death_of, person_proxy_uri))
+            if death.date:
+                g.add((death_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(f'{Namespaces.intavia_sbi}timespan/death/{person.id}/{i}')))
+                add_date_to_graph(g, death.date)
+            if death.place:
+                g.add((death_event_uri, Namespaces.crm.P7_took_place_at, death.place.proxy_uri))
+                add_place_to_graph(g, death.place)
+
     # TODO
-    # birth and death
-    # - date
-    # - place
     # occupation
     # relations
 
@@ -124,7 +127,38 @@ def create_graph(people):
 
 
 # -----------------------------------------------------------------------------
-# Helper functions ans classes
+# Load and parse people from the SBI data file.
+
+def load_people(file_name, count=None):
+    """Load data from the provided URL or file, pase it and convert it to the Person class."""
+
+    if is_url(file_name):
+        xml = etree.fromstring(urllib.request.urlopen(file_name).read())
+    else:
+        xml = etree.parse(file_name)
+
+    people = list(xpath_element(xml, '//tei:text/tei:body/tei:listPerson/tei:person[@role="main"]'))
+    if count:
+        people = people[:int(count)]
+
+    for xml_person in people:
+        persName = xpath_element(xml_person, 'tei:persName')[0]
+
+        person = Person(
+            id=xml_person.get('{http://www.w3.org/XML/1998/namespace}id'),
+            name=xpath_value(persName, 'tei:name'),
+            first_name=xpath_value(persName, 'tei:forename'),
+            last_name=xpath_value(persName, 'tei:surname'),
+            gender=parse_gender(xml_person),
+            birth=list(parse_events(xpath_element(xml_person, 'tei:birth'))),
+            death=list(parse_events(xpath_element(xml_person, 'tei:death'))),
+        )
+
+        yield person
+
+
+# -----------------------------------------------------------------------------
+# Helper functions
 
 def xpath_element(element, xpath):
     return element.xpath(xpath, namespaces={'tei': 'http://www.tei-c.org/ns/1.0'})
@@ -136,6 +170,14 @@ def xpath_value(element, xpath):
         return element[0].text
     else:
         return None
+
+
+def is_url(string):
+    try:
+        result = urllib.parse.urlparse(string)
+        return all([result.scheme, result.netloc])
+    except ValueError:
+        return False
 
 
 def parse_gender(person):
@@ -151,12 +193,150 @@ def parse_gender(person):
         return None
 
 
-def is_url(string):
-    try:
-        result = urllib.parse.urlparse(string)
-        return all([result.scheme, result.netloc])
-    except ValueError:
-        return False
+def parse_date(xml_date):
+    if not xml_date:
+        return None
+    else:
+        if not xml_date[0].get('when'):
+            return None
+        else:
+            match xml_date[0].get('when').split('-'):
+                case [year, month, day]:
+                    return Date(year=int(year), month=int(month), day=int(day))
+                case [year, month]:
+                    return Date(year=int(year), month=int(month), day=None)
+                case [year]:
+                    return Date(year=int(year), month=None, day=None)
+
+
+def parse_place(xml_place):
+
+    def parse_place_parts(xml_place):
+        for part in ['tei:settlement', 'tei:region', 'tei:country']:
+            xml_part = xpath_element(xml_place, part)
+            if xml_part:
+                yield xml_part[0].text
+
+    def parse_location(xml_location):
+        if not xml_location:
+            return None
+        else:
+            location = xml_location[0].text.split(' ')
+            return Location(lat=Decimal(location[0]), lng=Decimal(location[1]))
+
+    if not xml_place:
+        return None
+    else:
+        xml_place = xml_place[0]
+
+        name_parts = list(parse_place_parts(xml_place))
+        if not name_parts:
+            name = None
+        else:
+            name = ', '.join(name_parts)
+
+        location = parse_location(xpath_element(xml_place, 'tei:geo'))
+
+        if not name or location:
+            return None
+        else:
+            return Place(name=name, location=location)
+
+
+def parse_events(xml_events):
+    for xml_event in xml_events:
+        yield Event(
+            date=parse_date(xpath_element(xml_event, 'tei:date')),
+            place=parse_place(xpath_element(xml_event, 'tei:placeName')),
+        )
+
+
+def add_place_to_graph(g, place):
+    g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.crm.E53_Place))
+    g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.idm_core.Place_Proxy))
+    g.add((place.proxy_uri, Namespaces.rdfs.label, Literal(place.name)))
+    if place.location:
+        g.add((place.proxy_uri, Namespaces.crm.P168_place_is_defined_by, Literal(f'{place.location.lat} {place.location.lng}')))
+
+
+def add_date_to_graph(g, date):
+    g.add((date.uri, Namespaces.rdf.type, Namespaces.crm.E52_Time_Span))
+    g.add((date.uri, Namespaces.rdfs.label, Literal(date.uid)))
+    g.add((date.uri, Namespaces.crm.P82a_begin_of_the_begin, Literal(date.start_time, datatype=Namespaces.xsd.dateTime)))
+    g.add((date.uri, Namespaces.crm.P82b_end_of_the_end, Literal(date.end_time, datatype=Namespaces.xsd.dateTime)))
+
+
+# -----------------------------------------------------------------------------
+# Helper classes
+
+@dataclass
+class Date:
+    year: int
+    month: int
+    day: int
+
+    @property
+    def uid(self):
+        match (self.year, self.month, self.day):
+            case (year, None, None):
+                return year
+            case (year, month, None):
+                return f'{year}-{month:02}'
+            case (year, month, day):
+                return f'{year}-{month:02}-{day:02}'
+
+    @property
+    def uri(self):
+        return URIRef(f'{Namespaces.intavia_sbi}timespan/{self.uid}')
+
+    @property
+    def start_time(self):
+        match (self.year, self.month, self.day):
+            case (year, None, None):
+                return f'{year}-01-01+00:00:00'
+            case (year, month, None):
+                return f'{year}-{month:02}-01+00:00:00'
+            case (year, month, day):
+                return f'{year}-{month:02}-{day:02}+00:00:00'
+
+    @property
+    def end_time(self):
+        match (self.year, self.month, self.day):
+            case (year, None, None):
+                return f'{year}-12-31+23:59:59'
+            case (year, month, None):
+                return f'{year}-{month:02}-{calendar.monthrange(year, month)[1]}+23:59:59'
+            case (year, month, day):
+                return f'{year}-{month:02}-{day:02}+23:59:59'
+
+
+@dataclass
+class Location:
+    lat: Decimal
+    lng: Decimal
+
+
+@dataclass
+class Place:
+    name: str
+    location: Location
+
+    @property
+    def uid(self):
+        if self.location:
+            return f'{self.location.lat}-{self.location.lng}'
+        else:
+            return hashlib.md5(self.name.encode()).hexdigest()
+
+    @property
+    def proxy_uri(self):
+        return URIRef(f'{Namespaces.intavia_sbi}placeproxy/{self.uid}')
+
+
+@dataclass
+class Event:
+    date: Date
+    place: Place
 
 
 @dataclass
@@ -167,8 +347,8 @@ class Person:
     first_name: str
     last_name: str
     gender: str
-    # birth
-    # death
+    birth: list[Event]
+    death: list[Event]
 
     def __str__(self) -> str:
         if self.name:
@@ -178,7 +358,7 @@ class Person:
 
     @property
     def uri(self):
-        return f'https://www.slovenska-biografija.si/oseba/{self.id}/'
+        return URIRef(f'https://www.slovenska-biografija.si/oseba/{self.id}/')
 
     @property
     def full_name(self):
@@ -193,12 +373,14 @@ class Namespaces:
 
     rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
     rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
+    xsd = Namespace('http://www.w3.org/2001/XMLSchema#')
+
     owl = Namespace('http://www.w3.org/2002/07/owl#')
-    crm = Namespace('http://www.cidoc-crm.org/cidoc-crm/')
 
     intavia = Namespace('http://www.intavia.eu/')
     intavia_sbi = Namespace('http://www.intavia.eu/sbi/')
 
+    crm = Namespace('http://www.cidoc-crm.org/cidoc-crm/')
     bioc = Namespace('http://www.ldf.fi/schema/bioc/')
 
     idm_core = Namespace('http://www.intavia.eu/idm-core/')
@@ -207,8 +389,8 @@ class Namespaces:
 
     @classmethod
     def bind_to_graph(cls, graph):
-        graph.bind('crm', cls.crm)
         graph.bind('owl', cls.owl)
+        graph.bind('crm', cls.crm)
         graph.bind('bioc', cls.bioc)
         graph.bind('idm_core', cls.idm_core)
         graph.bind('idm_role', cls.idm_role)
