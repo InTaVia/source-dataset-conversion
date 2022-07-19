@@ -1,53 +1,99 @@
+@prefix bioc: <http://www.ldf.fi/schema/bioc/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix idm_core: <http://www.intavia.eu/idm-core/> .
 @prefix idm_nametype: <http://www.intavia.eu/nametype/> .
-@prefix idm_role: <http://www.intavia.eu/idm-role/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi123724/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi123724/1> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi123724> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124585/1> a crm:E67_Birth ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/b02779151764e0b675d9dfe562b4c22d> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124585> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124689/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124689/1> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124689> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124830/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124830/1> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124830> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124954/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124954/1> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124954> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi123724/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi123724> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi123724/1> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124585/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124585> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124585/1> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124689/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124689> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124689/1> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124830/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124830> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124830/1> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124954/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124954> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124954/1> .
 
 <http://www.intavia.eu/sbi/name/4/sbi124585> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Abraham" ;
     crm:P2_has_type idm_nametype:name .
 
-<http://www.intavia.eu/sbi/personproxy/sbi123724> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Adamič, Emil" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi123724> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/4> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi123724/> .
+<http://www.intavia.eu/sbi/timespan/1832-09-18> a crm:E52_Time_Span ;
+    rdfs:label "1832-09-18" ;
+    crm:P82a_begin_of_the_begin "1832-09-18+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1832-09-18+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124585> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abraham" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124585> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/0> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124585/> .
+<http://www.intavia.eu/sbi/timespan/1835-04-19> a crm:E52_Time_Span ;
+    rdfs:label "1835-04-19" ;
+    crm:P82a_begin_of_the_begin "1835-04-19+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1835-04-19+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124689> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Filip" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124689> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/1> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124689/> .
+<http://www.intavia.eu/sbi/timespan/1875-02-02> a crm:E52_Time_Span ;
+    rdfs:label "1875-02-02" ;
+    crm:P82a_begin_of_the_begin "1875-02-02+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1875-02-02+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124830> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Josip" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124830> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/2> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124830/> .
+<http://www.intavia.eu/sbi/timespan/1877-12-25> a crm:E52_Time_Span ;
+    rdfs:label "1877-12-25" ;
+    crm:P82a_begin_of_the_begin "1877-12-25+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1877-12-25+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124954> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Jože" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124954> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/3> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124954/> .
+<http://www.intavia.eu/sbi/timespan/1903-04-01> a crm:E52_Time_Span ;
+    rdfs:label "1903-04-01" ;
+    crm:P82a_begin_of_the_begin "1903-04-01+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1903-04-01+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1907-01-29> a crm:E52_Time_Span ;
+    rdfs:label "1907-01-29" ;
+    crm:P82a_begin_of_the_begin "1907-01-29+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1907-01-29+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1936-12-06> a crm:E52_Time_Span ;
+    rdfs:label "1936-12-06" ;
+    crm:P82a_begin_of_the_begin "1936-12-06+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1936-12-06+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1938-06-22> a crm:E52_Time_Span ;
+    rdfs:label "1938-06-22" ;
+    crm:P82a_begin_of_the_begin "1938-06-22+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-06-22+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/993-06-07> a crm:E52_Time_Span ;
+    rdfs:label "993-06-07" ;
+    crm:P82a_begin_of_the_begin "993-06-07+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "993-06-07+23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/person/0> a idm_core:Provided_Person .
 
@@ -115,5 +161,49 @@
     rdfs:label "Abram" ;
     crm:P2_has_type idm_nametype:surname .
 
-idm_role:male a idm_core:Gender .
+<http://www.intavia.eu/sbi/placeproxy/b02779151764e0b675d9dfe562b4c22d> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "neznano" .
+
+<http://www.intavia.eu/sbi/personproxy/sbi123724> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adamič, Emil" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi123724> ;
+    idm_core:person_proxy_for <http://www.intavia.eu/person/4> ;
+    bioc:has_gender bioc:male ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi123724/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124585> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abraham" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124585> ;
+    idm_core:person_proxy_for <http://www.intavia.eu/person/0> ;
+    bioc:has_gender bioc:male ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124585/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124689> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Filip" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124689> ;
+    idm_core:person_proxy_for <http://www.intavia.eu/person/1> ;
+    bioc:has_gender bioc:male ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124689/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124830> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Josip" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124830> ;
+    idm_core:person_proxy_for <http://www.intavia.eu/person/2> ;
+    bioc:has_gender bioc:male ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124830/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124954> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Jože" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124954> ;
+    idm_core:person_proxy_for <http://www.intavia.eu/person/3> ;
+    bioc:has_gender bioc:male ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124954/> .
+
+bioc:male a bioc:Gender .
 
