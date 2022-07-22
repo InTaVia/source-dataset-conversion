@@ -284,9 +284,9 @@ def datareturn (d, re, dapr, headers, da, placecheck, placerelationscheck, place
     #return d,datarelations
 
 def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched):
-    while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
+    #while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
     #define the point when iterating stops (for test serialization)
-    #while next_page != None:
+    while next_page != None:
         """iterate over JSON API urls"""
         first_response = requests.get(next_page, headers=headers)
         print(f"getting {next_page}")
@@ -306,10 +306,10 @@ def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelat
         return datageneral, datarelations, placecheck, dapr
 
 def institutionaggregation(next_page_institution, headers, data, dapr, da, not_included, data_institutions):
-    while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=200":
+    #while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=200":
     #     """iterate over APIS dataset (Institutions)"""
     #     #define the point when iterating over institutions stops 
-    #while next_page_institution != None:
+    while next_page_institution != None:
         """iterate over JSON API urls (institutions)"""
         print(f'getting {next_page_institution}')
         first_response_institution = requests.get(next_page_institution, headers=headers)
