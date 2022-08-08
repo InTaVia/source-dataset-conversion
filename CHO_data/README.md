@@ -1,9 +1,8 @@
-*Prioritization of CHO metadata*
+# Prioritization of CHO metadata
 
 | Priority for frontend (Johannes)       | CHO Metadata for InTaVia           | included in code?  |
 | :-------------: |:-------------| -----:|
-| 	| object metadata  |    |
-| --- | --- | --- |
+| object metadata  |
 | !!!      | object has identifier|  |
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place)     |   |
 | !!! | current location of object      |    |
@@ -21,16 +20,16 @@
 | !! | transfer of legal ownership of objects  |    |
 | !!	| current owner  |    |
 | !!	| is part of collection  |    |
-| 	| CHO Event metadata  |    |
-| 	| Production Event  |    |
+| 	 CHO Event metadata      |
+| 	 Production Event      |
 | !!!	| Person/Group has produced Cultural Heritage Object| | 
 | !!!	| Technique used in production event  |    |
 | !!!	| time-span of creation  |    |
 | !!!	| Place of creation  |    |
-| 	| Destruction/ Modification of CHO  |    |
+| 	 Destruction/ Modification of CHO      |
 | !!!	| destruction of object  |    |
-| 	| Person/Group has modified Cultural Heritage Object  |    |
+| 	 Person/Group has modified Cultural Heritage Object      |
 | !!	| Type of CHO modification  |    |
-| 	| References  |    |
+| 	 References      |
 | !	| same object in other resource  |    |
 | !!!	| link(s) to media file representation (external link, europeana doesn't store the data)  |    |
