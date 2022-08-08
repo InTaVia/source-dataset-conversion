@@ -3,6 +3,7 @@
 | Priority for frontend (Johannes)       | CHO Metadata for InTaVia           | included in code?  |
 | :-------------: |:-------------| -----:|
 | 	| object metadata  |    |
+| --- | --- | --- |
 | !!!      | object has identifier|  |
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place)     |   |
 | !!! | current location of object      |    |
