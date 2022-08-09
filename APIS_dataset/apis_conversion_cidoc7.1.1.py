@@ -2,7 +2,7 @@ from cProfile import label
 from operator import index, le
 from pydoc import ModuleScanner
 from unittest import result
-from numpy import r_
+#from numpy import r_
 import requests
 import pandas as pd
 import json
@@ -17,6 +17,42 @@ import datetime
 
 base_url_apis = "http://apis.acdh.oeaw.ac.at/apis/api/"
 base_url_apis2 = "http://apis.acdh.oeaw.ac.at/apis/api2/"
+familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
+data=[]
+data_institutions=[]
+da=[]
+dapr= []
+mostprofessions=[]
+placedata=[]
+placecheck=set()
+familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
+headers = {"accept": "application/json"}
+#remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
+
+next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
+#next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
+"""initial json url to get apis data"""
+first_response = requests.get(next_page, headers=headers)
+"""get data for this URL from REST API"""
+re_list=first_response.json()
+"""get data from REST API in JSON format"""
+#previous_page = re_list.get('previous')
+"""previous json url to get apis data"""
+#next_page = re_list.get('next')
+"""following REST API url to get apis data"""
+response_list = re_list.get('results')
+"""get list with all datasets from the url as dictionaries"""
+
+next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
+first_response_institution = requests.get(next_page_institution, headers=headers)
+"""get data for this URL from REST API"""
+re_list_institution=first_response_institution.json()
+"""get data from REST API in JSON format"""
+response_list_institution = re_list_institution.get('results')
+"""get list with all datasets from the url as dictionaries"""
+
+urls_places_already_fetched = []
+
 
 crm=Namespace('http://www.cidoc-crm.org/cidoc-crm/')
 """Defines namespace for CIDOC CRM."""
@@ -110,10 +146,6 @@ def geonamesref(place_id, headers):
         except json.decoder.JSONDecodeError:
             print(f"TIMEOUT in geonamesref function (api2) for: {place_id}")
             return(None)
-            #pass
-            # pl_ref_response = requests.get(placeurl, headers=headers)
-            # pl_ref_json = pl_ref_response.json()
-            # pl_ref = pl_ref_json.get('uris')
         for uri in pl_ref:
             if (uri['uri'].startswith("https://apis-edits.acdh-dev.oeaw.ac.at/")) or (uri['uri'].startswith("https://apis.acdh.oeaw.ac.at/")):
                 georef = None
@@ -244,7 +276,7 @@ def linkentity(apisid, headers):
                 return(uri["uri"])
 
 
-def datareturn (d, re, dapr, headers, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched):
+def datareturn (d, re):
     for n in range(len(re)):
         x = re[n]
         apisid = x.get('id')
@@ -283,7 +315,7 @@ def datareturn (d, re, dapr, headers, da, placecheck, placerelationscheck, place
     return d,datarelations, placecheck
     #return d,datarelations
 
-def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched):
+def personaggregation(first_page, next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched):
     #while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
     #define the point when iterating stops (for test serialization)
     while next_page != None:
@@ -295,7 +327,7 @@ def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelat
         """get data from REST API in JSON format"""
         next_page = re_list.get('next')
         datageneral, datarelations, placecheck = datareturn(data, response_list, dapr, headers, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
-        #return datageneral, datarelations, placecheck, dapr
+        return datageneral, datarelations, placecheck, dapr
         #datageneral, datarelations = datareturn(data, response_list)
     else:
         """stop iterating over JSON API urls"""
@@ -321,12 +353,11 @@ def institutionaggregation(next_page_institution, headers, data, dapr, da, not_i
         return data_institutions
     else:
         """stop iterating over JSON API urls"""
-        # first_response_institution = requests.get(next_page_institution, headers=headers)
-        # re_list_institution=first_response_institution.json()
-        # print('Institutions Done')
-        # response_list_institution = re_list_institution.get('results')
-        # data_institutions  = datareturn_institution(data_institutions, response_list_institution)
-        # print(f"not included: {not_included}")
+        first_response_institution = requests.get(next_page_institution, headers=headers)
+        re_list_institution=first_response_institution.json()
+        print('Institutions Done')
+        response_list_institution = re_list_institution.get('results')
+        data_institutions  = datareturn_institution(data_institutions, response_list_institution)
         return data_institutions
 
 def datatodf(datageneral, datarelations, data_institutions, dapr, placedata):
@@ -448,6 +479,25 @@ def persondata_graph(g, apis_df):
 #         relations_df[col] = relations_df[col].astype(float).fillna(0).astype(int).astype(str)
 #     else:
 #         relations_df[col] = relations_df[col].astype(str)
+
+while next_page != f"{base_url_apis}entities/person/?limit=50&offset=150":
+#define the point when iterating stops (for test serialization)
+#while next_page != None:
+    """iterate over JSON API urls"""
+    first_response = requests.get(next_page, headers=headers)
+    print(f"getting {next_page}")
+    re_list=first_response.json()
+    response_list = re_list.get('results')
+    """get data from REST API in JSON format"""
+    next_page = re_list.get('next')
+    #datageneral, datarelations, placeset = datareturn(data, response_list)
+    datageneral, datarelations = datareturn(data, response_list)
+else:
+    """stop iterating over JSON API urls"""
+    re_list=first_response.json()
+    response_list = re_list.get('results')
+    #datageneral, datarelations, placeset  = datareturn(data, response_list)
+    datageneral, datarelations = datareturn(data, response_list)
 
 
 def relationdata_graph(g, relations_df, familyrelationidlist, not_included, places_df):
@@ -692,31 +742,30 @@ def main():
     placedata=[]
     placecheck=set()
     placerelationscheck=set()
-    familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
     headers = {"accept": "application/json"}
     not_included=[]
     urls_places_already_fetched = []
-    #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
-    next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
+    first_page = f"{base_url_apis}entities/person/?limit=50&offset=50"
     """initial json url to get apis data"""
-    first_response = requests.get(next_page, headers=headers)
+    first_response = requests.get(first_page, headers=headers)
     """get data for this URL from REST API"""
     re_list = first_response.json()
     """get data from REST API in JSON format"""
-    #previous_page = re_list.get('previous')
+    previous_page = re_list.get('previous')
     """previous json url to get apis data"""
-    #next_page = re_list.get('next')
+    next_page = re_list.get('next')
     """following REST API url to get apis data"""
     response_list = re_list.get('results')
     """get list with all datasets from the url as dictionaries"""
-    datageneral, datarelations, placecheck, dapr = personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
-    next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
-    first_response_institution = requests.get(next_page_institution, headers=headers)
+    datageneral, datarelations, placecheck, dapr = personaggregation(first_page, next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
+    first_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
+    first_response_institution = requests.get(first_page_institution, headers=headers)
     """get data for this URL from REST API"""
     re_list_institution=first_response_institution.json()
     """get data from REST API in JSON format"""
     response_list_institution = re_list_institution.get('results')
     """get list with all datasets from the url as dictionaries"""
+    next_page_institution = re_list.get('next')
     datainstitution = institutionaggregation(next_page_institution, headers, data, dapr, da, not_included, data_institutions)
     apis_df, relations_df, occupations_df, institutions_df, places_df = datatodf(datageneral, datarelations, data_institutions, dapr, placedata)
     g = Graph()
