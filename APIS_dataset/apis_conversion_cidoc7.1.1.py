@@ -704,7 +704,7 @@ def places_graph(g, places_df):
         if row['place_lat'] != "nan":
             g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, URIRef(idmapis+'spaceprimitive/'+row['place_id'])))
             g.add((URIRef(idmapis+'spaceprimitive/'+row['place_id']), rdf.type, crm.E94_Space_Primitive))
-            g.add((URIRef(idmapis+'spaceprimitive/'+row['place_id']), crm.P168_place_is_defined_by, Literal(("POINT " + row['place_lat']+' '+row['place_lng']), datatype=geo.wktLiteral)))
+            g.add((URIRef(idmapis+'spaceprimitive/'+row['place_id']), crm.P168_place_is_defined_by, Literal(("POINT " + row['place_lng']+' '+row['place_lat']), datatype=geo.wktLiteral)))
             if row['georef'] != "None":
                 g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['georef']))))
             #define that individual in APIS named graph and APIS entity are the same
