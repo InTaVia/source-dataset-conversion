@@ -10,7 +10,7 @@
 | ?      | creator/person has image representation| Wikidata Item P18: Commons media file  |  [subclass of Q18610173: Wikidata property to link to Commons](https://www.wikidata.org/wiki/Q18610173) [Wikidata Item P18](https://www.wikidata.org/wiki/Property:P18) |
 | ?      | copyright status as a creator |  copyright status as a creator  | [Wikidata Item P7763](https://www.wikidata.org/wiki/Property:P7763) |
 | object metadata  |
-| !!!      | object has identifier| Wikidata URI (e.g. Gos table) |  Commons Creator page Wikidata Item P1472 |  [P1472](https://www.wikidata.org/wiki/Property:P1472) |
+| !!!      | object has identifier| Wikidata Item URI (e.g. Gos table, e.g. item Q12418) |  Commons Creator page Wikidata Item P1472 |  [P1472](https://www.wikidata.org/wiki/Property:P1472) |
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place) | Wikidata: list with URIs of canonical Authority Documents name of Commons Infobox template residing in "Creator" namespace on Wikimedia Commons? |  discuss: [Authority Control?](https://en.wikipedia.org/wiki/Authority_control) |
 | !!! | current location of object      |    |   |
 | !      | Measurement|  |   |
@@ -38,5 +38,5 @@
 | 	 Person/Group has modified Cultural Heritage Object      |
 | !!	| Type of CHO modification  |    |
 | 	 References      |
-| !	| same object in other resource  |    |
-| !!!	| link(s) to media file representation (external link, europeana doesn't store the data)  |    |
+| !	| same object in other resource  |  see first merging/mapping tables of of [netherlands](Gos merge table), [finnish]() and [austrian]()datasets, number of entities will probably increase |
+| !!!	| link(s) to media file representation (external link, europeana doesn't store the data)  |  Wikidata Item P18: Commons media file | [Wikidata Item P18](https://www.wikidata.org/wiki/Property:P18)  |
