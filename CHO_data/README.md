@@ -32,7 +32,7 @@
 | !!!	| Person/Group has produced Cultural Heritage Object| | 
 | !!!	| Technique used in production event  |    |
 | !!!	| time-span of creation of work  |  Wikidata Inception |   |
-| !!!	| time-span of creation of manifestation |  Wikidata [earliest date](https://www.wikidata.org/wiki/Property:P1319) / [latest date](https://www.wikidata.org/wiki/Property:P1319)  |   |
+| !!!	| time-span of creation of manifestation |  start date: [Wikidata Item P139 earliest date](https://www.wikidata.org/wiki/Property:P1319) / end date: [Wikidata Item P1319 latest date](https://www.wikidata.org/wiki/Property:P1319) |   |
 | !!!	| Place of creation  |    |
 | 	 Destruction/ Modification of CHO      |
 | !!!	| destruction of object  |    |
