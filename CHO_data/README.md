@@ -5,7 +5,8 @@
 | person metadata  |
 | !!!      | creator created artwort| Wikidata Item| [P170](https://www.wikidata.org/wiki/Property:P170) |
 | !!!      | creator/person has identifier| Wikidata URI (Item Identifier) | [Wikidata human Q5](https://www.wikidata.org/wiki/Q5) |  
-| !!!      | creator/person has appellation| Literal|  |
+| !!!      | creator/person has appellation| text: Literal| [Wikidata name in native language](https://www.wikidata.org/wiki/Property:P1559P1559) |
+| ?      | creator/person has image representation| Wikidata Item P18: Commons media file  |  [subclass of Q18610173: Wikidata property to link to Commons](https://www.wikidata.org/wiki/Q18610173) [P18](https://www.wikidata.org/wiki/Property:P18) |
 | object metadata  |
 | !!!      | object has identifier| Wikidata URI (e.g. Gos table) |  |
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place)     |   |   |
