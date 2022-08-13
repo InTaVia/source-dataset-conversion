@@ -1,6 +1,6 @@
 # Prioritization of CHO metadata
 
-| Priority for frontend (Johannes)       | CHO Metadata for InTaVia           | Wikidata Mapping  |  wikidatata reference  |
+| Priority for frontend (Johannes)       | CHO Metadata for InTaVia  *or* Intavia description          | Wikidata Mapping  |  wikidatata reference  |
 | :-------------: |:-------------| -----:| -----:|
 | person metadata  |
 | !!!      | creator created artwort | Wikidata Item| [P170](https://www.wikidata.org/wiki/Property:P170) |
@@ -12,7 +12,7 @@
 | object metadata  |
 | !!!      | object has identifier| Wikidata Item URI (e.g. Gos table, e.g. item Q12418) |  Commons Creator page Wikidata Item P1472 |  [P1472](https://www.wikidata.org/wiki/Property:P1472) |
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place) | Wikidata: list with URIs of canonical Authority Documents name of Commons Infobox template residing in "Creator" namespace on Wikimedia Commons? |  discuss: [Authority Control?](https://en.wikipedia.org/wiki/Authority_control) |
-| !!! | current location of object      |  CHO_Proxy -- P55_has_current_location--> E53 Place OR CHO_Proxy--edm:currentLocation--> crm:E1 Entity  | [Wikidata Property P276 location](https://www.wikidata.org/wiki/Property:P276)  |
+| !!! | current location of object      |  artwork -- P55_has_current_location-- E53 Place *or* artwork--edm:currentLocation--> crm:E1 Entity  | [Wikidata Property P276 location](https://www.wikidata.org/wiki/Property:P276)  |
 | !      | Measurement|  |   |
 | !     | Measurement Unit     |   |   |
 | !! | Material      |    |   |
