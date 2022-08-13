@@ -31,12 +31,13 @@
 | 	 Production Event      |
 | !!!	| Person/Group has produced Cultural Heritage Object| | 
 | !!!	| Technique used in production event  |    |
-| !!!	| time-span of creation  |    |
+| !!!	| time-span of creation of work  |  Wikidata Inception |   |
+| !!!	| time-span of creation of manifestation |  Wikidata [earliest date](https://www.wikidata.org/wiki/Property:P1319) / [latest date](https://www.wikidata.org/wiki/Property:P1319)  |   |
 | !!!	| Place of creation  |    |
 | 	 Destruction/ Modification of CHO      |
 | !!!	| destruction of object  |    |
 | 	 Person/Group has modified Cultural Heritage Object      |
 | !!	| Type of CHO modification  |    |
 | 	 References      |
-| !	| same object in other resource  |  see first merging/mapping tables of of [netherlands](Gos merge table), [finnish]() and [austrian]()datasets, number of entities will probably increase |
+| !	| same object in other resource (same as) / best to use with archive timestamps |  see first merging/mapping tables of of [netherlands] (Gos merge table), [finnish]() and [austrian]() datasets, number of entities will probably increase |  [P973 described in URL](https://www.wikidata.org/wiki/Property:P973)  |
 | !!!	| link(s) to media file representation (external link, europeana doesn't store the data)  |  Wikidata Item P18: Commons media file | [Wikidata Item P18](https://www.wikidata.org/wiki/Property:P18)  |
