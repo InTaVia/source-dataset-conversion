@@ -14,14 +14,14 @@
 | !!!     | object identifier assignment (to attach responsible actor, date, maybe place) | Wikidata: list with URIs of canonical Authority Documents name of Commons Infobox template residing in "Creator" namespace on Wikimedia Commons? |  discuss: [Authority Control?](https://en.wikipedia.org/wiki/Authority_control) |
 | !!! | current location of object      |  artwork -- P55_has_current_location-- E53 Place *or* artwork--edm:currentLocation--> crm:E1 Entity  | [Wikidata Property P276 location](https://www.wikidata.org/wiki/Property:P276)  |
 | !      | Measurement Event| E16 Measurement --P39 measured--> CHO_Proxy --P40 observed dimension (Type of dimension)--> E54 Dimension --P2 has type--> E55 Type | Wikidata properties [width P 2049](https://www.wikidata.org/wiki/Property:P2049) and [height P2048](https://www.wikidata.org/wiki/Property:P2048)|
-| !     | Measurement Unit     |   |   |
-| !! | Material      |    |   |
+| !     | Measurement Unit     |  Data Cleaning for: E16 Measurement --P39 measured--> CHO_Proxy --P40 observed dimension (Type of dimension)--> E54 Dimension --P90 has value--> rdfs:Literal | in Wikidata: Literal (e.g. "100 cm" or "100 centimetre")  |
+| !! | Material      |    | made from material [P186](https://www.wikidata.org/w/index.php?title=Property:P168&action=edit&redlink=1) (-> this property was removed from Wikidata = find equivalent in other datasets/Wikidata examples): material the subject or the object is made of or derived from (do not confuse with P10672 which is used for processes) |
 | !! | Title of Object      |    |   |
 | !!! | language of textual object (on CHO)   |    |   |
 | !!! | title of object (on CHO)   |    |
 | !! | has part (other object)   |    |   |
 | !!! | object has subject   |    |   |
-| !!! | depicts   |    |
+| !!! | depicts   |  diverse properties, more detailed approach, e.g. for Mona Lisa discussion: Wikidata Item [Q11879536 person depicted in Mona Lisa](https://www.wikidata.org/wiki/Q11879536)   |
 | !!! | container for all informal descriptions about an object   |    |
 | !! | transfer of physical custody or the legal responsibility for the physical custody of objects  |    |
 | !! | transfer of legal ownership of objects  |    |
