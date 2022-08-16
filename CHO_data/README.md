@@ -24,9 +24,9 @@
 | !!! | object has subject   |  [P180 depicts](https://www.wikidata.org/wiki/Property:P180): "entity visually depicted in an image, literarily described in a work, or otherwise incorporated into an audiovisual or other medium; see also P921, 'main subject'" |  [P180](https://www.wikidata.org/wiki/Property:P180)  |
 | !!! | depicts   | (see above) diverse properties, more detailed approach, e.g. for Mona Lisa discussion: Wikidata Item [Q11879536 person depicted in Mona Lisa](https://www.wikidata.org/wiki/Q11879536)   |
 | !!! | container for all informal descriptions about an object   |  e.g. name or *Wikidata Description* (The description on a Wikidata entry is a short phrase designed to disambiguate items with the same or similar labels. A description does not need to be unique; multiple items can have the same description, however no two items can have both the same label and the same description. )  |
-| !! | transfer of physical custody or the legal responsibility for the physical custody of objects  |    |
-| !! | transfer of legal ownership of objects  |    |
-| !!	| current owner  |    |
+| !! | transfer of physical custody or the legal responsibility for the physical custody of objects  |  P276 location (partly with start- and end-time)  |  [P276 location](https://www.wikidata.org/wiki/Property:P276) |
+| !! | transfer of legal ownership of objects  |  P127 owned by (partly with start- and end-time)  |  [P127](https://www.wikidata.org/wiki/Property:P127)  |
+| !!	| current owner  |  P127 owned by (last entry? doublecheck for clean data aggregation)  | [P127](https://www.wikidata.org/wiki/Property:P127) |
 | !!	| is part of collection  |    |
 | 	 CHO Event metadata      |
 | 	 Production Event      |
