@@ -28,17 +28,17 @@
 | !! | transfer of legal ownership of objects  |  P127 owned by (partly with start- and end-time)  |  [P127](https://www.wikidata.org/wiki/Property:P127)  |
 | !!	| current owner  |  P127 owned by (last entry? doublecheck for clean data aggregation)  | [P127](https://www.wikidata.org/wiki/Property:P127) |
 | !!	| is part of collection  |    |
-| 	 CHO Event metadata      |
+| 	  | 	 CHO Event metadata    |   P793_significant event   | [P739](https://www.wikidata.org/wiki/Property:P793)  |
 | 	 Production Event      |
-| !!!	| Person/Group has produced Cultural Heritage Object| | 
-| !!!	| Technique used in production event  |    |
-| !!!	| time-span of creation of work  |  Wikidata Inception |   |
-| !!!	| time-span of creation of manifestation |  start date: [Wikidata Item P139 earliest date](https://www.wikidata.org/wiki/Property:P1319) / end date: [Wikidata Item P1319 latest date](https://www.wikidata.org/wiki/Property:P1319) |   |
-| !!!	| Place of creation  |    |
+| !!!	| Person/Group has produced Cultural Heritage Object|  P800 notable work  |    [P800](https://www.wikidata.org/wiki/Property:P800)   | 
+| !!!	| Technique used in production event  | combination of:  P31 instance of /  P186 made from material |  [P31](https://www.wikidata.org/wiki/Property:P31), [P186](https://www.wikidata.org/wiki/Property:P186)  (hierarchy of Wikidata could be applied, I think)
+| !!!	| time-span of creation of work (like frbroo:Work)  |  P571 Inception | [P571](https://www.wikidata.org/wiki/Property:P571)  |
+| !!!	| time-span of creation of manifestation (like frbroo:Manifestation) |  start date: [Wikidata Item P139 earliest date/start time](https://www.wikidata.org/wiki/Property:P1319) / end date: [Wikidata Item P1319 latest date](https://www.wikidata.org/wiki/Property:P1319) |   |
+| !!!	| Place of creation  |  P1071 location of creation  | [P1071](https://www.wikidata.org/wiki/Property:P1071)
 | 	 Destruction/ Modification of CHO      |
-| !!!	| destruction of object  |    |
-| 	 Person/Group has modified Cultural Heritage Object      |
-| !!	| Type of CHO modification  |    |
+| !!!	| destruction of object  |  P793_significant event  Q17781833  | Wikidata Item (artwork) -- significant event (P793) --  Destruction (WikidataItem:Q17781833)  |  [P739 significant event](https://www.wikidata.org/wiki/Property:P793)  |
+| 	 Person/Group has modified Cultural Heritage Object     |
+| !!	| Type of CHO modification  |  Type of significant event (see above, modification events are e.g. vandalism etc.), Modification Event in wikidata: Q109243379  |  [P739 significant event](https://www.wikidata.org/wiki/Property:P793) [Q109243379 Modification](https://www.wikidata.org/wiki/Q109243379) 
 | 	 References      |
-| !	| same object in other resource (same as) / best to use with archive timestamps |  see first merging/mapping tables of of [netherlands] (Gos merge table), [finnish]() and [austrian]() datasets, number of entities will probably increase |  [P973 described in URL](https://www.wikidata.org/wiki/Property:P973)  |
+| !	| same object in other resource (same as) / best to use with archive timestamps | P973 describet at URL (InTaVia specific data preparation: see first merging/mapping tables of [netherlands] (Gos merge table), [finnish](*comment: add reference here*) and [austrian](*add reference here*) datasets, number of entities will probably increase |  [P973 described in URL](https://www.wikidata.org/wiki/Property:P973)  |
 | !!!	| link(s) to media file representation (external link, europeana doesn't store the data)  |  Wikidata Item P18: Commons media file | [Wikidata Item P18](https://www.wikidata.org/wiki/Property:P18)  |
