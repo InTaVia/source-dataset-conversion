@@ -1,4 +1,4 @@
-# Prioritization of CHO metadata
+# Prioritization of metadata from wikidata for CHOs
 
 | Priority for frontend (Johannes)       | CHO Metadata for InTaVia  *or* Intavia description          | Wikidata Mapping  |  wikidatata reference  |
 | :-------------: |:-------------| -----:| -----:|
