@@ -17,12 +17,13 @@
 | !     | Measurement Unit     |  Data Cleaning for: E16 Measurement --P39 measured--> CHO_Proxy --P40 observed dimension (Type of dimension)--> E54 Dimension --P90 has value--> rdfs:Literal | in Wikidata: Literal (e.g. "100 cm" or "100 centimetre")  |
 | !! | Material      |    | made from material [P186](https://www.wikidata.org/w/index.php?title=Property:P168&action=edit&redlink=1) (-> this property was removed from Wikidata = find equivalent in other datasets/Wikidata examples): material the subject or the object is made of or derived from (do not confuse with P10672 which is used for processes) |
 | !! | Title of Object      |    |   |
-| !!! | language of textual object (on CHO)   |    |   |
-| !!! | title of object (on CHO)   |    |
-| !! | has part (other object)   |    |   |
-| !!! | object has subject   |    |   |
-| !!! | depicts   |  diverse properties, more detailed approach, e.g. for Mona Lisa discussion: Wikidata Item [Q11879536 person depicted in Mona Lisa](https://www.wikidata.org/wiki/Q11879536)   |
-| !!! | container for all informal descriptions about an object   |    |
+| !!! | language of textual object (on CHO)   |  language of work or name  P407  |  [P407](https://www.wikidata.org/wiki/Property:P407)  |
+| !!! | title of object (on CHO)   |  wikidata label  |
+| ? | named after   |   P138 named after   |   [named after](https://www.wikidata.org/wiki/Property:P138)   |
+| !! | has part (other object)   |   [P527 has part(s)](P527) (reverse:  [P361 part of](https://www.wikidata.org/wiki/Property:P361))  |  [P527](https://www.wikidata.org/wiki/Property:P527)  |
+| !!! | object has subject   |  [P180 depicts](https://www.wikidata.org/wiki/Property:P180): "entity visually depicted in an image, literarily described in a work, or otherwise incorporated into an audiovisual or other medium; see also P921, 'main subject'" |  [P180](https://www.wikidata.org/wiki/Property:P180)  |
+| !!! | depicts   | (see above) diverse properties, more detailed approach, e.g. for Mona Lisa discussion: Wikidata Item [Q11879536 person depicted in Mona Lisa](https://www.wikidata.org/wiki/Q11879536)   |
+| !!! | container for all informal descriptions about an object   |  e.g. name or *Wikidata Description* (The description on a Wikidata entry is a short phrase designed to disambiguate items with the same or similar labels. A description does not need to be unique; multiple items can have the same description, however no two items can have both the same label and the same description. )  |
 | !! | transfer of physical custody or the legal responsibility for the physical custody of objects  |    |
 | !! | transfer of legal ownership of objects  |    |
 | !!	| current owner  |    |
