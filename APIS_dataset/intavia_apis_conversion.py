@@ -15,8 +15,8 @@ import re
 import urllib.parse
 import datetime
 
-base_url_apis = "https://apis.acdh.oeaw.ac.at/apis/api/"
-base_url_apis2 = "https://apis.acdh.oeaw.ac.at/apis/api2/"
+base_url_apis = "http://apis.acdh.oeaw.ac.at/apis/api/"
+base_url_apis2 = "http://apis.acdh.oeaw.ac.at/apis/api2/"
 
 crm=Namespace('http://www.cidoc-crm.org/cidoc-crm/')
 """Defines namespace for CIDOC CRM."""
@@ -41,7 +41,6 @@ edm=Namespace('http://www.europeana.eu/schemas/edm/')
 ore=Namespace('http://www.openarchives.org/ore/terms/')
 """Defines namespace for Europeana data model vocabulary."""
 owl=Namespace('http://www.w3.org/2002/7/owl#')
-# owl=Namespace('http://www.w3.org/2002/07/owl#')
 """Defines namespace for Europeana data model vocabulary."""
 rdf=Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 """Defines namespace for Europeana data model vocabulary."""
@@ -49,7 +48,7 @@ xml=Namespace('http://www.w3.org/XML/1998/namespace')
 """Defines namespace for Europeana data model vocabulary."""
 xsd=Namespace('http://www.w3.org/2001/XMLSchema#')
 """Defines namespace for Europeana data model vocabulary."""
-bioc=Namespace('http://www.ldf.fi/schema/bioc/')
+bioc=Namespace('http://ldf.fi/schema/bioc/')
 """Defines namespace for Europeana data model vocabulary."""
 rdfs=Namespace('http://www.w3.org/2000/01/rdf-schema#')
 """Defines namespace for Europeana data model vocabulary."""
@@ -59,6 +58,9 @@ owl=Namespace('http://www.w3.org/2002/07/owl#')
 """Defines OWL namespace."""
 bf=Namespace('http://id.loc.gov/ontologies/bibframe/')
 """Defines bibframe namespace."""
+geo=Namespace("http://www.opengis.net/ont/geosparql#")
+
+
 
 def datareturn_institution (data_institutions, re):
     for n in range(len(re)):
@@ -282,9 +284,9 @@ def datareturn (d, re, dapr, headers, da, placecheck, placerelationscheck, place
     #return d,datarelations
 
 def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched):
-    while next_page != f"{base_url_apis}entities/person/?limit=50&offset=100":
+    #while next_page != f"{base_url_apis}entities/person/?limit=50&offset=200":
     #define the point when iterating stops (for test serialization)
-    #while next_page != None:
+    while next_page != None:
         """iterate over JSON API urls"""
         first_response = requests.get(next_page, headers=headers)
         print(f"getting {next_page}")
@@ -293,7 +295,7 @@ def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelat
         """get data from REST API in JSON format"""
         next_page = re_list.get('next')
         datageneral, datarelations, placecheck = datareturn(data, response_list, dapr, headers, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
-        return datageneral, datarelations, placecheck, dapr
+        #return datageneral, datarelations, placecheck, dapr
         #datageneral, datarelations = datareturn(data, response_list)
     else:
         """stop iterating over JSON API urls"""
@@ -301,14 +303,13 @@ def personaggregation(next_page, headers, data, dapr, da, placecheck, placerelat
         re_list=first_response.json()
         response_list = re_list.get('results')
         datageneral, datarelations, placeset  = datareturn(data, response_list, dapr, headers, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
-        return datageneral, datarelations, placeset, dapr
-        #datageneral, datarelations = datareturn(data, response_list)
+        return datageneral, datarelations, placecheck, dapr
 
 def institutionaggregation(next_page_institution, headers, data, dapr, da, not_included, data_institutions):
-    while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=100":
+    #while next_page_institution != f"{base_url_apis}entities/institution/?limit=50&offset=200":
     #     """iterate over APIS dataset (Institutions)"""
     #     #define the point when iterating over institutions stops 
-    #while next_page_institution != None:
+    while next_page_institution != None:
         """iterate over JSON API urls (institutions)"""
         print(f'getting {next_page_institution}')
         first_response_institution = requests.get(next_page_institution, headers=headers)
@@ -320,12 +321,12 @@ def institutionaggregation(next_page_institution, headers, data, dapr, da, not_i
         return data_institutions
     else:
         """stop iterating over JSON API urls"""
-        first_response_institution = requests.get(next_page_institution, headers=headers)
-        re_list_institution=first_response_institution.json()
-        print('Institutions Done')
-        response_list_institution = re_list_institution.get('results')
-        data_institutions  = datareturn_institution(data_institutions, response_list_institution)
-        print(f"not included: {not_included}")
+        # first_response_institution = requests.get(next_page_institution, headers=headers)
+        # re_list_institution=first_response_institution.json()
+        # print('Institutions Done')
+        # response_list_institution = re_list_institution.get('results')
+        # data_institutions  = datareturn_institution(data_institutions, response_list_institution)
+        # print(f"not included: {not_included}")
         return data_institutions
 
 def datatodf(datageneral, datarelations, data_institutions, dapr, placedata):
@@ -363,9 +364,8 @@ def events(g, relation_id, apis_id, edate, crmtype, urltype, roletype, relationl
     """add events according to BioCRM Model"""
     roletype = str(urllib.parse.quote_plus(roletype))
     print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
-    #g.add((URIRef(f"{idmapis}personproxy/{apis_id}"), bioc.inheres_in, URIRef((f"idmapis/{urltype}/eventrole/{relation_id}"))))
     g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
-    #add eventrole to person proxy
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
     g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), RDF.type, URIRef(idmrole+roletype)))
     g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, bioc.Event_Role)))
     g.add(((URIRef(idmrole+roletype), RDFS.label, Literal(roletype))))
@@ -458,6 +458,8 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
         if row['relationtype_parentid'] != "nan":
                 # if the relationtype has a superclass, it is added here
                 relationtype_parentid = row['relationtype_parentid'][:-2]
+        else:
+            relationtype_parentid = 'nan'
         if relationtype_id == '595':
         #if rtype == f"{base_url_apis}vocabularies/personplacerelation/595/":
             #define serialization for "person born in place relations"
@@ -519,13 +521,13 @@ def relationdata_graph(g, relations_df, familyrelationidlist, not_included, plac
             # label for career event
             g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
             # role of participating person in the career event
-            g.add((URIRef(f"{idmapis}personproxy/{row['apis_id']}"), bioc.inheres_in, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+            g.add((URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id']), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{row['apis_id']}")))
             # person which inheres this role
             g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
             # role of institution/ group in the career event
             g.add((URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid']), RDF.type, bioc.Group_Relationship_Role))
-            g.add((URIRef(idmapis+'groupproxy/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
-            # institution/ group which inheres this role
+            g.add((URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid'])))
+            # role which inheres the institution/ group
             g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
             print (f" personinstitutionrelation serialized for: {row['apis_id']}")
             if (row['rd_start_date'] != 'None') and (row['rd_end_date'] != 'None'):
@@ -650,13 +652,14 @@ def places_graph(g, places_df):
         g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['apis_place_url']))))
         #define that individual in APIS named graph and APIS entity are the same
         if row['place_lat'] != "nan":
-            g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, Literal(row['place_lat']+' '+row['place_lng'])))
+            g.add((URIRef(idmapis+'place/'+row['place_id']), crm.P168_place_is_defined_by, URIRef(idmapis+'spaceprimitive/'+row['place_id'])))
+            g.add((URIRef(idmapis+'spaceprimitive/'+row['place_id']), rdf.type, crm.E94_Space_Primitive))
+            g.add((URIRef(idmapis+'spaceprimitive/'+row['place_id']), crm.P168_place_is_defined_by, Literal(("POINT " + row['place_lat']+' '+row['place_lng']), datatype=geo.wktLiteral)))
             if row['georef'] != "None":
                 g.add((URIRef(idmapis+'place/'+row['place_id']), owl.sameAs, (URIRef(row['georef']))))
             #define that individual in APIS named graph and APIS entity are the same
         # suggestion for serialization of space primitives according to ISO 6709, to be discussed
         # more place details will be added (references, source, place start date, place end date, relations to other places(?))
-
 
 
 def serializeto_ttl(g):
@@ -675,6 +678,7 @@ def serializeto_ttl(g):
     g.bind('idmrole', idmrole)
     g.bind('idmrelations', idmrelations)
     g.bind('owl', owl)
+    g.bind("geo", geo)
     #Bind namespaces to prefixes for readable output
     exapis = g.serialize(destination=f'apisdata_{datetime.datetime.now().strftime("%d-%m-%Y")}.ttl', format='turtle')
 
@@ -705,6 +709,7 @@ def main():
     """following REST API url to get apis data"""
     response_list = re_list.get('results')
     """get list with all datasets from the url as dictionaries"""
+    datageneral, datarelations, placecheck, dapr = personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
     next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
     first_response_institution = requests.get(next_page_institution, headers=headers)
     """get data for this URL from REST API"""
@@ -712,7 +717,6 @@ def main():
     """get data from REST API in JSON format"""
     response_list_institution = re_list_institution.get('results')
     """get list with all datasets from the url as dictionaries"""
-    datageneral, datarelations, placecheck, dapr = personaggregation(next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
     datainstitution = institutionaggregation(next_page_institution, headers, data, dapr, da, not_included, data_institutions)
     apis_df, relations_df, occupations_df, institutions_df, places_df = datatodf(datageneral, datarelations, data_institutions, dapr, placedata)
     g = Graph()

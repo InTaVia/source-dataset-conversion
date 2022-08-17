@@ -1,0 +1,52 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ore: <http://www.openarchives.org/ore/terms/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+
+select DISTINCT ?creator ?providerproxy ?providedcho ?aggregation ?rights ?title ?coverage ?creation ?description ?relation ?subject ?type
+WHERE
+{
+{?providerproxy dc:creator "Gustav Klimt"@de.}
+UNION
+{?providerproxy dc:creator "Klimt, Gustav"@en.}
+UNION
+{?providerproxy dc:creator "Klimt, Gustav". }
+UNION
+{?providerproxy dc:creator "Gustav Klimt". }
+OPTIONAL
+{?providerproxy dc:creator ?creator.}
+OPTIONAL
+{
+?providerproxy ore:proxyFor ?providedcho.
+?aggregation edm:aggregatedCHO ?providedcho.
+?aggregation edm:rights ?rights.
+}
+OPTIONAL
+{
+?providerproxy dc:title ?title.
+}
+OPTIONAL
+{
+?providerproxy dc:coverage ?coverage.
+}
+OPTIONAL
+{
+?providerproxy dc:creation ?creation.
+}
+OPTIONAL
+{
+?providerproxy dc:description ?description.
+}
+OPTIONAL
+{
+?providerproxy dc:relation ?relation.
+}
+OPTIONAL
+{
+?providerproxy dc:subject ?subject.
+}
+OPTIONAL
+{
+?providerproxy dc:type ?type.
+}
+}
+LIMIT 300

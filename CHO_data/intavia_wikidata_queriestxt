@@ -1,0 +1,17 @@
+OEBLpersons and artwork with basic metadata
+
+
+SELECT distinct ?oeblxmlname ?awLabel ?aw_url ?instance_of ?location ?inception ?creator ?mainsubject ?mainsubjectLabel ?depicts ?depictsLabel ?madefrom ?height ?width
+where {
+    ?artist wdt:P6194 ?oeblxmlname;
+            wdt:P800 ?aw .
+    OPTIONAL { ?aw wdt:P31 ?instance }
+    OPTIONAL { ?aw wdt:P276 ?location }
+    OPTIONAL { ?aw wdt:P571 ?inception }
+    OPTIONAL { ?aw wdt:P170 ?creator}
+    OPTIONAL { ?aw wdt:P180 ?depicts }
+    OPTIONAL { ?aw wdt:P186 ?madefrom }
+    OPTIONAL { ?aw wdt:P2048 ?height }
+    OPTIONAL { ?aw wdt:P2049 ?width }    
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+  }
