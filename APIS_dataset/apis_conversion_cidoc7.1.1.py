@@ -15,8 +15,8 @@ import re
 import urllib.parse
 import datetime
 
-base_url_apis = "http://apis.acdh.oeaw.ac.at/apis/api/"
-base_url_apis2 = "http://apis.acdh.oeaw.ac.at/apis/api2/"
+base_url_apis = "http://127.0.0.1:8000/apis/api/"
+base_url_apis2 = "http://127.0.0.1:8000/apis/api2/"
 familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 data=[]
 data_institutions=[]
@@ -29,7 +29,7 @@ familyrelationidlist=['5411', '5412', '5413', '5414', '5870']
 headers = {"accept": "application/json"}
 #remove 5412 and add these relationships without roles? (it's just a "has family relation" role for undefined family relations), all relations checked, no further family relations in DB
 
-next_page = f"{base_url_apis}entities/person/?limit=50&offset=100"
+next_page = f"{base_url_apis}entities/person/?limit=50&offset=0&collection=86"
 #next_page = f"{base_url_apis}entities/person/?limit=50&offset=30850"
 """initial json url to get apis data"""
 first_response = requests.get(next_page, headers=headers)
@@ -43,7 +43,7 @@ re_list=first_response.json()
 response_list = re_list.get('results')
 """get list with all datasets from the url as dictionaries"""
 
-next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
+next_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=0"
 first_response_institution = requests.get(next_page_institution, headers=headers)
 """get data for this URL from REST API"""
 re_list_institution=first_response_institution.json()
@@ -745,7 +745,7 @@ def main():
     headers = {"accept": "application/json"}
     not_included=[]
     urls_places_already_fetched = []
-    first_page = f"{base_url_apis}entities/person/?limit=50&offset=50"
+    first_page = f"{base_url_apis}entities/person/?limit=50&offset=0&collection=86"
     """initial json url to get apis data"""
     first_response = requests.get(first_page, headers=headers)
     """get data for this URL from REST API"""
@@ -758,7 +758,7 @@ def main():
     response_list = re_list.get('results')
     """get list with all datasets from the url as dictionaries"""
     datageneral, datarelations, placecheck, dapr = personaggregation(first_page, next_page, headers, data, dapr, da, placecheck, placerelationscheck, placedata, urls_places_already_fetched)
-    first_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=100"
+    first_page_institution = f"{base_url_apis}entities/institution/?limit=50&offset=0"
     first_response_institution = requests.get(first_page_institution, headers=headers)
     """get data for this URL from REST API"""
     re_list_institution=first_response_institution.json()
