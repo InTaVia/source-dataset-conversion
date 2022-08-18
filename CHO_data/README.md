@@ -5,7 +5,8 @@
 | person metadata  |
 | !!!      | creator created artwort | Wikidata Item - P170creator - Wikidata Item| [creator P170](https://www.wikidata.org/wiki/Property:P170) |  |
 | !!!      | human/person is creator | Creator:Creator Entity| [Commons Creator page P11472](https://www.wikidata.org/wiki/Property:P1472) |  |
-| !!!      | creator/person has identifier| Wikidata URI (Item Identifier) | [Wikidata human Q5](https://www.wikidata.org/wiki/Q5) |    |
+| !!!      | creator/person has identifier| Wikidata URI (Item Identifier) | [Wikidata human Q5](https://www.wikidata.org/wiki/Q5) |  X (person_proxy_for and owl:sameAs property)  |
+| !!!      | creator/person has source dataset identifier| InTaVia URI (Item Identifier) | crm:E21 Person *and* idmcore:PersonProxy |  X (Person/Personproxy initial Proxy URI)  |
 | !!!      | creator/person has appellation| text: Literal| [Wikidata name in native language P1559](https://www.wikidata.org/wiki/Property:P1559) |  |
 | ?      | creator/person has image representation| Wikidata Item P18: Commons media file  |  [Wikidata Item P18](https://www.wikidata.org/wiki/Property:P18); [subclass of Q18610173: Wikidata property to link to Commons](https://www.wikidata.org/wiki/Q18610173) |  |
 | ?      | copyright status as a creator |  copyright status as a creator  | [P7763](https://www.wikidata.org/wiki/Property:P7763) |  |
