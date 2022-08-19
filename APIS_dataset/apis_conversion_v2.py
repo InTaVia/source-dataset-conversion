@@ -56,42 +56,42 @@ async def render_person_relation(pers_uri, rel, g):
     n_rel_type = URIRef(f"{idmapis}grouprelation/{rel['relation_type']['id']}")
     g.add((pers_uri, bioc.has_group_relation, n_rel_type))
     # Person has a specific group relation
-    g.add((URIRef(idmapis+'grouprelation/'+relation_id), RDF.type, URIRef(idmrelations+relationtype_id)))
+    g.add((n_rel_type, RDF.type, URIRef(idmrelations+rel['relation_type']['id'])))
     #define type of grouprelation
-    if relationtype_parentid != "nan":
+    if rel['relation_type']['parent_id'] is not None:
         # if the relationtype has a superclass, it is added here
-        g.add((URIRef(idmrelations+relationtype_id), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))
-    g.add((URIRef(idmapis+'grouprelation/'+relation_id), rdfs.label, Literal(row['relationtypelabel'])))
+        g.add((URIRef(idmrelations+rel['relation_type']['id']), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+    g.add((n_rel_type, rdfs.label, Literal(rel['relation_type']['label'])))
     # add label to relationtype
-    g.add((URIRef(idmapis+'grouprelation/'+relation_id), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid'])))
+    g.add((n_rel_type, bioc.inheres_in, URIRef(idmapis+'groupproxy/'+rel['related_institution']['id'])))
     #group which is part of this relation
-    g.add((URIRef(idmapis+'career/'+row['relationid']), RDF.type, idmcore.Career))
+    g.add((URIRef(idmapis+'career/'+rel['id']), RDF.type, idmcore.Career))
     # add career event of type idmcore:career
     g.add((idmcore.Career, rdfs.subClassOf, crm.E5_Event,))
-    g.add((URIRef(idmapis+'career/'+row['relationid']), rdfs.label, Literal(row['relationlabel'])))
+    g.add((URIRef(idmapis+'career/'+rel['id']), rdfs.label, Literal(f"{rel['related_person']['label']} {rel['relation_type']['label']} {rel['related_institution']['label']}")))
     # label for career event
-    g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id'])))
+    g.add((URIRef(idmapis+'career/'+rel['id']), bioc.had_participant_in_role, URIRef(idmapis+'personrole/'+rel['id']+'/'+rel['related_person']['id'])))
     # role of participating person in the career event
-    g.add((URIRef(idmapis+'personrole/'+row['relationid']+'/'+row['apis_id']), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{row['apis_id']}")))
+    g.add((URIRef(idmapis+'personrole/'+rel['id']+'/'+rel['related_person']['id']), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}")))
     # person which inheres this role
-    g.add((URIRef(idmapis+'career/'+row['relationid']), bioc.had_participant_in_role, URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid'])))
+    g.add((URIRef(idmapis+'career/'+rel['id']), bioc.had_participant_in_role, URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id'])))
     # role of institution/ group in the career event
-    g.add((URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid']), RDF.type, bioc.Group_Relationship_Role))
-    g.add((URIRef(idmapis+'grouprole/'+row['relationid']+'/'+row['relatedentityid']), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+row['relatedentityid'])))
+    g.add((URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id']), RDF.type, bioc.Group_Relationship_Role))
+    g.add((URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id']), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+rel['related_institution']['id'])))
     # role which inheres the institution/ group
-    g.add((URIRef(idmapis+'career/'+row['relationid']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+row['relationid'])))
-    print (f" personinstitutionrelation serialized for: {row['apis_id']}")
-    if (row['rd_start_date'] != 'None') and (row['rd_end_date'] != 'None'):
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])+' - '+ row['rd_end_date_written']))
-    elif ((row['rd_start_date'] != 'None') and (row['rd_end_date']=='None')):
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82a_begin_of_the_begin, (Literal(row['rd_start_date']+'T00:00:00', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal(row['rd_start_date_written'])))
-    elif ((row['rd_start_date'] == 'None') and (row['rd_end_date']!='None')):
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), crm.P82b_end_of_the_end, (Literal(row['rd_end_date']+'T23:59:59', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+row['relationid']), rdfs.label, Literal('time-span end:' + row['rd_end_date_written'])))
-        #return g
+    g.add((URIRef(idmapis+'career/'+rel['id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+rel['id'])))
+    print (f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
+    if (rel['start_date'] != 'None') and (rel['end_date'] != 'None'):
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82a_begin_of_the_begin, (Literal(rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82b_end_of_the_end, (Literal(rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal(rel['start_date_written'])+' - '+ rel['end_date_written']))
+    elif ((rel['start_date'] != 'None') and (rel['end_date']=='None')):
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82a_begin_of_the_begin, (Literal(rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal(rel['start_date_written'])))
+    elif ((rel['start_date'] == 'None') and (rel['end_date']!='None')):
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82b_end_of_the_end, (Literal(rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
+        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal('time-span end:' + rel['end_date_written'])))
+    return g
 
 async def render_person(person, g):
     """renders person object as RDF graph
