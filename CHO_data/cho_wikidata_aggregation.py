@@ -117,23 +117,54 @@ def serdata(h):
     h.serialize("current_intavia_wikidata_aw.ttl",fomat ='turtle')
     return h
 
-def aw_query_a(x):    
-    query = """
+def aw_query_a(x):
+    squery = """
     PREFIX idmcore:<http://www.intavia.eu/idm-core/>
     PREFIX crm:<http://www.cidoc-crm.org/cidoc-crm/>
-    PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> 
+    PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
     CONSTRUCT
-    {{
-    wd:{x} crm:P1_is_identified_by ?creatorLabel.
-    ?creatorLabel a crm:E41_Appellation.
-    ?aw a idmcore:CHO_Proxy.
-    ?aw crm:P1_is_identified_by ?awLabel.
-    }}
+        {{
+            wd:{x} a crm:E21_Person
+            wd:{x} crm:P1_is_identified_by ?creatorLabel.
+            ?creatorLabel a crm:E41_Appellation.
+            ?aw a idmcore:CHO_Proxy.
+            ?aw crm:P1_is_identified_by ?awLabel.
+        }}
     WHERE
-    {
-    ?aw wdt:P170 wd:{x}.
-        SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl" }
-    }"""
+        {{
+            wd:{x} a wd:Q5
+            wd:{x} wdt:P106 wd:Q3391743.
+            wd:{x} wdt:P800 ?aw.
+            #SERVICE wikibase:label 
+            #filter(lang(?awLabel) = "de")
+            #?aw wdt:P170 ?creator.
+        }}
+    LIMIT 1
+    """    
+
+
+
+
+
+# query = """
+# PREFIX idmcore:<http://www.intavia.eu/idm-core/>
+# PREFIX crm:<http://www.cidoc-crm.org/cidoc-crm/>
+# PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> 
+# CONSTRUCT
+# {{
+# wd:{x} crm:P1_is_identified_by ?creatorLabel.
+# ?creatorLabel a crm:E41_Appellation.
+# ?aw a idmcore:CHO_Proxy.
+# ?aw crm:P1_is_identified_by ?awLabel.
+# }}
+# WHERE
+# {{
+#     wd:{x} 
+#     ?aw a wd:
+# ?aw wdt:P170 wd:{x}.
+# filter(lang(?bLabel) = "de")
+# }}
+# LIMIT 10"""
 
 def wikiq(x):
     user_agent = "intavia_dataaggregation_python_bot/%s.%s" % (sys.version_info[0], sys.version_info[1])
@@ -142,12 +173,20 @@ def wikiq(x):
     sparql = SPARQLWrapper(wd_endpoint_url, agent=user_agent)
     reslist = []
     print(x)
+    print("begin artwork query")
     aw_query_a(x)
+    try:
+        results = sparql.queryAndConvert()
+        print(x)
+        print(results.serialize())
+        return(results)
+    except:
+        results = "Error Incomplete Read?"
+        print(results)
+    finally:
+        return(results)
     #sparql.setQuery(query)
     #sparql.setQuery(f"""PREFIX idmcore: <http://www.intavia.eu/idm-core/> PREFIX crm:<http://www.cidoc-crm.org/cidoc-crm/> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> CONSTRUCT {{wd:{x} rdfs:label ?artistLabel. ?aw a idmcore:CHO_Proxy. ?aw rdfs:label ?awLabel.}} WHERE {{?aw wdt:P170 wd:{x}. wd:{x} rdfs:label ?artistLabel. ?aw rdfs:label ?awLabel. filter(lang(?bLabel) = "de".}} }}""")
-    results = sparql.queryAndConvert()
-    print(results.serialize())
-    return(results)
     # sparql.setReturnFormat(JSON)
     # resp = sparql.query().convert()
     # print(resp)
@@ -161,10 +200,13 @@ def wikisparql(wiki_id_list, update_wiki_id_list):
             x = x[(len(x))-1]
             x = wikiq(str(x))
             update_wiki_id_list.append(x)
-        else:
+        elif w == None:
             w = str("no_merge_yet")
             update_wiki_id_list.append(w)
-            return update_wiki_id_list
+        else:
+            print("update list: " + update_wiki_id_list)
+    return update_wiki_id_list
+
 
 def main():
     h = Graph()
