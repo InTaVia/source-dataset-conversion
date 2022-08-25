@@ -1,0 +1,10 @@
+pandas
+requests
+seaborn
+matplotlib
+rdflib
+SPARQLWrapper
+lxml
+numpy
+sparql-client
+SPARQLTransformer
