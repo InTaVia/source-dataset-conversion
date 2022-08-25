@@ -1,0 +1,256 @@
+"select ?z ?y
+where
+{?z dc:creator ""Gustav Klimt""@de .
+?z dc:title ?y.
+}
+LIMIT 500",205 results,"select ?z ?y 
+where
+{?z dc:creator ""Klimt, Gustav""@en .
+?z dc:title ?y.
+}
+LIMIT 500",9 results,"select ?z ?y 
+where
+{?z dc:creator ""Klimt, Gustav"".
+?z dc:title ?y.
+}
+LIMIT 500",8 results,"select ?z ?y 
+where
+{?z dc:creator ""Gustav Klimt"".
+?z dc:title ?y.
+}
+LIMIT 500",23 results
+z,y,,,http://data.europeana.eu/proxy/provider/2022608/MH_SS_46564,"""Bilde""",z,y
+http://data.europeana.eu/proxy/provider/15508/22396,"""Stehende, in Tücher gehüllt (Studie für das Bildnis Ria Munk III)""@de",z,y,http://data.europeana.eu/proxy/provider/2048419/item_SUIM3BXR5H6DHQXFGT44HI5UPV4E5AZ3,"""Junger Buchenwald""",http://data.europeana.eu/proxy/provider/2063629/AUS_280_005,"""Der Kuss""@de"
+http://data.europeana.eu/proxy/provider/15508/22492,"""Im Lehnstuhl Sitzende (Studie für das Bildnis Marie Henneberg)""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4487,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 1""@en",http://data.europeana.eu/proxy/provider/2048413/item_6C5WGRDMJPC3YMTHO7LKGQTQAALTQDST,"""Junger Buchenwald""",http://data.europeana.eu/proxy/provider/2063629/AUS_280_005,"""The Kiss""@en"
+http://data.europeana.eu/proxy/provider/15508/22493,"""Stehende Dame in Straßentoilette nach links""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4488,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 2, Die Erwartung (Tänzerin)""@en",http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095546917,"""18. Ausstellung der Wiener Secession""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148261879,"""Ritratto di Johanna Staude"""
+http://data.europeana.eu/proxy/provider/15508/22494,"""Studie für die linke der Gorgonen im ""Beethovenfries""""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4489,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 3""@en",http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095546920,"""99. Ausstellung der Wiener Secession""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148261883,"""Saffo"""
+http://data.europeana.eu/proxy/provider/15508/22495,"""Studie für das Bildnis Eugenia Primavesi (sitzend von vorne, den Oberkörper zur Seite gedreht)""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4490,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 4, Lebensbaum""@en",http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095546984,"""18. Ausstellung der Wiener Secession""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148264149,"""Giuditta"""
+http://data.europeana.eu/proxy/provider/15508/22496,"""Mutter und Kind""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4491,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 5""@en",http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095547323,"""Wien 1, Altes Burgtheater""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148264196,"""Bisce d'acqua"""
+http://data.europeana.eu/proxy/provider/15508/23528,"""Stehender Akt mit vorgebeugtem Gesicht (Studie für Die Jungfrau)""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4492,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 6""@en",http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095548305,"""Wien, 20 Ausstellung in der Secession""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148264211,"""Pallade Atena"""
+http://data.europeana.eu/proxy/provider/15508/23529,"""Mädchen mit gebauschtem Kleid (Studie für Die Jungfrau)""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4493,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 7""@en",http://data.europeana.eu/proxy/provider/92060/BibliographicResource_1000126015337,"""Gustav Klimt, 'Altes Burgtheater'""@de",http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148264212,"""Ritratto di Friederike Maria Beer"""
+http://data.europeana.eu/proxy/provider/15508/23530,"""Stehender Akt (Studie für Die Jungfrau)""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4494,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 8, Erfüllung""@en",,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148266537,"""La Vergine"""
+http://data.europeana.eu/proxy/provider/15508/23531,"""Sitzender Akt""@de",http://data.europeana.eu/proxy/provider/2026106/Partage_Plus_ProvidedCHO_MAK____sterreichisches_Museum_f_r_angewandte_Kunst___Gegenwartskunst_4495,"""Werkzeichnung für die Ausführung für ein Mosaikfries für den Speisesaal des Palais Stoclet in Brüssel: Teil 9, Ritter""@en",,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148266539,"""Schubert al piano II"""
+http://data.europeana.eu/proxy/provider/15508/23532,"""Sitzender Rückenakt (Studie für Die Jungfrau)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148268859,"""Fregio Stoclet (cartoni preparatori)"""
+http://data.europeana.eu/proxy/provider/15508/23533,"""Liegender Halbakt, die Arme hinter dem Kopf verschränkt""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148268860,"""Vita e Morte"""
+http://data.europeana.eu/proxy/provider/15508/23534,"""Stehender Akt in Dreiviertelansicht (Studie für Die Jungfrau)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148268862,"""Le tre età della donna"""
+http://data.europeana.eu/proxy/provider/15508/23535,"""Rückenakt mit aufgestütztem Bein, links Wiederholung (Studie für Die Jungfrau)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148268864,"""Il parco"""
+http://data.europeana.eu/proxy/provider/15508/23536,"""Sitzende alte Frau (Studie im Zusammenhang mit Die drei Lebensalter)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148271133,"""Il vecchio Burgtheater di Vienna"""
+http://data.europeana.eu/proxy/provider/15508/23537,"""Bekleidete Schwangere im Profil, das Gesicht dem Betrachter zugewendet (Studie für Die Hoffnung II)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148271180,"""Giuditta II"""
+http://data.europeana.eu/proxy/provider/15508/23538,"""Sitzender Akt mit verdecktem Gesicht (Studie für Die Jungfrau)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148271182,"""Strada nel parco del Castello"""
+http://data.europeana.eu/proxy/provider/15508/23539,"""Stehender Akt mit eingebeugtem Arm (Studie für Die Jungfrau)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148271187,"""Ritratto di Adele Bloch-Bauer"""
+http://data.europeana.eu/proxy/provider/15508/23540,"""Liegende in Rückenansicht""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148273454,"""Il bacio"""
+http://data.europeana.eu/proxy/provider/15508/23541,"""Lesende im Profil""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148273455,"""Ritratto di Sonja Knips"""
+http://data.europeana.eu/proxy/provider/15508/23542,"""Stehende mit herabhängenden Armen  (Studie für das Bildnis Adele Bloch-Bauer II)""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148273501,"""Fritza Riedler"""
+http://data.europeana.eu/proxy/provider/15508/23543,"""Liegender Akt mit erhobenem Bein""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148275813,"""Adamo ed Eva"""
+http://data.europeana.eu/proxy/provider/15508/23544,"""Dame im Profil, mit Hut""@de",,,,,http://data.europeana.eu/proxy/provider/9200369/BibliographicResource_3000148275819,"""Danae"""
+http://data.europeana.eu/proxy/provider/15508/23545,"""Elternpaar mit Baby (Studie für ""Hoffnung II"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23546,"""Sitzender Akt mit verdecktem Gesicht (Studie für Die Braut)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23547,"""Kostümstudie für ""Kirchliche Musik"" im Stadttheater in Fiume""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23643,"""Weiblicher Rückenakt, verzweifelter alter Mann (Studie für die 1. Fassung von Medizin [1901], Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23644,"""Fragment eines sich umarmenden Paares, sitzender männlicher Rückenakt (Studie für Philosophie, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23645,"""Stehende ältere Frau im Profil (Studie für ""Die drei Lebensalter"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23646,"""Sitzender männlicher Rückenakt; Detailskizze von Ringenden (Studien für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23647,"""Schwebende im Profil mit wallendem Haar (Studie für die Ölskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23648,"""Zwei Skelettstudien (Studien für die Übertragungsskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23649,"""Mädchenkopf mit langen Haaren im Halbprofil""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23650r,"""Schwebende im Profil (Studie für die Ölskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23650v,"""Schwebende im Profil (Studie für die Ölskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23651,"""links: Stehender Frauenakt; rechts: Kompositionsstudie (Studien für ""Bewegtes Wasser"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23652r,"""Schwebende mit ausgebreiteten Armen (Studie für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23652v,"""Zwei Studien einer Schwebenden (für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23653r,"""Fünf Studien eines schlafenden Kindes (Studien für die 1. Fassung von Medizin [1901], Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23653v,"""Zwei ringende Männer (Detailstudien für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23654,"""Männlicher Rückenakt mit ausgestrecktem linken Arm (Studie für Philosophie, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23655,"""Kniender Akt einer alten Frau (Studie für Philosophie, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23656,"""Kleines Kind, von zwei Händen gehalten (Figur- und Detailstudien für ""Die Drei Lebensalter"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23657,"""Zwei Ringerpaare (Studie für die Übertragungsskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23658,"""Zwei Studien eines getragenen Kindes (Studien für Die drei Lebensalter)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23659,"""Zwei Studien eines Säuglings (Studien für ""Die drei Lebensalter"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23660,"""Greisenhaupt, sitzender weiblicher Rückenakt, Detail eines weiblichen Oberkörpers (Studien für die 1. Fassung von Medizin [190]), Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23661,"""Männlicher Rückenakt mit ausgebreiteten Armen, Wiederholung von Kopf- und Schulterpartie (Studie für die Ölskizze oder die Übertragungsskizze von Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23662,"""Zwei ringende Männer (Studie für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23664,"""Schwebende mit ausgestrecktem linken Arm (Studie für die 1. Fassung von Medizin [1901], Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23665,"""Schwebende mit erhobenem linken Arm (Studie für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23666,"""Zwei Studien eines getragenen Kindes (Studie für Die drei Lebensalter)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23667,"""Gesicht einer Frau mit an die Wange gelegten Händen (Studie für Jurisprudenz, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23668,"""Nackte Schwangere, Oberkörper eines Greises (Studien für die 1. Fassung von Medizin [1901], Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23669,"""Sitzender männlicher Rückenakt (Studie für die 1903 gezeigte Fassung von Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23670,"""Zwei Ringerpaare, Detailstudie (Studie für die Übertragungsskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23671,"""Schlafendes Kind (Studie für Die drei Lebensalter)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23672,"""Zwei Studien eines stehenden Aktes (Studien für die Ölskizze für Medizin, Deckengemälde der Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23673,"""Ringende Männer (Studie für die Übertragungsskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23674,"""Schwebende mit einem hängenden und einem ausgestreckten Arm  (Studie für die Ölskizze für Medizin, Deckengemälde der Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23675,"""Zwei Studien eines stehenden  Aktes mit ausgestrecktem Arm (Studie für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23676,"""Stehender männlicher Rückenakt (Studie für ""Philosophie"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23677,"""Sitzender männlicher Rückenakt (Studie für ""Medizin""), Elefant, Aesculap""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23678,"""Stehende Frau mit ausgestrecktem Arm (Studie für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23679,"""Schwebender Männerakt in Unteransicht (Früheste Studie für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23680,"""Kniestück eines mit langem Gewand bekleideten Skeletts (Studie für Die Hoffnung I)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23681,"""Aufgestützt sitzender weiblicher Akt, zwei ringende Männer (Studien für ""Medizin"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/23682,"""Mit langem Gewand bekleidetes Skelett (Studie für Die Hoffnung I)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/26428,"""Mädchenkopf nach links""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/26429,"""Weiblicher Kopf im Dreiviertelprofil""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/26751,"""Liegende Mänade (Studie für Altar des Dionysos, Lünette im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27923,"""Kopf eines liegenden Mannes (Studie für Theater in Taormina, Deckenbild im nördlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27924,"""Mann in Dreiviertelansicht (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27925,"""Mann mit Mütze im Profil (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27926,"""Mann mit Bart und Mütze im verlorenen Profil (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27927,"""Liegender junger Mann (Romeo) und Mann im verlorenen Profil (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27928,"""Zwei Skizzen eines Herrn mit Theaterglas (Studien für Zuschauerraum des alten Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27929,"""Knabe im verlorenen Profil (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/27930,"""Liegendes Mädchen (Julia) und zwei Handstudien (Studie für Theater Shakespeares, Deckenbild im südlichen Stiegenhaus des Wiener Burgtheaters)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/GE408DL,"""Silberfische (Nixen, Sirenen)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29545,"""Übertragungsskizze für Medizin, Deckengemälde für die Wiener Universitätsaula""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29731,"""Stehende etwas nach links (Studie für das Bildnis Paula Zuckerkandl)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29732,"""Stehende Dame, die Hand auf einem Sessel ruhend (Studie für das Bildnis Paula Zuckerkandl)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29733,"""Stehende im Mantel (Studie für das Bildnis Paula Zuckerkandl)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29734,"""Stehende mit Umhang (Studie für das Bildnis Margarethe Stonborough-Wittgenstein)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29735,"""Stehende mit ineinandergelegten Händen (Studie für das Bildnis Margarethe Stonborough-Wittgenstein)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29736,"""Stehende mit herabhängenden Armen (Studie für das Bildnis Margarethe Stonborough-Wittgenstein)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29737,"""Gesenkter Männerkopf (Studie für Tod und Leben)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29776,"""Sitzender Halbakt (Studie für Judith II [Salome])""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29840,"""Liegender Halbakt, die Arme hinter dem Kopf verschränkt""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29841,"""Sitzende mit Hand am Kinn (Studie für ein nicht ausgeführtes Bildnis von Magda Mautner von Markhof)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29842,"""Stehende mit leicht nach links gewendetem Kopf (Studie für das Bildnis Margarethe Stonborough-Wittgenstein)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29843,"""Stehendes Liebespaar in Seitenansicht""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29844,"""Stehender Akt einer Schwangeren (Studie für ""Hoffnung II"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29845,"""Zwei stehende Männerakte, der rechte stützt sich auf die Schulter seines Gegenübers""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/29846,"""Männerakt im Profil, mit Last im Nacken""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30213,"""Zwei Liegende (Studie für Wasserschlangen II, 2. Zustand)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30246,"""Stehende im Mantel (Studie für das Bildnis Paula Zuckerkandl)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30247,"""Stehender weiblicher Rückenakt (Studie für ""Die Jungfrau"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30248,"""Frauenkopf von vorne""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30249,"""Sitzende mit ineinandergelegten Händen (Studie für das Bildnis Amalie Zuckerkandl)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30253,"""Brustbild einer Frau""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30443,"""Stehendes Mädchen im Mantel  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30444,"""Stehendes Mädchen, die Hand in die Hüfte gestützt  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30445,"""Sitzendes Mädchen von vorne  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30446,"""Stehendes Mädchen, die Hände ineinandergelegt  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30447,"""Stehendes Mädchen im Mantel, die Hand an der Hüfte (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30448,"""Stehendes Mädchen im Mantel  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30460,"""Liegender Akt""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30569,"""Sitzender Mädchenakt nach links""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30645,"""Stehende (Studie für das Bildnis Eugenia Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/30646,"""Stehende im Dreiviertelprofil (Studie für das Bildnis Eugenia Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/31459,"""Hygieia mit breitem Kopfputz (Studie für die Ölskizze für Medizin, Deckengemälde für die Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/31490,"""Brustbild eines Mädchens""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/31514,"""Stehende mit erhobenem linken Bein, rechts Wiederholung (Studien für Judith II [Salome])""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/32516,"""Brustbild eines kahlköpfigen alten Mannes (Studie für Liebe)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/32860,"""Stehende Tänzerin im Profil, den Kopf nach links gewendet (Studie für Die Tänzerin [Ria Munk II])""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/32944,"""Kopf einer alten Frau von vorne (Studie für ""Tod und Leben"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/32946,"""Liegender Akt""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/32947,"""Damenbrustbild im Dreiveirtelprofil""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/33355,"""Sitzendes Mädchen von der Seite  (Studie für das Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34553,"""Sitzende nach links (Studie für das Bildnis Fritza Riedler)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34554,"""Stehende mit Lehnstuhl (Studie für das Bildnis Rose von Rosthorn-Friedmann)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34555,"""Sitzende  (Studie für das Bildnis Friederike Maria Beer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34556,"""Sitzende Frau mit aufgestütztem Kopf (Studie für die Ölskizze für Philosophie, Deckengemälde der Wiener Universitätsaula)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34557,"""Zwei Männerköpfe im verlorenen Profil (Studien für Der Kuss)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34667,"""Halbbildnis einer Frau en face  (Studie für das Bildnis Johanna Staude)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/34933,"""Im Lehnstuhl sitzende Frau (Studie für das Bildnis Sonja Knips)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35165,"""Junge Frau im Straßenkleid""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35166,"""Stehende von vorne, mit herabhängenden Armen (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35167,"""Stehende mit Stuhl (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35168,"""Stehende von vorne, mit an die Taille gelegten Händen (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35169,"""Etwas nach Links Stehende, mit gebeugtem rechten Arm (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35170,"""Etwas nach links Stehende mit herabhängenden Armen  (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35171,"""Nach links Stehende mit erhobener rechter Hand (Studie für das Bildnis Serena Lederer)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35172,"""Etwas nach links Stehende mit herabhängenden Armen
+Studie für das Bildnis Serena Lederer""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35173,"""Stehende von vorne, mit herabhängenden Armen
+Studie für das Bildnis Serena Lederer""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35174,"""Stehende von vorne, mit erhobener linker Hand
+Studie für das Bildnis Serena Lederer""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35288,"""Kompositionsentwurf für Die Reiche der Natur""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35682,"""Reinzeichnung für Initiale G""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/35683,"""Reinzeichnung eines Männerkopfes im Profil""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/36058,"""Bildnis einer Dame mit Cape und Hut""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/36059,"""Thaleia und Melpomene (Thalia und Melpomene)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/36561,"""Brustbild eines Kindes
+Studie für Liebe""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/36633,"""Liegende mit erhobenem rechten Bein""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/36866,"""Liegender Akt""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/37133,"""Fliegender Dreifuß
+Illustration für Ver Sacrum""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/37634,"""Sitzende mit aufgestütztem Kinn. Studie für das Bildnis der Friederike Maria Beer""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/38348,"""Studie zum Bildnis Adele Bloch-Bauer (sitzend im ausgebreiteten Gewand)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39012,"""Liegende
+Studie für Wasserschlangen II, 1. Zustand""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39038,"""Stehende Schwangere im Profil, mit Wiederholung der Figur
+Studie für Die Hoffnung I""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39046,"""Dame mit Federhut""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39058,"""Zwei stehende Mädchen, mit Blättern in den Händen
+Studie für Schubert am Klavier""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39315,"""Die drei Gorgonen
+Zwei Kompositionsskizzen für den Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39316,"""Stehender weiblicher Akt
+Studie für ""Die drei Gorgonen"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39317,"""Stehender weiblicher Akt mit erhobenem rechten Bein
+Studien für ""Die drei Gorgonen"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39318,"""Stehende bekleidete Frau im Profil
+Studie für ""Die Poesie"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39319,"""Zwei Kauernde, zwei Sitzende
+Studien für ""Die Leiden der schwachen Menschheit"" und ""Nagender Kummer"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39320,"""Zwei Studien einer liegenden Gewandfigur 
+Studien für ""Die Sehnsucht nach Glück"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39321,"""Kniender Männerakt mit ausgestreckten Armen
+Studie für ""Die Leiden der Schwachen Menschheit"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39322,"""Frau mit gefalteten Händen
+Studien für ""Mitleid"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39323,"""Weibliches Bildnis im Dreiviertelprofil 
+Studie für ""Unkeuschheit"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39324,"""Stehender weiblicher Akt
+Studie für ""Die drei Gorgonen"", Beethovenfries""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39325,"""Sich umarmendes Paar (Studie für ""Diesen Kuss der ganzen Welt"", Beethovenfries)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/39941,"""Tänzerin mit abgewinkeltem Arm (Studie für ""Erwartung"", Stocletfries)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/41027,"""Brustbild einer Frau""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/41831r,"""Studie für das Bildnis Friederike Beer-Monti (stehend, von vorne)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/41831v,"""Studie für das Bildnis Friederike Beer-Monti""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/45489,"""Sitzende in einem gefalteten Kleid""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/46258,"""Vorzeichnung für die Allegorie der Skulptur für den Prachtband für Erzherzog Rainer anlässlich des 25-jährigen Jubiläums der Wiener Kunstgewerbeschule""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DG1994_152,"""I. KUNSTAUSSTELLUNG DER VEREINIGUNG BILDENDER KÜNSTLER ÖSTERREICHS. SECESSION (vor der Zensur)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DG2003_3810,"""VER SACRUM; ILLUSTR. KUNSTZEITSCHRIFT DER VEREINIGUNG BILDENDER KUENSTLER ÖSTERREICHS""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DG2003_534,"""GUSTAV KLIMT; SECESSION; XVIII. AUSSTELLUNG""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DG2003_535,"""I. KUNSTAUSSTELLUNG DER VEREINIGUNG BILDENDER KÜNSTLER ÖSTERREICHS. SECESSION (nach der Zensur)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DG2004_8585,"""I. KUNSTAUSSTELLUNG; SECESSION""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL391,"""Stehendes Liebespaar""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL392,"""Erwachendes, sich rekelndes Mädchen (Studie zu ""Die Jungfrau"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL560,"""Sitzender Mann nach links (Studie für ""Schubert am Klavier I"", Musiksalon des Palais Dumba)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL561,"""Intiale D
+Illustration für Ver Sacrum""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL562,"""Studie zum Bildnis Fritza Riedler""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL563,"""Studie für die ""Tänzerin"" (""Die Erwartung"", Stoclet-Fries)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL564,"""Studie zum Bildnis Paula Zuckerkandl""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL565,"""Damenbrustbild nach rechts""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL566,"""Bildnis einer Dame mit umgelegtem Pelz
+Studie für Die Freundinnen""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL567,"""Stehende mit geneigtem Kopf 
+Studie für die 1. Fassung von Medizin (1901), Deckengemälde für die Wiener Universitätsaula""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL568,"""Zwei Aktstudien einer Tänzerin""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL569,"""Stehende im Rüschenkleid
+Studie für ein nicht ausgeführtes Bildnis von Magda Mautner-Markhof""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL570,"""Stehende in gemustertem Gewand""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL571,"""Weibliches Brustbild""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL572,"""Sitzende im Lehnstuhl nach links
+Studie für das Bildnis Paula Zuckerkandl, 1912""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL573,"""Stehende nach links
+Studie für das Bildnis Paula Zuckerkandl, 1912""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL574,"""Stehende mit Umhang
+Studie für das Bildnis Paula Zuckerkandl""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL575,"""Stehende von vorne, mit ausgestreckten Fingern der rechten Hand
+Studie für das Bildnis Paula Zuckerkandl""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL576,"""Sitzende in Dreiviertelansicht
+Studie für das Bildnis Amalie Zuckerkandl""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL577,"""Sitzende mit überschlagenem Bein
+Studie für das Bildnis Amalie Zuckerkandl""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL578,"""Stehende in kurzer Jacke
+Studie für das Bildnis Maria Beer-Monti""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL589,"""Zwei nach rechts Schreitende""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL593,"""Sitzende Dame (Studie zum Bildnis Hermine Gallia)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL594,"""Schlafender Halbakt, den linken Arm über den Kopf gelegt""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL595,"""Mutter mit Baby (Studie in Zusammenhang mit dem Baby im Gemälde ""Die Braut"" und mit dem Gemälde ""Baby"")""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL596,"""Brustbild einer Dame im Profil nach links""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL597,"""Im Fauteuil schlummernde junge Frau""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL598,"""Brustbild eines sitzenden Mädchens nach rechts""@de",,,,,,
+http://data.europeana.eu/proxy/provider/15508/DL599,"""Sitzendes Mädchen nach rechts (Studie zum Bildnis Mäda Primavesi)""@de",,,,,,
+http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103,"""Werkbundausstellung""@de",,,,,,

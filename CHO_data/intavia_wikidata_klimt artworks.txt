@@ -1,0 +1,79 @@
+surname	firstname	oeblid	person	personLabel	aw	awLabel	instance	instanceLabel	location	inception	mainsubject	mainsubjectLabel	depicts	depictsLabel	madefrom	height	width	owner	VIAFid	description	parts	image	significantevent
+
+
+
+
+SELECT ?aw ?instance ?instanceLabel
+where {
+    wd:Q34661 wdt:P800 ?aw .
+    OPTIONAL { ?aw wdt:P31 ?instance } 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl" }
+}
+LIMIT 10
+
+
+
+
+SELECT distinct ?title ?aw ?instance ?location ?inception ?creator ?mainsubject ?mainsubjectLabel ?depicts ?depictsLabel ?madefrom ?height ?width
+where {
+    wd:Q34661 wdt:P800 ?aw .
+    OPTIONAL { ?aw wdt:P31 ?instance }
+    OPTIONAL { ?aw wdt:P276 ?location }
+    OPTIONAL { ?aw wdt:P571 ?inception }
+#    OPTIONAL { ?aw wdt:P170 ?creator}
+    OPTIONAL { ?aw wdt:P921 ?mainsubject }
+    OPTIONAL { ?aw wdt:P180 ?depicts }
+    OPTIONAL { ?aw wdt:P186 ?madefrom }
+    OPTIONAL { ?aw wdt:P2048 ?height }
+    OPTIONAL { ?aw wdt:P2049 ?width }    
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+
+
+
+SELECT distinct ?creator ?creatorLabel ?aw ?awLabel ?instance ?instanceLabel ?location ?inception ?mainsubject ?mainsubjectLabel ?depicts ?depictsLabel ?madefrom ?height ?width ?owner ?VIAFid ?description ?parts
+where {
+    wd:Q34661 wdt:P800 ?aw .
+    OPTIONAL { ?aw wdt:P31 ?instance }
+    OPTIONAL { ?aw wdt:P276 ?location }
+    OPTIONAL { ?aw wdt:P571 ?inception }
+    OPTIONAL { ?aw wdt:P170 ?creator}
+    OPTIONAL { ?aw wdt:P921 ?mainsubject }
+    OPTIONAL { ?aw wdt:P180 ?depicts }
+    OPTIONAL { ?aw wdt:P186 ?madefrom }
+    OPTIONAL { ?aw wdt:P2048 ?height }
+    OPTIONAL { ?aw wdt:P2049 ?width }  
+    OPTIONAL { ?aw wdt:P127 ?owner }  
+    OPTIONAL { ?aw wdt:P214 ?VIAFid }  
+    OPTIONAL { ?aw schema:despriction ?description }  
+    OPTIONAL { ?aw wdt:527 ?parts }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+
+
+
+#SELECT distinct ?creator ?creatorLabel ?aw ?awLabel ?instance ?instanceLabel ?location ?inception ?mainsubject ?mainsubjectLabel ?depicts ?depictsLabel ?madefrom ?height ?width ?owner ?VIAFid ?description ?parts ?image ?significantevent
+SELECT distinct ?aw ?awLabel ?instance ?instanceLabel ?location ?inception ?mainsubject ?mainsubjectLabel ?depicts ?depictsLabel ?madefrom ?height ?width ?owner ?VIAFid ?description ?parts ?image ?significantevent
+where {
+    wd:Q34661 wdt:P800 ?aw .
+    OPTIONAL { ?aw wdt:P31 ?instance }
+    OPTIONAL { ?aw wdt:P276 ?location }
+    OPTIONAL { ?aw wdt:P571 ?inception }
+    #OPTIONAL { ?aw wdt:P170 ?creator}
+    OPTIONAL { ?aw wdt:P921 ?mainsubject }
+    OPTIONAL { ?aw wdt:P180 ?depicts }
+    OPTIONAL { ?aw wdt:P186 ?madefrom }
+    OPTIONAL { ?aw wdt:P2048 ?height }
+    OPTIONAL { ?aw wdt:P2049 ?width }  
+    OPTIONAL { ?aw wdt:P127 ?owner }  
+    OPTIONAL { ?aw wdt:P214 ?VIAFid }  
+    OPTIONAL { ?aw schema:despriction ?description }  
+    OPTIONAL { ?aw wdt:527 ?parts }
+    OPTIONAL { ?aw wdt:P18 ?image }
+    OPTIONAL { ?aw wdt:P793 ?significantevent }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+
+
+
+

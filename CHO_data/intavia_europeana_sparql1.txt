@@ -1,0 +1,51 @@
+select DISTINCT ?creator ?providedcho ?title ?coverage ?creation ?description ?relation ?subject ?type ?view ?dprov
+WHERE
+{
+{?providedcho dc:creator "Gustav Klimt"@de.}
+UNION
+{?providedcho dc:creator "Klimt, Gustav"@en.}
+UNION
+{?providedcho dc:creator "Klimt, Gustav". }
+UNION
+{?providedcho dc:creator "Gustav Klimt". }
+{?providedcho dc:creator ?creator}
+OPTIONAL
+{
+?providedcho dc:title ?title.
+}
+OPTIONAL
+{
+?providedcho dc:coverage ?coverage.
+}
+OPTIONAL
+{
+?providedcho dc:creation ?creation.
+}
+OPTIONAL
+{
+?providedcho dc:description ?description.
+}
+OPTIONAL
+{
+?providedcho dc:relation ?relation.
+}
+OPTIONAL
+{
+?providedcho dc:subject ?subject.
+}
+OPTIONAL
+{
+?providedcho dc:type ?type.
+}
+OPTIONAL
+{
+?providedcho edm:hasView ?view.
+}
+OPTIONAL
+{
+?providedcho edm:dataProvider ?dprov.
+}
+}
+LIMIT 300
+
+
