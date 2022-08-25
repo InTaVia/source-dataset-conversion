@@ -51,47 +51,65 @@ bf = Namespace('http://id.loc.gov/ontologies/bibframe/')
 geo = Namespace("http://www.opengis.net/ont/geosparql#")
 
 
-async def render_person_relation(pers_uri, rel, g):
-    #connect personproxy and institutions with grouprelationship
+async def render_personinstitution_relation(pers_uri, rel, g):
+    # connect personproxy and institutions with grouprelationship
     n_rel_type = URIRef(f"{idmapis}grouprelation/{rel['relation_type']['id']}")
     g.add((pers_uri, bioc.has_group_relation, n_rel_type))
     # Person has a specific group relation
-    g.add((n_rel_type, RDF.type, URIRef(idmrelations+rel['relation_type']['id'])))
-    #define type of grouprelation
+    g.add((n_rel_type, RDF.type, URIRef(
+        f"{idmrelations}/{rel['relation_type']['id']}")))
+    # define type of grouprelation
     if rel['relation_type']['parent_id'] is not None:
         # if the relationtype has a superclass, it is added here
-        g.add((URIRef(idmrelations+rel['relation_type']['id']), rdfs.subClassOf, URIRef(idmrelations+relationtype_parentid)))
+        g.add((URIRef(f"{idmrelations}/{rel['relation_type']['id']}"),
+              rdfs.subClassOf, URIRef(f"{idmrelations}{rel['relation_type']['parent_id']}")))
     g.add((n_rel_type, rdfs.label, Literal(rel['relation_type']['label'])))
     # add label to relationtype
-    g.add((n_rel_type, bioc.inheres_in, URIRef(idmapis+'groupproxy/'+rel['related_institution']['id'])))
-    #group which is part of this relation
-    g.add((URIRef(idmapis+'career/'+rel['id']), RDF.type, idmcore.Career))
+    g.add((n_rel_type, bioc.inheres_in, URIRef(
+        f"{idmapis}groupproxy/{rel['related_institution']['id']}")))
+    # group which is part of this relation
+    g.add((URIRef(f"{idmapis}career/{rel['id']}"), RDF.type, idmcore.Career))
     # add career event of type idmcore:career
     g.add((idmcore.Career, rdfs.subClassOf, crm.E5_Event,))
-    g.add((URIRef(idmapis+'career/'+rel['id']), rdfs.label, Literal(f"{rel['related_person']['label']} {rel['relation_type']['label']} {rel['related_institution']['label']}")))
+    g.add((URIRef(f"{idmapis}career/{rel['id']}"), rdfs.label, Literal(
+        f"{rel['related_person']['label']} {rel['relation_type']['label']} {rel['related_institution']['label']}")))
     # label for career event
-    g.add((URIRef(idmapis+'career/'+rel['id']), bioc.had_participant_in_role, URIRef(idmapis+'personrole/'+rel['id']+'/'+rel['related_person']['id'])))
+    g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
+        f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
     # role of participating person in the career event
-    g.add((URIRef(idmapis+'personrole/'+rel['id']+'/'+rel['related_person']['id']), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}")))
+    g.add((URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}"),
+          bioc.inheres_in, URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}")))
     # person which inheres this role
-    g.add((URIRef(idmapis+'career/'+rel['id']), bioc.had_participant_in_role, URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id'])))
+    g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
+        f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}")))
     # role of institution/ group in the career event
-    g.add((URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id']), RDF.type, bioc.Group_Relationship_Role))
-    g.add((URIRef(idmapis+'grouprole/'+rel['id']+'/'+rel['related_institution']['id']), bioc.inheres_in, URIRef(idmapis+'groupproxy/'+rel['related_institution']['id'])))
+    g.add((URIRef(
+        f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}"), RDF.type, bioc.Group_Relationship_Role))
+    g.add((URIRef(f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}"),
+          bioc.inheres_in, URIRef(f"{idmapis}groupproxy/{rel['related_institution']['id']}")))
     # role which inheres the institution/ group
-    g.add((URIRef(idmapis+'career/'+rel['id']), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+'career/timespan/'+rel['id'])))
-    print (f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
-    if (rel['start_date'] != 'None') and (rel['end_date'] != 'None'):
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82a_begin_of_the_begin, (Literal(rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82b_end_of_the_end, (Literal(rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal(rel['start_date_written'])+' - '+ rel['end_date_written']))
-    elif ((rel['start_date'] != 'None') and (rel['end_date']=='None')):
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82a_begin_of_the_begin, (Literal(rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal(rel['start_date_written'])))
-    elif ((rel['start_date'] == 'None') and (rel['end_date']!='None')):
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), crm.P82b_end_of_the_end, (Literal(rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
-        g.add((URIRef(idmapis+'career/timespan/'+rel['id']), rdfs.label, Literal('time-span end:' + rel['end_date_written'])))
+    g.add((URIRef(f"{idmapis}career/{rel['id']}"), URIRef(
+        f"{crm}P4_has_time-span"), URIRef(f"{idmapis}career/timespan/{rel['id']}")))
+    logging.info(
+        f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
+    if (rel['start_date'] is not None) and (rel['end_date'] is not None):
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82a_begin_of_the_begin, (Literal(
+            rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82b_end_of_the_end, (Literal(
+            rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), rdfs.label, Literal(
+            rel['start_date_written'])+' - ' + rel['end_date_written']))
+    elif ((rel['start_date'] is not None) and (rel['end_date'] is not None)):
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82a_begin_of_the_begin, (Literal(
+            rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
+        g.add((URIRef(
+            f"{idmapis}career/timespan/{rel['id']}"), rdfs.label, Literal(rel['start_date_written'])))
+    elif ((rel['start_date']is not None) and (rel['end_date'] is not None)):
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82b_end_of_the_end, (Literal(
+            rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
+        g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), rdfs.label, Literal('time-span end:' + rel['end_date_written'])))
     return g
+
 
 async def render_person(person, g):
     """renders person object as RDF graph
@@ -100,23 +118,25 @@ async def render_person(person, g):
         person (_type_): _description_
         g (_type_): _description_
     """
-    if (URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), None, None) in g:
+    pers_uri = URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}")
+    if (pers_uri, None, None) in g:
         return g
-    g.add((URIRef(
-        f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), RDF.type, crm.E21_Person))
-    g.add((URIRef(
-        f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), RDF.type, idmcore.Person_Proxy))
-    g.add((URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), RDFS.label, Literal(
+    g.add((pers_uri, RDF.type, crm.E21_Person))
+    g.add((pers_uri, RDF.type, idmcore.Person_Proxy))
+    g.add((pers_uri, RDFS.label, Literal(
         f"{person['first_name']} {person['name']}")))
-    #define that individual in APIS named graph and APIS entity are the same
-    g.add((URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), owl.sameAs, URIRef(person['url'].split("?")[0])))
-    #add sameAs
+    # define that individual in APIS named graph and APIS entity are the same
+    g.add((pers_uri, owl.sameAs, URIRef(person['url'].split("?")[0])))
+    # add sameAs
     for uri in person['sameAs']:
-        g.add((URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}"), owl.sameAs, URIRef(uri))) 
-    person_rel = await get_person_relations(person['id'])
+        g.add((pers_uri, owl.sameAs, URIRef(uri)))
+    person_rel = await get_person_relations(person['id'], kinds=['personinstitution'])
     tasks = []
-    for rel in person_rel:
-        tasks.append(asyncio.create_task(render_person_relation(rel, g)))
+    for rel_type, rel_list in person_rel.items():
+        if rel_type == 'personinstitution':
+            for rel in rel_list:
+                tasks.append(asyncio.create_task(
+                    render_personinstitution_relation(pers_uri, rel, g)))
     await asyncio.gather(*tasks)
     return g
 
@@ -168,7 +188,7 @@ async def get_persons(filter_params, g):
         for person in res["results"]:
             tasks.append(asyncio.create_task(render_person(person, g)))
         if "offset" in res:
-            if int(res["offset"]) > 500:
+            if int(res["offset"]) > 10:
                 break
         if "next" in res:
             res = requests.get(res["next"]).json()
@@ -201,12 +221,22 @@ async def get_place(place_id):
     """
 
 
-async def get_person_relations(person_id):
+async def get_person_relations(person_id, kinds=["personplace", "personinstitution", "personevent", "personwork"]):
     """gets person relations from API
 
     Args:
         person_id (_type_): _description_
     """
+    res_full = {}   # TODO: add looping through pagination
+    query_params = {"related_person": person_id}
+    for kind in kinds:
+        res = requests.get(f"{BASE_URL_API}/relations/{kind}/", params=query_params)
+        if res.status_code != 200:
+            logging.error(f"Error getting {kind} for person {person_id}")
+            continue
+        res = res.json()
+        res_full[kind] = res["results"]
+    return res_full
 
 
 async def get_organization_relations(organization_id):
