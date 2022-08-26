@@ -1,4 +1,5 @@
 import asyncio
+from copy import deepcopy
 import re
 import requests
 import plac
@@ -51,6 +52,49 @@ bf = Namespace('http://id.loc.gov/ontologies/bibframe/')
 """Defines bibframe namespace."""
 geo = Namespace("http://www.opengis.net/ont/geosparql#")
 
+async def render_personplace_relation(pers_uri, rel, g):
+    """renders personplace relation as RDF graph
+
+    Args:
+        pers_uri (_type_): _description_
+        rel (_type_): _description_
+        g (_type_): _description_
+    """
+    #prepare nodes
+    place_uri = URIRef(f"{idmapis}place/{rel['related_place']['id']}")
+    if rel['relation_type']['id'] == 595:
+        #define serialization for "person born in place relations"
+        if (place_uri, None, None) not in g:
+            await render_place(rel['related_place']['id'], g)
+        g.add((URIRef(f"{idmapis}birthevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
+
+
+async def render_personperson_relation(pers_uri, rel, g):
+    """renders personperson relation as RDF graph
+
+    Args:
+        pers_uri (_type_): _description_
+        rel (_type_): _description_
+        g (_type_): _description_
+    """
+    #prepare nodes
+    n_rel_type = URIRef(f"{idmapis}personrelation/{rel['id']}")
+    n_relationtype = URIRef(f"{idmrelations}{rel['relation_type']['id']}")
+    g.add((pers_uri, bioc.has_person_relation, n_rel_type))
+    g.add((n_rel_type, RDF.type, n_relationtype))
+    g.add((n_rel_type, RDFS.label, Literal(f"{rel['relation_type']['label']}")))
+    g.add((n_relationtype, RDFS.subClassOf, bioc.Person_Relationship_Role))
+    g.add((URIRef(f"{idmapis}personproxy/{rel['related_personB']['id']}"), bioc.inheres_in, n_rel_type)) #TODO: add check if person already in triplestore
+    #TODO: add hiarachy of person relations
+    if rel['relation_type'] is not None:
+        if rel['relation_type']['label'] != "undefined":
+            if rel['relation_type']['parent_id'] is not None:
+                g.add((n_relationtype, RDFS.subClassOf, URIRef(f"{idmrelations}{rel['relation_type']['parent_id']}")))  
+                g.add((URIRef(f"{idmrelations}{rel['relation_type']['parent_id']}"), RDFS.subClassOf, URIRef(bioc.Group_Relationship_Role)))
+    logging.info(f" personpersonrelation serialized for: {rel['related_personA']['id']}")
+    #return g
+    #group which is part of this relation
+    return g
 
 async def render_personinstitution_relation(pers_uri, rel, g):
     # connect personproxy and institutions with grouprelationship
@@ -133,13 +177,21 @@ async def render_person(person, g):
     # add sameAs
     for uri in person['sameAs']:
         g.add((pers_uri, owl.sameAs, URIRef(uri)))
-    person_rel = await get_person_relations(person['id'], kinds=['personinstitution'])
+    person_rel = await get_person_relations(person['id'], kinds=['personinstitution', 'personperson', 'personplace'])
     tasks = []
     for rel_type, rel_list in person_rel.items():
         if rel_type == 'personinstitution':
             for rel in rel_list:
                 tasks.append(asyncio.create_task(
                     render_personinstitution_relation(pers_uri, rel, g)))
+        elif rel_type == 'personperson':
+            for rel in rel_list:
+                tasks.append(asyncio.create_task(
+                    render_personperson_relation(pers_uri, rel, g)))
+        elif rel_type == 'personplace':
+            for rel in rel_list:
+                tasks.append(asyncio.create_task(
+                    render_personplace_relation(pers_uri, rel, g)))
     await asyncio.gather(*tasks)
     return g
 
@@ -165,36 +217,38 @@ async def render_organization(organization, g):
     g.add((appelation_org, rdfs.label, Literal(res['name'])))
     g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
     #add group appellation and define it as linguistic appellation
-    if len(res['start_date_written']) > 0:
-        start_date_node = URIRef(f"{idmapis}groupstart/{organization}")
-        start_date_time_span = URIRef(f"{idmapis}groupstart/timespan/{organization}")
-        #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
-        g.add((start_date_node, RDF.type, crm.E63_Beginning_of_Existence))
-        g.add((start_date_node, crm.P92_brought_into_existence, node_org))
-        g.add((start_date_node, URIRef(crm + "P4_has_time-span"), start_date_time_span))
-        g.add((start_date_time_span, rdfs.label, Literal(res['start_date_written'])))
-        if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
-            #check whether only a year has bin given for the start date and add according nodes
-            g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_start_date']}T00:00:00", datatype=XSD.dateTime))))
-            g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_end_date']}T23:59:59", datatype=XSD.dateTime))))
-        else:
-            g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_date']}T00:00:00", datatype=XSD.dateTime))))
-            g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_date']}T23:59:59", datatype=XSD.dateTime))))
-    if len(res['end_date_written']) > 0:
-        end_date_node = URIRef(f"{idmapis}groupend/{organization}")
-        end_date_time_span = URIRef(f"{idmapis}groupend/timespan/{organization}")
-        #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
-        g.add((end_date_node, RDF.type, crm.E64_End_of_Existence))
-        g.add((end_date_node, crm.P93_took_out_of_existence, node_org))
-        g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
-        g.add((end_date_time_span, rdfs.label, Literal(res['end_date_written'])))
-        if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
-            #check whether only a year has bin given for the start date and add according nodes
-            g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_start_date']}T00:00:00", datatype=XSD.dateTime))))
-            g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_end_date']}T23:59:59", datatype=XSD.dateTime))))
-        else:
-            g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_date']}T00:00:00", datatype=XSD.dateTime))))
-            g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_date']}T23:59:59", datatype=XSD.dateTime))))
+    if res["start_date_written"] is not None:
+        if len(res['start_date_written']) >= 4:
+            start_date_node = URIRef(f"{idmapis}groupstart/{organization}")
+            start_date_time_span = URIRef(f"{idmapis}groupstart/timespan/{organization}")
+            #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+            g.add((start_date_node, RDF.type, crm.E63_Beginning_of_Existence))
+            g.add((start_date_node, crm.P92_brought_into_existence, node_org))
+            g.add((start_date_node, URIRef(crm + "P4_has_time-span"), start_date_time_span))
+            g.add((start_date_time_span, rdfs.label, Literal(res['start_date_written'])))
+            if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
+                #check whether only a year has bin given for the start date and add according nodes
+                g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_start_date']}T00:00:00", datatype=XSD.dateTime))))
+                g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_end_date']}T23:59:59", datatype=XSD.dateTime))))
+            else:
+                g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_date']}T00:00:00", datatype=XSD.dateTime))))
+                g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_date']}T23:59:59", datatype=XSD.dateTime))))
+    if res["end_date_written"] is not None: 
+        if len(res['end_date_written']) >= 4:
+            end_date_node = URIRef(f"{idmapis}groupend/{organization}")
+            end_date_time_span = URIRef(f"{idmapis}groupend/timespan/{organization}")
+            #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+            g.add((end_date_node, RDF.type, crm.E64_End_of_Existence))
+            g.add((end_date_node, crm.P93_took_out_of_existence, node_org))
+            g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
+            g.add((end_date_time_span, rdfs.label, Literal(res['end_date_written'])))
+            if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
+                #check whether only a year has bin given for the start date and add according nodes
+                g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_start_date']}T00:00:00", datatype=XSD.dateTime))))
+                g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_end_date']}T23:59:59", datatype=XSD.dateTime))))
+            else:
+                g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_date']}T00:00:00", datatype=XSD.dateTime))))
+                g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_date']}T23:59:59", datatype=XSD.dateTime))))
     return g
 
 async def render_event(event, g):
@@ -213,7 +267,37 @@ async def render_place(place, g):
         place (_type_): _description_
         g (_type_): _description_
     """
+    res = await get_entity(place, 'place')
+    # setup basic nodes
+    node_place = URIRef(f"{idmapis}place/{res['id']}")
+    node_appelation = URIRef(f"{idmapis}placeappellation/{res['id']}")
+    node_plc_identifier = URIRef(f"{idmapis}placeidentifier/{res['id']}")
 
+    g.add((node_place, RDF.type, crm.E53_Place))
+    #define place as Cidoc E53 Place
+    g.add((node_place, crm.P1_is_identified_by, node_appelation))
+    #add appellation to place
+    g.add((node_appelation, RDF.type, crm.E33_E41_Linguistic_Appellation))
+    #define appellation as linguistic appellation 
+    g.add((node_appelation, RDFS.label, Literal(res['name'])))
+    #add label to appellation
+    for uri in res['sameAs']:
+        g.add((node_place, owl.sameAs, URIRef(uri)))
+    g.add((node_place, crm.P1_is_identified_by, URIRef(f"{idmapis}placeidentifier/{res['id']}")))
+    #add APIS Identifier as Identifier
+    g.add((node_plc_identifier, RDF.type, crm.E_42_Identifier))
+    #define APIS Identifier as E42 Identifier (could add a class APIS-Identifier or model a Identifier Assignment Event)
+    g.add((node_plc_identifier, RDFS.label, Literal(res['id'])))
+    #add label to APIS Identifier
+    #define that individual in APIS named graph and APIS entity are the same
+    if res['lat'] is not None and res['lng'] is not None:
+        node_spaceprimitive = URIRef(f"{idmapis}spaceprimitive/{res['id']}")
+        g.add((node_place, crm.P168_place_is_defined_by, node_spaceprimitive))
+        g.add((node_spaceprimitive, rdf.type, crm.E94_Space_Primitive))
+        g.add((node_spaceprimitive, crm.P168_place_is_defined_by, Literal((f"POINT {res['lat']} {res['lng']})"), datatype=geo.wktLiteral)))
+        #define that individual in APIS named graph and APIS entity are the same
+    # suggestion for serialization of space primitives according to ISO 6709, to be discussed
+    # more place details will be added (references, source, place start date, place end date, relations to other places(?))
 
 async def get_persons(filter_params, g):
     """gets persons from API
@@ -235,7 +319,7 @@ async def get_persons(filter_params, g):
         for person in res["results"]:
             tasks.append(asyncio.create_task(render_person(person, g)))
         if "offset" in res:
-            if int(res["offset"]) > 10:
+            if int(res["offset"]) > 20:
                 break
         if "next" in res:
             res = requests.get(res["next"]).json()
@@ -251,7 +335,7 @@ async def get_entity(entity_id, entity_type):
         organization_id (_type_): _description_
     """
     params = {"format": "json", "include_relations": "false"}
-    res = requests.get(f"{BASE_URL_API}/entities/{entity_type}/{entity_id}", params=params)
+    res = requests.get(f"{BASE_URL_API}/entities/{entity_type}/{entity_id}/", params=params)
     if res.status_code != 200:
         logging.warn(f"Error getting {entity_type}: {res.status_code} / {res.text}")
     else:
@@ -264,10 +348,17 @@ async def get_person_relations(person_id, kinds=["personplace", "personinstituti
     Args:
         person_id (_type_): _description_
     """
-    res_full = {}   # TODO: add looping through pagination
+    res_full = {}
+
     query_params = {"related_person": person_id}
     for kind in kinds:
-        res = requests.get(f"{BASE_URL_API}/relations/{kind}/", params=query_params)
+        if kind == "personperson":
+            query_params_pp = deepcopy(query_params)
+            del query_params_pp["related_person"]
+            query_params_pp["related_personA"] = person_id
+            res = requests.get(f"{BASE_URL_API}/relations/{kind}/", params=query_params_pp)
+        else:
+            res = requests.get(f"{BASE_URL_API}/relations/{kind}/", params=query_params)
         if res.status_code != 200:
             logging.error(f"Error getting {kind} for person {person_id}")
             continue
