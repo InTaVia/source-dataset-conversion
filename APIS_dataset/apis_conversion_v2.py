@@ -1,4 +1,5 @@
 import asyncio
+import re
 import requests
 import plac
 from rdflib import Graph, Literal, RDF, Namespace, URIRef
@@ -88,6 +89,8 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     g.add((URIRef(f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}"),
           bioc.inheres_in, URIRef(f"{idmapis}groupproxy/{rel['related_institution']['id']}")))
     # role which inheres the institution/ group
+    if (URIRef(f"{idmapis}groupproxy/{rel['related_institution']['id']}"), None, None) not in g:
+        await render_organization(rel['related_institution']['id'], g)
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), URIRef(
         f"{crm}P4_has_time-span"), URIRef(f"{idmapis}career/timespan/{rel['id']}")))
     logging.info(
@@ -148,7 +151,51 @@ async def render_organization(organization, g):
         organization (_type_): _description_
         g (_type_): _description_
     """
-
+    res = await get_entity(organization, "institution")
+    # setup basic nodes
+    node_org = URIRef(f"{BASE_URI_SERIALIZATION}groupproxy/{organization}")
+    appelation_org = URIRef(f"{idmapis}groupappellation/{organization}")
+    #connect Group Proxy and person in named graphbgn:BioDes
+    g.add((node_org, RDF.type, crm.E74_Group))
+    #defines group class
+    for uri in res['sameAs']:
+        g.add((node_org, owl.sameAs, URIRef(uri)))
+    #defines group as the same group in the APIS dataset
+    g.add((node_org, crm.P1_is_identified_by, appelation_org))
+    g.add((appelation_org, rdfs.label, Literal(res['name'])))
+    g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
+    #add group appellation and define it as linguistic appellation
+    if len(res['start_date_written']) > 0:
+        start_date_node = URIRef(f"{idmapis}groupstart/{organization}")
+        start_date_time_span = URIRef(f"{idmapis}groupstart/timespan/{organization}")
+        #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+        g.add((start_date_node, RDF.type, crm.E63_Beginning_of_Existence))
+        g.add((start_date_node, crm.P92_brought_into_existence, node_org))
+        g.add((start_date_node, URIRef(crm + "P4_has_time-span"), start_date_time_span))
+        g.add((start_date_time_span, rdfs.label, Literal(res['start_date_written'])))
+        if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
+            #check whether only a year has bin given for the start date and add according nodes
+            g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_start_date']}T00:00:00", datatype=XSD.dateTime))))
+            g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_end_date']}T23:59:59", datatype=XSD.dateTime))))
+        else:
+            g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['start_date']}T00:00:00", datatype=XSD.dateTime))))
+            g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['start_date']}T23:59:59", datatype=XSD.dateTime))))
+    if len(res['end_date_written']) > 0:
+        end_date_node = URIRef(f"{idmapis}groupend/{organization}")
+        end_date_time_span = URIRef(f"{idmapis}groupend/timespan/{organization}")
+        #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+        g.add((end_date_node, RDF.type, crm.E64_End_of_Existence))
+        g.add((end_date_node, crm.P93_took_out_of_existence, node_org))
+        g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
+        g.add((end_date_time_span, rdfs.label, Literal(res['end_date_written'])))
+        if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
+            #check whether only a year has bin given for the start date and add according nodes
+            g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_start_date']}T00:00:00", datatype=XSD.dateTime))))
+            g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_end_date']}T23:59:59", datatype=XSD.dateTime))))
+        else:
+            g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(f"{res['end_date']}T00:00:00", datatype=XSD.dateTime))))
+            g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(f"{res['end_date']}T23:59:59", datatype=XSD.dateTime))))
+    return g
 
 async def render_event(event, g):
     """renders event object as RDF graph
@@ -180,7 +227,7 @@ async def get_persons(filter_params, g):
         filter_params["format"] = "json"
     res = requests.get(BASE_URL_API + "/entities/person", params=filter_params)
     if res.status_code != 200:
-        raise Exception("Error getting persons")
+        logging.warn(f"Error getting persons: {res.status_code} / {res.text}")
     res = res.json()
     tasks = []
     while res:
@@ -197,28 +244,18 @@ async def get_persons(filter_params, g):
     await asyncio.gather(*tasks)
 
 
-async def get_organizations(organization_id):
+async def get_entity(entity_id, entity_type):
     """gets organization object from API
 
     Args:
         organization_id (_type_): _description_
     """
-
-
-async def get_event(event_id):
-    """gets event object from API
-
-    Args:
-        event_id (_type_): _description_
-    """
-
-
-async def get_place(place_id):
-    """gets place object from API
-
-    Args:
-        place_id (_type_): _description_
-    """
+    params = {"format": "json", "include_relations": "false"}
+    res = requests.get(f"{BASE_URL_API}/entities/{entity_type}/{entity_id}", params=params)
+    if res.status_code != 200:
+        logging.warn(f"Error getting {entity_type}: {res.status_code} / {res.text}")
+    else:
+        return res.json()
 
 
 async def get_person_relations(person_id, kinds=["personplace", "personinstitution", "personevent", "personwork"]):
@@ -235,7 +272,12 @@ async def get_person_relations(person_id, kinds=["personplace", "personinstituti
             logging.error(f"Error getting {kind} for person {person_id}")
             continue
         res = res.json()
-        res_full[kind] = res["results"]
+        while res:
+            res_full[kind] = res_full.get(kind, []) + res["results"]
+            if res["next"] is not None:
+                res = requests.get(res["next"]).json()
+            else:
+                break
     return res_full
 
 
