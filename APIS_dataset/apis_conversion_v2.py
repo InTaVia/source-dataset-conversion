@@ -52,6 +52,7 @@ bf = Namespace('http://id.loc.gov/ontologies/bibframe/')
 """Defines bibframe namespace."""
 geo = Namespace("http://www.opengis.net/ont/geosparql#")
 
+
 async def render_personplace_relation(pers_uri, rel, g):
     """renders personplace relation as RDF graph
 
@@ -67,7 +68,17 @@ async def render_personplace_relation(pers_uri, rel, g):
         if (place_uri, None, None) not in g:
             await render_place(rel['related_place']['id'], g)
         g.add((URIRef(f"{idmapis}birthevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
-
+    elif rel['relation_type']['id'] == 596:
+        #define serialization for "person born in place relations"
+        if (place_uri, None, None) not in g:
+            await render_place(rel['related_place']['id'], g)
+        g.add((URIRef(f"{idmapis}deathevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
+    else:
+        event_uri = URIRef(f"{idmapis}event/{rel['id']}")
+        if (event_uri, None, None) not in g:
+            await render_event(rel, g)
+        g.add((event_uri, crm.P7_took_place_at, place_uri))
+    return g
 
 async def render_personperson_relation(pers_uri, rel, g):
     """renders personperson relation as RDF graph
@@ -156,7 +167,6 @@ async def render_personinstitution_relation(pers_uri, rel, g):
             rel['end_date']+'T23:59:59', datatype=XSD.dateTime))))
         g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), rdfs.label, Literal('time-span end:' + rel['end_date_written'])))
     return g
-
 
 async def render_person(person, g):
     """renders person object as RDF graph
@@ -270,6 +280,32 @@ async def render_event(event, g):
         event (_type_): _description_
         g (_type_): _description_
     """
+    #prepare basic node types
+    #TODO: left of here with implementing
+    roletype = str(urllib.parse.quote_plus(roletype))
+    print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), bioc.inheres_in, URIRef(f"{idmapis}personproxy/{apis_id}")))
+    g.add((URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"), RDF.type, URIRef(idmrole+roletype)))
+    g.add(((URIRef(idmrole+roletype), rdfs.subClassOf, bioc.Event_Role)))
+    g.add(((URIRef(idmrole+roletype), RDFS.label, Literal(roletype))))
+    #suggestion to add specific event role
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), bioc.had_participant_in_role, (URIRef(f"idmapis/{urltype}/eventrole/{relation_id}"))))
+    #connect event and event role
+    g.add(((URIRef(idmapis+urltype+'/'+relation_id)), RDF.type, crmtype))
+    #define crm classification
+    if isinstance(roletype, str):
+        roletype = Literal(roletype)
+    g.add((((URIRef((idmapis+'{}/eventrole/{}').format(urltype, relation_id))), RDFS.label, Literal(roletype))))
+    g.add((((URIRef(idmapis+urltype+'/'+relation_id))), RDFS.label, Literal(relationlabel)))
+    if edate != "None":
+        g.add((URIRef(idmapis+urltype+'/'+ apis_id), URIRef(crm + "P4_has_time-span"), URIRef(idmapis+urltype+'/timespan/'+ apis_id)))
+        #add time-span to event
+        g.add((URIRef(idmapis+urltype+'/timespan/'+apis_id), crm.P82a_begin_of_the_begin, (Literal(edate+'T00:00:00', datatype=XSD.dateTime))))
+        #add begin of time-span
+        g.add((URIRef(idmapis+urltype+'/timespan/'+apis_id), crm.P82b_end_of_the_end, (Literal(edate+'T23:59:59', datatype=XSD.dateTime))))
+        #add end of time-span
+    parallelproperties(g, apis_id, crmtype, urltype)
 
 
 async def render_place(place, g):
