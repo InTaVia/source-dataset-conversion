@@ -175,8 +175,20 @@ async def render_person(person, g):
     # define that individual in APIS named graph and APIS entity are the same
     g.add((pers_uri, owl.sameAs, URIRef(person['url'].split("?")[0])))
     # add sameAs
+    for prof in person['professeion']:
+        prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
+        g.add((pers_uri, bioc.has_occupation, prof_node))
+        g.add((prof_node, rdfs.label, Literal(prof['label'])))
+        if prof['parend_id'] is not None:
+            parent_prof_node = URIRef(f"{idmapis}occupation/{prof['parend_id']}")
+            g.add((prof_node, rdfs.subClassOf, parent_prof_node))
+            g.add((prof_node, rdfs.subClassOf, bioc.Occupation))
+        else:
+            g.add((prof_node, rdfs.subClassOf, bioc.Occupation))
     for uri in person['sameAs']:
         g.add((pers_uri, owl.sameAs, URIRef(uri)))
+    # add occupations
+
     person_rel = await get_person_relations(person['id'], kinds=['personinstitution', 'personperson', 'personplace'])
     tasks = []
     for rel_type, rel_list in person_rel.items():
