@@ -284,17 +284,18 @@ async def render_organization(organization, g):
                 crm + "P4_has_time-span"), start_date_time_span))
             g.add((start_date_time_span, rdfs.label,
                   Literal(res['start_date_written'])))
-            if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
-                # check whether only a year has bin given for the start date and add according nodes
-                g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
-                    f"{res['start_start_date']}T00:00:00", datatype=XSD.dateTime))))
-                g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(
-                    f"{res['start_end_date']}T23:59:59", datatype=XSD.dateTime))))
-            else:
-                g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
-                    f"{res['start_date']}T00:00:00", datatype=XSD.dateTime))))
-                g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(
-                    f"{res['start_date']}T23:59:59", datatype=XSD.dateTime))))
+            g = create_time_span_tripels('start', start_date_time_span, res, g)
+            # if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
+            #     # check whether only a year has bin given for the start date and add according nodes
+            #     g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
+            #         f"{res['start_start_date']}T00:00:00", datatype=XSD.dateTime))))
+            #     g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(
+            #         f"{res['start_end_date']}T23:59:59", datatype=XSD.dateTime))))
+            # else:
+            #     g.add((start_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
+            #         f"{res['start_date']}T00:00:00", datatype=XSD.dateTime))))
+            #     g.add((start_date_time_span, crm.P82b_end_of_the_end, (Literal(
+            #         f"{res['start_date']}T23:59:59", datatype=XSD.dateTime))))
     if res["end_date_written"] is not None:
         if len(res['end_date_written']) >= 4:
             end_date_node = URIRef(f"{idmapis}groupend/{organization}")
@@ -306,17 +307,18 @@ async def render_organization(organization, g):
             g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
             g.add((end_date_time_span, rdfs.label,
                   Literal(res['end_date_written'])))
-            if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
-                # check whether only a year has bin given for the start date and add according nodes
-                g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
-                    f"{res['end_start_date']}T00:00:00", datatype=XSD.dateTime))))
-                g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(
-                    f"{res['end_end_date']}T23:59:59", datatype=XSD.dateTime))))
-            else:
-                g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
-                    f"{res['end_date']}T00:00:00", datatype=XSD.dateTime))))
-                g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(
-                    f"{res['end_date']}T23:59:59", datatype=XSD.dateTime))))
+            g = create_time_span_tripels('end', end_date_time_span, res, g)
+            # if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
+            #     # check whether only a year has bin given for the start date and add according nodes
+            #     g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
+            #         f"{res['end_start_date']}T00:00:00", datatype=XSD.dateTime))))
+            #     g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(
+            #         f"{res['end_end_date']}T23:59:59", datatype=XSD.dateTime))))
+            # else:
+            #     g.add((end_date_time_span, crm.P82a_begin_of_the_begin, (Literal(
+            #         f"{res['end_date']}T00:00:00", datatype=XSD.dateTime))))
+            #     g.add((end_date_time_span, crm.P82b_end_of_the_end, (Literal(
+            #         f"{res['end_date']}T23:59:59", datatype=XSD.dateTime))))
     return g
 
 
@@ -351,18 +353,15 @@ async def render_event(event, event_type, g):
         event['relation_type']['label'])))
     g.add((node_event, RDFS.label, Literal(
         f"{event['related_person']['label']} {event['relation_type']['label']} {event['related_place']['label']}")))
-    if edate != "None":
-        g.add((URIRef(idmapis+urltype+'/' + apis_id), URIRef(crm +
-              "P4_has_time-span"), URIRef(idmapis+urltype+'/timespan/' + apis_id)))
+    if event['start_date'] is not None:
+        node_timespan = URIRef(f"{idmapis}{event_type}/timespan/{event['id']}")
+        g.add((node_event, URIRef(crm + "P4_has_time-span"), node_timespan))
         # add time-span to event
-        g.add((URIRef(idmapis+urltype+'/timespan/'+apis_id), crm.P82a_begin_of_the_begin,
-              (Literal(edate+'T00:00:00', datatype=XSD.dateTime))))
-        # add begin of time-span
-        g.add((URIRef(idmapis+urltype+'/timespan/'+apis_id), crm.P82b_end_of_the_end,
-              (Literal(edate+'T23:59:59', datatype=XSD.dateTime))))
+        g = create_time_span_tripels('start', node_timespan, event, g)
         # add end of time-span
-    parallelproperties(g, apis_id, crmtype, urltype)
-
+        if event['end_date'] is not None:
+            g = create_time_span_tripels('end', node_timespan, event, g)
+    return g
 
 async def render_place(place, g):
     """renders place object as RDF graph
