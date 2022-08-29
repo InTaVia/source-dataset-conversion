@@ -180,7 +180,7 @@ async def render_personinstitution_relation(pers_uri, rel, g):
         g = create_time_span_tripels('start', URIRef(f"{idmapis}career/timespan/{rel['id']}"), rel, g)
     if rel['end_date'] is not None:
         g = create_time_span_tripels('end', URIRef(f"{idmapis}career/timespan/{rel['id']}"), rel, g)
-"""     if (rel['start_date'] is not None) and (rel['end_date'] is not None):
+    """     if (rel['start_date'] is not None) and (rel['end_date'] is not None):
         g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82a_begin_of_the_begin, (Literal(
             rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
         g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82b_end_of_the_end, (Literal(
