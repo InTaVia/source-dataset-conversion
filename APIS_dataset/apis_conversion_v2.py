@@ -1,5 +1,6 @@
 import asyncio
 from copy import deepcopy
+from datetime import datetime
 import re
 import requests
 import plac
@@ -53,6 +54,14 @@ bf = Namespace('http://id.loc.gov/ontologies/bibframe/')
 geo = Namespace("http://www.opengis.net/ont/geosparql#")
 
 
+def convert_timedelta(duration):
+    days, seconds = duration.days, duration.seconds
+    hours = days * 24 + seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = (seconds % 60)
+    return hours, minutes, seconds
+
+
 def create_time_span_tripels(kind, event_node, obj, g):
     if len(obj[f'{kind}_date_written']) == 4 and obj[f'{kind}_end_date'] is not None:
         # check whether only a year has bin given for the start date and add according nodes
@@ -64,7 +73,7 @@ def create_time_span_tripels(kind, event_node, obj, g):
         g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
             f"{obj[f'{kind}_date']}T00:00:00", datatype=XSD.dateTime))))
         g.add((event_node, crm.P82b_end_of_the_end, (Literal(
-            f"{obj[f'{kind}_date']}T23:59:59", datatype=XSD.dateTime))))\
+                f"{obj[f'{kind}_date']}T23:59:59", datatype=XSD.dateTime))))
     return g
 
 
@@ -93,7 +102,7 @@ async def render_personplace_relation(pers_uri, rel, g):
     else:
         event_uri = URIRef(f"{idmapis}event/{rel['id']}")
         if (event_uri, None, None) not in g:
-            await render_event(rel, g)
+            await render_event(rel, 'personplace', g)
         g.add((event_uri, crm.P7_took_place_at, place_uri))
     return g
 
@@ -217,13 +226,13 @@ async def render_person(person, g):
     # define that individual in APIS named graph and APIS entity are the same
     g.add((pers_uri, owl.sameAs, URIRef(person['url'].split("?")[0])))
     # add sameAs
-    for prof in person['professeion']:
+    for prof in person['profession']:
         prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
         g.add((pers_uri, bioc.has_occupation, prof_node))
         g.add((prof_node, rdfs.label, Literal(prof['label'])))
-        if prof['parend_id'] is not None:
+        if prof['parent_id'] is not None:
             parent_prof_node = URIRef(
-                f"{idmapis}occupation/{prof['parend_id']}")
+                f"{idmapis}occupation/{prof['parent_id']}")
             g.add((prof_node, rdfs.subClassOf, parent_prof_node))
             g.add((prof_node, rdfs.subClassOf, bioc.Occupation))
         else:
@@ -335,8 +344,8 @@ async def render_event(event, event_type, g):
     node_pers = URIRef(f"{idmapis}personproxy/{event['related_person']['id']}")
     node_roletype = URIRef(f"{idmrole}{event['relation_type']['id']}")
     # TODO: left of here with implementing
-    roletype = str(urllib.parse.quote_plus(roletype))
-    print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
+    #roletype = str(urllib.parse.quote_plus(roletype))
+    #print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
     g.add((node_event_role, bioc.inheres_in, node_pers))
     g.add((node_event_role, RDF.type, node_roletype))
     g.add((node_roletype, rdfs.subClassOf, bioc.Event_Role))
@@ -347,8 +356,6 @@ async def render_event(event, event_type, g):
     # connect event and event role
     g.add((node_event, RDF.type, crm.E5_Event))
     # define crm classification
-    if isinstance(roletype, str):
-        roletype = Literal(roletype)
     g.add((node_event_role, RDFS.label, Literal(
         event['relation_type']['label'])))
     g.add((node_event, RDFS.label, Literal(
@@ -420,18 +427,23 @@ async def get_persons(filter_params, g):
         logging.warn(f"Error getting persons: {res.status_code} / {res.text}")
     res = res.json()
     tasks = []
+    count_pers = 0
     while res:
         logging.info(f"working on offset {res['offset']}")
         for person in res["results"]:
+            count_pers += 1
             tasks.append(asyncio.create_task(render_person(person, g)))
         if "offset" in res:
-            if int(res["offset"]) > 20:
+            if int(res["offset"]) > 5:
                 break
         if "next" in res:
             res = requests.get(res["next"]).json()
         else:
             break
     await asyncio.gather(*tasks)
+
+    hours, minutes, seconds = convert_timedelta(datetime.now() - start_time)
+    logging.info('serialized {} persons in {} hours, {} minutes, {} seconds'.format(count_pers, hours, minutes, seconds))
 
 
 async def get_entity(entity_id, entity_type):
@@ -504,6 +516,7 @@ async def main(use_cache: bool = False, additional_filters: str = None):
     """main function
     """
     logging.basicConfig(level=logging.DEBUG)
+    start_time = datetime.now()
     if use_cache:
         pass
     else:
