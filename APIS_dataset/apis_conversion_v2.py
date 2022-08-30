@@ -228,17 +228,17 @@ async def render_person(person, g):
     # add sameAs
     # add appellations
     node_main_appellation = URIRef(f"{idmapis}appellation/label/{person['id']}")
-    g.add((node_main_appellation, RDF.type, crm.E41_Appellation))
+    g.add((node_main_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
     g.add((node_main_appellation, RDFS.label, Literal(f"{person['name'] if person['name'] is not None else '-'}, {person['first_name'] if person['first_name'] is not None else '-'}")))
     g.add((pers_uri, crm.P1_is_identified_by, node_main_appellation))
     if person['first_name'] is not None:
         node_first_name_appellation = URIRef(f"{idmapis}appellation/first_name/{person['id']}")
-        g.add((node_first_name_appellation, RDF.type, crm.E41_Appellation))
+        g.add((node_first_name_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
         g.add((node_first_name_appellation, RDFS.label, Literal(person['first_name'])))
         g.add((node_main_appellation, crm.P148_has_component, node_first_name_appellation))
     if person['name'] is not None:
         node_last_name_appellation = URIRef(f"{idmapis}appellation/last_name/{person['id']}")
-        g.add((node_last_name_appellation, RDF.type, crm.E41_Appellation))
+        g.add((node_last_name_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
         g.add((node_last_name_appellation, RDFS.label, Literal(person['name'])))
         g.add((node_main_appellation, crm.P148_has_component, node_last_name_appellation))
     for prof in person['profession']:
@@ -446,7 +446,7 @@ async def get_persons(filter_params, g):
         for person in res["results"]:
             count_pers += 1
             tasks.append(asyncio.create_task(render_person(person, g)))
-        if count_pers > 1000:
+        if count_pers > 10:
             break
         if "next" in res:
             res = requests.get(res["next"]).json()
