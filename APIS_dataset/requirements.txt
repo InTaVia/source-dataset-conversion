@@ -5,3 +5,4 @@ matplotlib
 rdflib
 SPARQLWrapper
 lxml
+numpy
