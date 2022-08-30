@@ -418,6 +418,7 @@ async def get_persons(filter_params, g):
     Args:
         filter_params (_type_): _description_
     """
+    start_time = datetime.now()
     if "limit" not in filter_params:
         filter_params["limit"] = 100
     if "format" not in filter_params:
@@ -516,7 +517,6 @@ async def main(use_cache: bool = False, additional_filters: str = None):
     """main function
     """
     logging.basicConfig(level=logging.DEBUG)
-    start_time = datetime.now()
     if use_cache:
         pass
     else:
