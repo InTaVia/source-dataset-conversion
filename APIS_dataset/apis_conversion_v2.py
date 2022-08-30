@@ -100,9 +100,9 @@ async def render_personplace_relation(pers_uri, rel, g):
         g.add(
             (URIRef(f"{idmapis}deathevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
     else:
-        event_uri = URIRef(f"{idmapis}event/{rel['id']}")
+        event_uri = URIRef(f"{idmapis}event/personplace/{rel['id']}")
         if (event_uri, None, None) not in g:
-            await render_event(rel, 'personplace', g)
+            await render_event(rel, 'personplace', event_uri, g)
         g.add((event_uri, crm.P7_took_place_at, place_uri))
     return g
 
@@ -226,6 +226,21 @@ async def render_person(person, g):
     # define that individual in APIS named graph and APIS entity are the same
     g.add((pers_uri, owl.sameAs, URIRef(person['url'].split("?")[0])))
     # add sameAs
+    # add appellations
+    node_main_appellation = URIRef(f"{idmapis}appellation/label/{person['id']}")
+    g.add((node_main_appellation, RDF.type, crm.E41_Appellation))
+    g.add((node_main_appellation, RDFS.label, Literal(f"{person['name'] if person['name'] is not None else '-'}, {person['first_name'] if person['first_name'] is not None else '-'}")))
+    g.add((pers_uri, crm.P1_is_identified_by, node_main_appellation))
+    if person['first_name'] is not None:
+        node_first_name_appellation = URIRef(f"{idmapis}appellation/first_name/{person['id']}")
+        g.add((node_first_name_appellation, RDF.type, crm.E41_Appellation))
+        g.add((node_first_name_appellation, RDFS.label, Literal(person['first_name'])))
+        g.add((node_main_appellation, crm.P148_has_component, node_first_name_appellation))
+    if person['name'] is not None:
+        node_last_name_appellation = URIRef(f"{idmapis}appellation/last_name/{person['id']}")
+        g.add((node_last_name_appellation, RDF.type, crm.E41_Appellation))
+        g.add((node_last_name_appellation, RDFS.label, Literal(person['name'])))
+        g.add((node_main_appellation, crm.P148_has_component, node_last_name_appellation))
     for prof in person['profession']:
         prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
         g.add((pers_uri, bioc.has_occupation, prof_node))
@@ -331,7 +346,7 @@ async def render_organization(organization, g):
     return g
 
 
-async def render_event(event, event_type, g):
+async def render_event(event, event_type, node_event, g):
     """renders event object as RDF graph
 
     Args:
@@ -339,13 +354,10 @@ async def render_event(event, event_type, g):
         g (_type_): _description_
     """
     # prepare basic node types
-    node_event = URIRef(f"{idmapis}/{event_type}/{event['id']}")
-    node_event_role = URIRef(f"{idmapis}/{event_type}/eventrole/{event['id']}")
+    #node_event = URIRef(f"{idmapis}{event_type}/{event['id']}")
+    node_event_role = URIRef(f"{idmapis}{event_type}/eventrole/{event['id']}")
     node_pers = URIRef(f"{idmapis}personproxy/{event['related_person']['id']}")
     node_roletype = URIRef(f"{idmrole}{event['relation_type']['id']}")
-    # TODO: left of here with implementing
-    #roletype = str(urllib.parse.quote_plus(roletype))
-    #print(apis_id, edate, crmtype, urltype, roletype, relationlabel)
     g.add((node_event_role, bioc.inheres_in, node_pers))
     g.add((node_event_role, RDF.type, node_roletype))
     g.add((node_roletype, rdfs.subClassOf, bioc.Event_Role))
@@ -434,9 +446,8 @@ async def get_persons(filter_params, g):
         for person in res["results"]:
             count_pers += 1
             tasks.append(asyncio.create_task(render_person(person, g)))
-        if "offset" in res:
-            if int(res["offset"]) > 5:
-                break
+        if count_pers > 1000:
+            break
         if "next" in res:
             res = requests.get(res["next"]).json()
         else:
