@@ -1,63 +1,210 @@
+@prefix bioc: <http://www.ldf.fi/schema/bioc/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix idm_core: <http://www.intavia.eu/idm-core/> .
 @prefix idm_nametype: <http://www.intavia.eu/nametype/> .
-@prefix idm_role: <http://www.intavia.eu/idm-role/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi123724/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi123724/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/63ebf420b6eb915c828d10b5afb2c902> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi123724> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124585/1> a crm:E67_Birth ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/b02779151764e0b675d9dfe562b4c22d> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124585> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124689/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124689/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/e41fe5e5ac985990d4a7af578bb25d5e> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124689> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124830/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124830/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/e41fe5e5ac985990d4a7af578bb25d5e> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124830> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi124954/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi124954/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/e41fe5e5ac985990d4a7af578bb25d5e> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi124954> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi125348/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi125348/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/dcdad637b4735b85b2ca3f9f7031d227> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi125348> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi125452/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi125452/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/bf56f67943b5c6a5d513854cf9cf650b> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi125452> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi125569/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi125569/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/4a087762aa7a5d4f7bd9910b2099fe22> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi125569> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi125645/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi125645/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/63b22794a5247f16ff3f0fb20836ff41> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi125645> .
+
+<http://www.intavia.eu/sbi/birthevent/sbi125763/1> a crm:E67_Birth ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/birth/sbi125763/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/1944101d1e659eb52b29f922d6bafc2e> ;
+    crm:P98_brought_into_life <http://www.intavia.eu/sbi/personproxy/sbi125763> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi123724/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi123724> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi123724/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/dcdad637b4735b85b2ca3f9f7031d227> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124585/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124585> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124585/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/4b3d7e35a13eddb9360e0174280743f3> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124689/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124689> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124689/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/c8c7af229f90f849fca9d31850422d80> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124830/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124830> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124830/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/86d4cce1ef1e3a5c944618fff53fee72> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi124954/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi124954> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi124954/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/dcdad637b4735b85b2ca3f9f7031d227> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi125348/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi125348> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi125348/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/7fec626918dabe6cb8fdd9b8d2bd6fc5> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi125452/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi125452> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi125452/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/6d3e1d23005a23996b46aa5050453876> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi125569/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi125569> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi125569/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/4a087762aa7a5d4f7bd9910b2099fe22> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi125645/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi125645> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi125645/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/dcdad637b4735b85b2ca3f9f7031d227> .
+
+<http://www.intavia.eu/sbi/deathevent/sbi125763/1> a crm:E69_Death ;
+    crm:P100_was_death_of <http://www.intavia.eu/sbi/personproxy/sbi125763> ;
+    crm:P4_has_time-span <http://www.intavia.eu/sbi/timespan/death/sbi125763/1> ;
+    crm:P7_took_place_at <http://www.intavia.eu/sbi/placeproxy/4dd3249275ab55f6591e4b66993bc718> .
 
 <http://www.intavia.eu/sbi/name/4/sbi124585> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Abraham" ;
     crm:P2_has_type idm_nametype:name .
 
-<http://www.intavia.eu/sbi/personproxy/sbi123724> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Adamič, Emil" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi123724> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/4> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi123724/> .
+<http://www.intavia.eu/sbi/timespan/1830-09-04> a crm:E52_Time_Span ;
+    rdfs:label "1830-09-04" ;
+    crm:P82a_begin_of_the_begin "1830-09-04+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1830-09-04+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124585> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abraham" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124585> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/0> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124585/> .
+<http://www.intavia.eu/sbi/timespan/1832-09-18> a crm:E52_Time_Span ;
+    rdfs:label "1832-09-18" ;
+    crm:P82a_begin_of_the_begin "1832-09-18+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1832-09-18+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124689> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Filip" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124689> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/1> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124689/> .
+<http://www.intavia.eu/sbi/timespan/1835-04-19> a crm:E52_Time_Span ;
+    rdfs:label "1835-04-19" ;
+    crm:P82a_begin_of_the_begin "1835-04-19+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1835-04-19+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124830> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Josip" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124830> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/2> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124830/> .
+<http://www.intavia.eu/sbi/timespan/1837-09-29> a crm:E52_Time_Span ;
+    rdfs:label "1837-09-29" ;
+    crm:P82a_begin_of_the_begin "1837-09-29+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1837-09-29+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/sbi/personproxy/sbi124954> a crm:E21_Person,
-        idm_core:Person_Proxy ;
-    rdfs:label "Abram, Jože" ;
-    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124954> ;
-    idm_core:has_gender idm_role:male ;
-    idm_core:person_proxy_for <http://www.intavia.eu/person/3> ;
-    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124954/> .
+<http://www.intavia.eu/sbi/timespan/1875-02-02> a crm:E52_Time_Span ;
+    rdfs:label "1875-02-02" ;
+    crm:P82a_begin_of_the_begin "1875-02-02+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1875-02-02+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/person/0> a idm_core:Provided_Person .
+<http://www.intavia.eu/sbi/timespan/1877-12-22> a crm:E52_Time_Span ;
+    rdfs:label "1877-12-22" ;
+    crm:P82a_begin_of_the_begin "1877-12-22+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1877-12-22+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/person/1> a idm_core:Provided_Person .
+<http://www.intavia.eu/sbi/timespan/1877-12-25> a crm:E52_Time_Span ;
+    rdfs:label "1877-12-25" ;
+    crm:P82a_begin_of_the_begin "1877-12-25+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1877-12-25+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/person/2> a idm_core:Provided_Person .
+<http://www.intavia.eu/sbi/timespan/1879-07-17> a crm:E52_Time_Span ;
+    rdfs:label "1879-07-17" ;
+    crm:P82a_begin_of_the_begin "1879-07-17+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1879-07-17+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/person/3> a idm_core:Provided_Person .
+<http://www.intavia.eu/sbi/timespan/1884-05-07> a crm:E52_Time_Span ;
+    rdfs:label "1884-05-07" ;
+    crm:P82a_begin_of_the_begin "1884-05-07+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1884-05-07+23:59:59"^^xsd:dateTime .
 
-<http://www.intavia.eu/person/4> a idm_core:Provided_Person .
+<http://www.intavia.eu/sbi/timespan/1887-11-02> a crm:E52_Time_Span ;
+    rdfs:label "1887-11-02" ;
+    crm:P82a_begin_of_the_begin "1887-11-02+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1887-11-02+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1888-01-04> a crm:E52_Time_Span ;
+    rdfs:label "1888-01-04" ;
+    crm:P82a_begin_of_the_begin "1888-01-04+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1888-01-04+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1903-04-01> a crm:E52_Time_Span ;
+    rdfs:label "1903-04-01" ;
+    crm:P82a_begin_of_the_begin "1903-04-01+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1903-04-01+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1907-01-29> a crm:E52_Time_Span ;
+    rdfs:label "1907-01-29" ;
+    crm:P82a_begin_of_the_begin "1907-01-29+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1907-01-29+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1936-12-06> a crm:E52_Time_Span ;
+    rdfs:label "1936-12-06" ;
+    crm:P82a_begin_of_the_begin "1936-12-06+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1936-12-06+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1938-06-22> a crm:E52_Time_Span ;
+    rdfs:label "1938-06-22" ;
+    crm:P82a_begin_of_the_begin "1938-06-22+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-06-22+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1945-03-08> a crm:E52_Time_Span ;
+    rdfs:label "1945-03-08" ;
+    crm:P82a_begin_of_the_begin "1945-03-08+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1945-03-08+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1968-01-16> a crm:E52_Time_Span ;
+    rdfs:label "1968-01-16" ;
+    crm:P82a_begin_of_the_begin "1968-01-16+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1968-01-16+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/1968-09-29> a crm:E52_Time_Span ;
+    rdfs:label "1968-09-29" ;
+    crm:P82a_begin_of_the_begin "1968-09-29+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1968-09-29+23:59:59"^^xsd:dateTime .
+
+<http://www.intavia.eu/sbi/timespan/993-06-07> a crm:E52_Time_Span ;
+    rdfs:label "993-06-07" ;
+    crm:P82a_begin_of_the_begin "993-06-07+00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "993-06-07+23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/name/1/sbi123724> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Adamič, Emil" ;
@@ -83,6 +230,31 @@
     crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi124954>,
         <http://www.intavia.eu/sbi/name/3/sbi124954> .
 
+<http://www.intavia.eu/sbi/name/1/sbi125348> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adamič, Fran Serafin" ;
+    crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi125348>,
+        <http://www.intavia.eu/sbi/name/3/sbi125348> .
+
+<http://www.intavia.eu/sbi/name/1/sbi125452> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adamič, Karlo" ;
+    crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi125452>,
+        <http://www.intavia.eu/sbi/name/3/sbi125452> .
+
+<http://www.intavia.eu/sbi/name/1/sbi125569> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adlešič, Juro" ;
+    crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi125569>,
+        <http://www.intavia.eu/sbi/name/3/sbi125569> .
+
+<http://www.intavia.eu/sbi/name/1/sbi125645> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adrian, Makso" ;
+    crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi125645>,
+        <http://www.intavia.eu/sbi/name/3/sbi125645> .
+
+<http://www.intavia.eu/sbi/name/1/sbi125763> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Agustič, Imre" ;
+    crm:P148_has_component <http://www.intavia.eu/sbi/name/2/sbi125763>,
+        <http://www.intavia.eu/sbi/name/3/sbi125763> .
+
 <http://www.intavia.eu/sbi/name/2/sbi123724> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Emil" ;
     crm:P2_has_type idm_nametype:forename .
@@ -97,6 +269,26 @@
 
 <http://www.intavia.eu/sbi/name/2/sbi124954> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Jože" ;
+    crm:P2_has_type idm_nametype:forename .
+
+<http://www.intavia.eu/sbi/name/2/sbi125348> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Fran Serafin" ;
+    crm:P2_has_type idm_nametype:forename .
+
+<http://www.intavia.eu/sbi/name/2/sbi125452> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Karlo" ;
+    crm:P2_has_type idm_nametype:forename .
+
+<http://www.intavia.eu/sbi/name/2/sbi125569> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Juro" ;
+    crm:P2_has_type idm_nametype:forename .
+
+<http://www.intavia.eu/sbi/name/2/sbi125645> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Makso" ;
+    crm:P2_has_type idm_nametype:forename .
+
+<http://www.intavia.eu/sbi/name/2/sbi125763> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Imre" ;
     crm:P2_has_type idm_nametype:forename .
 
 <http://www.intavia.eu/sbi/name/3/sbi123724> a crm:E33_E41_Linguistic_Appellation ;
@@ -115,5 +307,372 @@
     rdfs:label "Abram" ;
     crm:P2_has_type idm_nametype:surname .
 
-idm_role:male a idm_core:Gender .
+<http://www.intavia.eu/sbi/name/3/sbi125348> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adamič" ;
+    crm:P2_has_type idm_nametype:surname .
+
+<http://www.intavia.eu/sbi/name/3/sbi125452> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adamič" ;
+    crm:P2_has_type idm_nametype:surname .
+
+<http://www.intavia.eu/sbi/name/3/sbi125569> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adlešič" ;
+    crm:P2_has_type idm_nametype:surname .
+
+<http://www.intavia.eu/sbi/name/3/sbi125645> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adrian" ;
+    crm:P2_has_type idm_nametype:surname .
+
+<http://www.intavia.eu/sbi/name/3/sbi125763> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Agustič" ;
+    crm:P2_has_type idm_nametype:surname .
+
+<http://www.intavia.eu/sbi/occupation/casnikar> a bioc:Occupation ;
+    rdfs:label "casnikar"@sl ;
+    skos:altLabel "časnikar"@sl,
+        "časnikarka"@sl .
+
+<http://www.intavia.eu/sbi/occupation/dirigent> a bioc:Occupation ;
+    rdfs:label "dirigent"@sl ;
+    skos:altLabel "dirigent"@sl,
+        "dirigentka"@sl .
+
+<http://www.intavia.eu/sbi/occupation/dramatik> a bioc:Occupation ;
+    rdfs:label "dramatik"@sl ;
+    skos:altLabel "dramatik"@sl,
+        "dramatičarka"@sl .
+
+<http://www.intavia.eu/sbi/occupation/drustveni-delavec> a bioc:Occupation ;
+    rdfs:label "drustveni-delavec"@sl ;
+    skos:altLabel "društvena delavka"@sl,
+        "društveni delavec"@sl .
+
+<http://www.intavia.eu/sbi/occupation/esejist> a bioc:Occupation ;
+    rdfs:label "esejist"@sl ;
+    skos:altLabel "esejist"@sl .
+
+<http://www.intavia.eu/sbi/occupation/glasbeni-kritik> a bioc:Occupation ;
+    rdfs:label "glasbeni-kritik"@sl ;
+    skos:altLabel "glasbeni kritik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/glasbeni-pedagog> a bioc:Occupation ;
+    rdfs:label "glasbeni-pedagog"@sl ;
+    skos:altLabel "glasbena pedagoginja"@sl,
+        "glasbeni pedagog"@sl .
+
+<http://www.intavia.eu/sbi/occupation/melograf> a bioc:Occupation ;
+    rdfs:label "melograf"@sl ;
+    skos:altLabel "melograf"@sl .
+
+<http://www.intavia.eu/sbi/occupation/operni-pevec> a bioc:Occupation ;
+    rdfs:label "operni-pevec"@sl ;
+    skos:altLabel "operna pevka"@sl,
+        "operni pevec"@sl .
+
+<http://www.intavia.eu/sbi/occupation/organizator-planinstva> a bioc:Occupation ;
+    rdfs:label "organizator-planinstva"@sl ;
+    skos:altLabel "organizator planinstva"@sl .
+
+<http://www.intavia.eu/sbi/occupation/pesnik> a bioc:Occupation ;
+    rdfs:label "pesnik"@sl ;
+    skos:altLabel "pesnica"@sl,
+        "pesnik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/publicist> a bioc:Occupation ;
+    rdfs:label "publicist"@sl ;
+    skos:altLabel "publicist"@sl,
+        "publicistka"@sl .
+
+<http://www.intavia.eu/sbi/occupation/skof> a bioc:Occupation ;
+    rdfs:label "skof"@sl ;
+    skos:altLabel "škof"@sl .
+
+<http://www.intavia.eu/sbi/occupation/sodnik> a bioc:Occupation ;
+    rdfs:label "sodnik"@sl ;
+    skos:altLabel "sodnica"@sl,
+        "sodnik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/ucitelj> a bioc:Occupation ;
+    rdfs:label "ucitelj"@sl ;
+    skos:altLabel "učitelj"@sl,
+        "učiteljica"@sl .
+
+<http://www.intavia.eu/sbi/occupation/urednik> a bioc:Occupation ;
+    rdfs:label "urednik"@sl ;
+    skos:altLabel "urednica"@sl,
+        "urednik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/zborovodja> a bioc:Occupation ;
+    rdfs:label "zborovodja"@sl ;
+    skos:altLabel "zborovodja"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/1944101d1e659eb52b29f922d6bafc2e> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Murski Petrovci, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/4a087762aa7a5d4f7bd9910b2099fe22> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Adlešiči, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/4b3d7e35a13eddb9360e0174280743f3> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Freising, Nemčija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/4dd3249275ab55f6591e4b66993bc718> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Budimpešta, Madžarska"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/63b22794a5247f16ff3f0fb20836ff41> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Bračna vas, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/63ebf420b6eb915c828d10b5afb2c902> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Dobrova, Dobrova - Polhov Gradec, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/6d3e1d23005a23996b46aa5050453876> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Split, Hrvaška"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/7fec626918dabe6cb8fdd9b8d2bd6fc5> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Šmartno pri Litiji, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/86d4cce1ef1e3a5c944618fff53fee72> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Gorica, Furlanija - Julijska krajina, Italija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/b02779151764e0b675d9dfe562b4c22d> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "neznano"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/bf56f67943b5c6a5d513854cf9cf650b> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Sodražica, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/c8c7af229f90f849fca9d31850422d80> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Dunaj, Avstrija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/dcdad637b4735b85b2ca3f9f7031d227> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Ljubljana, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeappellation/e41fe5e5ac985990d4a7af578bb25d5e> a crm:E33_E41_Linguistic_Appellation ;
+    rdfs:label "Tupelče, Slovenija"@sl .
+
+<http://www.intavia.eu/sbi/placeproxy/1944101d1e659eb52b29f922d6bafc2e> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Murski Petrovci, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 16.0488583 46.6652525"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/1944101d1e659eb52b29f922d6bafc2e> .
+
+<http://www.intavia.eu/sbi/placeproxy/4b3d7e35a13eddb9360e0174280743f3> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Freising, Nemčija"@sl ;
+    crm:P168_place_is_defined_by "POINT 11.7411846 48.4028796"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/4b3d7e35a13eddb9360e0174280743f3> .
+
+<http://www.intavia.eu/sbi/placeproxy/4dd3249275ab55f6591e4b66993bc718> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Budimpešta, Madžarska"@sl ;
+    crm:P168_place_is_defined_by "POINT 19.040235 47.497912"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/4dd3249275ab55f6591e4b66993bc718> .
+
+<http://www.intavia.eu/sbi/placeproxy/63b22794a5247f16ff3f0fb20836ff41> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Bračna vas, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 15.7057687 46.0138485"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/63b22794a5247f16ff3f0fb20836ff41> .
+
+<http://www.intavia.eu/sbi/placeproxy/63ebf420b6eb915c828d10b5afb2c902> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Dobrova, Dobrova - Polhov Gradec, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 14.4142209 46.0537894"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/63ebf420b6eb915c828d10b5afb2c902> .
+
+<http://www.intavia.eu/sbi/placeproxy/6d3e1d23005a23996b46aa5050453876> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Split, Hrvaška"@sl ;
+    crm:P168_place_is_defined_by "POINT 16.4401935 43.5081323"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/6d3e1d23005a23996b46aa5050453876> .
+
+<http://www.intavia.eu/sbi/placeproxy/7fec626918dabe6cb8fdd9b8d2bd6fc5> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Šmartno pri Litiji, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 14.8410058 46.0457437"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/7fec626918dabe6cb8fdd9b8d2bd6fc5> .
+
+<http://www.intavia.eu/sbi/placeproxy/86d4cce1ef1e3a5c944618fff53fee72> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Gorica, Furlanija - Julijska krajina, Italija"@sl ;
+    crm:P168_place_is_defined_by "POINT 13.6201754 45.9401812"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/86d4cce1ef1e3a5c944618fff53fee72> .
+
+<http://www.intavia.eu/sbi/placeproxy/b02779151764e0b675d9dfe562b4c22d> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "neznano"@sl ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/b02779151764e0b675d9dfe562b4c22d> .
+
+<http://www.intavia.eu/sbi/placeproxy/bf56f67943b5c6a5d513854cf9cf650b> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Sodražica, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 14.6362158 45.762125"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/bf56f67943b5c6a5d513854cf9cf650b> .
+
+<http://www.intavia.eu/sbi/placeproxy/c8c7af229f90f849fca9d31850422d80> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Dunaj, Avstrija"@sl ;
+    crm:P168_place_is_defined_by "POINT 16.3738189 48.2081743"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/c8c7af229f90f849fca9d31850422d80> .
+
+<http://www.intavia.eu/sbi/occupation/duhovnik> a bioc:Occupation ;
+    rdfs:label "duhovnik"@sl ;
+    skos:altLabel "duhovnik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/odvetnik> a bioc:Occupation ;
+    rdfs:label "odvetnik"@sl ;
+    skos:altLabel "odvetnica"@sl,
+        "odvetnik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/orglavec> a bioc:Occupation ;
+    rdfs:label "orglavec"@sl ;
+    skos:altLabel "orglavec"@sl .
+
+<http://www.intavia.eu/sbi/occupation/pisatelj> a bioc:Occupation ;
+    rdfs:label "pisatelj"@sl ;
+    skos:altLabel "pisatelj"@sl,
+        "pisateljica"@sl .
+
+<http://www.intavia.eu/sbi/occupation/politik> a bioc:Occupation ;
+    rdfs:label "politik"@sl ;
+    skos:altLabel "politik"@sl,
+        "političarka"@sl .
+
+<http://www.intavia.eu/sbi/occupation/prevajalec> a bioc:Occupation ;
+    rdfs:label "prevajalec"@sl ;
+    skos:altLabel "prevajalec"@sl,
+        "prevajalka"@sl .
+
+<http://www.intavia.eu/sbi/personproxy/sbi123724> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adamič, Emil" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi123724> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/dirigent>,
+        <http://www.intavia.eu/sbi/occupation/esejist>,
+        <http://www.intavia.eu/sbi/occupation/glasbeni-kritik>,
+        <http://www.intavia.eu/sbi/occupation/glasbeni-pedagog>,
+        <http://www.intavia.eu/sbi/occupation/skladatelj>,
+        <http://www.intavia.eu/sbi/occupation/urednik> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi123724/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124585> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abraham" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124585> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/duhovnik>,
+        <http://www.intavia.eu/sbi/occupation/skof> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124585/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124689> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Filip" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124689> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/pravnik>,
+        <http://www.intavia.eu/sbi/occupation/sodnik> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124689/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124830> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Josip" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124830> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/odvetnik>,
+        <http://www.intavia.eu/sbi/occupation/politik>,
+        <http://www.intavia.eu/sbi/occupation/pravnik> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124830/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi124954> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Abram, Jože" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi124954> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/dramatik>,
+        <http://www.intavia.eu/sbi/occupation/drustveni-delavec>,
+        <http://www.intavia.eu/sbi/occupation/duhovnik>,
+        <http://www.intavia.eu/sbi/occupation/organizator-planinstva>,
+        <http://www.intavia.eu/sbi/occupation/pesnik>,
+        <http://www.intavia.eu/sbi/occupation/pisatelj>,
+        <http://www.intavia.eu/sbi/occupation/prevajalec> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi124954/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi125348> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adamič, Fran Serafin" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi125348> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/orglavec>,
+        <http://www.intavia.eu/sbi/occupation/publicist>,
+        <http://www.intavia.eu/sbi/occupation/skladatelj>,
+        <http://www.intavia.eu/sbi/occupation/ucitelj> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi125348/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi125452> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adamič, Karlo" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi125452> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/orglavec>,
+        <http://www.intavia.eu/sbi/occupation/skladatelj>,
+        <http://www.intavia.eu/sbi/occupation/zborovodja> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi125452/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi125569> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adlešič, Juro" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi125569> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/melograf>,
+        <http://www.intavia.eu/sbi/occupation/odvetnik>,
+        <http://www.intavia.eu/sbi/occupation/politik>,
+        <http://www.intavia.eu/sbi/occupation/pravnik> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi125569/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi125645> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Adrian, Makso" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi125645> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/operni-pevec> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi125645/> .
+
+<http://www.intavia.eu/sbi/personproxy/sbi125763> a crm:E21_Person,
+        idm_core:Person_Proxy ;
+    rdfs:label "Agustič, Imre" ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/name/1/sbi125763> ;
+    bioc:has_gender bioc:male ;
+    bioc:has_occupation <http://www.intavia.eu/sbi/occupation/casnikar>,
+        <http://www.intavia.eu/sbi/occupation/pisatelj>,
+        <http://www.intavia.eu/sbi/occupation/prevajalec> ;
+    owl:sameAs <https://www.slovenska-biografija.si/oseba/sbi125763/> .
+
+<http://www.intavia.eu/sbi/placeproxy/4a087762aa7a5d4f7bd9910b2099fe22> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Adlešiči, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 15.3114212 45.5223183"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/4a087762aa7a5d4f7bd9910b2099fe22> .
+
+<http://www.intavia.eu/sbi/occupation/pravnik> a bioc:Occupation ;
+    rdfs:label "pravnik"@sl ;
+    skos:altLabel "pravnica"@sl,
+        "pravnik"@sl .
+
+<http://www.intavia.eu/sbi/occupation/skladatelj> a bioc:Occupation ;
+    rdfs:label "skladatelj"@sl ;
+    skos:altLabel "skladatelj"@sl,
+        "skladateljica"@sl .
+
+<http://www.intavia.eu/sbi/placeproxy/e41fe5e5ac985990d4a7af578bb25d5e> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Tupelče, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 13.8136459 45.8140029"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/e41fe5e5ac985990d4a7af578bb25d5e> .
+
+<http://www.intavia.eu/sbi/placeproxy/dcdad637b4735b85b2ca3f9f7031d227> a crm:E53_Place,
+        idm_core:Place_Proxy ;
+    rdfs:label "Ljubljana, Slovenija"@sl ;
+    crm:P168_place_is_defined_by "POINT 14.5057515 46.0569465"^^geo:wktLiteral ;
+    crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/dcdad637b4735b85b2ca3f9f7031d227> .
+
+bioc:male a bioc:Gender .
 
