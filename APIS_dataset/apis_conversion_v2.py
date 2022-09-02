@@ -220,7 +220,7 @@ async def render_person(person, g, count_pers):
         person (_type_): _description_
         g (_type_): _description_
     """
-    pers_uri = URIRef(f"{BASE_URI_SERIALIZATION}personproxy/{person['id']}")
+    pers_uri = URIRef(f"{idmapis}personproxy/{person['id']}")
     if (pers_uri, None, None) in g:
         return g
     g.add((pers_uri, RDF.type, crm.E21_Person))
@@ -313,11 +313,12 @@ async def render_organization(organization, g):
     """
     res = await get_entity(organization, "institution")
     # setup basic nodes
-    node_org = URIRef(f"{BASE_URI_SERIALIZATION}groupproxy/{organization}")
+    node_org = URIRef(f"{idmapis}groupproxy/{organization}")
     appelation_org = URIRef(f"{idmapis}groupappellation/{organization}")
     # connect Group Proxy and person in named graphbgn:BioDes
     g.add((node_org, RDF.type, crm.E74_Group))
     # defines group class
+    g.add((node_org, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{organization}")))
     for uri in res['sameAs']:
         g.add((node_org, owl.sameAs, URIRef(uri)))
     # defines group as the same group in the APIS dataset
@@ -432,6 +433,7 @@ async def render_place(place, g):
     # define appellation as linguistic appellation
     g.add((node_appelation, RDFS.label, Literal(res['name'])))
     # add label to appellation
+    g.add((node_place, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{place}")))
     for uri in res['sameAs']:
         g.add((node_place, owl.sameAs, URIRef(uri)))
     g.add((node_place, crm.P1_is_identified_by, URIRef(
