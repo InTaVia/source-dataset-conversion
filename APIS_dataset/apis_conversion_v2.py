@@ -92,13 +92,13 @@ async def render_personplace_relation(pers_uri, rel, g):
         if (place_uri, None, None) not in g:
             await render_place(rel['related_place']['id'], g)
         g.add(
-            (URIRef(f"{idmapis}birthevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
+            (URIRef(f"{idmapis}birthevent/{rel['related_person']['id']}"), crm.P7_took_place_at, place_uri))
     elif rel['relation_type']['id'] == 596:
         # define serialization for "person born in place relations"
         if (place_uri, None, None) not in g:
             await render_place(rel['related_place']['id'], g)
         g.add(
-            (URIRef(f"{idmapis}deathevent/{rel['id']}"), crm.P7_took_place_at, place_uri))
+            (URIRef(f"{idmapis}deathevent/{rel['related_person']['id']}"), crm.P7_took_place_at, place_uri))
     else:
         event_uri = URIRef(f"{idmapis}event/personplace/{rel['id']}")
         if (event_uri, None, None) not in g:
@@ -125,6 +125,8 @@ async def render_personperson_relation(pers_uri, rel, g):
     # TODO: add check if person already in triplestore
     g.add((URIRef(
         f"{idmapis}personproxy/{rel['related_personB']['id']}"), bioc.inheres_in, n_rel_type))
+    #g.add(n_rel_type, bioc.bearer_of, (URIRef(
+    #    f"{idmapis}personproxy/{rel['related_personB']['id']}")))
     # TODO: add hiarachy of person relations
     if rel['relation_type'] is not None:
         if rel['relation_type']['label'] != "undefined":
@@ -158,6 +160,8 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     # add label to relationtype
     g.add((n_rel_type, bioc.inheres_in, URIRef(
         f"{idmapis}groupproxy/{rel['related_institution']['id']}")))
+    #g.add((URIRef(
+    #    f"{idmapis}groupproxy/{rel['related_institution']['id']}"), bioc.bearer_of, n_rel_type))
     # group which is part of this relation
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), RDF.type, idmcore.Career))
     # add career event of type idmcore:career
@@ -168,8 +172,8 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
     # role of participating person in the career event
-    g.add((URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}"),
-          bioc.inheres_in, URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}")))
+    #g.add((URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"),
+    #     bioc.bearer_of, URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
     # person which inheres this role
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}")))
@@ -209,7 +213,7 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     return g
 
 
-async def render_person(person, g):
+async def render_person(person, g, count_pers):
     """renders person object as RDF graph
 
     Args:
@@ -241,6 +245,30 @@ async def render_person(person, g):
         g.add((node_last_name_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
         g.add((node_last_name_appellation, RDFS.label, Literal(person['name'])))
         g.add((node_main_appellation, crm.P148_has_component, node_last_name_appellation))
+    if person['start_date'] is not None:
+        node_birth_event = URIRef(f"{idmapis}birthevent/{person['id']}")
+        node_role = URIRef(f"{idmapis}born_person/{person['id']}")
+        node_role_class = URIRef(f"{idmrole}born_person")
+        node_time_span = URIRef(f"{idmapis}birth/timespan/{person['id']}")
+        g.add((node_role, bioc.inheres_in, pers_uri))
+        g.add((node_role, RDF.type, node_role_class))
+        g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
+        g.add((node_birth_event, bioc.had_participant_in_role, node_role))
+        g.add((node_birth_event, RDFS.label, Literal(f"Birth of {person['first_name']} {person['name']}")))
+        g.add((node_birth_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
+        g = create_time_span_tripels('start', node_birth_event, person, g)
+    if person['end_date'] is not None:
+        node_death_event = URIRef(f"{idmapis}deathevent/{person['id']}")
+        node_role = URIRef(f"{idmapis}deceased_person/{person['id']}")
+        node_role_class = URIRef(f"{idmrole}deceased_person")
+        node_time_span = URIRef(f"{idmapis}death/timespan/{person['id']}")
+        g.add((node_role, bioc.inheres_in, pers_uri))
+        g.add((node_role, RDF.type, node_role_class))
+        g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
+        g.add((node_death_event, bioc.had_participant_in_role, node_role))
+        g.add((node_death_event, RDFS.label, Literal(f"Death of {person['first_name']} {person['name']}")))
+        g.add((node_death_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
+        g = create_time_span_tripels('end', node_death_event, person, g)
     for prof in person['profession']:
         prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
         g.add((pers_uri, bioc.has_occupation, prof_node))
@@ -272,6 +300,7 @@ async def render_person(person, g):
                 tasks.append(asyncio.create_task(
                     render_personplace_relation(pers_uri, rel, g)))
     await asyncio.gather(*tasks)
+    logging.info(f"rendered person {count_pers}")
     return g
 
 
@@ -445,10 +474,12 @@ async def get_persons(filter_params, g):
         logging.info(f"working on offset {res['offset']}")
         for person in res["results"]:
             count_pers += 1
-            tasks.append(asyncio.create_task(render_person(person, g)))
-        if count_pers > 10:
-            break
-        if "next" in res:
+            tasks.append(asyncio.create_task(render_person(person, g, count_pers)))
+        #    if count_pers > 10:
+        #        break
+        #if count_pers > 10:
+        #    break
+        if res["next"] is not None:
             res = requests.get(res["next"]).json()
         else:
             break
@@ -553,7 +584,11 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('owl', owl)
         g.bind("geo", geo)
         await get_persons({"collection": 86}, g)
-        g.serialize(destination="persons.rdf", format="turtle")
+        g.serialize(destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.rdf", format="turtle")
+        for s, p, o in g.triples((None, bioc.inheres_in, None)):
+            g.add((o, bioc.bearer_of, s))
+        g.serialize(destination=f"persons_enriched_{datetime.now().strftime('%d-%m-%Y')}.rdf", format="turtle")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
