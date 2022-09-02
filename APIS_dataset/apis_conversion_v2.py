@@ -228,7 +228,7 @@ async def render_person(person, g, count_pers):
     g.add((pers_uri, RDFS.label, Literal(
         f"{person['first_name']} {person['name']}")))
     # define that individual in APIS named graph and APIS entity are the same
-    g.add((pers_uri, owl.sameAs, URIRef(person['url'].split("?")[0])))
+    g.add((pers_uri, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{person['id']}")))
     # add sameAs
     # add appellations
     node_main_appellation = URIRef(f"{idmapis}appellation/label/{person['id']}")
@@ -256,7 +256,7 @@ async def render_person(person, g, count_pers):
         g.add((node_birth_event, bioc.had_participant_in_role, node_role))
         g.add((node_birth_event, RDFS.label, Literal(f"Birth of {person['first_name']} {person['name']}")))
         g.add((node_birth_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
-        g = create_time_span_tripels('start', node_birth_event, person, g)
+        g = create_time_span_tripels('start', node_time_span, person, g)
     if person['end_date'] is not None:
         node_death_event = URIRef(f"{idmapis}deathevent/{person['id']}")
         node_role = URIRef(f"{idmapis}deceased_person/{person['id']}")
@@ -268,7 +268,7 @@ async def render_person(person, g, count_pers):
         g.add((node_death_event, bioc.had_participant_in_role, node_role))
         g.add((node_death_event, RDFS.label, Literal(f"Death of {person['first_name']} {person['name']}")))
         g.add((node_death_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
-        g = create_time_span_tripels('end', node_death_event, person, g)
+        g = create_time_span_tripels('end', node_time_span, person, g)
     for prof in person['profession']:
         prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
         g.add((pers_uri, bioc.has_occupation, prof_node))
@@ -447,7 +447,7 @@ async def render_place(place, g):
         g.add((node_place, crm.P168_place_is_defined_by, node_spaceprimitive))
         g.add((node_spaceprimitive, rdf.type, crm.E94_Space_Primitive))
         g.add((node_spaceprimitive, crm.P168_place_is_defined_by, Literal(
-            (f"POINT {res['lat']} {res['lng']})"), datatype=geo.wktLiteral)))
+            (f"Point ( {'+' if res['lat'] > 0 else ''}{res['lat']} {'+' if res['lng'] > 0 else ''}{res['lng']})"), datatype=geo.wktLiteral)))
         # define that individual in APIS named graph and APIS entity are the same
     # suggestion for serialization of space primitives according to ISO 6709, to be discussed
     # more place details will be added (references, source, place start date, place end date, relations to other places(?))
@@ -475,8 +475,8 @@ async def get_persons(filter_params, g):
         for person in res["results"]:
             count_pers += 1
             tasks.append(asyncio.create_task(render_person(person, g, count_pers)))
-        #    if count_pers > 10:
-        #        break
+            #if count_pers > 10:
+            #    break
         #if count_pers > 10:
         #    break
         if res["next"] is not None:
@@ -584,10 +584,10 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('owl', owl)
         g.bind("geo", geo)
         await get_persons({"collection": 86}, g)
-        g.serialize(destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.rdf", format="turtle")
+        g.serialize(destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
         for s, p, o in g.triples((None, bioc.inheres_in, None)):
             g.add((o, bioc.bearer_of, s))
-        g.serialize(destination=f"persons_enriched_{datetime.now().strftime('%d-%m-%Y')}.rdf", format="turtle")
+        g.serialize(destination=f"persons_enriched_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
 
 
 if __name__ == "__main__":
