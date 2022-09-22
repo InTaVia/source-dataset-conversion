@@ -332,21 +332,21 @@ class Date:
     def start_time(self):
         match (self.year, self.month, self.day):
             case (year, None, None):
-                return f'{year}-01-01+00:00:00'
+                return f'{year}-01-01T00:00:00'
             case (year, month, None):
-                return f'{year}-{month:02}-01+00:00:00'
+                return f'{year}-{month:02}-01T00:00:00'
             case (year, month, day):
-                return f'{year}-{month:02}-{day:02}+00:00:00'
+                return f'{year}-{month:02}-{day:02}T00:00:00'
 
     @property
     def end_time(self):
         match (self.year, self.month, self.day):
             case (year, None, None):
-                return f'{year}-12-31+23:59:59'
+                return f'{year}-12-31T23:59:59'
             case (year, month, None):
-                return f'{year}-{month:02}-{calendar.monthrange(year, month)[1]}+23:59:59'
+                return f'{year}-{month:02}-{calendar.monthrange(year, month)[1]}T23:59:59'
             case (year, month, day):
-                return f'{year}-{month:02}-{day:02}+23:59:59'
+                return f'{year}-{month:02}-{day:02}T23:59:59'
 
 
 @dataclass
