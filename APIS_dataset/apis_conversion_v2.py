@@ -63,6 +63,8 @@ def convert_timedelta(duration):
 
 
 def create_time_span_tripels(kind, event_node, obj, g):
+    if len(obj[f"{kind}_date_written"]) > 0:
+        g.add((event_node, rdfs.label, Literal(obj[f"{kind}_date_written"])))
     if len(obj[f'{kind}_date_written']) == 4 and obj[f'{kind}_end_date'] is not None:
         # check whether only a year has bin given for the start date and add according nodes
         g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
@@ -256,6 +258,7 @@ async def render_person(person, g, count_pers):
         g.add((node_birth_event, bioc.had_participant_in_role, node_role))
         g.add((node_birth_event, RDFS.label, Literal(f"Birth of {person['first_name']} {person['name']}")))
         g.add((node_birth_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
+        g.add((node_birth_event, crm.P98_brought_into_life, pers_uri))
         g = create_time_span_tripels('start', node_time_span, person, g)
     if person['end_date'] is not None:
         node_death_event = URIRef(f"{idmapis}deathevent/{person['id']}")
@@ -268,6 +271,7 @@ async def render_person(person, g, count_pers):
         g.add((node_death_event, bioc.had_participant_in_role, node_role))
         g.add((node_death_event, RDFS.label, Literal(f"Death of {person['first_name']} {person['name']}")))
         g.add((node_death_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
+        g.add((node_death_event, crm.P100_was_death_of, pers_uri))
         g = create_time_span_tripels('end', node_time_span, person, g)
     for prof in person['profession']:
         prof_node = URIRef(f"{idmapis}occupation/{prof['id']}")
@@ -336,8 +340,6 @@ async def render_organization(organization, g):
             g.add((start_date_node, crm.P92_brought_into_existence, node_org))
             g.add((start_date_node, URIRef(
                 crm + "P4_has_time-span"), start_date_time_span))
-            g.add((start_date_time_span, rdfs.label,
-                  Literal(res['start_date_written'])))
             g = create_time_span_tripels('start', start_date_time_span, res, g)
             # if len(res['start_date_written']) == 4 and res['start_end_date'] is not None:
             #     # check whether only a year has bin given for the start date and add according nodes
@@ -359,8 +361,6 @@ async def render_organization(organization, g):
             g.add((end_date_node, RDF.type, crm.E64_End_of_Existence))
             g.add((end_date_node, crm.P93_took_out_of_existence, node_org))
             g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
-            g.add((end_date_time_span, rdfs.label,
-                  Literal(res['end_date_written'])))
             g = create_time_span_tripels('end', end_date_time_span, res, g)
             # if len(res['end_date_written']) == 4 and res['end_end_date'] is not None:
             #     # check whether only a year has bin given for the start date and add according nodes
