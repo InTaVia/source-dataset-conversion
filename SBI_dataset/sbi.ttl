@@ -113,98 +113,98 @@
 
 <http://www.intavia.eu/sbi/timespan/1830-09-04> a crm:E52_Time_Span ;
     rdfs:label "1830-09-04" ;
-    crm:P82a_begin_of_the_begin "1830-09-04+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1830-09-04+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1830-09-04T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1830-09-04T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1832-09-18> a crm:E52_Time_Span ;
     rdfs:label "1832-09-18" ;
-    crm:P82a_begin_of_the_begin "1832-09-18+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1832-09-18+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1832-09-18T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1832-09-18T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1835-04-19> a crm:E52_Time_Span ;
     rdfs:label "1835-04-19" ;
-    crm:P82a_begin_of_the_begin "1835-04-19+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1835-04-19+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1835-04-19T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1835-04-19T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1837-09-29> a crm:E52_Time_Span ;
     rdfs:label "1837-09-29" ;
-    crm:P82a_begin_of_the_begin "1837-09-29+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1837-09-29+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1837-09-29T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1837-09-29T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1875-02-02> a crm:E52_Time_Span ;
     rdfs:label "1875-02-02" ;
-    crm:P82a_begin_of_the_begin "1875-02-02+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1875-02-02+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1875-02-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1875-02-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1877-12-22> a crm:E52_Time_Span ;
     rdfs:label "1877-12-22" ;
-    crm:P82a_begin_of_the_begin "1877-12-22+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1877-12-22+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1877-12-22T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1877-12-22T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1877-12-25> a crm:E52_Time_Span ;
     rdfs:label "1877-12-25" ;
-    crm:P82a_begin_of_the_begin "1877-12-25+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1877-12-25+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1877-12-25T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1877-12-25T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1879-07-17> a crm:E52_Time_Span ;
     rdfs:label "1879-07-17" ;
-    crm:P82a_begin_of_the_begin "1879-07-17+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1879-07-17+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1879-07-17T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1879-07-17T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1884-05-07> a crm:E52_Time_Span ;
     rdfs:label "1884-05-07" ;
-    crm:P82a_begin_of_the_begin "1884-05-07+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1884-05-07+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1884-05-07T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1884-05-07T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1887-11-02> a crm:E52_Time_Span ;
     rdfs:label "1887-11-02" ;
-    crm:P82a_begin_of_the_begin "1887-11-02+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1887-11-02+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1887-11-02T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1887-11-02T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1888-01-04> a crm:E52_Time_Span ;
     rdfs:label "1888-01-04" ;
-    crm:P82a_begin_of_the_begin "1888-01-04+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1888-01-04+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1888-01-04T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1888-01-04T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1903-04-01> a crm:E52_Time_Span ;
     rdfs:label "1903-04-01" ;
-    crm:P82a_begin_of_the_begin "1903-04-01+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1903-04-01+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1903-04-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1903-04-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1907-01-29> a crm:E52_Time_Span ;
     rdfs:label "1907-01-29" ;
-    crm:P82a_begin_of_the_begin "1907-01-29+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1907-01-29+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1907-01-29T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1907-01-29T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1936-12-06> a crm:E52_Time_Span ;
     rdfs:label "1936-12-06" ;
-    crm:P82a_begin_of_the_begin "1936-12-06+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1936-12-06+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1936-12-06T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1936-12-06T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1938-06-22> a crm:E52_Time_Span ;
     rdfs:label "1938-06-22" ;
-    crm:P82a_begin_of_the_begin "1938-06-22+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1938-06-22+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1938-06-22T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1938-06-22T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1945-03-08> a crm:E52_Time_Span ;
     rdfs:label "1945-03-08" ;
-    crm:P82a_begin_of_the_begin "1945-03-08+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1945-03-08+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1945-03-08T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1945-03-08T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1968-01-16> a crm:E52_Time_Span ;
     rdfs:label "1968-01-16" ;
-    crm:P82a_begin_of_the_begin "1968-01-16+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1968-01-16+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1968-01-16T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1968-01-16T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/1968-09-29> a crm:E52_Time_Span ;
     rdfs:label "1968-09-29" ;
-    crm:P82a_begin_of_the_begin "1968-09-29+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "1968-09-29+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "1968-09-29T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1968-09-29T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/timespan/993-06-07> a crm:E52_Time_Span ;
     rdfs:label "993-06-07" ;
-    crm:P82a_begin_of_the_begin "993-06-07+00:00:00"^^xsd:dateTime ;
-    crm:P82b_end_of_the_end "993-06-07+23:59:59"^^xsd:dateTime .
+    crm:P82a_begin_of_the_begin "9901-01-01T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "9901-01-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/name/1/sbi123724> a crm:E33_E41_Linguistic_Appellation ;
     rdfs:label "Adamič, Emil" ;
