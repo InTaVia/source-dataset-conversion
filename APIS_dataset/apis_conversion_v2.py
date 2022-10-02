@@ -256,6 +256,7 @@ async def render_person(person, g, count_pers):
         g.add((node_role, RDF.type, node_role_class))
         g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
         g.add((node_birth_event, bioc.had_participant_in_role, node_role))
+        g.add((node_birth_event, RDF.type, crm.E67_Birth))
         g.add((node_birth_event, RDFS.label, Literal(f"Birth of {person['first_name']} {person['name']}")))
         g.add((node_birth_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
         g.add((node_birth_event, crm.P98_brought_into_life, pers_uri))
@@ -269,6 +270,7 @@ async def render_person(person, g, count_pers):
         g.add((node_role, RDF.type, node_role_class))
         g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
         g.add((node_death_event, bioc.had_participant_in_role, node_role))
+        g.add((node_death_event, RDF.type, crm.E69_Death))
         g.add((node_death_event, RDFS.label, Literal(f"Death of {person['first_name']} {person['name']}")))
         g.add((node_death_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
         g.add((node_death_event, crm.P100_was_death_of, pers_uri))
@@ -449,7 +451,7 @@ async def render_place(place, g):
         g.add((node_place, crm.P168_place_is_defined_by, node_spaceprimitive))
         g.add((node_spaceprimitive, rdf.type, crm.E94_Space_Primitive))
         g.add((node_spaceprimitive, crm.P168_place_is_defined_by, Literal(
-            (f"Point ( {'+' if res['lat'] > 0 else ''}{res['lat']} {'+' if res['lng'] > 0 else ''}{res['lng']})"), datatype=geo.wktLiteral)))
+            (f"Point ( {'+' if res['lng'] > 0 else ''}{res['lng']} {'+' if res['lat'] > 0 else ''}{res['lat']} )"), datatype=geo.wktLiteral)))
         # define that individual in APIS named graph and APIS entity are the same
     # suggestion for serialization of space primitives according to ISO 6709, to be discussed
     # more place details will be added (references, source, place start date, place end date, relations to other places(?))
