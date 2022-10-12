@@ -1,0 +1,140 @@
+from cProfile import label
+from operator import index, le
+from pydoc import ModuleScanner
+from typing import Any
+from unittest import result
+from numpy import r_
+import requests
+import pandas as pd
+import json
+import pprint
+from rdflib import Graph, Literal, RDF, Namespace, URIRef
+from rdflib.namespace import RDFS, FOAF
+from SPARQLWrapper import JSON, SPARQLWrapper
+from lxml import etree
+import re
+import urllib.parse
+import datetime
+import numpy as np
+import sys
+
+
+"""Import libraries."""
+
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX idm: <https://www.intavia.org/idm/>
+PREFIX idmrole: <https://www.intavia.org/idm/role/>
+PREFIX bioc: <http://www.ldf.fi/schema/bioc/>
+ 
+INSERT {
+  GRAPH <$namedGraph> {
+    ?painting a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy;
+        bioc:bearer_of ?paintingProductionEventRole .
+    ?paintingProductionEventRole a bioc:Thing_Role .
+    ?paintingProductionEvent bioc:occured_in_the_presence_of_in_role ?paintingProductionEventRole;
+        bioc:had_participant_in_role ?artistProductionEventRole .
+    ?artist bioc:bearer_of ?artistProductionEventRole .
+    ?artistProductionEventRole a idmrole:producing_artist ,
+            bioc:Event_Role .
+    ?artistProductionEventRole rdfs:label "producing artist"@en .
+    ?paintingProductionEvent crm:P4_has_time-span ?paintingProductionTimespan .
+    ?paintingProductionEvent a crm:E12_Production .
+    ?paintingProductionTimespan crm:P82a_begin_of_the_begin ?pInception .
+    ?paintingProductionTimespan crm:P82b_end_of_the_end ?pInception .
+    ?paintingProductionTimespan rdfs:label ?pInceptionLabel .
+    ?painting crm:P1_is_identified_by ?paintingAppelation .
+    ?paintingAppelation a crm:E41_E33_Linguistic_Appellation .
+    ?paintingAppelation rdfs:label ?paintingLabel .
+    ?painting rdfs:label ?paintingLabel
+  }
+} WHERE {    
+    {
+      SELECT ?artist ?painting ?paintingLabel ?paintingAppelation ?pInception ?paintingProductionEvent ?paintingProductionEventRole ?artistProductionEventRole ?paintingProductionTimespan (CONCAT(STR(YEAR(?pInception)), "-", STR(MONTH(?pInception)), "-", STR(DAY(?pInception))) as ?pInceptionLabel) {
+          {SELECT ?artist ?artistUri {?artist a crm:E21_Person .
+                        ?artist rdfs:label ?artistLabel1 .
+                ?artist owl:sameAs ?artistUri .
+  FILTER(contains(str(?artistUri), "wikidata.org"))}
+                          ORDER BY ?artist
+                          LIMIT $limit
+                          OFFSET $offset
+          
+          }
+          SERVICE <https://query.wikidata.org/sparql> {
+            #?artistUri wdt:P800 ?painting .
+            ?painting wdt:P170 ?artistUri .
+            ?painting wdt:P31 wd:Q3305213
+        BIND(REPLACE(STR(?painting), "http://www.wikidata.org/entity/", "https://www.intavia.org/productionthingrole/") as ?paintingProductionEventRoleStr)      
+        BIND(IRI(?paintingProductionEventRoleStr) as ?paintingProductionEventRole)
+        BIND(REPLACE(STR(?artistUri), "http://www.wikidata.org/entity/", "https://www.intavia.org/role/responsibleArtist/") as ?artistProductionEventRoleStr)      
+        BIND(IRI(?artistProductionEventRoleStr) as ?artistProductionEventRole)
+        BIND(REPLACE(STR(?painting), "http://www.wikidata.org/entity/", "https://www.intavia.org/production_event/") as ?paintingProductionEventStr)      
+        BIND(IRI(?paintingProductionEventStr) as ?paintingProductionEvent)
+            OPTIONAL{?painting wdt:P571 ?pInception .
+        BIND(REPLACE(STR(?painting), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?paintingProductionTimespanStr)      
+        BIND(IRI(?paintingProductionTimespanStr) as ?paintingProductionTimespan)
+        }
+                OPTIONAL{?painting rdfs:label ?paintingLabel
+                    BIND(CONCAT(REPLACE(STR(?painting), "http://www.wikidata.org/entity/", "https://www.intavia.org/cho/"), "title") as ?paintingAppelationStr)      
+                    BIND(IRI(?paintingAppelationStr) as ?paintingAppelation)
+      FILTER(lang(?paintingLabel) = "en")
+    }
+          }
+          
+      
+      }
+    }
+}
+
+def wikiq(x):
+    user_agent = "intavia_dataaggregation_python_bot/%s.%s" % (sys.version_info[0], sys.version_info[1])
+    wd_endpoint_url = "https://query.wikidata.org/sparql"
+    # TODO adjust user agent; see https://w.wiki/CX6
+    sparql = SPARQLWrapper(wd_endpoint_url, agent=user_agent)
+    reslist = []
+    print(x)
+    sparql.setQuery(f"""SELECT ?aw WHERE {{?aw wdt:P170 wd:{x}.}} """)
+    sparql.setReturnFormat(JSON)
+    resp = sparql.query().convert()
+    print(resp)
+    return(resp)
+
+
+def wikisparql(wiki_id_list, update_wiki_id_list):
+    for w in wiki_id_list:
+        if w != None:
+            x = w.split('/')
+            x = x[(len(x))-1]
+            x = wikiq(str(x))
+            update_wiki_id_list.append(x)
+        else:
+            w = str("no_merge_yet")
+            update_wiki_id_list.append(w)
+            return update_wiki_id_list
+
+def main():
+    h = Graph()
+    wiki_mergecheck=[]
+    oeblxml_mergecheck=[]
+    update_wiki_id_list=[]
+    merge2_wiki_apis = pd.read_csv('apis_wiki_id_merge.csv')
+    headers = {"accept": "application/json"}
+    merge2_wiki_apis_df = merge2_wiki_apis.applymap(str)
+    merge2_wiki_apis_df.head()
+    h, wiki_mergecheck, oeblxml_mergecheck = merge_graph_apis_wikidata(h, wiki_mergecheck, oeblxml_mergecheck, merge2_wiki_apis_df)
+    w_id_list = wikisparql(wiki_mergecheck, update_wiki_id_list) 
+    namespaces(h)
+    exapisawdata = h.serialize(destination=f'intavia_wikidata_aw_{datetime.datetime.now().strftime("%d-%m-%Y")}.ttl', format='turtle')
+    print("h serialization Done")
+
+
+
+
+if __name__ == "__main__":
+    main()
