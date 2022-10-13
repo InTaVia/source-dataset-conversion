@@ -5,840 +5,403 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 
+wd:Q135924 a crm:E78_Curated_Holding ;
+    rdfs:label "Society of Authors ZAiKS"@en ;
+    crm:P46_is_composed_of wd:Q108335821 .
+
+wd:Q150066 a crm:E78_Curated_Holding ;
+    rdfs:label "Pinacoteca di Brera"@en ;
+    crm:P46_is_composed_of wd:Q108917736 .
+
 wd:Q95569 a crm:E78_Curated_Holding ;
     rdfs:label "Kunsthistorisches Museum"@en ;
-    crm:P46_is_composed_of wd:Q105812133,
-        wd:Q28001339,
-        wd:Q28001540,
-        wd:Q28001700,
-        wd:Q28001734,
-        wd:Q28001747,
-        wd:Q28001748,
-        wd:Q28001749,
-        wd:Q28001757,
-        wd:Q28002505,
-        wd:Q28003533,
-        wd:Q28007574,
-        wd:Q28007626,
-        wd:Q28007631,
-        wd:Q28007732,
-        wd:Q28007921,
-        wd:Q28008100,
-        wd:Q28008102,
-        wd:Q28008104,
-        wd:Q28008133,
-        wd:Q28008135,
-        wd:Q28008138,
-        wd:Q28008155,
-        wd:Q28008157,
-        wd:Q28008161,
-        wd:Q28008192,
-        wd:Q28008472,
-        wd:Q28008486,
-        wd:Q28008641,
-        wd:Q28008720,
-        wd:Q28008738,
-        wd:Q28008805,
-        wd:Q28008863,
-        wd:Q28008864,
-        wd:Q28008876,
-        wd:Q28008893,
-        wd:Q28008908,
-        wd:Q28008909,
-        wd:Q28008913,
-        wd:Q28008915,
-        wd:Q28008917,
-        wd:Q28008931,
-        wd:Q28009359,
-        wd:Q28009627,
-        wd:Q28009629,
-        wd:Q28019076,
-        wd:Q28020526,
-        wd:Q58371246,
-        wd:Q58376277,
-        wd:Q58414597 .
+    crm:P46_is_composed_of wd:Q28008117,
+        wd:Q28008118,
+        wd:Q28008122,
+        wd:Q28008150,
+        wd:Q28008170,
+        wd:Q28008201,
+        wd:Q28008211,
+        wd:Q28008241,
+        wd:Q28008292,
+        wd:Q28008441,
+        wd:Q28008468,
+        wd:Q28008479,
+        wd:Q28008487,
+        wd:Q28008493,
+        wd:Q28008535,
+        wd:Q28008544,
+        wd:Q28008563,
+        wd:Q28008574,
+        wd:Q28008585 .
 
-<https://www.intavia.org/production_event/Q105812133> a crm:E12_Production ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1336893> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q105812133> .
+<https://www.intavia.org/production_event/Q108335821> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q108335821> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q381238> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q108335821> .
 
-<https://www.intavia.org/production_event/Q28001339> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001339> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q4297899> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001339> .
+<https://www.intavia.org/production_event/Q108917736> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q108917736> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q3620122> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q108917736> .
 
-<https://www.intavia.org/production_event/Q28001540> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001540> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1695465> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001540> .
-
-<https://www.intavia.org/production_event/Q28001700> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001700> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q21127421> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001700> .
-
-<https://www.intavia.org/production_event/Q28001734> a crm:E12_Production ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q27969709> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001734> .
-
-<https://www.intavia.org/production_event/Q28001747> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001747> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1275737> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001747> .
-
-<https://www.intavia.org/production_event/Q28001748> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001748> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q26234773> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001748> .
-
-<https://www.intavia.org/production_event/Q28001749> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001749> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q39803374> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001749> .
-
-<https://www.intavia.org/production_event/Q28001757> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28001757> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1275737> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28001757> .
-
-<https://www.intavia.org/production_event/Q28002505> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28002505> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1339893> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28002505> .
-
-<https://www.intavia.org/production_event/Q28003533> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28003533> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1449173> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28003533> .
-
-<https://www.intavia.org/production_event/Q28007574> a crm:E12_Production ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1695014> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28007574> .
-
-<https://www.intavia.org/production_event/Q28007626> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28007626> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q28055136> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28007626> .
-
-<https://www.intavia.org/production_event/Q28007631> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28007631> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q579856> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28007631> .
-
-<https://www.intavia.org/production_event/Q28007732> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28007732> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q39438065> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28007732> .
-
-<https://www.intavia.org/production_event/Q28007921> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28007921> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q26240462> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28007921> .
-
-<https://www.intavia.org/production_event/Q28008100> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008100> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q776508> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008100> .
-
-<https://www.intavia.org/production_event/Q28008102> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008102> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q453650> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008102> .
-
-<https://www.intavia.org/production_event/Q28008104> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008104> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q453650> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008104> .
-
-<https://www.intavia.org/production_event/Q28008133> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008133> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1040415> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008133> .
-
-<https://www.intavia.org/production_event/Q28008135> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008135> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q470537> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008135> .
-
-<https://www.intavia.org/production_event/Q28008138> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008138> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q186816> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008138> .
-
-<https://www.intavia.org/production_event/Q28008155> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008155> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q328283> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008155> .
-
-<https://www.intavia.org/production_event/Q28008157> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008157> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q551901> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008157> .
-
-<https://www.intavia.org/production_event/Q28008161> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008161> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q186816> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008161> .
-
-<https://www.intavia.org/production_event/Q28008192> a crm:E12_Production ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1657504> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008192> .
-
-<https://www.intavia.org/production_event/Q28008472> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008472> ;
+<https://www.intavia.org/production_event/Q28008117> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008117> ;
     bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q324318> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008472> .
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008117> .
 
-<https://www.intavia.org/production_event/Q28008486> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008486> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q26945337> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008486> .
+<https://www.intavia.org/production_event/Q28008118> a crm:E12_Production ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q263569> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008118> .
 
-<https://www.intavia.org/production_event/Q28008641> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008641> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1713039> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008641> .
-
-<https://www.intavia.org/production_event/Q28008720> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008720> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q348863> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008720> .
-
-<https://www.intavia.org/production_event/Q28008738> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008738> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q175980> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008738> .
-
-<https://www.intavia.org/production_event/Q28008805> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008805> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q522983> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008805> .
-
-<https://www.intavia.org/production_event/Q28008863> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008863> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q26202745> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008863> .
-
-<https://www.intavia.org/production_event/Q28008864> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008864> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1447485> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008864> .
-
-<https://www.intavia.org/production_event/Q28008876> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008876> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q579856> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008876> .
-
-<https://www.intavia.org/production_event/Q28008893> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008893> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1819621> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008893> .
-
-<https://www.intavia.org/production_event/Q28008908> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008908> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1704563> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008908> .
-
-<https://www.intavia.org/production_event/Q28008909> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008909> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q323578> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008909> .
-
-<https://www.intavia.org/production_event/Q28008913> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008913> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q323578> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008913> .
-
-<https://www.intavia.org/production_event/Q28008915> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008915> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q453650> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008915> .
-
-<https://www.intavia.org/production_event/Q28008917> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008917> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1496891> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008917> .
-
-<https://www.intavia.org/production_event/Q28008931> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008931> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q772701> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008931> .
-
-<https://www.intavia.org/production_event/Q28009359> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28009359> ;
+<https://www.intavia.org/production_event/Q28008122> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008122> ;
     bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q511444> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28009359> .
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008122> .
 
-<https://www.intavia.org/production_event/Q28009627> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28009627> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1178671> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28009627> .
+<https://www.intavia.org/production_event/Q28008150> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008150> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q670611> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008150> .
 
-<https://www.intavia.org/production_event/Q28009629> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28009629> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1819621> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28009629> .
+<https://www.intavia.org/production_event/Q28008170> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008170> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q872147> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008170> .
 
-<https://www.intavia.org/production_event/Q28019076> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28019076> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q493349> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28019076> .
+<https://www.intavia.org/production_event/Q28008201> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008201> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q39160065> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008201> .
 
-<https://www.intavia.org/production_event/Q28020526> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28020526> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q699740> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28020526> .
+<https://www.intavia.org/production_event/Q28008211> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008211> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q143416> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008211> .
 
-<https://www.intavia.org/production_event/Q58371246> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q58371246> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q93804> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q58371246> .
+<https://www.intavia.org/production_event/Q28008241> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008241> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q265340> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008241> .
 
-<https://www.intavia.org/production_event/Q58376277> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q58376277> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1467409> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q58376277> .
+<https://www.intavia.org/production_event/Q28008292> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008292> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q265340> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008292> .
 
-<https://www.intavia.org/production_event/Q58414597> a crm:E12_Production ;
-    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q58414597> ;
-    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q245311> ;
-    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q58414597> .
+<https://www.intavia.org/production_event/Q28008441> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008441> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q698097> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008441> .
 
-wd:Q105812133 a crm:E24_Physical_Human_Made_Thing,
+<https://www.intavia.org/production_event/Q28008468> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008468> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1583777> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008468> .
+
+<https://www.intavia.org/production_event/Q28008479> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008479> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q19569500> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008479> .
+
+<https://www.intavia.org/production_event/Q28008487> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008487> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q78711> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008487> .
+
+<https://www.intavia.org/production_event/Q28008493> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008493> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q776508> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008493> .
+
+<https://www.intavia.org/production_event/Q28008535> a crm:E12_Production ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1707254> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008535> .
+
+<https://www.intavia.org/production_event/Q28008544> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008544> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q265340> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008544> .
+
+<https://www.intavia.org/production_event/Q28008563> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008563> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q1701484> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008563> .
+
+<https://www.intavia.org/production_event/Q28008574> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008574> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q87659> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008574> .
+
+<https://www.intavia.org/production_event/Q28008585> a crm:E12_Production ;
+    crm:P4_has_time-span <https://www.intavia.org/timespan_production/Q28008585> ;
+    bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/Q452397> ;
+    bioc:occured_in_the_presence_of_in_role <https://www.intavia.org/productionthingrole/Q28008585> .
+
+wd:Q108335821 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q105812133> ;
+    rdfs:label "Portrait of Mira Zimińska"@en,
+        "Portret Miry Zimińskiej"@pl ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q108335821> ;
+    crm:P2_has_type wd:Q12043905,
+        wd:Q93184 ;
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q11472>,
+        <https://www.intavia.org/chomaterial/Q189085> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q108335821> .
+
+wd:Q108917736 a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy ;
+    rdfs:label "Last Prize in Venice Boat Race (Rotta)"@en,
+        "Sconfitto alla regata"@it,
+        "Sconfitto alla Regata"@sc ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q108917736> ;
+    crm:P2_has_type wd:Q3305213 ;
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255>,
+        <https://www.intavia.org/chomaterial/Q296955> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q108917736> .
+
+wd:Q12043905 a crm:E55_Type ;
+    rdfs:label "pastel"@en .
+
+wd:Q28008117 a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy ;
+    rdfs:label "Jakob begegnet Rahel bei den Herden ihres Vaters"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008117> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q105812133> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008117> .
 
-wd:Q28001339 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008118 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001339> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001339> .
-
-wd:Q28001540 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001540> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001540> .
-
-wd:Q28001700 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001700> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001700> .
-
-wd:Q28001734 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001734> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001734> .
-
-wd:Q28001747 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001747> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001747> .
-
-wd:Q28001748 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001748> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001748> .
-
-wd:Q28001749 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001749> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001749> .
-
-wd:Q28001757 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28001757> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28001757> .
-
-wd:Q28002505 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28002505> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28002505> .
-
-wd:Q28003533 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28003533> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28003533> .
-
-wd:Q28007574 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28007574> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28007574> .
-
-wd:Q28007626 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28007626> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28007626> .
-
-wd:Q28007631 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28007631> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28007631> .
-
-wd:Q28007732 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28007732> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28007732> .
-
-wd:Q28007921 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28007921> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28007921> .
-
-wd:Q28008100 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008100> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008100> .
-
-wd:Q28008102 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008102> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008102> .
-
-wd:Q28008104 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008104> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008104> .
-
-wd:Q28008133 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008133> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008133> .
-
-wd:Q28008135 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008135> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008135> .
-
-wd:Q28008138 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008138> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008138> .
-
-wd:Q28008155 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008155> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008155> .
-
-wd:Q28008157 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008157> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008157> .
-
-wd:Q28008161 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008161> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008161> .
-
-wd:Q28008192 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008192> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008192> .
-
-wd:Q28008472 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008472> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008472> .
-
-wd:Q28008486 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008486> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008486> .
-
-wd:Q28008641 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008641> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008641> .
-
-wd:Q28008720 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008720> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008720> .
-
-wd:Q28008738 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008738> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008738> .
-
-wd:Q28008805 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008805> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008805> .
-
-wd:Q28008863 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008863> ;
+    rdfs:label "Die Wasserfälle von Tivoli bei Rom"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008118> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008863> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008118> .
 
-wd:Q28008864 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008122 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008864> ;
+    rdfs:label "Bacchus and Ariadne"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008122> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008864> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008122> .
 
-wd:Q28008876 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008150 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008876> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008876> .
-
-wd:Q28008893 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008893> ;
+    rdfs:label "Josef Mayer Freiherr von und zu Gravenegg"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008150> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008893> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008150> .
 
-wd:Q28008908 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008170 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008908> ;
+    rdfs:label "Der Hafen Granatello bei Portici mit dem Vesuv im Hintergrund"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008170> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008908> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008170> .
 
-wd:Q28008909 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008201 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008909> ;
+    rdfs:label "The Foundling"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008201> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008909> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008201> .
 
-wd:Q28008913 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008211 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008913> ;
+    rdfs:label "Der Maler Johann Ender"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008211> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008913> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008211> .
 
-wd:Q28008915 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008241 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008915> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008915> .
-
-wd:Q28008917 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008917> ;
+    rdfs:label "Die Heimkehr Jakobs"@de,
+        "Jacob's homecoming"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008241> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008917> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008241> .
 
-wd:Q28008931 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008292 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008931> ;
-    crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008931> .
-
-wd:Q28009359 a crm:E24_Physical_Human_Made_Thing,
-        idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28009359> ;
+    rdfs:label "Die Schlacht bei Kolin 1757"@de,
+        "The Battle of Kolin 1757"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008292> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28009359> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008292> .
 
-wd:Q28009627 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008441 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28009627> ;
+    rdfs:label "Venus, auf einem Ruhebett schlafend"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008441> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28009627> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008441> .
 
-wd:Q28009629 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008468 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28009629> ;
+    rdfs:label "Selbstbildnis"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008468> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28009629> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008468> .
 
-wd:Q28019076 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008479 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28019076> ;
+    rdfs:label "Stillleben"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008479> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28019076> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008479> .
 
-wd:Q28020526 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008487 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28020526> ;
+    rdfs:label "Das letzte Aufgebot"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008487> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28020526> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008487> .
 
-wd:Q58371246 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008493 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q58371246> ;
+    rdfs:label "Abraham verstößt Hagar und Ismael"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008493> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q58371246> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008493> .
 
-wd:Q58376277 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008535 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q58376277> ;
+    rdfs:label "Der stille Waldwinkel"@de,
+        "Der stille Waldwinkel"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008535> ;
     crm:P2_has_type wd:Q3305213 ;
     crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q58376277> .
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008535> .
 
-wd:Q58414597 a crm:E24_Physical_Human_Made_Thing,
+wd:Q28008544 a crm:E24_Physical_Human_Made_Thing,
         idm:CHO_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q58414597> ;
+    rdfs:label "Boucquoi's victory at Zablat (Budweis) 1619"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008544> ;
     crm:P2_has_type wd:Q3305213 ;
-    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q106857709> ;
-    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q58414597> .
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008544> .
 
-<https://www.intavia.org/chotitle/Q105812133> rdfs:label "Der Halter kommt"@de .
+wd:Q28008563 a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy ;
+    rdfs:label "Emperor Franz Joseph I in the service uniform of an Austrian field marshal"@en ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008563> ;
+    crm:P2_has_type wd:Q3305213 ;
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008563> .
 
-<https://www.intavia.org/chotitle/Q28001339> rdfs:label "Meine Mutter (Abendmahlzeit)"@de .
+wd:Q28008574 a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy ;
+    rdfs:label "Waldlandschaft"@de ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008574> ;
+    crm:P2_has_type wd:Q3305213 ;
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008574> .
 
-<https://www.intavia.org/chotitle/Q28001540> rdfs:label "Die Jagdbeute"@de .
+wd:Q28008585 a crm:E24_Physical_Human_Made_Thing,
+        idm:CHO_Proxy ;
+    rdfs:label "Autoportrét"@cs,
+        "Self Portrait"@en,
+        "Autorretrato"@es,
+        "Autoportret"@hr,
+        "Önarckép"@hu,
+        "Autoritratto"@it,
+        "Autoportret"@ro,
+        "Автопортрет"@uk,
+        "自画像"@zh ;
+    crm:P1_is_identified_by <https://www.intavia.org/chotitle/Q28008585> ;
+    crm:P2_has_type wd:Q3305213 ;
+    crm:P45_consists_of <https://www.intavia.org/chomaterial/Q12321255> ;
+    bioc:bearer_of <https://www.intavia.org/productionthingrole/Q28008585> .
 
-<https://www.intavia.org/chotitle/Q28001700> rdfs:label "Motiv aus Venedig"@de .
+wd:Q93184 a crm:E55_Type ;
+    rdfs:label "drawing"@en .
 
-<https://www.intavia.org/chotitle/Q28001734> rdfs:label "Der Maler Josef Feid"@de .
+<https://www.intavia.org/chomaterial/Q11472> a crm:E57_Material ;
+    rdfs:label "paper"@en .
 
-<https://www.intavia.org/chotitle/Q28001747> rdfs:label "Einem verwundeten Offizier wird die letzte Ölung erteilt"@de .
+<https://www.intavia.org/chomaterial/Q189085> a crm:E57_Material ;
+    rdfs:label "pastel"@en .
 
-<https://www.intavia.org/chotitle/Q28001748> rdfs:label "Frau Katharina Waldmüller"@de .
+<https://www.intavia.org/chomaterial/Q296955> a crm:E57_Material ;
+    rdfs:label "oil paint"@en .
 
-<https://www.intavia.org/chotitle/Q28001749> rdfs:label "Das Innere des Baptisteriums von San Marco in Venedig"@de .
+<https://www.intavia.org/chotitle/Q108335821> rdfs:label "Portret Miry Zimińskiej"@pl .
 
-<https://www.intavia.org/chotitle/Q28001757> rdfs:label "Die Witwe des Landwehrmannes (Bauernstube)"@de .
+<https://www.intavia.org/chotitle/Q108917736> rdfs:label "L’ultimo premio in regata"@it,
+        "Sconfitto alla regata"@it .
 
-<https://www.intavia.org/chotitle/Q28002505> rdfs:label "Blumenstück mit Ananas, Weintrauben und Papagei"@de .
+<https://www.intavia.org/chotitle/Q28008117> rdfs:label "Jakob begegnet Rahel bei den Herden ihres Vaters"@de .
 
-<https://www.intavia.org/chotitle/Q28003533> rdfs:label "Der Hallstätter See"@de .
+<https://www.intavia.org/chotitle/Q28008118> rdfs:label "Die Wasserfälle von Tivoli bei Rom"@de .
 
-<https://www.intavia.org/chotitle/Q28007574> rdfs:label "Waldausgang"@de .
+<https://www.intavia.org/chotitle/Q28008122> rdfs:label "Bacchus und Ariadne"@de .
 
-<https://www.intavia.org/chotitle/Q28007626> rdfs:label "Vesperzeit"@de .
+<https://www.intavia.org/chotitle/Q28008150> rdfs:label "Josef Mayer Freiherr von und zu Gravenegg"@de .
 
-<https://www.intavia.org/chotitle/Q28007631> rdfs:label "Römische Pilger"@de .
+<https://www.intavia.org/chotitle/Q28008170> rdfs:label "Der Hafen Granatella bei Portici mit dem Vesuv im Hintergrund"@de .
 
-<https://www.intavia.org/chotitle/Q28007732> rdfs:label "Vorderer Gosausee gegen Dachstein"@de .
+<https://www.intavia.org/chotitle/Q28008201> rdfs:label "Der Findling"@de .
 
-<https://www.intavia.org/chotitle/Q28007921> rdfs:label "Lotterieschwestern"@de .
+<https://www.intavia.org/chotitle/Q28008211> rdfs:label "Der Maler Johann Ender"@de .
 
-<https://www.intavia.org/chotitle/Q28008100> rdfs:label "Die Klostersuppe"@de .
+<https://www.intavia.org/chotitle/Q28008241> rdfs:label "Die Heimkehr Jakobs"@de .
 
-<https://www.intavia.org/chotitle/Q28008102> rdfs:label "Der Taufgang"@de .
+<https://www.intavia.org/chotitle/Q28008292> rdfs:label "Die Schlacht bei Kolin 1757"@de .
 
-<https://www.intavia.org/chotitle/Q28008104> rdfs:label "Die Lauscherin"@de .
+<https://www.intavia.org/chotitle/Q28008441> rdfs:label "Venus, auf einem Ruhebett schlafend"@de .
 
-<https://www.intavia.org/chotitle/Q28008133> rdfs:label "Die Rekrutierung"@de .
+<https://www.intavia.org/chotitle/Q28008468> rdfs:label "Selbstbildnis"@de .
 
-<https://www.intavia.org/chotitle/Q28008135> rdfs:label "Der tote Eremit"@de .
+<https://www.intavia.org/chotitle/Q28008479> rdfs:label "Stillleben"@de .
 
-<https://www.intavia.org/chotitle/Q28008138> rdfs:label "Reisigsammler im Wienerwald"@de .
+<https://www.intavia.org/chotitle/Q28008487> rdfs:label "Das letzte Aufgebot"@de .
 
-<https://www.intavia.org/chotitle/Q28008155> rdfs:label "Der kleine Patient"@de .
+<https://www.intavia.org/chotitle/Q28008493> rdfs:label "Abraham verstößt Hagar und Ismael"@de .
 
-<https://www.intavia.org/chotitle/Q28008157> rdfs:label "Kaiser Maximilian I. in der Martinswand"@de .
+<https://www.intavia.org/chotitle/Q28008535> rdfs:label "Der stille Waldwinkel"@de .
 
-<https://www.intavia.org/chotitle/Q28008161> rdfs:label "Christtagsmorgen"@de .
+<https://www.intavia.org/chotitle/Q28008544> rdfs:label "Boucquoi's Sieg bei Zablat (Budweis) 1619"@de .
 
-<https://www.intavia.org/chotitle/Q28008192> rdfs:label "Vor der Dorfschenke"@de .
+<https://www.intavia.org/chotitle/Q28008563> rdfs:label "Kaiser Franz Joseph I. in der Dienstuniform eines österreichischen Feldmarschalls"@de .
 
-<https://www.intavia.org/chotitle/Q28008472> rdfs:label "Gott schreibt Moses auf dem Berg Sinai die zehn Gebote auf zwei steinerne Tafeln"@de .
+<https://www.intavia.org/chotitle/Q28008574> rdfs:label "Waldlandschaft"@de .
 
-<https://www.intavia.org/chotitle/Q28008486> rdfs:label "Blumenstillleben"@de .
+<https://www.intavia.org/chotitle/Q28008585> rdfs:label "Selbstporträt"@de .
 
-<https://www.intavia.org/chotitle/Q28008641> rdfs:label "Der Hoffotograf Josef Löwy"@de .
-
-<https://www.intavia.org/chotitle/Q28008720> rdfs:label "Der Drahtbinder in der Küche"@de .
-
-<https://www.intavia.org/chotitle/Q28008738> rdfs:label "Interieur einer Hammerschmiede"@de .
-
-<https://www.intavia.org/chotitle/Q28008805> rdfs:label "Die büßende Magdalena"@de .
-
-<https://www.intavia.org/chotitle/Q28008863> rdfs:label "Schloss Persenbeug"@de .
-
-<https://www.intavia.org/chotitle/Q28008864> rdfs:label "Faust und Gretchen im 19. Jahrhundert"@de .
-
-<https://www.intavia.org/chotitle/Q28008876> rdfs:label "Maria, das Kind anbetend"@de .
-
-<https://www.intavia.org/chotitle/Q28008893> rdfs:label "Ansicht eines Säulenganges im Tempel der Diana zu Spalato"@de .
-
-<https://www.intavia.org/chotitle/Q28008908> rdfs:label "Waldlandschaft"@de .
-
-<https://www.intavia.org/chotitle/Q28008909> rdfs:label "Zwei Bacchantinnen"@de .
-
-<https://www.intavia.org/chotitle/Q28008913> rdfs:label "Schlafende Bacchantin"@de .
-
-<https://www.intavia.org/chotitle/Q28008915> rdfs:label "Therese Rockert"@de .
-
-<https://www.intavia.org/chotitle/Q28008917> rdfs:label "Heilige Maria Magdalena"@de .
-
-<https://www.intavia.org/chotitle/Q28008931> rdfs:label "Soldaten in der Kantine"@de .
-
-<https://www.intavia.org/chotitle/Q28009359> rdfs:label "Raffael, Rembrandt, Rubens"@de .
-
-<https://www.intavia.org/chotitle/Q28009627> rdfs:label "Die Rückeroberung Ofens aus der Hand der Türken im Jahr 1686"@de .
-
-<https://www.intavia.org/chotitle/Q28009629> rdfs:label "Das Innere einer Taufkapelle"@de .
-
-<https://www.intavia.org/chotitle/Q28019076> rdfs:label "Napoleon I. Bonaparte (1769-1821), als König von Italien"@de .
-
-<https://www.intavia.org/chotitle/Q28020526> rdfs:label "Elisabeth Wilhelmine von Württemberg (1767-1790), 1. Gemahlin von Franz II. (I.), an einem Tisch sitzend, Kniestück"@de .
-
-<https://www.intavia.org/chotitle/Q58371246> rdfs:label "Gewitterlandschaft"@de .
-
-<https://www.intavia.org/chotitle/Q58376277> rdfs:label "Oberst Alnock auf der Budapester Kettenbrücke"@de .
-
-<https://www.intavia.org/chotitle/Q58414597> rdfs:label "Die Legende des heiligen Wolfgang"@de .
-
-<https://www.intavia.org/role/responsibleArtist/Q1040415> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q143416> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1178671> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q1583777> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1336893> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q1701484> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1339893> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q1707254> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1447485> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q19569500> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1449173> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1467409> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1496891> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1657504> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1695014> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1695465> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1704563> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q1713039> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q175980> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q21127421> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q245311> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q26202745> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q26234773> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q26240462> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q26945337> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q27969709> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q28055136> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q263569> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
@@ -846,31 +409,19 @@ wd:Q58414597 a crm:E24_Physical_Human_Made_Thing,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q328283> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q3620122> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q348863> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q381238> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q39438065> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q39160065> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q39803374> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q4297899> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q470537> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q493349> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q452397> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
@@ -878,19 +429,11 @@ wd:Q58414597 a crm:E24_Physical_Human_Made_Thing,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q522983> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q670611> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q551901> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q699740> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q772701> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q698097> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
@@ -898,140 +441,66 @@ wd:Q58414597 a crm:E24_Physical_Human_Made_Thing,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q93804> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q78711> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/productionthingrole/Q105812133> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001339> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001540> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001700> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001734> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001747> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001748> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001749> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28001757> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28002505> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28003533> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28007574> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28007626> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28007631> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28007732> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28007921> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008100> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008102> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008104> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008133> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008135> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008138> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008155> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008157> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008161> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008192> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008472> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008486> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008641> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008720> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008738> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008805> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008863> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008864> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008876> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008893> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008908> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008909> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008913> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008915> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008917> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28008931> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28009359> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28009627> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28009629> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28019076> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q28020526> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q58371246> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q58376277> a bioc:Thing_Role .
-
-<https://www.intavia.org/productionthingrole/Q58414597> a bioc:Thing_Role .
-
-<https://www.intavia.org/role/responsibleArtist/Q1275737> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q872147> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q1819621> a bioc:Event_Role,
+<https://www.intavia.org/role/responsibleArtist/Q87659> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
 
-<https://www.intavia.org/role/responsibleArtist/Q186816> a bioc:Event_Role,
+<https://www.intavia.org/productionthingrole/Q108335821> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q108917736> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008117> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008118> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008122> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008150> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008170> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008201> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008211> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008241> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008292> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008441> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008468> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008479> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008487> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008493> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008535> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008544> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008563> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008574> a bioc:Thing_Role .
+
+<https://www.intavia.org/productionthingrole/Q28008585> a bioc:Thing_Role .
+
+<https://www.intavia.org/role/responsibleArtist/Q265340> a bioc:Event_Role,
         idmrole:producing_artist ;
     rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q323578> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q579856> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/role/responsibleArtist/Q453650> a bioc:Event_Role,
-        idmrole:producing_artist ;
-    rdfs:label "producing artist"@en .
-
-<https://www.intavia.org/chomaterial/Q12321255> a crm:E57_Material ;
-    rdfs:label "canvas"@en .
-
-<https://www.intavia.org/chomaterial/Q106857709> a crm:E57_Material ;
-    rdfs:label "panel"@en .
 
 wd:Q3305213 a crm:E55_Type ;
     rdfs:label "painting"@en .
 
+<https://www.intavia.org/chomaterial/Q12321255> a crm:E57_Material ;
+    rdfs:label "canvas"@en .
