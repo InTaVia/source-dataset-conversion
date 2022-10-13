@@ -39,7 +39,7 @@ sparql.setQuery(
                bioc:bearer_of ?choProductionEventRole;
                crm:P2_has_type ?class;
                crm:P1_is_identified_by ?cho_1476Title;
-               rdfs:label ?choLabel.
+               rdfs:label ?chordfsLabel.
         ?class rdfs:label ?classLabel;
                a crm:E55_Type.
         ?cho_1476Title rdfs:label ?choTitle .
@@ -83,8 +83,7 @@ sparql.setQuery(
                 BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?choProductionTimespanStr)      
                 BIND(IRI(?choProductionTimespanStr) as ?choProductionTimespan)
                 }
-            OPTIONAL{?cho rdfs:label ?chordfslabel .
-            FILTER(lang(?choLabel) = "en")
+            OPTIONAL{?cho rdfs:label ?chordfsLabel .
             }
             OPTIONAL{?material rdfs:label ?materialLabel .
             FILTER(lang(?materialLabel) = "en")
