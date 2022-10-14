@@ -25,6 +25,7 @@ sparql.setQuery(
     PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
     PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX p: <http://www.wikidata.org/prop/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX wikibase: <http://wikiba.se/ontology#>
@@ -32,7 +33,7 @@ sparql.setQuery(
     PREFIX idm: <https://www.intavia.org/idm/>
     PREFIX idmrole: <https://www.intavia.org/idm/role/>
     PREFIX bioc: <http://www.ldf.fi/schema/bioc/>
-    
+    PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
     CONSTRUCT {
         ?cho a crm:E24_Physical_Human_Made_Thing,
                idm:CHO_Proxy;
@@ -43,6 +44,7 @@ sparql.setQuery(
         ?class rdfs:label ?classLabel;
                a crm:E55_Type.
         ?cho_1476Title rdfs:label ?choTitle .
+        ?cho_1476Title a crm:E35_Title .
         ?choProductionEventRole a bioc:Thing_Role .
         ?choProductionEvent bioc:occured_in_the_presence_of_in_role ?choProductionEventRole;
                                  bioc:had_participant_in_role ?artistProductionEventRole .
@@ -63,10 +65,21 @@ sparql.setQuery(
     WHERE {
             ?artistUri wdt:P6194 ?oeblid .
             ?cho wdt:P170 ?artistUri .
-            ?cho wdt:P31 ?class .
-            ?cho wdt:P186 ?material .
-            ?cho wdt:P195 ?collection .
-            ?cho wdt:P1476 ?choTitle
+            OPTIONAL{?cho wdt:P1476 ?choTitle}
+            OPTIONAL{?cho wdt:P31 ?class}
+            OPTIONAL{?cho wdt:P186 ?material}
+            OPTIONAL{?cho rdfs:label ?chordfsLabel
+                FILTER(lang(?chordfsLabel) = "en")}
+            OPTIONAL{?cho wdt:P276 ?location}
+            OPTIONAL{?location rdfs:label ?locationLabel
+                FILTER(lang(?chordfsLabel) = "en")}
+            OPTIONAL{?cho p:P2048 ?heightnode}
+            OPTIONAL{?heightnode psv:P2048 ?heightvaluenode}
+            OPTIONAL{?heightvaluenode wikibase:quantityUnit ?qunit}
+            OPTIONAL{?cho wdt:P2049 ?width}
+            OPTIONAL{?cho wdt:P195 ?collection}
+            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementStr)
+            BIND(IRI(?cho_MeasurementStr) as ?cho_measurement_event)
             BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chotitle/") as ?cho_TitleStr)
             BIND(IRI(?cho_TitleStr) as ?cho_1476Title)
             BIND(REPLACE(STR(?material), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomaterial/") as ?cho_materialStr)
@@ -83,19 +96,8 @@ sparql.setQuery(
                 BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?choProductionTimespanStr)      
                 BIND(IRI(?choProductionTimespanStr) as ?choProductionTimespan)
                 }
-            OPTIONAL{?cho rdfs:label ?chordfsLabel .
             }
-            OPTIONAL{?material rdfs:label ?materialLabel .
-            FILTER(lang(?materialLabel) = "en")
-                }
-            OPTIONAL {?class rdfs:label ?classLabel .
-            FILTER(lang(?classLabel) = "en")
-            }
-            OPTIONAL {?collection rdfs:label ?collectionLabel .
-            FILTER(lang(?collectionLabel) = "en")
-            }
-            }
-            LIMIT 50
+            LIMIT 10
     """
     )
 
@@ -165,3 +167,16 @@ def querya():
 
 if __name__ == "__main__":
     querya()
+
+
+
+
+    # OPTIONAL{?material rdfs:label ?materialLabel .
+    #         FILTER(lang(?materialLabel) = "en")
+    #         }
+    #         OPTIONAL {?class rdfs:label ?classLabel .
+    #         FILTER(lang(?classLabel) = "en")
+    #         }
+    #         OPTIONAL {?collection rdfs:label ?collectionLabel .
+    #         FILTER(lang(?collectionLabel) = "en")
+    #         }
