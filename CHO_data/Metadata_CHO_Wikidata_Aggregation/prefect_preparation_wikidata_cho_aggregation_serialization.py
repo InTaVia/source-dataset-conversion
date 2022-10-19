@@ -10,7 +10,7 @@ import pprint
 from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import RDFS, FOAF
 from SPARQLWrapper import JSON, SPARQLWrapper
-from lxml import etree
+from lxml import etree 
 import re
 import urllib.parse
 import datetime
@@ -37,10 +37,10 @@ sparql.setQuery(
     CONSTRUCT {
         ?cho a crm:E24_Physical_Human_Made_Thing,
                idm:CHO_Proxy;
-               bioc:bearer_of ?choProductionEventRole;
-               crm:P2_has_type ?class;
-               crm:P1_is_identified_by ?cho_1476Title;
-               rdfs:label ?chordfsLabel.
+             bioc:bearer_of ?choProductionEventRole;
+             crm:P2_has_type ?class;
+             crm:P1_is_identified_by ?cho_1476Title;
+             rdfs:label ?chordfsLabel.
         ?class rdfs:label ?classLabel;
                a crm:E55_Type.
         ?cho_1476Title rdfs:label ?choTitle .
@@ -61,6 +61,12 @@ sparql.setQuery(
         ?collection crm:P46_is_composed_of ?cho .
         ?collection a crm:E78_Curated_Holding .
         ?collection rdfs:label ?collectionLabel.
+        ?cho_measurement_event crm:P39_measured ?cho.
+        ?cho_measurement_event crm:P40_observed_dimension ?cho_measurement.
+        ?cho_measurement a crm:E54_Dimension.
+        ?cho_measuerement crm:P91_has_unit ?qunit.
+        ?qunit a crm:E58_Measurement_Unit.
+        ?cho_measurement crm:P90_has_value ?heightvalue.
     }
     WHERE {
             ?artistUri wdt:P6194 ?oeblid .
@@ -73,13 +79,15 @@ sparql.setQuery(
             OPTIONAL{?cho wdt:P276 ?location}
             OPTIONAL{?location rdfs:label ?locationLabel
                 FILTER(lang(?chordfsLabel) = "en")}
-            OPTIONAL{?cho p:P2048 ?heightnode}
-            OPTIONAL{?heightnode psv:P2048 ?heightvaluenode}
-            OPTIONAL{?heightvaluenode wikibase:quantityUnit ?qunit}
-            OPTIONAL{?cho wdt:P2049 ?width}
+            OPTIONAL{?cho wdt:P2048 ?heightvalue}
+            OPTIONAL{?cho p:P2048 ?heightstatement}
+            OPTIONAL{?heightstatement wikibase:quantityUnit ?qunit}
+            OPTIONAL{?cho wdt:P2049 ?widthvalue}
+            OPTIONAL{?cho p:2049 ?widthstatement}
+            OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
             OPTIONAL{?cho wdt:P195 ?collection}
-            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementStr)
-            BIND(IRI(?cho_MeasurementStr) as ?cho_measurement_event)
+            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
+            BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
             BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chotitle/") as ?cho_TitleStr)
             BIND(IRI(?cho_TitleStr) as ?cho_1476Title)
             BIND(REPLACE(STR(?material), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomaterial/") as ?cho_materialStr)
@@ -100,63 +108,7 @@ sparql.setQuery(
             LIMIT 10
     """
     )
-
-# sparql.setQuery("""
-#     PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
-#     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-#     PREFIX wd: <http://www.wikidata.org/entity/>
-#     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-#     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-#     PREFIX wikibase: <http://wikiba.se/ontology#>
-#     PREFIX bd: <http://www.bigdata.com/rdf#>
-#     PREFIX idm: <https://www.intavia.org/idm/>
-#     PREFIX idmrole: <https://www.intavia.org/idm/role/>
-#     PREFIX bioc: <http://www.ldf.fi/schema/bioc/>
-    
-#     CONSTRUCT {
-#         ?cho a crm:E24_Physical_Human_Made_Thing,
-#                     idm:CHO_Proxy;
-#                   bioc:bearer_of ?choProductionEventRole .
-#         ?choProductionEventRole a bioc:Thing_Role .
-#         ?choProductionEvent bioc:occured_in_the_presence_of_in_role ?choProductionEventRole;
-#                                  bioc:had_participant_in_role ?artistProductionEventRole .
-#         ?artist bioc:bearer_of ?artistProductionEventRole .
-#         ?artistProductionEventRole a idmrole:producing_artist ,
-#                                      bioc:Event_Role .
-#         ?artistProductionEventRole rdfs:label "producing artist"@en .
-#         ?choProductionEvent crm:P4_has_time-span ?choProductionTimespan .
-#         ?choProductionEvent a crm:E12_Production .
-#         ?choProductionTimespan crm:P82a_begin_of_the_begin ?pInception .
-#         ?choProductionTimespan crm:P82b_end_of_the_end ?pInception .
-#         ?choProductionTimespan rdfs:label ?pInceptionLabel .
-#         ?cho crm:P1_is_identified_by ?choAppelation .
-#         ?choAppelation a crm:E41_E33_Linguistic_Appellation .
-#         ?choAppelation rdfs:label ?choLabel .
-#         ?cho rdfs:label ?choLabel
-#     }
-#     WHERE {
-#                 ?cho wdt:P170 ?artistUri .
-#                 ?cho wdt:P31 wd:Q3305213
-#                 BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/productionthingrole/") as ?choProductionEventRoleStr)      
-#                 BIND(IRI(?choProductionEventRoleStr) as ?choProductionEventRole)
-#                 BIND(REPLACE(STR(?artistUri), "http://www.wikidata.org/entity/", "https://www.intavia.org/role/responsibleArtist/") as ?artistProductionEventRoleStr)      
-#                 BIND(IRI(?artistProductionEventRoleStr) as ?artistProductionEventRole)
-#                 BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/production_event/") as ?choProductionEventStr)      
-#                 BIND(IRI(?choProductionEventStr) as ?choProductionEvent)
-#                     OPTIONAL{?cho wdt:P571 ?pInception .
-#                 BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?choProductionTimespanStr)      
-#                 BIND(IRI(?choProductionTimespanStr) as ?choProductionTimespan)
-#                 }
-#                     OPTIONAL{?cho rdfs:label ?choLabel
-#                         BIND(CONCAT(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/cho/"), "title") as ?choAppelationStr)      
-#                         BIND(IRI(?choAppelationStr) as ?choAppelation)
-#             FILTER(lang(?choLabel) = "en")}
-#             }
-#             LIMIT 50
-#     """
-#     )
-
-#                 BIND(CONCAT(REPLACE(STR(?choTitle), "http://www.wikidata.org/entity/", "https://www.intavia.org/cho/"), "title") as ?choTitleStr)      
+ 
 
 def querya():
     try:
