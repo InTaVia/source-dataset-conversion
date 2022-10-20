@@ -69,23 +69,26 @@ sparql.setQuery(
         ?cho_measurement crm:P90_has_value ?heightvalue.
     }
     WHERE {
-            ?artistUri wdt:P6194 ?oeblid .
-            ?cho wdt:P170 ?artistUri .
-            OPTIONAL{?cho wdt:P1476 ?choTitle}
-            OPTIONAL{?cho wdt:P31 ?class}
-            OPTIONAL{?cho wdt:P186 ?material}
-            OPTIONAL{?cho rdfs:label ?chordfsLabel
-                FILTER(lang(?chordfsLabel) = "en")}
-            OPTIONAL{?cho wdt:P276 ?location}
-            OPTIONAL{?location rdfs:label ?locationLabel
-                FILTER(lang(?chordfsLabel) = "en")}
-            OPTIONAL{?cho wdt:P2048 ?heightvalue}
-            OPTIONAL{?cho p:P2048 ?heightstatement}
-            OPTIONAL{?heightstatement wikibase:quantityUnit ?qunit}
-            OPTIONAL{?cho wdt:P2049 ?widthvalue}
-            OPTIONAL{?cho p:2049 ?widthstatement}
-            OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
-            OPTIONAL{?cho wdt:P195 ?collection}
+        ?artistUri wdt:P6194 ?oeblid .
+          ?cho wdt:P170 ?artistUri .
+          #?cho wdt:P31 wd:Q3305213.
+          OPTIONAL{?cho wdt:P1476 ?choTitle}
+          OPTIONAL{?cho wdt:P31 ?class}
+          OPTIONAL{?cho wdt:P186 ?material}
+          OPTIONAL{?cho rdfs:label ?chordfsLabel
+                        FILTER(lang(?chordfsLabel) = "en")}
+          OPTIONAL{?cho wdt:P276 ?location}
+          OPTIONAL{?location rdfs:label ?locationLabel
+                             FILTER(lang(?chordfsLabel) = "en")}
+          OPTIONAL{?cho wdt:P2048 ?heightvalue}
+          OPTIONAL{?cho p:P2048 ?heightstatement.
+                   ?heightstatement psn:P2048 ?quantityvaluestmt.
+                   ?quantityvaluestmt wikibase:quantityUnit ?qunit}
+          OPTIONAL{?cho wdt:P2049 ?widthvalue}
+          OPTIONAL{?cho p:2049 ?widthstatement}
+          OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
+          OPTIONAL{?cho wdt:P195 ?collection}
+          }
             BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
             BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
             BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chotitle/") as ?cho_TitleStr)
