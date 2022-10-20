@@ -77,6 +77,8 @@ sparql.setQuery(
      OPTIONAL{?cho wdt:P1476 ?choTitle}
      OPTIONAL{?cho rdfs:label ?chordfsLabel
                    FILTER(lang(?chordfsLabel) = "en")}
+     OPTIONAL{ ?cho schema:description ?description
+                    FILTER(lang(?description) = "en")}
      OPTIONAL{?cho wdt:P31 ?class}
      OPTIONAL{?cho wdt:P186 ?material}
      OPTIONAL{?cho wdt:P921 ?mainsubject.
@@ -100,6 +102,12 @@ sparql.setQuery(
      OPTIONAL{?cho wdt:P195 ?collection}
      OPTIONAL{?cho wdt:P527 ?partsofcho}
      OPTIONAL{?cho wdt:P361 ?choispartof}
+     OPTIONAL{?cho wdt:P1071 ?locationofcreation}
+     #significant events have to be checked for relevance, if the relevance is given, details about the events should be added
+     OPTIONAL{?cho wdt:P739 ?chosignificantevent}
+     OPTIONAL{?artistURI wdt:P739 ?artistsignificantevent}
+     OPTIONAL{?cho wdt:P973 ?chodescribedat}
+     OPTIONAL{?artistURI wdt:P973 ?artistdescribedat}
      }
     BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
     BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
