@@ -72,11 +72,22 @@ sparql.setQuery(
     {?artistUri wdt:P6194 ?oeblid .
      ?cho wdt:P170 ?artistUri .
      #?cho wdt:P31 wd:Q3305213.
+     OPTIONAL{?artistUri wdt:P7763 ?creatorCopyrightstatus}
+     OPTIONAL{?cho wdt:P6216 ?choCopyrightStatus}
      OPTIONAL{?cho wdt:P1476 ?choTitle}
      OPTIONAL{?cho rdfs:label ?chordfsLabel
                    FILTER(lang(?chordfsLabel) = "en")}
      OPTIONAL{?cho wdt:P31 ?class}
      OPTIONAL{?cho wdt:P186 ?material}
+     OPTIONAL{?cho wdt:P921 ?mainsubject.
+             OPTIONAL{?mainsubject wdt:P31 ?mainsubjectclass}
+              OPTIONAL{?mainsubject rdfs:label ?mainsubjectLabel
+                                    FILTER(lang(?mainsubjectLabel) = "en")}
+             }
+     OPTIONAL{?cho wdt:P180 ?depictedSubject.
+             OPTIONAL{?depictedSubject wdt:P31 ?dsubjectclass}
+              OPTIONAL{?depictedSubject rdfs:label ?dsubjectLabel
+                                    FILTER(lang(?dsubjectLabel) = "en")}}
      OPTIONAL{?cho wdt:P276 ?location.
               OPTIONAL{?location rdfs:label ?locationLabel
                                  FILTER(lang(?locationLabel) = "en")}}
@@ -86,12 +97,9 @@ sparql.setQuery(
               ?heightstatement psn:P2048 ?quantityvaluestmt.
               ?quantityvaluestmt wikibase:quantityUnit ?qunit}
      OPTIONAL{?cho wdt:P2049 ?widthvalue}
-     OPTIONAL{?cho p:2049 ?widthstatement}
-     OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
      OPTIONAL{?cho wdt:P195 ?collection}
-     #identifiers, other identifiers may be added
-     OPTIONAL{?cho wdt:214 ?VIAFid}
-     OPTIONAL{?cho wdt:5823 ?BelvedereObjectID}
+     OPTIONAL{?cho wdt:P527 ?partsofcho}
+     OPTIONAL{?cho wdt:P361 ?choispartof}
      }
     BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
     BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
