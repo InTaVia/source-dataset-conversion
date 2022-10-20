@@ -68,47 +68,51 @@ sparql.setQuery(
         ?qunit a crm:E58_Measurement_Unit.
         ?cho_measurement crm:P90_has_value ?heightvalue.
     }
-    WHERE {
-        ?artistUri wdt:P6194 ?oeblid .
-          ?cho wdt:P170 ?artistUri .
-          #?cho wdt:P31 wd:Q3305213.
-          OPTIONAL{?cho wdt:P1476 ?choTitle}
-          OPTIONAL{?cho wdt:P31 ?class}
-          OPTIONAL{?cho wdt:P186 ?material}
-          OPTIONAL{?cho rdfs:label ?chordfsLabel
-                        FILTER(lang(?chordfsLabel) = "en")}
-          OPTIONAL{?cho wdt:P276 ?location}
-          OPTIONAL{?location rdfs:label ?locationLabel
-                             FILTER(lang(?chordfsLabel) = "en")}
-          OPTIONAL{?cho wdt:P2048 ?heightvalue}
-          OPTIONAL{?cho p:P2048 ?heightstatement.
-                   ?heightstatement psn:P2048 ?quantityvaluestmt.
-                   ?quantityvaluestmt wikibase:quantityUnit ?qunit}
-          OPTIONAL{?cho wdt:P2049 ?widthvalue}
-          OPTIONAL{?cho p:2049 ?widthstatement}
-          OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
-          OPTIONAL{?cho wdt:P195 ?collection}
-          }
-            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
-            BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
-            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chotitle/") as ?cho_TitleStr)
-            BIND(IRI(?cho_TitleStr) as ?cho_1476Title)
-            BIND(REPLACE(STR(?material), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomaterial/") as ?cho_materialStr)
-            BIND(IRI(?cho_materialStr) as ?cho_material)
-            BIND(REPLACE(STR(?class), "http://www.wikidata.org/entity/", "https://www.intavia.org/cho_instanceofclass/") as ?cho_instanceofclassStr)
-            BIND(IRI(?cho_instanceofclassStr) as ?cho_instanceofclass)
-            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/productionthingrole/") as ?choProductionEventRoleStr)      
-            BIND(IRI(?choProductionEventRoleStr) as ?choProductionEventRole)
-            BIND(REPLACE(STR(?artistUri), "http://www.wikidata.org/entity/", "https://www.intavia.org/role/responsibleArtist/") as ?artistProductionEventRoleStr)      
-            BIND(IRI(?artistProductionEventRoleStr) as ?artistProductionEventRole)
-            BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/production_event/") as ?choProductionEventStr)      
-            BIND(IRI(?choProductionEventStr) as ?choProductionEvent)
-            OPTIONAL{?cho wdt:P571 ?pInception .
-                BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?choProductionTimespanStr)      
-                BIND(IRI(?choProductionTimespanStr) as ?choProductionTimespan)
-                }
-            }
-            LIMIT 10
+    WHERE
+    {?artistUri wdt:P6194 ?oeblid .
+     ?cho wdt:P170 ?artistUri .
+     #?cho wdt:P31 wd:Q3305213.
+     OPTIONAL{?cho wdt:P1476 ?choTitle}
+     OPTIONAL{?cho rdfs:label ?chordfsLabel
+                   FILTER(lang(?chordfsLabel) = "en")}
+     OPTIONAL{?cho wdt:P31 ?class}
+     OPTIONAL{?cho wdt:P186 ?material}
+     OPTIONAL{?cho wdt:P276 ?location.
+              OPTIONAL{?location rdfs:label ?locationLabel
+                                 FILTER(lang(?locationLabel) = "en")}}
+     OPTIONAL{?cho wdt:P1684 ?inscription}
+     OPTIONAL{?cho wdt:P2048 ?heightvalue}
+     OPTIONAL{?cho p:P2048 ?heightstatement.
+              ?heightstatement psn:P2048 ?quantityvaluestmt.
+              ?quantityvaluestmt wikibase:quantityUnit ?qunit}
+     OPTIONAL{?cho wdt:P2049 ?widthvalue}
+     OPTIONAL{?cho p:2049 ?widthstatement}
+     OPTIONAL{?widthstatement wikibase:quantityUnit ?qwunit}
+     OPTIONAL{?cho wdt:P195 ?collection}
+     #identifiers, other identifiers may be added
+     OPTIONAL{?cho wdt:214 ?VIAFid}
+     OPTIONAL{?cho wdt:5823 ?BelvedereObjectID}
+     }
+    BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomeasurement/") as ?cho_MeasurementEventStr)
+    BIND(IRI(?cho_MeasurementEventStr) as ?cho_measurement_event)
+    BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/chotitle/") as ?cho_TitleStr)
+    BIND(IRI(?cho_TitleStr) as ?cho_1476Title)
+    BIND(REPLACE(STR(?material), "http://www.wikidata.org/entity/", "https://www.intavia.org/chomaterial/") as ?cho_materialStr)
+    BIND(IRI(?cho_materialStr) as ?cho_material)
+    BIND(REPLACE(STR(?class), "http://www.wikidata.org/entity/", "https://www.intavia.org/cho_instanceofclass/") as ?cho_instanceofclassStr)
+    BIND(IRI(?cho_instanceofclassStr) as ?cho_instanceofclass)
+    BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/productionthingrole/") as ?choProductionEventRoleStr)      
+    BIND(IRI(?choProductionEventRoleStr) as ?choProductionEventRole)
+    BIND(REPLACE(STR(?artistUri), "http://www.wikidata.org/entity/", "https://www.intavia.org/role/responsibleArtist/") as ?artistProductionEventRoleStr)      
+    BIND(IRI(?artistProductionEventRoleStr) as ?artistProductionEventRole)
+    BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/production_event/") as ?choProductionEventStr)      
+    BIND(IRI(?choProductionEventStr) as ?choProductionEvent)
+    OPTIONAL{?cho wdt:P571 ?pInception .
+        BIND(REPLACE(STR(?cho), "http://www.wikidata.org/entity/", "https://www.intavia.org/timespan_production/") as ?choProductionTimespanStr)      
+        BIND(IRI(?choProductionTimespanStr) as ?choProductionTimespan)
+        }
+    }
+    LIMIT 10
     """
     )
  
