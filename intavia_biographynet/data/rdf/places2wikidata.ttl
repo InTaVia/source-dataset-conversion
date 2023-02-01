@@ -1,0 +1,481 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix idm: <http://www.intavia.eu/idm-core/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+ <http://data.biographynet.nl/rdf/place-Accra> owl:sameAs <http://www.wikidata.org/entity/Q3761> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.187 5.6037)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ajaccio> owl:sameAs <http://www.wikidata.org/entity/Q40104> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.736388888 41.925555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Alkmaar> owl:sameAs <http://www.wikidata.org/entity/Q16977290> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.751 52.632)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Almelo> owl:sameAs <http://www.wikidata.org/entity/Q33421017> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.6625 52.35667)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Almere> owl:sameAs <http://www.wikidata.org/entity/Q83178> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.225555555 52.375833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Alphen_aan_den_Rijn> owl:sameAs <http://www.wikidata.org/entity/Q15156199> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.653806 52.128306)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Altena> owl:sameAs <http://www.wikidata.org/entity/Q5276> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(7.666666666 51.3)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Amersfoort> owl:sameAs <http://www.wikidata.org/entity/Q33421377> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.3875 52.155)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Amersfoort> owl:sameAs <http://www.wikidata.org/entity/Q992> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.38 52.15)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Amstelveen> owl:sameAs <http://www.wikidata.org/entity/Q33421878> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.86389 52.30083)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Amsterdam> owl:sameAs <http://www.wikidata.org/entity/Q727> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.9 52.383333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Angers> owl:sameAs <http://www.wikidata.org/entity/Q38380> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.555555555 47.472777777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Antwerpen> owl:sameAs <http://www.wikidata.org/entity/Q31467408> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.400277777 51.220555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Apeldoorn> owl:sameAs <http://www.wikidata.org/entity/Q3018561> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.97 52.21)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Appingedam> owl:sameAs <http://www.wikidata.org/entity/Q33422054> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.85833 53.32167)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Arnhem> owl:sameAs <http://www.wikidata.org/entity/Q12269651> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.91111 51.98)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Assen> owl:sameAs <http://www.wikidata.org/entity/Q49280472> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.5625 52.99667)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Assen> owl:sameAs <http://www.wikidata.org/entity/Q798> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.55 53.0)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Athene> owl:sameAs <http://www.wikidata.org/entity/Q1524> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(23.728055555 37.984166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Auckland> owl:sameAs <http://www.wikidata.org/entity/Q37100> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(174.783333333 -36.85)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Avignon> owl:sameAs <http://www.wikidata.org/entity/Q6397> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.808333333 43.948611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bakel> owl:sameAs <http://www.wikidata.org/entity/Q804289> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-12.458333333 14.904166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bar> owl:sameAs <http://www.wikidata.org/entity/Q115276> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(19.1 42.1)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Barcelona> owl:sameAs <http://www.wikidata.org/entity/Q1492> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(2.176944444 41.3825)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Barcelona> owl:sameAs <http://www.wikidata.org/entity/Q391221> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-64.683333333 10.133333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bath> owl:sameAs <http://www.wikidata.org/entity/Q22889> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-2.358611 51.381389)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Benidorm> owl:sameAs <http://www.wikidata.org/entity/Q487981> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.131388888 38.534166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bergamo> owl:sameAs <http://www.wikidata.org/entity/Q628> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.67 45.695)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bergen> owl:sameAs <http://www.wikidata.org/entity/Q26793> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.323333333 60.3925)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bergen_op_Zoom> owl:sameAs <http://www.wikidata.org/entity/Q192508> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.3 51.5)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Best> owl:sameAs <http://www.wikidata.org/entity/Q33424686> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.39028 51.5075)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Beziers> owl:sameAs <http://www.wikidata.org/entity/Q174019> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.216111111 43.343333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Biella> owl:sameAs <http://www.wikidata.org/entity/Q18021> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.053333333 45.566388888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bloemfontein> owl:sameAs <http://www.wikidata.org/entity/Q37701> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(26.216666666 -29.1)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bologna> owl:sameAs <http://www.wikidata.org/entity/Q1891> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.342777777 44.493888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bolsward> owl:sameAs <http://www.wikidata.org/entity/Q3291153> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.521403 53.061797)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Braunschweig> owl:sameAs <http://www.wikidata.org/entity/Q2773> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(10.521111111 52.269166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Breda> owl:sameAs <http://www.wikidata.org/entity/Q40844> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.775833333 51.588888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Bristol> owl:sameAs <http://www.wikidata.org/entity/Q23154> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-2.583333333 51.45)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Brugge> owl:sameAs <http://www.wikidata.org/entity/Q12994> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.216666666 51.25)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Brugge> owl:sameAs <http://www.wikidata.org/entity/Q12994> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.224166666 51.208888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Brussel> owl:sameAs <http://www.wikidata.org/entity/Q111901161> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.3525 50.84668)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Cambridge> owl:sameAs <http://www.wikidata.org/entity/Q1028279> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-80.313888888 43.358333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Cambridge> owl:sameAs <http://www.wikidata.org/entity/Q350> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(0.1225 52.208055555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Canberra> owl:sameAs <http://www.wikidata.org/entity/Q3114> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(149.126944444 -35.293055555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Cannes> owl:sameAs <http://www.wikidata.org/entity/Q39984> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(7.021388888 43.5525)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Canterbury> owl:sameAs <http://www.wikidata.org/entity/Q29303> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(1.0775 51.278333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Charleroi> owl:sameAs <http://www.wikidata.org/entity/Q81046> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.444166666 50.416666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-China> owl:sameAs <http://www.wikidata.org/entity/Q288864> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-94.33574 30.04799)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Colombo> owl:sameAs <http://www.wikidata.org/entity/Q35381> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(79.833333333 6.916666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Constantinopel> owl:sameAs <http://www.wikidata.org/entity/Q16869> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(28.976018 41.01224)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Courbevoie> owl:sameAs <http://www.wikidata.org/entity/Q189715> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(2.252222222 48.897222222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Damme> owl:sameAs <http://www.wikidata.org/entity/Q523394> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.195555555 52.522222222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Dar_es_Salaam> owl:sameAs <http://www.wikidata.org/entity/Q1960> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(39.280277777 -6.816111111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Den_Haag> owl:sameAs <http://www.wikidata.org/entity/Q41795540> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.29861 52.07667)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Den_Helder> owl:sameAs <http://www.wikidata.org/entity/Q33432868> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.75933 52.95988)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Detmold> owl:sameAs <http://www.wikidata.org/entity/Q3922> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.883333333 51.937777777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Deventer> owl:sameAs <http://www.wikidata.org/entity/Q26296883> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.16 52.251111111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Diekirch> owl:sameAs <http://www.wikidata.org/entity/Q29057521> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.15583 49.86778)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Dieppe> owl:sameAs <http://www.wikidata.org/entity/Q264075> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-64.724166666 46.098888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Doetinchem> owl:sameAs <http://www.wikidata.org/entity/Q16068685> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.28888889 51.96555556)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Domburg> owl:sameAs <http://www.wikidata.org/entity/Q650018> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-55.0875 5.688055555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Doornik> owl:sameAs <http://www.wikidata.org/entity/Q51462855> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.389605555 50.606897222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Dordrecht> owl:sameAs <http://www.wikidata.org/entity/Q33433503> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.67361 51.81)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Dresden> owl:sameAs <http://www.wikidata.org/entity/Q1731> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(13.74 51.05)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Duinkerke> owl:sameAs <http://www.wikidata.org/entity/Q45797> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(2.376388888 51.037777777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Durham> owl:sameAs <http://www.wikidata.org/entity/Q179815> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-1.566666666 54.783333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Echternach> owl:sameAs <http://www.wikidata.org/entity/Q204317> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.421666666 49.811666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ede> owl:sameAs <http://www.wikidata.org/entity/Q2473978> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.6667 52.0436)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Edinburgh> owl:sameAs <http://www.wikidata.org/entity/Q23436> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-3.189166666 55.953333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Enkhuizen> owl:sameAs <http://www.wikidata.org/entity/Q33435346> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.29167 52.70333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Erfurt> owl:sameAs <http://www.wikidata.org/entity/Q1729> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.029166666 50.978055555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ferrara> owl:sameAs <http://www.wikidata.org/entity/Q13362> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.619865 44.835297)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Florence> owl:sameAs <http://www.wikidata.org/entity/Q2044> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.254166666 43.771388888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Forli> owl:sameAs <http://www.wikidata.org/entity/Q13367> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.040833333 44.2225)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Formosa> owl:sameAs <http://www.wikidata.org/entity/Q44214> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-58.175833333 -26.184722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Genk> owl:sameAs <http://www.wikidata.org/entity/Q21769011> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.500647222 50.965305555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Genua> owl:sameAs <http://www.wikidata.org/entity/Q1449> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.933983333 44.407186111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Geraardsbergen> owl:sameAs <http://www.wikidata.org/entity/Q31590351> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.90696 50.7804)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Gibraltar> owl:sameAs <http://www.wikidata.org/entity/Q1410> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-5.345361111 36.13775)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Glasgow> owl:sameAs <http://www.wikidata.org/entity/Q4093> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-4.25 55.861111111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Gouda> owl:sameAs <http://www.wikidata.org/entity/Q33439340> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.70833 52.01667)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Groningen> owl:sameAs <http://www.wikidata.org/entity/Q749> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.567 53.218527777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Haarlem> owl:sameAs <http://www.wikidata.org/entity/Q9920> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.640555555 52.380277777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Haifa> owl:sameAs <http://www.wikidata.org/entity/Q41621> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(34.999166666 32.819166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Hannover> owl:sameAs <http://www.wikidata.org/entity/Q1715> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.738611111 52.374444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Hannuit> owl:sameAs <http://www.wikidata.org/entity/Q21767677> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.078113888 50.671963888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Hasselt> owl:sameAs <http://www.wikidata.org/entity/Q21767697> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.338336111 50.930375)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Heerenveen> owl:sameAs <http://www.wikidata.org/entity/Q1061677> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.933333333 52.95)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Heinsberg> owl:sameAs <http://www.wikidata.org/entity/Q32055985> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.099722222 51.063611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Helmond> owl:sameAs <http://www.wikidata.org/entity/Q33444423> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.66111 51.48167)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Helsingør> owl:sameAs <http://www.wikidata.org/entity/Q26881> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.6106 56.036)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Helsinki> owl:sameAs <http://www.wikidata.org/entity/Q1757> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(24.93417 60.17556)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Herrnhut> owl:sameAs <http://www.wikidata.org/entity/Q165140> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(14.741666666 51.016666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Hillerød> owl:sameAs <http://www.wikidata.org/entity/Q27425> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.3 55.933333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Hørsholm> owl:sameAs <http://www.wikidata.org/entity/Q20835> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.499166666 55.878611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Innsbruck> owl:sameAs <http://www.wikidata.org/entity/Q1735> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.393333333 47.268333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Jeruzalem> owl:sameAs <http://www.wikidata.org/entity/Q1218> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(35.225555555 31.778888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Johannesburg> owl:sameAs <http://www.wikidata.org/entity/Q34647> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(28.041638888 -26.204361111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Kaapstad> owl:sameAs <http://www.wikidata.org/entity/Q1185115> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(18.5 -34.0)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Kaapstad> owl:sameAs <http://www.wikidata.org/entity/Q1185115> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(18.59418 -33.89267)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Kampen> owl:sameAs <http://www.wikidata.org/entity/Q10014> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.919722222 52.555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Karlsbad> owl:sameAs <http://www.wikidata.org/entity/Q384544> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.8725 50.230555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Katowice> owl:sameAs <http://www.wikidata.org/entity/Q588> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(19.0 50.25)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Kerkrade> owl:sameAs <http://www.wikidata.org/entity/Q28914824> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.060556 50.864722)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Konstanz> owl:sameAs <http://www.wikidata.org/entity/Q3834> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.175277777 47.663333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Krasnodar> owl:sameAs <http://www.wikidata.org/entity/Q3646> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(38.983333333 45.033333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-La_Rochelle> owl:sameAs <http://www.wikidata.org/entity/Q82185> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-1.151388888 46.159444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Landen> owl:sameAs <http://www.wikidata.org/entity/Q21765449> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.07975 50.750861111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leeds> owl:sameAs <http://www.wikidata.org/entity/Q39121> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-1.549166666 53.799722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leer> owl:sameAs <http://www.wikidata.org/entity/Q15984> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(7.452777777 53.230833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leeuwarden> owl:sameAs <http://www.wikidata.org/entity/Q25390> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.783333333 53.2)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leiden> owl:sameAs <http://www.wikidata.org/entity/Q33456378> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.49306 52.15833)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leipzig> owl:sameAs <http://www.wikidata.org/entity/Q2079> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.375 51.34)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Lelystad> owl:sameAs <http://www.wikidata.org/entity/Q166065> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.483333333 52.516666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Leuven> owl:sameAs <http://www.wikidata.org/entity/Q21765562> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.700888888 50.879130555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Lochem> owl:sameAs <http://www.wikidata.org/entity/Q16069637> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.415833333 52.160555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Londen> owl:sameAs <http://www.wikidata.org/entity/Q84> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.1275 51.507222222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-London> owl:sameAs <http://www.wikidata.org/entity/Q92561> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-81.2497 42.9837)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Los_Angeles> owl:sameAs <http://www.wikidata.org/entity/Q65> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-118.24368 34.05223)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Lugano> owl:sameAs <http://www.wikidata.org/entity/Q7024> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.9625 46.010277777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Luik> owl:sameAs <http://www.wikidata.org/entity/Q3992> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.570555555 50.639722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Luxemburg> owl:sameAs <http://www.wikidata.org/entity/Q1842> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.132777777 49.610555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Maastricht> owl:sameAs <http://www.wikidata.org/entity/Q39260185> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.68889 50.84833)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Madrid> owl:sameAs <http://www.wikidata.org/entity/Q2807> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-3.7025 40.416666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Makassar> owl:sameAs <http://www.wikidata.org/entity/Q24828295> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(119.4221 -5.14)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Malaga> owl:sameAs <http://www.wikidata.org/entity/Q8851> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-4.416666666 36.716666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Malakka> owl:sameAs <http://www.wikidata.org/entity/Q61089> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(102.251111111 2.188888888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Mechelen> owl:sameAs <http://www.wikidata.org/entity/Q21765751> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.479538888 51.027419444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Meppel> owl:sameAs <http://www.wikidata.org/entity/Q33461897> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.19444 52.69583)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Meppel> owl:sameAs <http://www.wikidata.org/entity/Q60425> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.191666666 52.703333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Meran> owl:sameAs <http://www.wikidata.org/entity/Q131605> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.159419 46.669555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Messina> owl:sameAs <http://www.wikidata.org/entity/Q13666> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(15.554166666 38.193611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Mexico-Stad> owl:sameAs <http://www.wikidata.org/entity/Q1489> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-99.145555555 19.419444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Middelburg> owl:sameAs <http://www.wikidata.org/entity/Q52101> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.613611111 51.499722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Milaan> owl:sameAs <http://www.wikidata.org/entity/Q490> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.19 45.466944444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Munchen> owl:sameAs <http://www.wikidata.org/entity/Q1726> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.575 48.1375)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Namen> owl:sameAs <http://www.wikidata.org/entity/Q134121> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.866666666 50.466666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Namen> owl:sameAs <http://www.wikidata.org/entity/Q51389725> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.873563888 50.463483333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Napels> owl:sameAs <http://www.wikidata.org/entity/Q2634> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(14.25 40.833333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-New_York> owl:sameAs <http://www.wikidata.org/entity/Q60> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-74.0 40.7)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Nijkerk> owl:sameAs <http://www.wikidata.org/entity/Q16220881> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.484166666 52.221388888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Nijmegen> owl:sameAs <http://www.wikidata.org/entity/Q13188714> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.85278 51.8425)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ninove> owl:sameAs <http://www.wikidata.org/entity/Q385026> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.016666666 50.833333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Nordhorn> owl:sameAs <http://www.wikidata.org/entity/Q4133> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(7.066666666 52.433333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Norwich> owl:sameAs <http://www.wikidata.org/entity/Q130191> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(1.299167 52.628056)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Nottingham> owl:sameAs <http://www.wikidata.org/entity/Q41262> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-1.149166666 52.955)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Offenburg> owl:sameAs <http://www.wikidata.org/entity/Q4044> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(7.940833333 48.470833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Oran> owl:sameAs <http://www.wikidata.org/entity/Q131818> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.633055555 35.696944444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Orange> owl:sameAs <http://www.wikidata.org/entity/Q580973> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(149.1011111 -33.281666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Oranjestad> owl:sameAs <http://www.wikidata.org/entity/Q131243> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-70.035833333 12.518611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Oslo> owl:sameAs <http://www.wikidata.org/entity/Q585> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(10.738888888 59.913333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Padua> owl:sameAs <http://www.wikidata.org/entity/Q617> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.877777777 45.406388888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Palermo> owl:sameAs <http://www.wikidata.org/entity/Q2656> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(13.361261944 38.115658055)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Palestina> owl:sameAs <http://www.wikidata.org/entity/Q7127272> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-79.977 -1.6263)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Palma_de_Mallorca> owl:sameAs <http://www.wikidata.org/entity/Q8826> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(2.649722222 39.566666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Palmerston_North> owl:sameAs <http://www.wikidata.org/entity/Q212289> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(175.609511 -40.354911)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Paramaribo> owl:sameAs <http://www.wikidata.org/entity/Q3001> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-55.166666666 5.866666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Parma> owl:sameAs <http://www.wikidata.org/entity/Q2683> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(10.328 44.801472222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Pau> owl:sameAs <http://www.wikidata.org/entity/Q132671> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-0.37 43.300833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Perugia> owl:sameAs <http://www.wikidata.org/entity/Q3437> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.3888 43.1121)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Piacenza> owl:sameAs <http://www.wikidata.org/entity/Q13329> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.7 45.05)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Pisa> owl:sameAs <http://www.wikidata.org/entity/Q13375> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(10.4 43.716666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Portsmouth> owl:sameAs <http://www.wikidata.org/entity/Q1014235> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-61.459722222 15.573611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Portsmouth> owl:sameAs <http://www.wikidata.org/entity/Q72259> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-1.087222222 50.805833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Potchefstroom> owl:sameAs <http://www.wikidata.org/entity/Q605167> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(27.103333333 -26.715)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Purmerend> owl:sameAs <http://www.wikidata.org/entity/Q9954> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.963888888 52.505)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Reimerswaal> owl:sameAs <http://www.wikidata.org/entity/Q2590944> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.172486 51.507539)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ridderkerk> owl:sameAs <http://www.wikidata.org/entity/Q222220> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.6 51.866666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Rijswijk> owl:sameAs <http://www.wikidata.org/entity/Q33475563> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.32501 52.03634)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Roermond> owl:sameAs <http://www.wikidata.org/entity/Q9783> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.987222222 51.193333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Roosendaal> owl:sameAs <http://www.wikidata.org/entity/Q6903267> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.45 51.533333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Rosmalen> owl:sameAs <http://www.wikidata.org/entity/Q2001490> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.366666666 51.716666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Rotterdam> owl:sameAs <http://www.wikidata.org/entity/Q34370> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.47917 51.9225)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Roubaix> owl:sameAs <http://www.wikidata.org/entity/Q34001> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.181666666 50.69)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Rueil-Malmaison> owl:sameAs <http://www.wikidata.org/entity/Q193920> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(2.188333333 48.877777777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Safed> owl:sameAs <http://www.wikidata.org/entity/Q188336> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(35.498333333 32.965833333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Schiedam> owl:sameAs <http://www.wikidata.org/entity/Q33482242> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.38889 51.91917)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Schwerin> owl:sameAs <http://www.wikidata.org/entity/Q1709> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(11.416666666 53.633333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Sevilla> owl:sameAs <http://www.wikidata.org/entity/Q55893348> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-5.973055555 37.382777777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Sevilla> owl:sameAs <http://www.wikidata.org/entity/Q8717> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-5.983333333 37.383333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Singapore> owl:sameAs <http://www.wikidata.org/entity/Q334> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(103.8 1.3)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Sneek> owl:sameAs <http://www.wikidata.org/entity/Q23070> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.66 53.0325)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Souillac> owl:sameAs <http://www.wikidata.org/entity/Q2215428> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(57.525 -20.519444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Southport> owl:sameAs <http://www.wikidata.org/entity/Q1002144> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(153.4 -27.966666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Spa> owl:sameAs <http://www.wikidata.org/entity/Q39865> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.866666666 50.5)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Stavanger> owl:sameAs <http://www.wikidata.org/entity/Q26772333> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.73332 58.97005)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Stellenbosch> owl:sameAs <http://www.wikidata.org/entity/Q5460> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(18.861388888 -33.936666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Stockholm> owl:sameAs <http://www.wikidata.org/entity/Q1754> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(18.068611111 59.329444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Surat> owl:sameAs <http://www.wikidata.org/entity/Q4629> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(72.83 21.17)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Syracuse> owl:sameAs <http://www.wikidata.org/entity/Q13670> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(15.2875 37.069166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Szczecin> owl:sameAs <http://www.wikidata.org/entity/Q393> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(14.555277777 53.424722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tel_Aviv> owl:sameAs <http://www.wikidata.org/entity/Q33935> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(34.78 32.08)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tienen> owl:sameAs <http://www.wikidata.org/entity/Q31555441> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.94179 50.80767)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tilburg> owl:sameAs <http://www.wikidata.org/entity/Q9871> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.0911 51.5572)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tongeren> owl:sameAs <http://www.wikidata.org/entity/Q190113> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.4631 50.7794)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tongeren> owl:sameAs <http://www.wikidata.org/entity/Q31558934> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.46227 50.78065)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Toronto> owl:sameAs <http://www.wikidata.org/entity/Q172> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-79.386666666 43.670277777)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Tourcoing> owl:sameAs <http://www.wikidata.org/entity/Q182481> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.160277777 50.7225)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Treviso> owl:sameAs <http://www.wikidata.org/entity/Q5475> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.242219444 45.672219444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Trier> owl:sameAs <http://www.wikidata.org/entity/Q3138> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.63935 49.75565)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Trier> owl:sameAs <http://www.wikidata.org/entity/Q3138> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.641388888 49.756666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Trondheim> owl:sameAs <http://www.wikidata.org/entity/Q25804> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(10.4 63.44)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Ulm> owl:sameAs <http://www.wikidata.org/entity/Q3012> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.99155 48.39841)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Uppsala> owl:sameAs <http://www.wikidata.org/entity/Q25286> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(17.638946597 59.849760548)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Utrecht> owl:sameAs <http://www.wikidata.org/entity/Q39297398> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.12222 52.09083)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Valencia> owl:sameAs <http://www.wikidata.org/entity/Q54880> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-68.0 10.166666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Valladolid> owl:sameAs <http://www.wikidata.org/entity/Q1024731> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-88.201666666 20.689444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Valladolid> owl:sameAs <http://www.wikidata.org/entity/Q8356> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-4.728561111 41.651980555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Varese> owl:sameAs <http://www.wikidata.org/entity/Q6285> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(8.833333333 45.816666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Venetie> owl:sameAs <http://www.wikidata.org/entity/Q641> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(12.331944444 45.439722222)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Venlo> owl:sameAs <http://www.wikidata.org/entity/Q3322237> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.16806 51.37)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Verviers> owl:sameAs <http://www.wikidata.org/entity/Q31571899> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.86412 50.58349)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Vilvoorde> owl:sameAs <http://www.wikidata.org/entity/Q318418> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.424488888 50.928138888)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Vlaardingen> owl:sameAs <http://www.wikidata.org/entity/Q33512296> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.34167 51.9125)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Vlissingen> owl:sameAs <http://www.wikidata.org/entity/Q33512335> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(3.57361 51.4425)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Voorburg> owl:sameAs <http://www.wikidata.org/entity/Q809821> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.355 52.07)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wageningen> owl:sameAs <http://www.wikidata.org/entity/Q1305> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.663055555 51.964444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wageningen> owl:sameAs <http://www.wikidata.org/entity/Q33512910> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.66667 51.97)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Warschau> owl:sameAs <http://www.wikidata.org/entity/Q270> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(21.011111111 52.23)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Waver> owl:sameAs <http://www.wikidata.org/entity/Q21760204> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.610747222 50.714655555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Weesp> owl:sameAs <http://www.wikidata.org/entity/Q9974> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.0417 52.3069)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wels> owl:sameAs <http://www.wikidata.org/entity/Q178582> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(14.016666666 48.15)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wezel> owl:sameAs <http://www.wikidata.org/entity/Q4011> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.617777777 51.658611111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wiener_Neustadt> owl:sameAs <http://www.wikidata.org/entity/Q131612> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(16.25 47.816666666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Willemstad> owl:sameAs <http://www.wikidata.org/entity/Q132679> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-68.935 12.108)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wiltz> owl:sameAs <http://www.wikidata.org/entity/Q16765057> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.93194 49.96889)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Windsor> owl:sameAs <http://www.wikidata.org/entity/Q182625> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-83.03526 42.31729)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Woodstock> owl:sameAs <http://www.wikidata.org/entity/Q1642364> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-80.746666666 43.130555555)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Worcester> owl:sameAs <http://www.wikidata.org/entity/Q1646181> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-2.222222222 52.191111111)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Wurzburg> owl:sameAs <http://www.wikidata.org/entity/Q2999> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(9.929444444 49.794444444)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Zamora> owl:sameAs <http://www.wikidata.org/entity/Q145865> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-102.283333333 19.983333333)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Zamora> owl:sameAs <http://www.wikidata.org/entity/Q2283736> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(-78.956666666 -4.069166666)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Zoetermeer> owl:sameAs <http://www.wikidata.org/entity/Q33528284> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(4.49306 52.0575)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Zutphen> owl:sameAs <http://www.wikidata.org/entity/Q109535> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.195 52.14)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-Zwolle> owl:sameAs <http://www.wikidata.org/entity/Q13189044> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(6.09444 52.5125)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
+ <http://data.biographynet.nl/rdf/place-s-Hertogenbosch> owl:sameAs <http://www.wikidata.org/entity/Q2766547> ;
+	 crm:P168_place_is_defined_by [ a crm:E94_Space_Primitive ;  crm:P168_place_is_defined_by "Point(5.316666666 51.7)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ] . 
