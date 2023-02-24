@@ -160,6 +160,37 @@ async def render_personperson_relation(pers_uri, rel, g):
     return g
 
 
+async def render_personrole(pers_uri, role, g, second_entity):
+    """renders personrole as RDF graph
+
+    Args:
+        pers_uri (_type_): _description_
+        role (_type_): _description_
+        g (_type_): _description_
+    """
+    # prepare nodes
+    label = "label"
+    if "label" not in role:
+        label = "name"
+    parent = "parent_id"
+    if "parent_id" not in role:
+        parent = "parent_class"
+    n_role = URIRef(f"{idmapis}personrole/{role['id']}")
+    g.add((n_role, RDFS.label, Literal(f"{role[label]}", lang="de")))
+    if role[parent] is not None:
+        if (URIRef(f"{idmapis}personrole/{role['parent_id']}"), None, None) not in g:
+            res = requests.get(
+                BASE_URL_API + f"/vocabularies/person{second_entity}relation/{role['parent_id']}")
+            if res.status_code != 200:
+                logging.warn(
+                    f"Error getting relation type: {res.status_code} / {res.text}")
+            role2 = res.json()
+            await render_personrole(pers_uri, role2, g, second_entity)
+    else:
+        g.add((n_role, RDF.type, bioc.Actor_Role))
+    return g
+
+
 async def render_personinstitution_relation(pers_uri, rel, g):
     # connect personproxy and institutions with grouprelationship
     n_rel_type = URIRef(f"{idmapis}grouprelation/{rel['relation_type']['id']}")
@@ -188,8 +219,15 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
     # role of participating person in the career event
-    # g.add((URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"),
-    #     bioc.bearer_of, URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
+    g.add((URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"),
+           bioc.bearer_of, URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
+    if (URIRef(f"{idmapis}personrole/{rel['relation_type']['id']}"), None, None) not in g:
+        for k in rel.keys():
+            if k.startswith("related_"):
+                if k.split('_')[1] != "person":
+                    await render_personrole(URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"), rel['relation_type'], g, k.split('_')[1])
+    g.add((URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}"),
+          RDF.type, URIRef(f"{idmapis}personrole/{rel['relation_type']['id']}")))
     # person which inheres this role
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}")))
