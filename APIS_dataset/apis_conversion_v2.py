@@ -8,7 +8,7 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import RDFS, XSD
 import logging
 
-BASE_URL_API = 'http://localhost:8000/apis/api'
+BASE_URL_API = 'http://localhost:5000/apis/api'
 BASE_URI_SERIALIZATION = 'https://apis.acdh.oeaw.ac.at/'
 
 crm = Namespace('http://www.cidoc-crm.org/cidoc-crm/')
@@ -180,7 +180,11 @@ async def render_personrole(pers_uri, role, g, second_entity):
     n_role = URIRef(f"{idmapis}personrole/{role['id']}")
     g.add((n_role, RDFS.label, Literal(f"{role[label]}", lang="de")))
     if role[parent] is not None:
-        if (URIRef(f"{idmapis}personrole/{role['parent_id']}"), None, None) not in g:
+        if 'parent_id' in role:
+            p_id = role['parent_id']
+        else:
+            p_id = role['parent_class']['id']
+        if (URIRef(f"{idmapis}personrole/{p_id}"), None, None) not in g:
             res = requests.get(
                 BASE_URL_API + f"/vocabularies/person{second_entity}relation/{role['parent_id']}")
             if res.status_code != 200:
@@ -664,7 +668,7 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('idmrelations', idmrelations)
         g.bind('owl', owl)
         g.bind("geo", geo)
-        await get_persons({"collection": 86, "name": "Tesla"}, g)
+        await get_persons({"collection": 86, "first_name": "Franz"}, g)
         g.serialize(
             destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
         for s, p, o in g.triples((None, bioc.inheres_in, None)):
