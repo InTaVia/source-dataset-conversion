@@ -63,18 +63,32 @@ def convert_timedelta(duration):
 
 
 def create_time_span_tripels(kind, event_node, obj, g):
-    if len(obj[f"{kind}_date_written"]) > 0:
-        g.add((event_node, rdfs.label, Literal(obj[f"{kind}_date_written"])))
-    if len(obj[f'{kind}_date_written']) == 4 and obj[f'{kind}_end_date'] is not None:
+    if kind == "start":
+        if obj['start_date_written'] is not None:
+            if len(obj[f"start_date_written"]) > 0:
+                label_date = obj[f"start_date_written"]
+                if obj['end_date_written'] is not None:
+                    if len(obj["end_date_written"]) > 0:
+                        label_date += f" - {obj['end_date_written']}"
+                g.add((event_node, rdfs.label, Literal(label_date)))
+    if len(obj[f'{kind}_date_written']) == 4:
         # check whether only a year has bin given for the start date and add according nodes
-        g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
-            f"{obj[f'{kind}_start_date']}T00:00:00", datatype=XSD.dateTime))))
-        g.add((event_node, crm.P82b_end_of_the_end, (Literal(
-            f"{obj[f'{kind}_end_date']}T23:59:59", datatype=XSD.dateTime))))
+        if kind == "start":
+            g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
+                f"{obj[f'{kind}_date_written']}-01-01T00:00:00", datatype=XSD.dateTime))))
+            g.add((event_node, crm.P81a_end_of_the_begin, (Literal(
+                f"{obj[f'{kind}_date_written']}-12-31T23:59:59", datatype=XSD.dateTime))))
+        elif kind == "end":
+            g.add((event_node, crm.P82b_end_of_the_end, (Literal(
+                f"{obj[f'{kind}_date_written']}-12-31T23:59:59", datatype=XSD.dateTime))))
+            g.add((event_node, crm.P81b_begin_of_the_end, (Literal(
+                f"{obj[f'{kind}_date_written']}-01-01T00:00:00", datatype=XSD.dateTime))))
     else:
-        g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
-            f"{obj[f'{kind}_date']}T00:00:00", datatype=XSD.dateTime))))
-        g.add((event_node, crm.P82b_end_of_the_end, (Literal(
+        if kind == "start":
+            g.add((event_node, crm.P82a_begin_of_the_begin, (Literal(
+                f"{obj[f'{kind}_date']}T00:00:00", datatype=XSD.dateTime))))
+        elif kind == "end":
+            g.add((event_node, crm.P82b_end_of_the_end, (Literal(
                 f"{obj[f'{kind}_date']}T23:59:59", datatype=XSD.dateTime))))
     return g
 
@@ -105,6 +119,8 @@ async def render_personplace_relation(pers_uri, rel, g):
         event_uri = URIRef(f"{idmapis}event/personplace/{rel['id']}")
         if (event_uri, None, None) not in g:
             await render_event(rel, 'personplace', event_uri, g)
+        if (place_uri, None, None) not in g:
+            await render_place(rel['related_place']['id'], g)
         g.add((event_uri, crm.P7_took_place_at, place_uri))
     return g
 
@@ -115,7 +131,7 @@ async def render_personperson_relation(pers_uri, rel, g):
     Args:
         pers_uri (_type_): _description_
         rel (_type_): _description_
-        g (_type_): _description_
+        g (_type_): _description_http://localhost:8000/apis/api/entities/person/
     """
     # prepare nodes
     n_rel_type = URIRef(f"{idmapis}personrelation/{rel['id']}")
@@ -127,7 +143,7 @@ async def render_personperson_relation(pers_uri, rel, g):
     # TODO: add check if person already in triplestore
     g.add((URIRef(
         f"{idmapis}personproxy/{rel['related_personB']['id']}"), bioc.inheres_in, n_rel_type))
-    #g.add(n_rel_type, bioc.bearer_of, (URIRef(
+    # g.add(n_rel_type, bioc.bearer_of, (URIRef(
     #    f"{idmapis}personproxy/{rel['related_personB']['id']}")))
     # TODO: add hiarachy of person relations
     if rel['relation_type'] is not None:
@@ -143,6 +159,37 @@ async def render_personperson_relation(pers_uri, rel, g):
         f" personpersonrelation serialized for: {rel['related_personA']['id']}")
     # return g
     # group which is part of this relation
+    return g
+
+
+async def render_personrole(pers_uri, role, g, second_entity):
+    """renders personrole as RDF graph
+
+    Args:
+        pers_uri (_type_): _description_
+        role (_type_): _description_
+        g (_type_): _description_
+    """
+    # prepare nodes
+    label = "label"
+    if "label" not in role:
+        label = "name"
+    parent = "parent_id"
+    if "parent_id" not in role:
+        parent = "parent_class"
+    n_role = URIRef(f"{idmapis}personrole/{role['id']}")
+    g.add((n_role, RDFS.label, Literal(f"{role[label]}", lang="de")))
+    if role[parent] is not None:
+        if (URIRef(f"{idmapis}personrole/{role['parent_id']}"), None, None) not in g:
+            res = requests.get(
+                BASE_URL_API + f"/vocabularies/person{second_entity}relation/{role['parent_id']}")
+            if res.status_code != 200:
+                logging.warn(
+                    f"Error getting relation type: {res.status_code} / {res.text}")
+            role2 = res.json()
+            await render_personrole(pers_uri, role2, g, second_entity)
+    else:
+        g.add((n_role, RDF.type, bioc.Actor_Role))
     return g
 
 
@@ -162,7 +209,7 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     # add label to relationtype
     g.add((n_rel_type, bioc.inheres_in, URIRef(
         f"{idmapis}groupproxy/{rel['related_institution']['id']}")))
-    #g.add((URIRef(
+    # g.add((URIRef(
     #    f"{idmapis}groupproxy/{rel['related_institution']['id']}"), bioc.bearer_of, n_rel_type))
     # group which is part of this relation
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), RDF.type, idmcore.Career))
@@ -174,8 +221,15 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
     # role of participating person in the career event
-    #g.add((URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"),
-    #     bioc.bearer_of, URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
+    g.add((URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"),
+           bioc.bearer_of, URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}")))
+    if (URIRef(f"{idmapis}personrole/{rel['relation_type']['id']}"), None, None) not in g:
+        for k in rel.keys():
+            if k.startswith("related_"):
+                if k.split('_')[1] != "person":
+                    await render_personrole(URIRef(f"{idmapis}personproxy/{rel['related_person']['id']}"), rel['relation_type'], g, k.split('_')[1])
+    g.add((URIRef(f"{idmapis}personrole/{rel['id']}/{rel['related_person']['id']}"),
+          RDF.type, URIRef(f"{idmapis}personrole/{rel['relation_type']['id']}")))
     # person which inheres this role
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), bioc.had_participant_in_role, URIRef(
         f"{idmapis}grouprole/{rel['id']}/{rel['related_institution']['id']}")))
@@ -192,9 +246,11 @@ async def render_personinstitution_relation(pers_uri, rel, g):
     logging.info(
         f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
     if rel['start_date'] is not None:
-        g = create_time_span_tripels('start', URIRef(f"{idmapis}career/timespan/{rel['id']}"), rel, g)
+        g = create_time_span_tripels('start', URIRef(
+            f"{idmapis}career/timespan/{rel['id']}"), rel, g)
     if rel['end_date'] is not None:
-        g = create_time_span_tripels('end', URIRef(f"{idmapis}career/timespan/{rel['id']}"), rel, g)
+        g = create_time_span_tripels('end', URIRef(
+            f"{idmapis}career/timespan/{rel['id']}"), rel, g)
     """     if (rel['start_date'] is not None) and (rel['end_date'] is not None):
         g.add((URIRef(f"{idmapis}career/timespan/{rel['id']}"), crm.P82a_begin_of_the_begin, (Literal(
             rel['start_date']+'T00:00:00', datatype=XSD.dateTime))))
@@ -230,23 +286,34 @@ async def render_person(person, g, count_pers):
     g.add((pers_uri, RDFS.label, Literal(
         f"{person['first_name']} {person['name']}")))
     # define that individual in APIS named graph and APIS entity are the same
-    g.add((pers_uri, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{person['id']}")))
+    g.add((pers_uri, owl.sameAs, URIRef(
+        f"{BASE_URI_SERIALIZATION}entity/{person['id']}")))
     # add sameAs
     # add appellations
-    node_main_appellation = URIRef(f"{idmapis}appellation/label/{person['id']}")
+    node_main_appellation = URIRef(
+        f"{idmapis}appellation/label/{person['id']}")
     g.add((node_main_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
-    g.add((node_main_appellation, RDFS.label, Literal(f"{person['name'] if person['name'] is not None else '-'}, {person['first_name'] if person['first_name'] is not None else '-'}")))
+    g.add((node_main_appellation, RDFS.label, Literal(
+        f"{person['name'] if person['name'] is not None else '-'}, {person['first_name'] if person['first_name'] is not None else '-'}")))
     g.add((pers_uri, crm.P1_is_identified_by, node_main_appellation))
     if person['first_name'] is not None:
-        node_first_name_appellation = URIRef(f"{idmapis}appellation/first_name/{person['id']}")
-        g.add((node_first_name_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
-        g.add((node_first_name_appellation, RDFS.label, Literal(person['first_name'])))
-        g.add((node_main_appellation, crm.P148_has_component, node_first_name_appellation))
+        node_first_name_appellation = URIRef(
+            f"{idmapis}appellation/first_name/{person['id']}")
+        g.add((node_first_name_appellation, RDF.type,
+              crm.E33_E41_Linguistic_Appellation))
+        g.add((node_first_name_appellation, RDFS.label,
+              Literal(person['first_name'])))
+        g.add((node_main_appellation, crm.P148_has_component,
+              node_first_name_appellation))
     if person['name'] is not None:
-        node_last_name_appellation = URIRef(f"{idmapis}appellation/last_name/{person['id']}")
-        g.add((node_last_name_appellation, RDF.type, crm.E33_E41_Linguistic_Appellation))
-        g.add((node_last_name_appellation, RDFS.label, Literal(person['name'])))
-        g.add((node_main_appellation, crm.P148_has_component, node_last_name_appellation))
+        node_last_name_appellation = URIRef(
+            f"{idmapis}appellation/last_name/{person['id']}")
+        g.add((node_last_name_appellation, RDF.type,
+              crm.E33_E41_Linguistic_Appellation))
+        g.add((node_last_name_appellation,
+              RDFS.label, Literal(person['name'])))
+        g.add((node_main_appellation, crm.P148_has_component,
+              node_last_name_appellation))
     if person['start_date'] is not None:
         node_birth_event = URIRef(f"{idmapis}birthevent/{person['id']}")
         node_role = URIRef(f"{idmapis}born_person/{person['id']}")
@@ -257,7 +324,8 @@ async def render_person(person, g, count_pers):
         g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
         g.add((node_birth_event, bioc.had_participant_in_role, node_role))
         g.add((node_birth_event, RDF.type, crm.E67_Birth))
-        g.add((node_birth_event, RDFS.label, Literal(f"Birth of {person['first_name']} {person['name']}")))
+        g.add((node_birth_event, RDFS.label, Literal(
+            f"Birth of {person['first_name']} {person['name']}")))
         g.add((node_birth_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
         g.add((node_birth_event, crm.P98_brought_into_life, pers_uri))
         g = create_time_span_tripels('start', node_time_span, person, g)
@@ -271,7 +339,8 @@ async def render_person(person, g, count_pers):
         g.add((node_role_class, rdfs.subClassOf, bioc.Event_Role))
         g.add((node_death_event, bioc.had_participant_in_role, node_role))
         g.add((node_death_event, RDF.type, crm.E69_Death))
-        g.add((node_death_event, RDFS.label, Literal(f"Death of {person['first_name']} {person['name']}")))
+        g.add((node_death_event, RDFS.label, Literal(
+            f"Death of {person['first_name']} {person['name']}")))
         g.add((node_death_event, URIRef(crm + 'P4_has_time-span'), node_time_span))
         g.add((node_death_event, crm.P100_was_death_of, pers_uri))
         g = create_time_span_tripels('end', node_time_span, person, g)
@@ -286,6 +355,8 @@ async def render_person(person, g, count_pers):
             g.add((prof_node, rdfs.subClassOf, bioc.Occupation))
         else:
             g.add((prof_node, rdfs.subClassOf, bioc.Occupation))
+    if person["gender"] is not None:
+        g.add((pers_uri, bioc.has_gender, bioc[person["gender"].capitalize()]))
     for uri in person['sameAs']:
         g.add((pers_uri, owl.sameAs, URIRef(uri)))
     # add occupations
@@ -324,7 +395,8 @@ async def render_organization(organization, g):
     # connect Group Proxy and person in named graphbgn:BioDes
     g.add((node_org, RDF.type, crm.E74_Group))
     # defines group class
-    g.add((node_org, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{organization}")))
+    g.add((node_org, owl.sameAs, URIRef(
+        f"{BASE_URI_SERIALIZATION}entity/{organization}")))
     for uri in res['sameAs']:
         g.add((node_org, owl.sameAs, URIRef(uri)))
     # defines group as the same group in the APIS dataset
@@ -337,7 +409,7 @@ async def render_organization(organization, g):
             start_date_node = URIRef(f"{idmapis}groupstart/{organization}")
             start_date_time_span = URIRef(
                 f"{idmapis}groupstart/timespan/{organization}")
-            #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+            # print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
             g.add((start_date_node, RDF.type, crm.E63_Beginning_of_Existence))
             g.add((start_date_node, crm.P92_brought_into_existence, node_org))
             g.add((start_date_node, URIRef(
@@ -359,7 +431,7 @@ async def render_organization(organization, g):
             end_date_node = URIRef(f"{idmapis}groupend/{organization}")
             end_date_time_span = URIRef(
                 f"{idmapis}groupend/timespan/{organization}")
-            #print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
+            # print(row['institution_name'], ':', row['institution_start_date'], row['institution_end_date'], row['institution_start_date_written'], row['institution_end_date_written'])
             g.add((end_date_node, RDF.type, crm.E64_End_of_Existence))
             g.add((end_date_node, crm.P93_took_out_of_existence, node_org))
             g.add((end_date_node, URIRef(crm + "P4_has_time-span"), end_date_time_span))
@@ -386,7 +458,7 @@ async def render_event(event, event_type, node_event, g):
         g (_type_): _description_
     """
     # prepare basic node types
-    #node_event = URIRef(f"{idmapis}{event_type}/{event['id']}")
+    # node_event = URIRef(f"{idmapis}{event_type}/{event['id']}")
     node_event_role = URIRef(f"{idmapis}{event_type}/eventrole/{event['id']}")
     node_pers = URIRef(f"{idmapis}personproxy/{event['related_person']['id']}")
     node_roletype = URIRef(f"{idmrole}{event['relation_type']['id']}")
@@ -414,6 +486,7 @@ async def render_event(event, event_type, node_event, g):
             g = create_time_span_tripels('end', node_timespan, event, g)
     return g
 
+
 async def render_place(place, g):
     """renders place object as RDF graph
 
@@ -424,6 +497,7 @@ async def render_place(place, g):
     res = await get_entity(place, 'place')
     # setup basic nodes
     node_place = URIRef(f"{idmapis}place/{res['id']}")
+    g.add((node_place, RDFS.label, Literal(res['name'])))
     node_appelation = URIRef(f"{idmapis}placeappellation/{res['id']}")
     node_plc_identifier = URIRef(f"{idmapis}placeidentifier/{res['id']}")
 
@@ -435,7 +509,8 @@ async def render_place(place, g):
     # define appellation as linguistic appellation
     g.add((node_appelation, RDFS.label, Literal(res['name'])))
     # add label to appellation
-    g.add((node_place, owl.sameAs, URIRef(f"{BASE_URI_SERIALIZATION}entity/{place}")))
+    g.add((node_place, owl.sameAs, URIRef(
+        f"{BASE_URI_SERIALIZATION}entity/{place}")))
     for uri in res['sameAs']:
         g.add((node_place, owl.sameAs, URIRef(uri)))
     g.add((node_place, crm.P1_is_identified_by, URIRef(
@@ -478,10 +553,11 @@ async def get_persons(filter_params, g):
         logging.info(f"working on offset {res['offset']}")
         for person in res["results"]:
             count_pers += 1
-            tasks.append(asyncio.create_task(render_person(person, g, count_pers)))
-            #if count_pers > 10:
+            tasks.append(asyncio.create_task(
+                render_person(person, g, count_pers)))
+            # if count_pers > 10:
             #    break
-        #if count_pers > 10:
+        # if count_pers > 10:
         #    break
         if res["next"] is not None:
             res = requests.get(res["next"]).json()
@@ -490,7 +566,8 @@ async def get_persons(filter_params, g):
     await asyncio.gather(*tasks)
 
     hours, minutes, seconds = convert_timedelta(datetime.now() - start_time)
-    logging.info('serialized {} persons in {} hours, {} minutes, {} seconds'.format(count_pers, hours, minutes, seconds))
+    logging.info('serialized {} persons in {} hours, {} minutes, {} seconds'.format(
+        count_pers, hours, minutes, seconds))
 
 
 async def get_entity(entity_id, entity_type):
@@ -587,11 +664,13 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('idmrelations', idmrelations)
         g.bind('owl', owl)
         g.bind("geo", geo)
-        await get_persons({"collection": 86}, g)
-        g.serialize(destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
+        await get_persons({"collection": 86, "name": "Tesla"}, g)
+        g.serialize(
+            destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
         for s, p, o in g.triples((None, bioc.inheres_in, None)):
             g.add((o, bioc.bearer_of, s))
-        g.serialize(destination=f"persons_enriched_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
+        g.serialize(
+            destination=f"persons_enriched_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
 
 
 if __name__ == "__main__":
