@@ -119,6 +119,8 @@ async def render_personplace_relation(pers_uri, rel, g):
         event_uri = URIRef(f"{idmapis}event/personplace/{rel['id']}")
         if (event_uri, None, None) not in g:
             await render_event(rel, 'personplace', event_uri, g)
+        if (place_uri, None, None) not in g:
+            await render_place(rel['related_place']['id'], g)
         g.add((event_uri, crm.P7_took_place_at, place_uri))
     return g
 
@@ -495,6 +497,7 @@ async def render_place(place, g):
     res = await get_entity(place, 'place')
     # setup basic nodes
     node_place = URIRef(f"{idmapis}place/{res['id']}")
+    g.add((node_place, RDFS.label, Literal(res['name'])))
     node_appelation = URIRef(f"{idmapis}placeappellation/{res['id']}")
     node_plc_identifier = URIRef(f"{idmapis}placeidentifier/{res['id']}")
 
