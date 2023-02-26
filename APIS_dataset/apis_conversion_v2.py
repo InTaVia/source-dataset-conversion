@@ -8,6 +8,7 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import RDFS, XSD
 import logging
 
+
 BASE_URL_API = 'http://localhost:5000/apis/api'
 BASE_URI_SERIALIZATION = 'https://apis.acdh.oeaw.ac.at/'
 
@@ -396,6 +397,7 @@ async def render_organization(organization, g):
         g (_type_): _description_
     """
     res = await get_entity(organization, "institution")
+    res_relations = await get_organization_relations(organization, ["institutionplace"])
     # setup basic nodes
     node_org = URIRef(f"{idmapis}groupproxy/{organization}")
     appelation_org = URIRef(f"{idmapis}groupappellation/{organization}")
@@ -411,12 +413,13 @@ async def render_organization(organization, g):
     g.add((node_org, crm.P1_is_identified_by, appelation_org))
     g.add((appelation_org, rdfs.label, Literal(res['name'])))
     g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
-    if len(res["places"]) > 0:
-        for plc in res["places"]:
-            if (URIRef(f"{idmapis}place/{plc['id']}"), None, None) not in g:
-                await render_place(plc["id"], g)
-            g.add(
-                (node_org, crm.P74_has_current_or_former_residence, URIRef(plc["id"])))
+    if "institutionplace" in res_relations:
+        if len(res_relations["institutionplace"]["results"]) > 0:
+            for plc in res_relations["institutionplace"]["results"]:
+                if (URIRef(f"{idmapis}place/{plc['related_place']['id']}"), None, None) not in g:
+                    await render_place(plc["related_place"]["id"], g)
+                g.add(
+                    (node_org, crm.P74_has_current_or_former_residence, URIRef(f"{idmapis}place/{plc['related_place']['id']}")))
     # add group appellation and define it as linguistic appellation
     if res["start_date_written"] is not None:
         if len(res['start_date_written']) >= 4:
@@ -632,12 +635,18 @@ async def get_person_relations(person_id, kinds=["personplace", "personinstituti
     return res_full
 
 
-async def get_organization_relations(organization_id):
+async def get_organization_relations(organization_id, kinds=["institutionplace"]):
     """gets organization relations from API
 
     Args:
         organization_id (_type_): _description_
     """
+    res = dict()
+    for rel_type in kinds:
+        res_pre = requests.get(BASE_URL_API + "/relations/" +
+                               rel_type, params={"related_institution": organization_id})
+        res[rel_type] = res_pre.json()
+    return res
 
 
 async def get_place_relations(place_id):
