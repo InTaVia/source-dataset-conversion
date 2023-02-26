@@ -8,6 +8,7 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import RDFS, XSD
 import logging
 
+
 BASE_URL_API = 'http://localhost:5000/apis/api'
 BASE_URI_SERIALIZATION = 'https://apis.acdh.oeaw.ac.at/'
 
@@ -247,6 +248,9 @@ async def render_personinstitution_relation(pers_uri, rel, g):
         await render_organization(rel['related_institution']['id'], g)
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), URIRef(
         f"{crm}P4_has_time-span"), URIRef(f"{idmapis}career/timespan/{rel['id']}")))
+    for rel_plcs in g.objects(URIRef(f"{idmapis}groupproxy/{rel['related_institution']['id']}"), crm.P74_has_current_or_former_residence):
+        g.add(
+            (URIRef(f"{idmapis}career/{rel['id']}"), crm.P7_took_place_at, rel_plcs))
     logging.info(
         f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
     if rel['start_date'] is not None:
@@ -393,11 +397,13 @@ async def render_organization(organization, g):
         g (_type_): _description_
     """
     res = await get_entity(organization, "institution")
+    res_relations = await get_organization_relations(organization, ["institutionplace"])
     # setup basic nodes
     node_org = URIRef(f"{idmapis}groupproxy/{organization}")
     appelation_org = URIRef(f"{idmapis}groupappellation/{organization}")
     # connect Group Proxy and person in named graphbgn:BioDes
     g.add((node_org, RDF.type, crm.E74_Group))
+    g.add((node_org, RDF.type, idmcore.Group))
     # defines group class
     g.add((node_org, owl.sameAs, URIRef(
         f"{BASE_URI_SERIALIZATION}entity/{organization}")))
@@ -407,6 +413,13 @@ async def render_organization(organization, g):
     g.add((node_org, crm.P1_is_identified_by, appelation_org))
     g.add((appelation_org, rdfs.label, Literal(res['name'])))
     g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
+    if "institutionplace" in res_relations:
+        if len(res_relations["institutionplace"]["results"]) > 0:
+            for plc in res_relations["institutionplace"]["results"]:
+                if (URIRef(f"{idmapis}place/{plc['related_place']['id']}"), None, None) not in g:
+                    await render_place(plc["related_place"]["id"], g)
+                g.add(
+                    (node_org, crm.P74_has_current_or_former_residence, URIRef(f"{idmapis}place/{plc['related_place']['id']}")))
     # add group appellation and define it as linguistic appellation
     if res["start_date_written"] is not None:
         if len(res['start_date_written']) >= 4:
@@ -622,12 +635,18 @@ async def get_person_relations(person_id, kinds=["personplace", "personinstituti
     return res_full
 
 
-async def get_organization_relations(organization_id):
+async def get_organization_relations(organization_id, kinds=["institutionplace"]):
     """gets organization relations from API
 
     Args:
         organization_id (_type_): _description_
     """
+    res = dict()
+    for rel_type in kinds:
+        res_pre = requests.get(BASE_URL_API + "/relations/" +
+                               rel_type, params={"related_institution": organization_id})
+        res[rel_type] = res_pre.json()
+    return res
 
 
 async def get_place_relations(place_id):
@@ -668,7 +687,7 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('idmrelations', idmrelations)
         g.bind('owl', owl)
         g.bind("geo", geo)
-        await get_persons({"collection": 86, "first_name": "Franz"}, g)
+        await get_persons({"collection": 86, "name": "Tesla"}, g)
         g.serialize(
             destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
         for s, p, o in g.triples((None, bioc.inheres_in, None)):
