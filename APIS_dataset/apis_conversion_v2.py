@@ -398,6 +398,7 @@ async def render_organization(organization, g):
     appelation_org = URIRef(f"{idmapis}groupappellation/{organization}")
     # connect Group Proxy and person in named graphbgn:BioDes
     g.add((node_org, RDF.type, crm.E74_Group))
+    g.add((node_org, RDF.type, idmcore.Group))
     # defines group class
     g.add((node_org, owl.sameAs, URIRef(
         f"{BASE_URI_SERIALIZATION}entity/{organization}")))
@@ -407,6 +408,12 @@ async def render_organization(organization, g):
     g.add((node_org, crm.P1_is_identified_by, appelation_org))
     g.add((appelation_org, rdfs.label, Literal(res['name'])))
     g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
+    if len(res["places"]) > 0:
+        for plc in res["places"]:
+            if (plc["id"], None, None) not in g:
+                await render_place(plc["id"], g)
+            g.add(
+                (node_org, crm.P74_has_current_or_former_residence, URIRef(plc["id"])))
     # add group appellation and define it as linguistic appellation
     if res["start_date_written"] is not None:
         if len(res['start_date_written']) >= 4:
@@ -668,7 +675,7 @@ async def main(use_cache: bool = False, additional_filters: str = None):
         g.bind('idmrelations', idmrelations)
         g.bind('owl', owl)
         g.bind("geo", geo)
-        await get_persons({"collection": 86, "first_name": "Franz"}, g)
+        await get_persons({"collection": 86, "name": "Tesla"}, g)
         g.serialize(
             destination=f"persons_base_{datetime.now().strftime('%d-%m-%Y')}.ttl", format="turtle")
         for s, p, o in g.triples((None, bioc.inheres_in, None)):
