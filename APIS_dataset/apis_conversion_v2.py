@@ -247,6 +247,9 @@ async def render_personinstitution_relation(pers_uri, rel, g):
         await render_organization(rel['related_institution']['id'], g)
     g.add((URIRef(f"{idmapis}career/{rel['id']}"), URIRef(
         f"{crm}P4_has_time-span"), URIRef(f"{idmapis}career/timespan/{rel['id']}")))
+    for rel_plcs in g.objects(URIRef(f"{idmapis}groupproxy/{rel['related_institution']['id']}"), crm.P74_has_current_or_former_residence):
+        g.add(
+            (URIRef(f"{idmapis}career/{rel['id']}"), crm.P7_took_place_at, rel_plcs))
     logging.info(
         f" personinstitutionrelation serialized for: {rel['related_person']['id']}")
     if rel['start_date'] is not None:
@@ -410,7 +413,7 @@ async def render_organization(organization, g):
     g.add((appelation_org, RDF.type, crm.E33_E41_Linguistic_Appellation))
     if len(res["places"]) > 0:
         for plc in res["places"]:
-            if (plc["id"], None, None) not in g:
+            if (URIRef(f"{idmapis}place/{plc['id']}"), None, None) not in g:
                 await render_place(plc["id"], g)
             g.add(
                 (node_org, crm.P74_has_current_or_former_residence, URIRef(plc["id"])))
