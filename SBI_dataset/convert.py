@@ -429,7 +429,7 @@ class Namespaces:
     intavia_sbi = Namespace('http://www.intavia.eu/sbi/')
 
     crm = Namespace('http://www.cidoc-crm.org/cidoc-crm/')
-    bioc = Namespace('http://www.ldf.fi/schema/bioc/')
+    bioc = Namespace('http://ldf.fi/schema/bioc/')
 
     idm_core = Namespace('http://www.intavia.eu/idm-core/')
     idm_role = Namespace('http://www.intavia.eu/idm-role/')
