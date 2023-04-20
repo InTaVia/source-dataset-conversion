@@ -525,38 +525,49 @@ make_rand_uri(S,['-other'],Evt),
 % claim_to_fame
 % TODO: potentially remove events for non-qualified occupations to
 % reduce triples?
+% Update 19-4-2023: change the make our Occupations etc an instance:
+% PersonX-occupation-999-painte make them instance of a General Class:
+% 'painter' - That is subclass of occupation
+
 occupationstate_event
 @@
 {S, bgn:state, E},
 {E, bgn:type, "occupation"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Occupation-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bioc:'Occupation'},
-	{OURI, rdfs:label, Val}, % previously prefLabel
-%	{OURI, rdfs:label, Val},
-	{S, bioc:has_occupation, OURI},
-	% make_rand_uri(S,['-actorrole'],ARURI), %NO longer needed
-        %{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	%{ARURI, rdf:type, bioc:'Actor_Role'},
-	%{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-occupationevent'],Evt), %then make the Event instance
-%	{Evt, rdf:type,crm:'E5_Event' },
+	% first make the occupation class URI
+	literal_to_id(['Occupation-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bioc:'Occupation'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-occupation'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bioc:has_occupation, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-occupationevent'],Evt),
 	{Evt, rdf:type, bgn:'OccupationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-occupationevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-occupationevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
-
+	{Time, rdfs:label, WhenDate}.
 
 
 educationstate_event
