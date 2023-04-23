@@ -31,6 +31,8 @@ user:file_search_path(data,       data).
 		library(semweb/rdf_turtle_write)
 	      ]).
 :- use_module(rewrite_bioned).
+:- dynamic rc/1.
+
 
 load_ontologies :-
 	rdf_load_library(dc),
@@ -112,11 +114,25 @@ delete_bioned:-
 
 % UTILITY predicates
 %
+%"random" counter, for generating URIs
+rc(0).
+reset_rc:-
+	retractall(rc(_)),
+	assert(rc(0)).
+
+next_rc(Next):-
+	rc(A),
+	retract(rc(A)),
+	Next is A + 1,
+	assert(rc(Next)).
+
 make_rand_uri(InputURI,OutputURI):-
-	random(1,99999999,Rand),
+	%random(1,99999999,Rand),
+	next_rc(Rand),
 	atomic_list_concat([InputURI,'-',Rand],OutputURI).
 make_rand_uri(InputURI,List,OutputURI):-
-	random(1,99999999,Rand),
+	next_rc(Rand),
+	%random(1,99999999,Rand),
 	atomic_list_concat([InputURI,'-',Rand|List],OutputURI).
 
 make_rand_uri_bnode(OutputURI):-
