@@ -114,7 +114,7 @@ delete_bioned:-
 
 % UTILITY predicates
 %
-%"random counter, for generating URIs"
+%"random" counter, for generating URIs
 rc(0).
 reset_rc:-
 	retractall(rc(_)),

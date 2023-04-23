@@ -580,24 +580,35 @@ educationstate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Education-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Education'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_education, OURI}, % TODO: fix correct property for this
-% make_rand_uri(S,['-actorrole'],ARURI),
-%	{ARURI, bgn:roletype,OURI}, %	{ARURI, rdf:type, bioc:'Actor_Role'},
-%	{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-educationevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Education-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Education'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-education'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_education, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-educationevent'],Evt),
 	{Evt, rdf:type, bgn:'EducationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-educationevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-educationevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.
 
 residencestate_event
 @@
@@ -609,25 +620,35 @@ residencestate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Residence'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_residence, OURI},
-       %make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole instance
-	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	%{ARURI, rdf:type, bioc:'Actor_Role'},
-	%{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-residenceevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Residence-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Residence'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-residence'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_residence, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-residenceevent'],Evt),
 	{Evt, rdf:type, bgn:'ResidenceStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-residenceevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-residenceevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.
 
 
 %TODO: What is Floruit?
@@ -641,26 +662,35 @@ floruitstate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Residence-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Floruit'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_floruit, OURI}, % TODO: fix correct property for this
-% make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole
-% instance
-	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	%{ARURI, rdf:type, bioc:'Actor_Role'},
-	%{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-floruitevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Floruit-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Floruit'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-floruit'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_floruit, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-floruitevent'],Evt),
 	{Evt, rdf:type, bgn:'FloruitStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-floruitevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-floruitevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.
 
 % DELETE empty floruit?
 floruitstate_event
@@ -681,27 +711,37 @@ faithstate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Faith'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_faith, OURI}, % TODO: fix correct property for this
-% make_rand_uri(S,['-actorrole'],ARURI), %then make the actorrole
-% instance
-%	{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for
-%	this
-%	{ARURI, rdf:type, bioc:'Actor_Role'},
-%	{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-faithevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Faith-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Faith'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-faith'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_faith, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-faithevent'],Evt),
 	{Evt, rdf:type, bgn:'FaithStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-faithevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-faithevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.
+
+
 
 
 % Seems to be empty, for now delete, otherwise use commented stuff below
@@ -748,26 +788,37 @@ claimtofamestate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Faith-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Claim_to_fame'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_claim_to_fame, OURI}, % TODO: fix correct property for this
-% make_rand_uri(S,['-claimtofamerole'],ARURI), %then make the actorrole
-% instance
-	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	%{S, bioc:bearer_of,ARURI},
-	%{ARURI, rdf:type, bioc:'Actor_Role'},
-make_rand_uri(S,['-claimtofameevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Claimtofame-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Claim_to_fame'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-claimtofame'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_claimtofame, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-claimtofameevent'],Evt),
 	{Evt, rdf:type, bgn:'ClaimtofameStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-claimtofameevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-claimtofameevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
+	{Time, rdfs:label, WhenDate}.
+
+
 
 categorystate_event
 @@
@@ -779,29 +830,35 @@ categorystate_event
 {E, bgn:when,WhenDate} ?
 <=>
 true,
-literal_to_id(['Category-' ,Val], bgn, OURI), % first make the occupation instance
-	{OURI, rdf:type, bgn:'Category'},
-	{OURI, rdfs:label, Val},
-	{S, bgn:has_category, OURI}, % TODO: fix correct property for this
-% make_rand_uri(S,['-categoryrole'],ARURI), %then make the actorrole
-% instance
-	%{ARURI, bgn:roletype,OURI}, % TODO: fix correct property for this
-	%{ARURI, rdf:type, bioc:'Actor_Role'},
-	%{S, bioc:bearer_of,ARURI},
-make_rand_uri(S,['-categoryevent'],Evt), %then make the actorroleevent instance
+	% first make the occupation class URI
+	literal_to_id(['Category-' ,Val], bgn, ClURI),
+	{ClURI, rdf:type, rdfs:'Class'},
+	{ClURI, rdfs:subClassOf, bgn:'Category'},
+	{ClURI, rdfs:label, Val},
+
+	% now make the instance, which is specific to this person
+	make_rand_uri(S,['-category'],ARURI),
+	{ARURI, rdf:type, ClURI},
+	{ARURI, rdfs:label, Val},
+
+	% link it to the person
+	{S, bgn:has_category, ARURI},
+	{S, bioc:bearer_of, ARURI},
+
+	%then make the Event instance
+	make_rand_uri(S,['-category'],Evt),
 	{Evt, rdf:type, bgn:'CategoryStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, OURI},
-make_rand_uri(S,['-categoryevent_time'],Time), % then make the Event instance
+	{Evt, bioc:had_participant_in_role, ClURI},
+
+	% then make the Event Timespan instance
+	make_rand_uri(S,['-categoryevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.  %TODO: make complex object?
-
-
-
+	{Time, rdfs:label, WhenDate}.
 
 
 % RELATIONS
