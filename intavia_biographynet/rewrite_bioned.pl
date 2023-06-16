@@ -262,17 +262,7 @@ true,
 
 % FIX GENDER
 %
-sextogender
-@@
-{S, bgn:sex, literal(Sex)}
-<=>
-true,
-sex_to_gender(Sex,Gender),
-{S, bioc:has_gender, Gender},
-	{Gender, rdf:type, bioc:'Gender'} .
-
-
-sextogender
+sextogender2
 @@
 {S, bgn:sex, O},
 {O, bgn:value, literal(Sex)}
@@ -283,6 +273,14 @@ sex_to_gender(Sex,Gender),
 	{Gender, rdf:type, bioc:'Gender'} .
 
 
+sextogender1
+@@
+{S, bgn:sex, literal(Sex)}
+<=>
+true,
+sex_to_gender(Sex,Gender),
+{S, bioc:has_gender, Gender},
+	{Gender, rdf:type, bioc:'Gender'} .
 
 % NATIONALITY
 % changed to idm rather than bioc
