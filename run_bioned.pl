@@ -96,6 +96,7 @@ run_bioned:-
         rdf_load('mapschema.ttl'),
 	load_xml_dir,
 	rewrite,
+	add_xsddates,
 	save_bioned.
 
 
@@ -140,9 +141,9 @@ make_rand_uri_bnode(OutputURI):-
 	atomic_list_concat(['http://data.biographynet.nl/rdf/','bnode-',Rand],OutputURI).
 
 
-sex_to_gender('1', 'http://ldf.fi/schema/bioc/Male'):-true,!.
-sex_to_gender('2', 'http://ldf.fi/schema/bioc/Female'):-true,!.
-sex_to_gender(_, 'http://ldf.fi/schema/bioc/Other').
+sex_to_gender('1', 'http://ldf.fi/schema/bioc/Male').
+sex_to_gender('2', 'http://ldf.fi/schema/bioc/Female').
+%sex_to_gender('', 'http://ldf.fi/schema/bioc/Other'):-true,!.
 
 
 
@@ -162,6 +163,17 @@ name_list_to_str(N,[H|T],Str):-
 	name_list_to_str(N,T,Rest),
 	atomic_list_concat([H,' ',Rest],Str).
 
+
+% add datetimes
+%
+%
+add_xsddates:-
+	forall(rdf_db:rdf(S,crm:'P82a_begin_of_the_begin',literal(Date)),
+	       (rdf_retractall(S, crm:'P82a_begin_of_the_begin',literal(Date)),
+		rdf_assert(S, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))))),
+	forall(rdf(S,crm:'P82b_end_of_the_end',literal(Date)),
+	       (rdf_retractall(S, crm:'P82b_end_of_the_end',literal(Date)),
+		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date)))))	.
 
 
 % Data enrichment predicates
