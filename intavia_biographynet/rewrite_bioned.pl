@@ -336,10 +336,10 @@ birthevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "birth"},
-	{E, bgn:date,  literal(Date)} ?,
-	{E, bgn:when,  literal(WhenDate)} ?,
-	{E, bgn:notAfter,  literal(NA)} ?, % TODO figure out how to do these
-	{E, bgn:notBefore, literal(NB)} ?, % not used, todo
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -354,10 +354,10 @@ make_rand_uri(S,['-birth'],Evt),
 make_rand_uri(S,['-birth-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -377,12 +377,12 @@ deathevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "death"},
-	{E, bgn:date, literal(Date)} ?,
-	{E, bgn:when, literal(WhenDate)} ?,
-	{E, bgn:notAfter, literal(NA)} ?,
-	{E, bgn:notBefore,literal(NB)} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
-	{E, rdf:value,Value}?
+	{E, rdf:value, Value}?
 <=>
 true,
 make_rand_uri(S,['-death'],Evt),
@@ -396,10 +396,10 @@ make_rand_uri(S,['-death'],Evt),
 	make_rand_uri(S,['-death-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 
@@ -412,10 +412,10 @@ baptismevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "baptism"},
-	{E, bgn:date, literal(Date)} ?,
-	{E, bgn:when, literal(WhenDate)} ?,
-	{E, bgn:notAfter, literal(NA)} ?,
-	{E, bgn:notBefore,literal(NB)} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -431,10 +431,10 @@ make_rand_uri(S,['-baptism'],Evt),
 	make_rand_uri(S,['-baptism-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -446,10 +446,10 @@ marriageevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "marriage"},
-	{E, bgn:date, literal(Date)} ?,
-	{E, bgn:when, literal(WhenDate)} ?,
-	{E, bgn:notAfter, literal(NA)} ?,
-	{E, bgn:notBefore,literal(NB)} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -466,10 +466,10 @@ make_rand_uri(S,['marriage'],Evt),
 	make_rand_uri(S,['-marriage-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -480,10 +480,10 @@ funeralevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "funeral"},
-	{E, bgn:date, literal(Date)} ?,
-	{E, bgn:when, literal(WhenDate)} ?,
-	{E, bgn:notAfter, literal(NA)} ?,
-	{E, bgn:notBefore,literal(NB)} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -499,10 +499,10 @@ make_rand_uri(S,['funeral'],Evt),
 	make_rand_uri(S,['-funeral-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -514,10 +514,10 @@ restevent %TODO
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, Other},
-	{E, bgn:date, literal(Date)} ?,
-	{E, bgn:when, literal(WhenDate)} ?,
-	{E, bgn:notAfter, literal(NA)} ?,
-	{E, bgn:notBefore,literal(NB)} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -532,11 +532,11 @@ make_rand_uri(S,['-other'],Evt),
 	make_rand_uri(S,['-other-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))},
-{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-{Time, rdfs:label, Date},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
+	{Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
@@ -561,9 +561,9 @@ occupationstate_event
 {S, bgn:state, E},
 {E, bgn:type, "occupation"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -592,10 +592,10 @@ true,
 	make_rand_uri(S,['-occupationevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -605,9 +605,9 @@ educationstate_event
 {S, bgn:state, E},
 {E, bgn:type, "education"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -636,10 +636,10 @@ true,
 	make_rand_uri(S,['-educationevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -648,9 +648,9 @@ residencestate_event
 {S, bgn:state, E},
 {E, bgn:type, "residence"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -679,10 +679,10 @@ true,
 	make_rand_uri(S,['-residenceevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -693,9 +693,9 @@ floruitstate_event
 {S, bgn:state, E},
 {E, bgn:type, "floruit"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -724,10 +724,10 @@ true,
 	make_rand_uri(S,['-floruitevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -745,9 +745,9 @@ faithstate_event
 {S, bgn:state, E},
 {E, bgn:type, "faith"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -776,10 +776,10 @@ true,
 	make_rand_uri(S,['-faithevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -825,9 +825,9 @@ claimtofamestate_event
 {S, bgn:state, E},
 {E, bgn:type, "claim_to_fame"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -856,10 +856,10 @@ true,
 	make_rand_uri(S,['-claimtofameevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 
 {Time, rdfs:label, WhenDate}.
 
@@ -870,9 +870,9 @@ categorystate_event
 {S, bgn:state, E},
 {E, bgn:type, "category"},
 {E, rdf:value, Val},
-{E, bgn:to, literal(ToDate)} ?,
-{E, bgn:from,literal(FromDate)} ?,
-{E, bgn:when,literal(WhenDate)} ?
+{E, bgn:to, ToDate} ?,
+{E, bgn:from,FromDate} ?,
+{E, bgn:when,WhenDate} ?
 <=>
 true,
 	% first make the occupation class URI
@@ -901,10 +901,10 @@ true,
 	make_rand_uri(S,['-categoryevent_time'],Time),
 	{Time, rdf:type, crm:'E52_Time-Span'},
 	{Evt, crm:'P4_has_time-span', Time},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', FromDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', ToDate))},
-	{Time, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
-	{Time, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', WhenDate))},
+	{Time, crm:'P82a_begin_of_the_begin', FromDate},
+	{Time, crm:'P82b_end_of_the_end', ToDate},
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, WhenDate}.
 
 

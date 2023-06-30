@@ -79,7 +79,7 @@ run_bioned_it1(XmlFile):-
 	rdf_load('mapschema.ttl'),
 	load_biodes_file(XmlFile),
 	rewrite,
-%	add_xsddates,
+	add_xsddates,
 	atom_concat(F,'.xml',XmlFile),
 	atom_concat(F,'.ttl',TTLFile),
 	absolute_file_name(TTLFile, File,
@@ -183,16 +183,16 @@ name_list_to_str(N,[H|T],Str):-
 	atomic_list_concat([H,' ',Rest],Str).
 
 
-% add datetimes should be deprecated now as it is fixed in the rewrite
-/*
+% add datetimes
+
 add_xsddates:-
 	forall(rdf_db:rdf(S,crm:'P82a_begin_of_the_begin',literal(Date)),
 	       (rdf_retractall(S, crm:'P82a_begin_of_the_begin',literal(Date)),
 		rdf_assert(S, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))))),
 	forall(rdf(S,crm:'P82b_end_of_the_end',literal(Date)),
 	       (rdf_retractall(S, crm:'P82b_end_of_the_end',literal(Date)),
-		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date)))))	.
-*/
+		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))))).
+
 
 % Data enrichment predicates
 %
