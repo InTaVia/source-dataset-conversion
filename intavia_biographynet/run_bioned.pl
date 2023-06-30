@@ -64,6 +64,29 @@ load_biodes_file(XmlFile):-
 	).
 */
 
+
+
+run_bioned_it_test:-
+	expand_file_name('data/xml/test/*.xml', X),
+		maplist(run_bioned_it1,X).
+
+run_bioned_it:-
+	expand_file_name('data/xml/full_preprocessed/*.xml', X),
+	maplist(run_bioned_it1,X).
+
+run_bioned_it1(XmlFile):-
+        rdf_retractall(_,_,_,_),
+	rdf_load('mapschema.ttl'),
+	load_biodes_file(XmlFile),
+	rewrite,
+%	add_xsddates,
+	atom_concat(F,'.xml',XmlFile),
+	atom_concat(F,'.ttl',TTLFile),
+	absolute_file_name(TTLFile, File,
+			   [ access(write)
+			   ]),
+	rdf_save_turtle(File,[]).
+
 load_xml_dir:-
 	expand_file_name('data/xml/full_preprocessed/*.xml', X),
 %	expand_file_name('data/xml/full_preprocessed/*.XML', Y),
@@ -85,10 +108,8 @@ load(File) :-
 			  graph(bioned) % save as graph name
 			]).
 
-% extractFileInfo(File, FileID, PersID, Suffix) :-
-%	atomic_list_concat([_Path, FileName], 'data/xml/full/', File),
-%	atomic_list_concat([FileID, _Extention], '.', FileName),
-%	atomic_list_concat([PersID, Suffix], '_', FileID).
+
+
 
 
 
@@ -96,7 +117,7 @@ run_bioned:-
         rdf_load('mapschema.ttl'),
 	load_xml_dir,
 	rewrite,
-	add_xsddates,
+%	add_xsddates,
 	save_bioned.
 
 
@@ -104,7 +125,7 @@ save_bioned:-
 	absolute_file_name(data('rdf/biographynet.ttl'), File,
 			   [ access(write)
 			   ]),
-	rdf_save_turtle(File,[graph(bioned)]).
+	rdf_save_turtle(File,[]).
 
 
 
@@ -143,8 +164,6 @@ make_rand_uri_bnode(OutputURI):-
 
 sex_to_gender('1', 'http://ldf.fi/schema/bioc/Male').
 sex_to_gender('2', 'http://ldf.fi/schema/bioc/Female').
-%sex_to_gender('', 'http://ldf.fi/schema/bioc/Other'):-true,!.
-
 
 
 % For a name URI, generate the concatenated name PLUS the
@@ -164,9 +183,8 @@ name_list_to_str(N,[H|T],Str):-
 	atomic_list_concat([H,' ',Rest],Str).
 
 
-% add datetimes
-%
-%
+% add datetimes should be deprecated now as it is fixed in the rewrite
+/*
 add_xsddates:-
 	forall(rdf_db:rdf(S,crm:'P82a_begin_of_the_begin',literal(Date)),
 	       (rdf_retractall(S, crm:'P82a_begin_of_the_begin',literal(Date)),
@@ -174,7 +192,7 @@ add_xsddates:-
 	forall(rdf(S,crm:'P82b_end_of_the_end',literal(Date)),
 	       (rdf_retractall(S, crm:'P82b_end_of_the_end',literal(Date)),
 		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date)))))	.
-
+*/
 
 % Data enrichment predicates
 %
