@@ -262,6 +262,7 @@ true,
 
 % FIX GENDER
 %
+%
 sextogender2
 @@
 {S, bgn:sex, O},
@@ -272,7 +273,6 @@ sex_to_gender(Sex,Gender),
 {S, bioc:has_gender, Gender},
 	{Gender, rdf:type, bioc:'Gender'} .
 
-
 sextogender1
 @@
 {S, bgn:sex, literal(Sex)}
@@ -281,6 +281,8 @@ true,
 sex_to_gender(Sex,Gender),
 {S, bioc:has_gender, Gender},
 	{Gender, rdf:type, bioc:'Gender'} .
+
+
 
 % NATIONALITY
 % changed to idm rather than bioc
@@ -334,10 +336,10 @@ birthevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "birth"},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter, NA} ?, % TODO figure out how to do these
-	{E, bgn:notBefore,NB} ?, % not used, todo
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -352,6 +354,10 @@ make_rand_uri(S,['-birth'],Evt),
 make_rand_uri(S,['-birth-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -371,10 +377,10 @@ deathevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "death"},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter, NA} ?,
-	{E, bgn:notBefore,NB} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -390,8 +396,13 @@ make_rand_uri(S,['-death'],Evt),
 	make_rand_uri(S,['-death-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, crm:'P78_is_identified_by', Date},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
+{Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
+
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
 
@@ -401,10 +412,10 @@ baptismevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "baptism"},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter, NA} ?,
-	{E, bgn:notBefore,NB} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -420,6 +431,10 @@ make_rand_uri(S,['-baptism'],Evt),
 	make_rand_uri(S,['-baptism-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -431,10 +446,10 @@ marriageevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "marriage"},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter, NA} ?,
-	{E, bgn:notBefore,NB} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -451,6 +466,10 @@ make_rand_uri(S,['marriage'],Evt),
 	make_rand_uri(S,['-marriage-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -461,10 +480,10 @@ funeralevent
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, "funeral"},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter,NA} ?,
-	{E, bgn:notBefore,NB} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -480,6 +499,10 @@ make_rand_uri(S,['funeral'],Evt),
 	make_rand_uri(S,['-funeral-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
 {Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
@@ -491,10 +514,10 @@ restevent %TODO
 {S, bgn:event, E},
 {E, rdf:type, bgn:'Event'},
 {E, bgn:type, Other},
-	{E, bgn:date, Date} ?,
-	{E, bgn:when, WhenDate} ?,
-	{E, bgn:notAfter,NA} ?,
-	{E, bgn:notBefore,NB} ?,
+	{E, bgn:date,  Date} ?,
+	{E, bgn:when,  WhenDate} ?,
+	{E, bgn:notAfter,  NA} ?, % TODO figure out how to do these
+	{E, bgn:notBefore, NB} ?, % not used, todo
 	{E, bgn:place, Place}?,
 	{E, rdf:value, Value}?
 <=>
@@ -509,7 +532,11 @@ make_rand_uri(S,['-other'],Evt),
 	make_rand_uri(S,['-other-time'],Time), % make the time t instance
 {Evt, crm:'P4_has_time-span', Time},
 {Time, rdf:type, crm:'E52_Time-Span'},
-{Time, rdfs:label, Date},
+{Time, crm:'P82a_begin_of_the_begin', Date},
+{Time, crm:'P82b_end_of_the_end', Date},
+{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+{Time, crm:'P82b_end_of_the_end', WhenDate},
+	{Time, rdfs:label, Date},
 {Time, rdfs:label, WhenDate},
 	{Time,  bgn:notAfter, NA},
 	{Time,  bgn:notBefore, NB}.
@@ -526,6 +553,8 @@ make_rand_uri(S,['-other'],Evt),
 % Update 19-4-2023: change the make our Occupations etc an instance:
 % PersonX-occupation-999-painte make them instance of a General Class:
 % 'painter' - That is subclass of occupation
+% Update 30-6-2023: now had_participant in actually points to the
+% instance, rather than the class
 
 occupationstate_event
 @@
@@ -557,7 +586,7 @@ true,
 	{Evt, rdf:type, bgn:'OccupationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-occupationevent_time'],Time),
@@ -565,7 +594,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 
 educationstate_event
@@ -574,7 +606,7 @@ educationstate_event
 {E, bgn:type, "education"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -598,7 +630,7 @@ true,
 	{Evt, rdf:type, bgn:'EducationStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-educationevent_time'],Time),
@@ -606,7 +638,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 residencestate_event
 @@
@@ -614,7 +649,7 @@ residencestate_event
 {E, bgn:type, "residence"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -638,7 +673,7 @@ true,
 	{Evt, rdf:type, bgn:'ResidenceStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-residenceevent_time'],Time),
@@ -646,7 +681,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 
 %TODO: What is Floruit?
@@ -656,7 +694,7 @@ floruitstate_event
 {E, bgn:type, "floruit"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -680,7 +718,7 @@ true,
 	{Evt, rdf:type, bgn:'FloruitStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-floruitevent_time'],Time),
@@ -688,7 +726,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 % DELETE empty floruit?
 floruitstate_event
@@ -705,7 +746,7 @@ faithstate_event
 {E, bgn:type, "faith"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -729,7 +770,7 @@ true,
 	{Evt, rdf:type, bgn:'FaithStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-faithevent_time'],Time),
@@ -737,7 +778,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 
 
@@ -782,7 +826,7 @@ claimtofamestate_event
 {E, bgn:type, "claim_to_fame"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -806,7 +850,7 @@ true,
 	{Evt, rdf:type, bgn:'ClaimtofameStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-claimtofameevent_time'],Time),
@@ -814,7 +858,10 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+
+{Time, rdfs:label, WhenDate}.
 
 
 
@@ -824,7 +871,7 @@ categorystate_event
 {E, bgn:type, "category"},
 {E, rdf:value, Val},
 {E, bgn:to, ToDate} ?,
-{E, bgn:from,FromDate} ?, % not used, todo
+{E, bgn:from,FromDate} ?,
 {E, bgn:when,WhenDate} ?
 <=>
 true,
@@ -848,7 +895,7 @@ true,
 	{Evt, rdf:type, bgn:'CategoryStateEvent'},
 	{Evt, rdfs:label, Val},
 	{Evt, crm:'P11_had_participant',S},
-	{Evt, bioc:had_participant_in_role, ClURI},
+	{Evt, bioc:had_participant_in_role, ARURI},
 
 	% then make the Event Timespan instance
 	make_rand_uri(S,['-categoryevent_time'],Time),
@@ -856,7 +903,9 @@ true,
 	{Evt, crm:'P4_has_time-span', Time},
 	{Time, crm:'P82a_begin_of_the_begin', FromDate},
 	{Time, crm:'P82b_end_of_the_end', ToDate},
-	{Time, rdfs:label, WhenDate}.
+	{Time, crm:'P82a_begin_of_the_begin', WhenDate},
+	{Time, crm:'P82b_end_of_the_end', WhenDate},
+{Time, rdfs:label, WhenDate}.
 
 
 % RELATIONS

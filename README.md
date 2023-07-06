@@ -37,6 +37,10 @@ Steps 4-8 load the XML testfile, converts it to crude RDF using the map_schema f
 To save the result as RDF turtle, use 
 1. ?- rdf_save_turtle(FILENAME, [graph(bioned)]).
 
+### iterative conversion (seems to have resolved some issues with buggy loading and deleting of graphs)
+- ?- run_bioned_it.
+
+
 For full conversion: 
 1. Get XML file from biografisch portaal (not provided here)
 2. In folder ./data/xml/full_preprocessed
