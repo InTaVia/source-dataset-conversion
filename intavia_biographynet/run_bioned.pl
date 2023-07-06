@@ -55,15 +55,6 @@ load_biodes_file(XmlFile):-
 			   [ access(read)
 			   ]),
 	load(File).
-/*
-	extractFileInfo(XmlFile, FileID, PersID, Suffix),
-	setup_call_cleanup(
-	    b_setval(bgn_context, bionedfileinfo(FileID, PersID, Suffix)),
-	    rewrite(addidsandlinktoperson),
-	    b_setval(bgn_context, [])
-	).
-*/
-
 
 
 run_bioned_it_test:-
@@ -75,7 +66,7 @@ run_bioned_it:-
 	maplist(run_bioned_it1,X).
 
 run_bioned_it1(XmlFile):-
-        rdf_retractall(_,_,_,_),
+        rdf_unload_graph(bioned),
 	rdf_load('mapschema.ttl'),
 	load_biodes_file(XmlFile),
 	rewrite,
@@ -188,10 +179,10 @@ name_list_to_str(N,[H|T],Str):-
 add_xsddates:-
 	forall(rdf_db:rdf(S,crm:'P82a_begin_of_the_begin',literal(Date)),
 	       (rdf_retractall(S, crm:'P82a_begin_of_the_begin',literal(Date)),
-		rdf_assert(S, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))))),
+		rdf_assert(S, crm:'P82a_begin_of_the_begin', literal(type('http://www.w3.org/2001/XMLSchema#date', Date)),bioned))),
 	forall(rdf(S,crm:'P82b_end_of_the_end',literal(Date)),
 	       (rdf_retractall(S, crm:'P82b_end_of_the_end',literal(Date)),
-		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date))))).
+		rdf_assert(S, crm:'P82b_end_of_the_end', literal(type('http://www.w3.org/2001/XMLSchema#date', Date)),bioned))).
 
 
 % Data enrichment predicates
