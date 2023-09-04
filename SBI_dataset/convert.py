@@ -95,7 +95,7 @@ def create_graph(people):
             g.add((birth_event_uri, Namespaces.rdf.type, Namespaces.crm.E67_Birth))
             g.add((birth_event_uri, Namespaces.crm.P98_brought_into_life, person_proxy_uri))
             if birth.date:
-                g.add((birth_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(f'{Namespaces.intavia_sbi}timespan/birth/{person.id}/{index}')))
+                g.add((birth_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(birth.date.uri)))
                 add_date_to_graph(g, birth.date)
             if birth.place:
                 g.add((birth_event_uri, Namespaces.crm.P7_took_place_at, birth.place.proxy_uri))
@@ -106,7 +106,7 @@ def create_graph(people):
             g.add((death_event_uri, Namespaces.rdf.type, Namespaces.crm.E69_Death))
             g.add((death_event_uri, Namespaces.crm.P100_was_death_of, person_proxy_uri))
             if death.date:
-                g.add((death_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(f'{Namespaces.intavia_sbi}timespan/death/{person.id}/{index}')))
+                g.add((death_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(death.date.uri)))
                 add_date_to_graph(g, death.date)
             if death.place:
                 g.add((death_event_uri, Namespaces.crm.P7_took_place_at, death.place.proxy_uri))
@@ -173,9 +173,9 @@ def parse_gender(person):
     try:
         match xpath_element(person, 'tei:sex')[0].get('value'):
             case '1':
-                return 'male'
+                return 'Male'
             case '2':
-                return 'female'
+                return 'Female'
             case _:
                 return None
     except IndexError:
@@ -299,7 +299,7 @@ def add_place_to_graph(g, place):
 
 
 def add_date_to_graph(g, date):
-    g.add((date.uri, Namespaces.rdf.type, Namespaces.crm.E52_Time_Span))
+    g.add((date.uri, Namespaces.rdf.type, Namespaces.crm['E52_Time-Span']))
     g.add((date.uri, Namespaces.rdfs.label, Literal(date.uid)))
     g.add((date.uri, Namespaces.crm.P82a_begin_of_the_begin, Literal(date.start_time, datatype=Namespaces.xsd.dateTime)))
     g.add((date.uri, Namespaces.crm.P82b_end_of_the_end, Literal(date.end_time, datatype=Namespaces.xsd.dateTime)))
