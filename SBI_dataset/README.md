@@ -8,15 +8,15 @@ The example (subset) converted data is available in the `sbi.ttl` file.
 
 The converter has the following requirements:
 
-- `Python 3.10`
-- `pipenv`
+- Python 3.11
+- [pdm](https://pdm.fming.dev/) package manager
 
 To start using this project, first create a python virtual environment and install the dependencies:
 
-    pipenv install --dev
+    pdm install --dev
 
 To start the converter, run the following command:
 
-    pipenv run ./convert.py <sbi-data.xml> <output.ttl>
+    pdm run ./convert.py <sbi-data.xml> <output.ttl>
 
-where `<sbi-data.xml>` can be a local file or a URL of the file.
+where `<sbi-data.xml>` can be a local file or a URL of the file. You can limit the number of converted entities by specifying the `--count=` parameter.

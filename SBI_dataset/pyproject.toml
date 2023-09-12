@@ -1,0 +1,12 @@
+[project]
+requires-python = ">=3.11"
+dependencies = [
+    "rdflib~=7.0",
+    "lxml~=4.9",
+    "docopt~=0.6",
+]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "flake8~=6.1",
+]
