@@ -233,82 +233,82 @@
     crm:P2_has_type idm_nametype:surname .
 
 <http://www.intavia.eu/sbi/occupation/casnikar> a bioc:Occupation ;
-    rdfs:label "casnikar"@sl ;
+    rdfs:label "journalist"@en ;
     skos:altLabel "časnikar"@sl,
         "časnikarka"@sl .
 
 <http://www.intavia.eu/sbi/occupation/dirigent> a bioc:Occupation ;
-    rdfs:label "dirigent"@sl ;
+    rdfs:label "conductor"@en ;
     skos:altLabel "dirigent"@sl,
         "dirigentka"@sl .
 
 <http://www.intavia.eu/sbi/occupation/dramatik> a bioc:Occupation ;
-    rdfs:label "dramatik"@sl ;
+    rdfs:label "playwright"@en ;
     skos:altLabel "dramatik"@sl,
         "dramatičarka"@sl .
 
 <http://www.intavia.eu/sbi/occupation/drustveni-delavec> a bioc:Occupation ;
-    rdfs:label "drustveni-delavec"@sl ;
+    rdfs:label "social worker"@en ;
     skos:altLabel "društvena delavka"@sl,
         "društveni delavec"@sl .
 
 <http://www.intavia.eu/sbi/occupation/esejist> a bioc:Occupation ;
-    rdfs:label "esejist"@sl ;
+    rdfs:label "essayist"@en ;
     skos:altLabel "esejist"@sl .
 
 <http://www.intavia.eu/sbi/occupation/glasbeni-kritik> a bioc:Occupation ;
-    rdfs:label "glasbeni-kritik"@sl ;
+    rdfs:label "music critic"@en ;
     skos:altLabel "glasbeni kritik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/glasbeni-pedagog> a bioc:Occupation ;
-    rdfs:label "glasbeni-pedagog"@sl ;
+    rdfs:label "music pedagogue"@en ;
     skos:altLabel "glasbena pedagoginja"@sl,
         "glasbeni pedagog"@sl .
 
 <http://www.intavia.eu/sbi/occupation/melograf> a bioc:Occupation ;
-    rdfs:label "melograf"@sl ;
+    rdfs:label "melographer"@en ;
     skos:altLabel "melograf"@sl .
 
 <http://www.intavia.eu/sbi/occupation/operni-pevec> a bioc:Occupation ;
-    rdfs:label "operni-pevec"@sl ;
+    rdfs:label "opera singer"@en ;
     skos:altLabel "operna pevka"@sl,
         "operni pevec"@sl .
 
 <http://www.intavia.eu/sbi/occupation/organizator-planinstva> a bioc:Occupation ;
-    rdfs:label "organizator-planinstva"@sl ;
+    rdfs:label "mountaineering organizer"@en ;
     skos:altLabel "organizator planinstva"@sl .
 
 <http://www.intavia.eu/sbi/occupation/pesnik> a bioc:Occupation ;
-    rdfs:label "pesnik"@sl ;
+    rdfs:label "poet"@en ;
     skos:altLabel "pesnica"@sl,
         "pesnik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/publicist> a bioc:Occupation ;
-    rdfs:label "publicist"@sl ;
+    rdfs:label "publicist"@en ;
     skos:altLabel "publicist"@sl,
         "publicistka"@sl .
 
 <http://www.intavia.eu/sbi/occupation/skof> a bioc:Occupation ;
-    rdfs:label "skof"@sl ;
+    rdfs:label "bishop"@en ;
     skos:altLabel "škof"@sl .
 
 <http://www.intavia.eu/sbi/occupation/sodnik> a bioc:Occupation ;
-    rdfs:label "sodnik"@sl ;
+    rdfs:label "judge"@en ;
     skos:altLabel "sodnica"@sl,
         "sodnik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/ucitelj> a bioc:Occupation ;
-    rdfs:label "ucitelj"@sl ;
+    rdfs:label "teacher"@en ;
     skos:altLabel "učitelj"@sl,
         "učiteljica"@sl .
 
 <http://www.intavia.eu/sbi/occupation/urednik> a bioc:Occupation ;
-    rdfs:label "urednik"@sl ;
+    rdfs:label "editor"@en ;
     skos:altLabel "urednica"@sl,
         "urednik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/zborovodja> a bioc:Occupation ;
-    rdfs:label "zborovodja"@sl ;
+    rdfs:label "choral conductor"@en ;
     skos:altLabel "zborovodja"@sl .
 
 <http://www.intavia.eu/sbi/placeappellation/1944101d1e659eb52b29f922d6bafc2e> a crm:E33_E41_Linguistic_Appellation ;
@@ -514,30 +514,30 @@
     crm:P82b_end_of_the_end "9901-01-01T23:59:59"^^xsd:dateTime .
 
 <http://www.intavia.eu/sbi/occupation/duhovnik> a bioc:Occupation ;
-    rdfs:label "duhovnik"@sl ;
+    rdfs:label "priest"@en ;
     skos:altLabel "duhovnik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/odvetnik> a bioc:Occupation ;
-    rdfs:label "odvetnik"@sl ;
+    rdfs:label "lawyer"@en ;
     skos:altLabel "odvetnica"@sl,
         "odvetnik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/orglavec> a bioc:Occupation ;
-    rdfs:label "orglavec"@sl ;
+    rdfs:label "organ player"@en ;
     skos:altLabel "orglavec"@sl .
 
 <http://www.intavia.eu/sbi/occupation/pisatelj> a bioc:Occupation ;
-    rdfs:label "pisatelj"@sl ;
+    rdfs:label "writer"@en ;
     skos:altLabel "pisatelj"@sl,
         "pisateljica"@sl .
 
 <http://www.intavia.eu/sbi/occupation/politik> a bioc:Occupation ;
-    rdfs:label "politik"@sl ;
+    rdfs:label "politician"@en ;
     skos:altLabel "politik"@sl,
         "političarka"@sl .
 
 <http://www.intavia.eu/sbi/occupation/prevajalec> a bioc:Occupation ;
-    rdfs:label "prevajalec"@sl ;
+    rdfs:label "translator"@en ;
     skos:altLabel "prevajalec"@sl,
         "prevajalka"@sl .
 
@@ -653,12 +653,12 @@
     crm:P1_is_identified_by <http://www.intavia.eu/sbi/placeappellation/4a087762aa7a5d4f7bd9910b2099fe22> .
 
 <http://www.intavia.eu/sbi/occupation/pravnik> a bioc:Occupation ;
-    rdfs:label "pravnik"@sl ;
+    rdfs:label "lawyer"@en ;
     skos:altLabel "pravnica"@sl,
         "pravnik"@sl .
 
 <http://www.intavia.eu/sbi/occupation/skladatelj> a bioc:Occupation ;
-    rdfs:label "skladatelj"@sl ;
+    rdfs:label "composer"@en ;
     skos:altLabel "skladatelj"@sl,
         "skladateljica"@sl .
 

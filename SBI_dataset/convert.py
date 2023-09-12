@@ -12,12 +12,14 @@ Options:
 
 import urllib
 import hashlib
+import tablib
 import calendar
 from lxml import etree
 from docopt import docopt
 from decimal import Decimal
 from dataclasses import dataclass
 from rdflib import Graph, Literal, Namespace, URIRef
+from typing import Optional
 
 
 def main(file_name, output_file_name, count=None):
@@ -120,11 +122,21 @@ def create_graph(people):
 
             # Add occupation
             g.add((occupation_uri, Namespaces.rdf.type, Namespaces.bioc.Occupation))
-            g.add((occupation_uri, Namespaces.rdfs.label, Literal(occupation.code, lang='sl')))
-            if occupation.male_label:
-                g.add((occupation_uri, Namespaces.skos.altLabel, Literal(occupation.male_label, lang='sl')))
-            if occupation.female_label:
-                g.add((occupation_uri, Namespaces.skos.altLabel, Literal(occupation.female_label, lang='sl')))
+
+            if occupation.english_label:
+                g.add((occupation_uri, Namespaces.rdfs.label, Literal(occupation.english_label, lang='en')))
+                if occupation.male_label:
+                    g.add((occupation_uri, Namespaces.skos.altLabel, Literal(occupation.male_label, lang='sl')))
+                if occupation.female_label:
+                    g.add((occupation_uri, Namespaces.skos.altLabel, Literal(occupation.female_label, lang='sl')))
+            elif occupation.male_label:
+                g.add((occupation_uri, Namespaces.rdfs.label, Literal(occupation.male_label, lang='sl')))
+                if occupation.female_label:
+                    g.add((occupation_uri, Namespaces.skos.altLabel, Literal(occupation.female_label, lang='sl')))
+            elif occupation.female_label:
+                g.add((occupation_uri, Namespaces.rdfs.label, Literal(occupation.female_label, lang='sl')))
+            else:
+                g.add((occupation_uri, Namespaces.rdfs.label, Literal(occupation.code, lang='sl')))
 
             # Add occupation to the person
             g.add((person_proxy_uri, Namespaces.bioc.has_occupation, occupation_uri))
@@ -249,12 +261,21 @@ def parse_occupations(person, occupations_taxonomy):
             pass
 
 
+def load_occupation_translations():
+    with open('./data/occupations.csv', 'r') as fh:
+        return dict((row[0], row[1]) for row in tablib.Dataset().load(fh, format='csv', delimiter='|'))
+
+
 def parse_occupations_taxonomy(xml):
+    occupation_translations = load_occupation_translations()
+
     for occupation in xpath_element(xml, '//tei:taxonomy[@xml:id="occupation"]//tei:category'):
-        yield(Occupation(
-            code=occupation.get('{http://www.w3.org/XML/1998/namespace}id'),
+        code = occupation.get('{http://www.w3.org/XML/1998/namespace}id')
+        yield (Occupation(
+            code=code,
             male_label=xpath_value(occupation, 'tei:desc[@ana="#masc"]'),
             female_label=xpath_value(occupation, 'tei:desc[@ana="#fem"]'),
+            english_label=occupation_translations.get(code)
         ))
 
 
@@ -311,8 +332,8 @@ def add_date_to_graph(g, date):
 @dataclass
 class Date:
     year: int
-    month: int
-    day: int
+    month: Optional[int]
+    day: Optional[int]
 
     @property
     def uid(self):
@@ -382,17 +403,18 @@ class Event:
 @dataclass
 class Occupation:
     code: str
-    male_label: str
-    female_label: str
+    male_label: Optional[str]
+    female_label: Optional[str]
+    english_label: Optional[str]
 
 
 @dataclass
 class Person:
     """Class respresenting a person in the SBI."""
     id: str
-    name: str
-    first_name: str
-    last_name: str
+    name: Optional[str]
+    first_name: Optional[str]
+    last_name: Optional[str]
     gender: str
     birth: list[Event]
     death: list[Event]
