@@ -109,6 +109,13 @@ def create_graph(people, people_extra_data):
                 g.add((birth_event_uri, Namespaces.crm.P7_took_place_at, birth.place.proxy_uri))
                 add_place_to_graph(g, birth.place)
 
+            # Connect the birth to the person
+            born_person_uri = URIRef(f'{Namespaces.intavia_sbi}born_person/{person.id}/{index}')
+            g.add((born_person_uri, Namespaces.rdf.type, Namespaces.idm_role.born_person))
+            g.add((born_person_uri, Namespaces.bioc.inheres_in, person_proxy_uri))
+            g.add((person_proxy_uri, Namespaces.bioc.bearer_of, born_person_uri))
+            g.add((birth_event_uri, Namespaces.bioc.had_participant_in_role, born_person_uri))
+
         for index, death in enumerate(person.death, 1):
             death_event_uri = URIRef(f'{Namespaces.intavia_sbi}event/death/{person.id}/{index}')
             g.add((death_event_uri, Namespaces.rdf.type, Namespaces.crm.E69_Death))
@@ -119,6 +126,13 @@ def create_graph(people, people_extra_data):
             if death.place:
                 g.add((death_event_uri, Namespaces.crm.P7_took_place_at, death.place.proxy_uri))
                 add_place_to_graph(g, death.place)
+
+            # Connect the birth to the person
+            deceased_person_uri = URIRef(f'{Namespaces.intavia_sbi}deceased_person/{person.id}/{index}')
+            g.add((deceased_person_uri, Namespaces.rdf.type, Namespaces.idm_role.deceased_person))
+            g.add((deceased_person_uri, Namespaces.bioc.inheres_in, person_proxy_uri))
+            g.add((person_proxy_uri, Namespaces.bioc.bearer_of, deceased_person_uri))
+            g.add((death_event_uri, Namespaces.bioc.had_participant_in_role, deceased_person_uri))
 
         # ---------------------------------------------------------------------
         # Occupation
@@ -166,7 +180,7 @@ def create_graph(people, people_extra_data):
                 if data.object_wikidata_id:
                     g.add((event_uri, Namespaces.crm.P108_has_produced, URIRef(data.object_wikidata_id)))
 
-                # Connect the evenet to the person
+                # Connect the event to the person
                 event_role_uri = URIRef(f'{Namespaces.intavia_sbi}role/event/production/{person.id}/{index}')
                 g.add((event_role_uri, Namespaces.rdf.type, Namespaces.idm_role.responsibleArtist))
                 g.add((event_role_uri, Namespaces.rdf.type, Namespaces.bioc.Event_Role))
@@ -320,6 +334,10 @@ def parse_people(xml, occupations_taxonomy, count=None):
 
     for xml_person in people:
         persName = xpath_element(xml_person, 'tei:persName')[0]
+
+        # TODO remove when the data is fixed
+        # if xml_person.get('{http://www.w3.org/XML/1998/namespace}id') != 'sbi1000150':
+        #     continue
 
         person = Person(
             id=xml_person.get('{http://www.w3.org/XML/1998/namespace}id'),
