@@ -5,6 +5,7 @@ dependencies = [
     "lxml~=4.9",
     "docopt~=0.6",
     "tablib~=3.5",
+    "openpyxl~=3.1",
 ]
 
 [tool.pdm.dev-dependencies]
