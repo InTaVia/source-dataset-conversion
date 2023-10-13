@@ -102,6 +102,8 @@ def create_graph(people, people_extra_data):
             birth_event_uri = URIRef(f'{Namespaces.intavia_sbi}event/birth/{person.id}/{index}')
             g.add((birth_event_uri, Namespaces.rdf.type, Namespaces.crm.E67_Birth))
             g.add((birth_event_uri, Namespaces.crm.P98_brought_into_life, person_proxy_uri))
+            g.add((birth_event_uri, Namespaces.rdfs.label, Literal(f'Birth of {person.full_name_first_name_last_name}')))
+
             if birth.date:
                 g.add((birth_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(birth.date.uri)))
                 add_date_to_graph(g, birth.date)
@@ -120,6 +122,8 @@ def create_graph(people, people_extra_data):
             death_event_uri = URIRef(f'{Namespaces.intavia_sbi}event/death/{person.id}/{index}')
             g.add((death_event_uri, Namespaces.rdf.type, Namespaces.crm.E69_Death))
             g.add((death_event_uri, Namespaces.crm.P100_was_death_of, person_proxy_uri))
+            g.add((death_event_uri, Namespaces.rdfs.label, Literal(f'Death of {person.full_name_first_name_last_name}')))
+
             if death.date:
                 g.add((death_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(death.date.uri)))
                 add_date_to_graph(g, death.date)
@@ -171,9 +175,9 @@ def create_graph(people, people_extra_data):
                 g.add((event_uri, Namespaces.rdf.type, Namespaces.crm.E12_Production))
                 match data.relation_name:
                     case'avtor':
-                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{data.person_name} wrote {data.object_name}')))
+                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{person.full_name_first_name_last_name} wrote {data.object_name}')))
                     case 'skladatelj' | 'avtor glasbe':
-                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{data.person_name} composed {data.object_name}')))
+                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{person.full_name_first_name_last_name} composed {data.object_name}')))
                 if data.year:
                     add_date_to_graph(g, data.year)
                     g.add((event_uri, Namespaces.crm["P4_has_time-span"], URIRef(data.year.uri)))
@@ -520,6 +524,13 @@ class Person:
             return self.name
         else:
             return f'{self.last_name}, {self.first_name}'
+
+    @property
+    def full_name_first_name_last_name(self):
+        if self.name:
+            return self.name
+        else:
+            return f'{self.first_name} {self.last_name}'
 
 
 @dataclass
