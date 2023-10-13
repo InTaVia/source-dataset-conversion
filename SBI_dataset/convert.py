@@ -188,7 +188,7 @@ def create_graph(people, people_extra_data):
                 event_role_uri = URIRef(f'{Namespaces.intavia_sbi}role/event/production/{person.id}/{index}')
                 g.add((event_role_uri, Namespaces.rdf.type, Namespaces.idm_role.responsibleArtist))
                 g.add((event_role_uri, Namespaces.rdf.type, Namespaces.bioc.Event_Role))
-                g.add((event_uri, Namespaces.idm_core.had_participant_in_role, event_role_uri))
+                g.add((event_uri, Namespaces.bioc.had_participant_in_role, event_role_uri))
                 g.add((person_proxy_uri, Namespaces.bioc.bearer_of, event_role_uri))
 
     # TODO
