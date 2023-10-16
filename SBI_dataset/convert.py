@@ -175,9 +175,9 @@ def create_graph(people, people_extra_data):
                 g.add((event_uri, Namespaces.rdf.type, Namespaces.crm.E12_Production))
                 match data.relation_name:
                     case'avtor':
-                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{person.full_name_first_name_last_name} wrote {data.object_name}')))
+                        g.add((event_uri, Namespaces.rdfs.label, Literal(f'{person.full_name_first_name_last_name} wrote {data.object_name}')))
                     case 'skladatelj' | 'avtor glasbe':
-                        g.add((event_uri, Namespaces.rdf.label, Literal(f'{person.full_name_first_name_last_name} composed {data.object_name}')))
+                        g.add((event_uri, Namespaces.rdfs.label, Literal(f'{person.full_name_first_name_last_name} composed {data.object_name}')))
                 if data.year:
                     add_date_to_graph(g, data.year)
                     g.add((event_uri, Namespaces.crm["P4_has_time-span"], URIRef(data.year.uri)))
@@ -186,7 +186,6 @@ def create_graph(people, people_extra_data):
 
                 # Connect the event to the person
                 event_role_uri = URIRef(f'{Namespaces.intavia_sbi}role/event/production/{person.id}/{index}')
-                g.add((event_role_uri, Namespaces.rdf.type, Namespaces.idm_role.responsibleArtist))
                 g.add((event_role_uri, Namespaces.rdf.type, Namespaces.bioc.Event_Role))
                 g.add((event_uri, Namespaces.bioc.had_participant_in_role, event_role_uri))
                 g.add((person_proxy_uri, Namespaces.bioc.bearer_of, event_role_uri))
@@ -397,14 +396,17 @@ def parse_people_extra_data(file_name):
 def add_place_to_graph(g, place):
     g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.crm.E53_Place))
     g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.idm_core.Place_Proxy))
-    g.add((place.proxy_uri, Namespaces.rdfs.label, Literal(place.name, lang='sl')))
+    g.add((place.proxy_uri, Namespaces.rdfs.label, Literal(place.name)))
 
     g.add((place.proxy_uri, Namespaces.crm.P1_is_identified_by, place.appelation_uri))
     g.add((place.appelation_uri, Namespaces.rdf.type, Namespaces.crm.E33_E41_Linguistic_Appellation))
-    g.add((place.appelation_uri, Namespaces.rdfs.label, Literal(place.name, lang='sl')))
+    g.add((place.appelation_uri, Namespaces.rdfs.label, Literal(place.name)))
 
     if place.location:
-        g.add((place.proxy_uri, Namespaces.crm.P168_place_is_defined_by, Literal(f'POINT {place.location.lng} {place.location.lat}', datatype=Namespaces.geo.wktLiteral)))
+        space_primitive_uri = URIRef(f'{Namespaces.intavia_sbi}spaceprimitive/{place.uid}')
+        g.add((space_primitive_uri, Namespaces.rdf.type, Namespaces.crm.E94_Space_Primitive))
+        g.add((space_primitive_uri, Namespaces.crm.P168_place_is_defined_by, Literal(f'Point({place.location.lng} {place.location.lat})', datatype=Namespaces.geo.wktLiteral)))
+        g.add((place.proxy_uri, Namespaces.crm.P168_place_is_defined_by, space_primitive_uri))
 
 
 def add_date_to_graph(g, date):
