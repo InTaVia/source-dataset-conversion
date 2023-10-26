@@ -1,0 +1,81 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX idm: <https://www.intavia.org/idm/>
+PREFIX idmrole: <https://www.intavia.org/idm/role/>
+PREFIX bioc: <http://ldf.fi/schema/bioc/>
+
+CONSTRUCT {
+	?cho a crm:E24_Physical_Human_Made_Thing , idm:CHO_Proxy ;
+		crm:P1_is_identified_by ?cho_1476Title ;
+		bioc:bearer_of ?choProductionEventRole .
+	?cho rdfs:label ?dc_title .
+	?cho crm:P2_has_type ?dc_type_uri .
+
+    ?edm_object crm:P70_documents ?cho ;
+		a crm:E31_Document .
+	?cho_1476Title rdfs:label ?dc_title ;
+		a crm:E35_Title .
+
+    ?choProductionEventRole a idmrole:produced_cho .
+    idmrole:produced_cho a bioc:Thing_Role .
+
+  	idmrole:produced_cho rdfs:label "produced cho"@en .
+	?choProductionEvent bioc:occured_in_the_presence_of_in_role ?choProductionEventRole ;
+		 a crm:E12_Production ;
+		 crm:P4_has_time-span ?choProductionTimespan ;
+		 rdfs:label ?eventLabel .
+
+	?choProductionTimespan rdfs:label ?dc_date ;
+		crm:P82a_beginning_of_the_begin ?dc_date ;
+		crm:P82b_end_of_the_end ?dc_date .
+
+    ?choProductionEvent crm:P7_took_place_at ?spatial_uri .
+	?spatial_uri a crm:E53_Place ;
+				 rdfs:label ?spatial_label .
+	?choProductionEvent bioc:had_participant_in_role ?producingArtistRole .
+    ?choProductionEvent crm:P11_had_participant ?dc_creator_uri .
+    ?dc_creator_uri bioc:bearer_of ?producingArtistRole .
+	?producingArtistRole a idmrole:producing_artist .
+    idmrole:producing_artist a bioc:Actor_Role .
+	idmrole:producing_artist rdfs:label "producing artist"@en .
+    ?dc_creator_uri owl:sameAs ?artistUri .
+    ?spatial_uri owl:sameAs ?spatial_sameas_uri .
+}
+WHERE 
+{  		
+  	?cho dc:creator ?dc_creator_uri .
+	?dc_creator_uri owl:sameAs ?artistUri .
+    FILTER (STRSTARTS(STR(?artistUri), "http://www.wikidata.org/"))
+
+    BIND(IRI(REPLACE(STR(?cho), "http://", CONCAT(STR(idmrole:produced_cho), "/"))) as ?choProductionEventRole)
+    BIND(IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_event/")) as ?choProductionEvent)
+    BIND(IRI(REPLACE(STR(?artistUri), "http://", CONCAT(STR(idmrole:producing_artist), "/"))) as ?producingArtistRole)
+    BIND(IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.org/chotitle/")) as ?cho_1476Title)
+	#OPTIONAL { ?cho dc:coverage ?dc_coverage_uri }
+    OPTIONAL { ?cho dc:type ?dc_type_uri } # europeana uri (label not included in data dump)
+
+    OPTIONAL { ?cho dcterms:spatial ?spatial . OPTIONAL { ?spatial owl:sameAs ?spatial_sameas_uri . FILTER (STRSTARTS(STR(?spatial_sameas_uri), "http://www.wikidata.org/")) 
+    } }
+  
+	BIND (IF(ISIRI(?spatial), ?spatial, IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/location_of_production/"))) AS ?spatial_uri)
+	BIND (IF(!ISIRI(?spatial), ?spatial, ?unbound) AS ?spatial_label)
+
+	# Shortcut technique to avoid hopping many nodes (for the 2 subqueries below and )
+	BIND(IRI(REPLACE(str(?cho), "http://data.europeana.eu/proxy/europeana/", "http://data.europeana.eu/proxy/provider/")) AS ?provider_proxy)
+	BIND(IRI(REPLACE(str(?cho), "http://data.europeana.eu/proxy/europeana/", "http://data.europeana.eu/aggregation/provider/")) AS ?provider_agg)
+	#BIND(IRI(REPLACE(str(?cho), "http://data.europeana.eu/proxy/europeana/", "http://data.europeana.eu/item/")) AS ?item)
+
+	#?provider_proxy edm:type ?edm_type .
+	#OPTIONAL { ?provider_proxy dc:creator ?dc_creator . }
+	#OPTIONAL { ?provider_proxy dc:coverage ?dc_coverage . }
+	OPTIONAL { ?provider_proxy dc:date ?dc_date . }
+	OPTIONAL { ?provider_proxy dc:title ?dc_title . }
+	OPTIONAL { ?provider_agg edm:object ?edm_object . }
+
+}
+#LIMIT 1
