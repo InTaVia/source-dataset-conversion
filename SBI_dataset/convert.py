@@ -3,7 +3,7 @@
 """SBI data converter.
 
 Usage:
-    convert.py <sbi-data.xml> <output.ttl> [--count=<count>]
+    convert.py [--traceback] <sbi-data.xml> <sbi-extra-data.xlsx> <output.ttl> [--count=<count>]
 
 Options:
     -h --help       Show this screen.
@@ -13,7 +13,9 @@ Options:
 import urllib
 import hashlib
 import tablib
+import openpyxl
 import calendar
+import itertools
 from lxml import etree
 from docopt import docopt
 from decimal import Decimal
@@ -22,18 +24,22 @@ from rdflib import Graph, Literal, Namespace, URIRef
 from typing import Optional
 
 
-def main(file_name, output_file_name, count=None):
+# -----------------------------------------------------------------------------
+# Convert SBI data
+
+def convert_sbi(file_name, file_name_extra, output_file_name, count=None):
     xml = load_xml(file_name)
     occupations = dict((occupation.code, occupation) for occupation in parse_occupations_taxonomy(xml))
     people = parse_people(xml, occupations, count)
-    graph = create_graph(people)
+    people_extra_data = parse_people_extra_data(file_name_extra)
+    graph = create_graph(people, people_extra_data)
     graph.serialize(destination=output_file_name, format='turtle')
 
 
 # -----------------------------------------------------------------------------
 # Create the InTavia RDF graph from the available people data.
 
-def create_graph(people):
+def create_graph(people, people_extra_data):
     """Create RDF graph of the provided people."""
 
     g = Graph()
@@ -93,9 +99,11 @@ def create_graph(people):
         # Birth and death
 
         for index, birth in enumerate(person.birth, 1):
-            birth_event_uri = URIRef(f'{Namespaces.intavia_sbi}birthevent/{person.id}/{index}')
+            birth_event_uri = URIRef(f'{Namespaces.intavia_sbi}event/birth/{person.id}/{index}')
             g.add((birth_event_uri, Namespaces.rdf.type, Namespaces.crm.E67_Birth))
             g.add((birth_event_uri, Namespaces.crm.P98_brought_into_life, person_proxy_uri))
+            g.add((birth_event_uri, Namespaces.rdfs.label, Literal(f'Birth of {person.full_name_first_name_last_name}')))
+
             if birth.date:
                 g.add((birth_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(birth.date.uri)))
                 add_date_to_graph(g, birth.date)
@@ -103,16 +111,32 @@ def create_graph(people):
                 g.add((birth_event_uri, Namespaces.crm.P7_took_place_at, birth.place.proxy_uri))
                 add_place_to_graph(g, birth.place)
 
+            # Connect the birth to the person
+            born_person_uri = URIRef(f'{Namespaces.intavia_sbi}born_person/{person.id}/{index}')
+            g.add((born_person_uri, Namespaces.rdf.type, Namespaces.idm_role.born_person))
+            g.add((born_person_uri, Namespaces.bioc.inheres_in, person_proxy_uri))
+            g.add((person_proxy_uri, Namespaces.bioc.bearer_of, born_person_uri))
+            g.add((birth_event_uri, Namespaces.bioc.had_participant_in_role, born_person_uri))
+
         for index, death in enumerate(person.death, 1):
-            death_event_uri = URIRef(f'{Namespaces.intavia_sbi}deathevent/{person.id}/{index}')
+            death_event_uri = URIRef(f'{Namespaces.intavia_sbi}event/death/{person.id}/{index}')
             g.add((death_event_uri, Namespaces.rdf.type, Namespaces.crm.E69_Death))
             g.add((death_event_uri, Namespaces.crm.P100_was_death_of, person_proxy_uri))
+            g.add((death_event_uri, Namespaces.rdfs.label, Literal(f'Death of {person.full_name_first_name_last_name}')))
+
             if death.date:
                 g.add((death_event_uri, Namespaces.crm["P4_has_time-span"], URIRef(death.date.uri)))
                 add_date_to_graph(g, death.date)
             if death.place:
                 g.add((death_event_uri, Namespaces.crm.P7_took_place_at, death.place.proxy_uri))
                 add_place_to_graph(g, death.place)
+
+            # Connect the birth to the person
+            deceased_person_uri = URIRef(f'{Namespaces.intavia_sbi}deceased_person/{person.id}/{index}')
+            g.add((deceased_person_uri, Namespaces.rdf.type, Namespaces.idm_role.deceased_person))
+            g.add((deceased_person_uri, Namespaces.bioc.inheres_in, person_proxy_uri))
+            g.add((person_proxy_uri, Namespaces.bioc.bearer_of, deceased_person_uri))
+            g.add((death_event_uri, Namespaces.bioc.had_participant_in_role, deceased_person_uri))
 
         # ---------------------------------------------------------------------
         # Occupation
@@ -140,6 +164,31 @@ def create_graph(people):
 
             # Add occupation to the person
             g.add((person_proxy_uri, Namespaces.bioc.has_occupation, occupation_uri))
+
+        # ---------------------------------------------------------------------
+        # Extra data
+
+        if person.id in people_extra_data:
+            for index, data in enumerate([data for data in people_extra_data[person.id] if data.relation_name in ['avtor', 'skladatelj', 'avtor glasbe']], 1):
+                # Add production event
+                event_uri = URIRef(f'{Namespaces.intavia_sbi}event/production/{person.id}/{index}')
+                g.add((event_uri, Namespaces.rdf.type, Namespaces.crm.E12_Production))
+                match data.relation_name:
+                    case'avtor':
+                        g.add((event_uri, Namespaces.rdfs.label, Literal(f'{person.full_name_first_name_last_name} wrote {data.object_name}')))
+                    case 'skladatelj' | 'avtor glasbe':
+                        g.add((event_uri, Namespaces.rdfs.label, Literal(f'{person.full_name_first_name_last_name} composed {data.object_name}')))
+                if data.year:
+                    add_date_to_graph(g, data.year)
+                    g.add((event_uri, Namespaces.crm["P4_has_time-span"], URIRef(data.year.uri)))
+                if data.object_wikidata_id:
+                    g.add((event_uri, Namespaces.crm.P108_has_produced, URIRef(data.object_wikidata_id)))
+
+                # Connect the event to the person
+                event_role_uri = URIRef(f'{Namespaces.intavia_sbi}role/event/production/{person.id}/{index}')
+                g.add((event_role_uri, Namespaces.rdf.type, Namespaces.bioc.Event_Role))
+                g.add((event_uri, Namespaces.bioc.had_participant_in_role, event_role_uri))
+                g.add((person_proxy_uri, Namespaces.bioc.bearer_of, event_role_uri))
 
     # TODO
     # relations
@@ -289,6 +338,10 @@ def parse_people(xml, occupations_taxonomy, count=None):
     for xml_person in people:
         persName = xpath_element(xml_person, 'tei:persName')[0]
 
+        # TODO remove when the data is fixed
+        # if xml_person.get('{http://www.w3.org/XML/1998/namespace}id') != 'sbi1000150':
+        #     continue
+
         person = Person(
             id=xml_person.get('{http://www.w3.org/XML/1998/namespace}id'),
             name=xpath_value(persName, 'tei:name'),
@@ -304,19 +357,56 @@ def parse_people(xml, occupations_taxonomy, count=None):
 
 
 # -----------------------------------------------------------------------------
+# Extra data parsing functions
+
+def parse_cell(cell, type=str):
+    if cell.value is None:
+        return None
+    else:
+        return type(cell.value)
+
+
+def parse_people_extra_data_aux(file_name):
+    cols = dict([(name, id) for (id, name) in list(enumerate(['Oseba', 'Relacija', 'Leto', 'Objekt', 'Tip objekta', 'SBI ID', 'Oseba ID', 'Relacija ID', 'Objekt ID', 'Tip objekta ID']))])
+    workbook = openpyxl.load_workbook(file_name)
+    for worksheet in workbook.worksheets:
+        for row in worksheet.iter_rows(2):
+            person_name, person_sbi_id, relation_name, object_name = [parse_cell(row[cols[key]]) for key in ['Oseba', 'SBI ID', 'Relacija', 'Objekt']]
+            if not all([person_name, person_sbi_id, relation_name, object_name]):
+                continue
+            yield ExtraData(
+                person_name=str(person_name),
+                person_sbi_id=str(person_sbi_id),
+                person_wikidata_id=parse_cell(row[cols['Oseba ID']]),
+                relation_name=str(relation_name),
+                relation_wikidata_id=parse_cell(row[cols['Relacija ID']]),
+                object_name=str(object_name),
+                object_wikidata_id=parse_cell(row[cols['Objekt ID']]),
+                year=Date(year=parse_cell(row[cols['Leto']], int), month=None, day=None) if parse_cell(row[cols['Leto']], int) else None,
+            )
+
+
+def parse_people_extra_data(file_name):
+    return dict([(id, list(data)) for (id, data) in itertools.groupby(parse_people_extra_data_aux(file_name), lambda data: data.person_sbi_id)])
+
+
+# -----------------------------------------------------------------------------
 # Graph adding functions
 
 def add_place_to_graph(g, place):
     g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.crm.E53_Place))
     g.add((place.proxy_uri, Namespaces.rdf.type, Namespaces.idm_core.Place_Proxy))
-    g.add((place.proxy_uri, Namespaces.rdfs.label, Literal(place.name, lang='sl')))
+    g.add((place.proxy_uri, Namespaces.rdfs.label, Literal(place.name)))
 
     g.add((place.proxy_uri, Namespaces.crm.P1_is_identified_by, place.appelation_uri))
     g.add((place.appelation_uri, Namespaces.rdf.type, Namespaces.crm.E33_E41_Linguistic_Appellation))
-    g.add((place.appelation_uri, Namespaces.rdfs.label, Literal(place.name, lang='sl')))
+    g.add((place.appelation_uri, Namespaces.rdfs.label, Literal(place.name)))
 
     if place.location:
-        g.add((place.proxy_uri, Namespaces.crm.P168_place_is_defined_by, Literal(f'POINT {place.location.lng} {place.location.lat}', datatype=Namespaces.geo.wktLiteral)))
+        space_primitive_uri = URIRef(f'{Namespaces.intavia_sbi}spaceprimitive/{place.uid}')
+        g.add((space_primitive_uri, Namespaces.rdf.type, Namespaces.crm.E94_Space_Primitive))
+        g.add((space_primitive_uri, Namespaces.crm.P168_place_is_defined_by, Literal(f'Point({place.location.lng} {place.location.lat})', datatype=Namespaces.geo.wktLiteral)))
+        g.add((place.proxy_uri, Namespaces.crm.P168_place_is_defined_by, space_primitive_uri))
 
 
 def add_date_to_graph(g, date):
@@ -415,7 +505,7 @@ class Person:
     name: Optional[str]
     first_name: Optional[str]
     last_name: Optional[str]
-    gender: str
+    gender: Optional[str]
     birth: list[Event]
     death: list[Event]
     occupations: list[Occupation]
@@ -436,6 +526,26 @@ class Person:
             return self.name
         else:
             return f'{self.last_name}, {self.first_name}'
+
+    @property
+    def full_name_first_name_last_name(self):
+        if self.name:
+            return self.name
+        else:
+            return f'{self.first_name} {self.last_name}'
+
+
+@dataclass
+class ExtraData:
+    """Class representing extra data about people in SBI."""
+    person_name: str
+    person_sbi_id: str
+    person_wikidata_id: Optional[str]
+    relation_name: str
+    relation_wikidata_id: Optional[str]
+    object_name: str
+    object_wikidata_id: Optional[str]
+    year: Optional[Date]
 
 
 class Namespaces:
@@ -476,5 +586,5 @@ class Namespaces:
 # Entry point
 
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='SBI data converter')
-    main(arguments['<sbi-data.xml>'], arguments['<output.ttl>'], count=arguments['--count'])
+    args = docopt(__doc__, version='SBI data converter')
+    convert_sbi(args['<sbi-data.xml>'], args['<sbi-extra-data.xlsx>'], args['<output.ttl>'], count=args['--count'])
