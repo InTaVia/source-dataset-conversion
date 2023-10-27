@@ -10,6 +10,7 @@ Options:
     --count=<count> Limit the number of people to convert.
 """
 
+import re
 import urllib
 import hashlib
 import tablib
@@ -164,6 +165,12 @@ def create_graph(people, people_extra_data):
 
             # Add occupation to the person
             g.add((person_proxy_uri, Namespaces.bioc.has_occupation, occupation_uri))
+
+        # ---------------------------------------------------------------------
+        # Biography text
+
+        if person.short_bio:
+            g.add((person_proxy_uri, Namespaces.idm_core.short_bio_text, Literal(person.short_bio, lang='sl')))
 
         # ---------------------------------------------------------------------
         # Extra data
@@ -342,6 +349,12 @@ def parse_people(xml, occupations_taxonomy, count=None):
         # if xml_person.get('{http://www.w3.org/XML/1998/namespace}id') != 'sbi1000150':
         #     continue
 
+        note = xpath_element(xml_person, 'tei:note')
+        if not note:
+            short_bio = None
+        else:
+            short_bio = re.sub(r"\s{2,}", " ", note[0].text)
+
         person = Person(
             id=xml_person.get('{http://www.w3.org/XML/1998/namespace}id'),
             name=xpath_value(persName, 'tei:name'),
@@ -351,6 +364,7 @@ def parse_people(xml, occupations_taxonomy, count=None):
             birth=list(parse_events(xpath_element(xml_person, 'tei:birth'))),
             death=list(parse_events(xpath_element(xml_person, 'tei:death'))),
             occupations=list(parse_occupations(xml_person, occupations_taxonomy)),
+            short_bio=short_bio
         )
 
         yield person
@@ -509,6 +523,7 @@ class Person:
     birth: list[Event]
     death: list[Event]
     occupations: list[Occupation]
+    short_bio: Optional[str]
 
     def __str__(self) -> str:
         if self.name:
