@@ -41,7 +41,8 @@ CONSTRUCT {
 	?choProductionEvent bioc:had_participant_in_role ?producingArtistRole .
     ?choProductionEvent crm:P11_had_participant ?dc_creator_uri .
     ?dc_creator_uri bioc:bearer_of ?producingArtistRole ;
-					a crm:E21_Person , idmcore:Person_Proxy .
+					a crm:E21_Person , idmcore:Person_Proxy ;
+					rdfs:label ?dc_creator_label .
 	?producingArtistRole a idmrole:producing_artist .
     idmrole:producing_artist a bioc:Actor_Role .
 	idmrole:producing_artist rdfs:label "producing artist"@en .
@@ -53,6 +54,8 @@ WHERE
   	?cho dc:creator ?dc_creator_uri .
 	?dc_creator_uri owl:sameAs ?artistUri .
     FILTER (STRSTARTS(STR(?artistUri), "http://www.wikidata.org/"))
+
+    OPTIONAL { ?dc_creator_uri skos:prefLabel ?dc_creator_label . }
 
     BIND(IRI(REPLACE(STR(?cho), "http://", CONCAT(STR(idmrole:produced_cho), "/"))) as ?choProductionEventRole)
     BIND(IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_event/")) as ?choProductionEvent)
