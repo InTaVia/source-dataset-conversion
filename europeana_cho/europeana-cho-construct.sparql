@@ -76,6 +76,7 @@ WHERE
 	#OPTIONAL { ?provider_proxy dc:creator ?dc_creator . }
 	#OPTIONAL { ?provider_proxy dc:coverage ?dc_coverage . }
 	OPTIONAL { ?provider_proxy dc:date ?dc_date . }
+    BIND(IF(?dc_date, IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_timespan/")), ?unbound) as ?choProductionTimespan)
 	OPTIONAL { ?provider_proxy dc:title ?dc_title . }
 	OPTIONAL { ?provider_agg edm:object ?edm_object . }
 
