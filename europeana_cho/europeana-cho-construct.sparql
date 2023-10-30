@@ -8,6 +8,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX idm: <https://www.intavia.org/idm/>
 PREFIX idmrole: <https://www.intavia.org/idm/role/>
 PREFIX bioc: <http://ldf.fi/schema/bioc/>
+PREFIX idmcore: <http://www.intavia.eu/idm-core/>
 
 CONSTRUCT {
 	?cho a crm:E24_Physical_Human_Made_Thing , idm:CHO_Proxy ;
@@ -39,7 +40,8 @@ CONSTRUCT {
 				 rdfs:label ?spatial_label .
 	?choProductionEvent bioc:had_participant_in_role ?producingArtistRole .
     ?choProductionEvent crm:P11_had_participant ?dc_creator_uri .
-    ?dc_creator_uri bioc:bearer_of ?producingArtistRole .
+    ?dc_creator_uri bioc:bearer_of ?producingArtistRole ;
+					a crm:E21_Person , idmcore:Person_Proxy .
 	?producingArtistRole a idmrole:producing_artist .
     idmrole:producing_artist a bioc:Actor_Role .
 	idmrole:producing_artist rdfs:label "producing artist"@en .
