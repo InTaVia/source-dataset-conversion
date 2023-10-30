@@ -1,6 +1,6 @@
 # Europeana CHO data
 
-This repository contains documentation for the workflow for selecting a subset of Europeana CHO RDF data (received as a data dump `export-europeana-intavia.zip`) that will contain CHO's created by persons who are included in the InTaVia knowledge graph (persons are identified/matched using Wikidata identifiers) and converting it into IDM RDF.
+This repository contains documentation for the workflow for selecting a subset of Europeana CHO RDF data (received as a data dump `export-europeana-intavia.zip`) that will contain CHO's created by persons (also CHO's that have other references to persons are included, e.g. via dc:subject) who are included in the InTaVia knowledge graph (persons are identified/matched using Wikidata identifiers) and converting it into IDM RDF.
 
 Files:
 - README.md - documentation
