@@ -59,7 +59,7 @@ WHERE
 
     BIND(IRI(REPLACE(STR(?cho), "http://", CONCAT(STR(idmrole:produced_cho), "/"))) as ?choProductionEventRole)
     BIND(IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_event/")) as ?choProductionEvent)
-    BIND(IRI(REPLACE(STR(?artistUri), "http://", CONCAT(STR(idmrole:producing_artist), "/"))) as ?producingArtistRole)
+    BIND(IRI(REPLACE(STR(?cho), "http://", CONCAT(STR(idmrole:producing_artist), "/"))) as ?producingArtistRole)
     BIND(IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.org/chotitle/")) as ?cho_1476Title)
 	#OPTIONAL { ?cho dc:coverage ?dc_coverage_uri }
     OPTIONAL { ?cho dc:type ?dc_type_uri } # europeana uri (label not included in data dump)
