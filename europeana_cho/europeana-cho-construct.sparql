@@ -64,8 +64,7 @@ WHERE
 	#OPTIONAL { ?cho dc:coverage ?dc_coverage_uri }
     OPTIONAL { ?cho dc:type ?dc_type_uri } # europeana uri (label not included in data dump)
 
-    OPTIONAL { ?cho dcterms:spatial ?spatial . OPTIONAL { ?spatial owl:sameAs ?spatial_sameas_uri . FILTER (STRSTARTS(STR(?spatial_sameas_uri), "http://www.wikidata.org/")) 
-    } }
+    OPTIONAL { ?cho dcterms:spatial ?spatial . OPTIONAL { ?spatial owl:sameAs ?spatial_sameas_uri . FILTER (STRSTARTS(STR(?spatial_sameas_uri), "http://www.wikidata.org/")) } OPTIONAL { ?spatial skos:prefLabel ?spatial_prefLabel } }
   
 	BIND (IF(ISIRI(?spatial), ?spatial, IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/location_of_production/"))) AS ?spatial_uri)
 	BIND (IF(!ISIRI(?spatial), ?spatial, ?unbound) AS ?spatial_label)
