@@ -54,7 +54,8 @@ CONSTRUCT {
 }
 WHERE 
 {
-	{ ?cho dc:creator ?dc_creator_uri .
+	{ ?cho dc:creator ?dc_creator_uri ;
+           edm:europeanaProxy  "true" .
 	?dc_creator_uri owl:sameAs ?artistUri .
     FILTER (STRSTARTS(STR(?artistUri), "http://www.wikidata.org/"))
 
@@ -94,7 +95,8 @@ WHERE
 	OPTIONAL { ?provider_agg edm:object ?edm_object . }
 	}
 	UNION
-	{ ?cho dc:creator ?dc_creator_uri .
+	{ ?cho dc:creator ?dc_creator_uri ;
+                      edm:europeanaProxy  "true" .
 	?dc_creator_uri owl:sameAs ?artistUri .
     FILTER (STRSTARTS(STR(?artistUri), "http://www.wikidata.org/"))
 	?dc_creator_uri skos:prefLabel ?dc_creator_label . #FILTER(LANGMATCHES(LANG(?dc_creator_label), "en"))
