@@ -61,7 +61,7 @@ docker run -it --rm -v "$(pwd)"/europeana-export-for-intavia-persons-fixed.ttl:/
 ## Run Fuseki with SPARQL endpoint
 
 ```
-docker run -it --rm -p 3030:3030 -v "$(pwd)"/fuseki-data:/fuseki-base/databases --name intavia-europeana-fuseki secoresearch/fuseki
+docker run -it --rm -p 3030:3030 -v "$(pwd)"/fuseki-data:/fuseki-base/databases -e QUERY_TIMEOUT=300000 --name intavia-europeana-fuseki secoresearch/fuseki
 ```
 
 SPARQL endpoint available at http://localhost:3030/ds/sparql
