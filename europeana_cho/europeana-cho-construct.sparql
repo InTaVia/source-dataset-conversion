@@ -89,7 +89,7 @@ WHERE
       BIND(IF(BOUND(?dc_date_dateTime_valid), ?dc_date_dateTime, IF(BOUND(?dc_date_date_valid), ?dc_date_date, IF(BOUND(?dc_date_gYear_valid) && !STRSTARTS(?dc_date, "-") && ?dc_date != "0000", ?dc_date_gYear, ?ubound))) AS ?dc_date_datatyped)
     }
 
-    BIND(IF(?dc_date, IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_timespan/")), ?unbound) as ?choProductionTimespan)
+    BIND(IF(BOUND(?dc_date), IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_timespan/")), ?unbound) as ?choProductionTimespan)
 	OPTIONAL { ?provider_proxy dc:title ?dc_title . }
 	OPTIONAL { ?provider_agg edm:object ?edm_object . }
 	}
