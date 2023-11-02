@@ -10,6 +10,7 @@ PREFIX idm: <https://www.intavia.org/idm/>
 PREFIX idmrole: <https://www.intavia.org/idm/role/>
 PREFIX bioc: <http://ldf.fi/schema/bioc/>
 PREFIX idmcore: <http://www.intavia.eu/idm-core/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
 	?cho a crm:E24_Physical_Human_Made_Thing , idm:CHO_Proxy ;
@@ -34,8 +35,8 @@ CONSTRUCT {
 
 	?choProductionTimespan a crm:E52_Time-Span ;
 	    rdfs:label ?dc_date ;
-		crm:P82a_beginning_of_the_begin ?dc_date ;
-		crm:P82b_end_of_the_end ?dc_date .
+		crm:P82a_beginning_of_the_begin ?dc_date_datatyped ;
+		crm:P82b_end_of_the_end ?dc_date_datatyped .
 
     ?choProductionEvent crm:P7_took_place_at ?spatial_uri .
 	?spatial_uri a crm:E53_Place , idmcore:Place_Proxy ;
@@ -77,7 +78,17 @@ WHERE
 	#?provider_proxy edm:type ?edm_type .
 	#OPTIONAL { ?provider_proxy dc:creator ?dc_creator . }
 	#OPTIONAL { ?provider_proxy dc:coverage ?dc_coverage . }
-	OPTIONAL { ?provider_proxy dc:date ?dc_date . }
+	OPTIONAL {
+      ?provider_proxy dc:date ?dc_date .
+      BIND (STRDT(?dc_date, xsd:dateTime) AS ?dc_date_dateTime)
+      BIND (STRDT(?dc_date, xsd:date) AS ?dc_date_date)
+      BIND (STRDT(?dc_date, xsd:gYear) AS ?dc_date_gYear)
+      BIND(YEAR(?dc_date_dateTime) AS ?dc_date_dateTime_valid)
+      BIND(YEAR(?dc_date_date) AS ?dc_date_date_valid)
+      BIND(YEAR(?dc_date_gYear) AS ?dc_date_gYear_valid)
+      BIND(IF(BOUND(?dc_date_dateTime_valid), ?dc_date_dateTime, IF(BOUND(?dc_date_date_valid), ?dc_date_date, IF(BOUND(?dc_date_gYear_valid) && !STRSTARTS(?dc_date, "-") && ?dc_date != "0000", ?dc_date_gYear, ?ubound))) AS ?dc_date_datatyped)
+    }
+
     BIND(IF(?dc_date, IRI(REPLACE(STR(?cho), "http://", "https://www.intavia.eu/production_timespan/")), ?unbound) as ?choProductionTimespan)
 	OPTIONAL { ?provider_proxy dc:title ?dc_title . }
 	OPTIONAL { ?provider_agg edm:object ?edm_object . }
