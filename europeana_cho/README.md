@@ -72,4 +72,16 @@ SPARQL endpoint available at http://localhost:3030/ds/sparql
 sed 's/[[:space:]]#.*$//' europeana-cho-construct.sparql | curl -H "Content-Type: application/sparql-query" -d @- -o europeana-cho-idm.ttl http://localhost:3030/ds/sparql
 ```
 
+## Run SPARQL CONSTRUCT query to add Europeana CHO dc:type object labels into InTaVia knowledge graph
+
+```
+sed 's/[[:space:]]#.*$//' europeana-cho-dc-type-labels-construct.sparql | curl -H "Content-Type: application/sparql-query" -d @- -o europeana-cho-dc-type-labels.ttl http://localhost:3030/ds/sparql
+```
+
+# Concatenate the CHO dc:type object labels into the CHO IDM data ttl file
+
+```
+cat europeana-cho-dc-type-labels.ttl >> europeana-cho-idm.ttl
+```
+
 The resulting file `europeana-cho-idm.ttl` can be ingested into InTaVia triplestore.

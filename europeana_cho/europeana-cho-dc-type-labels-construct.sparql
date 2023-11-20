@@ -1,0 +1,18 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  	?dc_type_uri rdfs:label ?dc_type_label .
+}
+WHERE 
+{
+	?cho dc:creator ?dc_creator_uri ;
+                    edm:europeanaProxy  "true" .
+	?dc_creator_uri owl:sameAs ?artistUri .
+    FILTER (STRSTARTS(STR(?artistUri), "http://www.wikidata.org/"))
+    ?cho dc:type ?dc_type_uri .
+    ?dc_type_uri skos:prefLabel ?dc_type_label . #FILTER(LANGMATCHES(LANG(?dc_type_label), "en"))
+}
